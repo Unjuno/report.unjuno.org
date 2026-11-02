@@ -3,89 +3,157 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="読んだ研究論文を、内容・根拠・限界とともに整理して紹介する個人研究ノート。">
-    <meta name="theme-color" content="#f5f3ee">
-    <title>Research Notes — unjuno</title>
+    <meta name="description" content="読んだ研究論文の内容と根拠を整理し、読み手として考えたことを記録する個人研究ノート。">
+    <meta name="theme-color" content="#f4f2ec">
+    <title>論文を読むノート — unjuno</title>
     <style>
       :root {
         color-scheme: light;
-        --paper: #f5f3ee;
-        --ink: #202820;
-        --muted: #687168;
-        --line: #d9ddd3;
-        --green: #315c48;
+        --paper: #f4f2ec;
+        --ink: #20251f;
+        --muted: #656d64;
+        --line: #d9dbd2;
+        --green: #345b47;
         --serif: Georgia, "Yu Mincho", "Hiragino Mincho ProN", serif;
         --sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       }
       * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
       body {
         margin: 0;
         background: var(--paper);
         color: var(--ink);
         font-family: var(--sans);
-        line-height: 1.75;
+        line-height: 1.8;
       }
       a { color: inherit; }
-      .page { width: min(100% - 3rem, 1100px); margin-inline: auto; }
-      header {
+      .page { width: min(100% - 3rem, 1120px); margin-inline: auto; }
+      .site-header {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding-block: 1.5rem;
+        gap: 2rem;
+        padding-block: 1.35rem;
         border-bottom: 1px solid var(--line);
       }
-      .brand { font-size: .85rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
-      .edition { color: var(--muted); font-size: .8rem; }
-      main { padding-block: clamp(4rem, 10vw, 8rem); }
-      .eyebrow { color: var(--green); font-size: .76rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
-      h1 {
-        max-width: 850px;
-        margin: 1.25rem 0 1.5rem;
-        font-family: var(--serif);
-        font-size: clamp(2.8rem, 7vw, 6rem);
-        font-weight: 400;
-        letter-spacing: -.055em;
-        line-height: 1.12;
+      .brand { font-size: .82rem; font-weight: 750; letter-spacing: .12em; text-decoration: none; text-transform: uppercase; }
+      nav { display: flex; gap: 1.5rem; color: var(--muted); font-size: .82rem; }
+      nav a { text-decoration: none; }
+      nav a:hover { color: var(--green); }
+      .hero { display: grid; grid-template-columns: minmax(0, 1fr) 200px; align-items: end; gap: 3rem; padding-block: clamp(4rem, 11vw, 8.5rem) clamp(3.5rem, 8vw, 6.5rem); }
+      .eyebrow { margin: 0; color: var(--green); font-size: .73rem; font-weight: 750; letter-spacing: .16em; text-transform: uppercase; }
+      h1 { max-width: 790px; margin: 1.25rem 0 1.5rem; font-family: var(--serif); font-size: clamp(3rem, 7vw, 6.25rem); font-weight: 400; letter-spacing: -.06em; line-height: 1.12; }
+      .intro { max-width: 650px; margin: 0; color: #485149; font-size: clamp(1rem, 2vw, 1.18rem); }
+      .hero-mark { display: grid; width: 180px; aspect-ratio: 1; place-items: center; justify-self: end; border: 1px solid #c7cec2; border-radius: 50%; color: var(--green); font-family: var(--serif); font-size: 1.15rem; line-height: 1.35; text-align: center; transform: rotate(-8deg); }
+      .hero-mark span { display: block; font-size: .68rem; letter-spacing: .15em; text-transform: uppercase; }
+      .section { padding-block: 2.25rem 5rem; }
+      .section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--line); }
+      h2 { margin: 0; font-family: var(--serif); font-size: 1.65rem; font-weight: 400; letter-spacing: -.02em; }
+      .section-label { color: var(--muted); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; }
+      .empty { padding: 3.75rem 1rem 4rem; text-align: center; }
+      .empty-mark { display: grid; width: 2.5rem; height: 2.5rem; margin: 0 auto 1rem; place-items: center; border: 1px solid #bfc7bb; border-radius: 50%; color: var(--green); font-family: var(--serif); }
+      .empty h3 { margin: 0 0 .45rem; font-family: var(--serif); font-size: 1.4rem; font-weight: 400; }
+      .empty p { max-width: 440px; margin: 0 auto; color: var(--muted); font-size: .9rem; }
+      .approach { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; padding-top: 2rem; }
+      .approach article { padding-top: 1rem; border-top: 2px solid var(--green); }
+      .number { color: var(--green); font-size: .72rem; font-weight: 750; letter-spacing: .1em; }
+      .approach h3 { margin: .7rem 0 .4rem; font-family: var(--serif); font-size: 1.25rem; font-weight: 400; }
+      .approach p { margin: 0; color: var(--muted); font-size: .88rem; }
+      .note { max-width: 740px; padding: 1.5rem 1.75rem; border-left: 2px solid var(--green); background: #eeece5; color: #50574f; font-size: .88rem; }
+      .note p { margin: 0; }
+      footer { display: flex; justify-content: space-between; gap: 2rem; padding-block: 1.35rem 2rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .75rem; }
+      footer p { margin: 0; }
+      @media (max-width: 700px) {
+        .page { width: min(100% - 2rem, 1120px); }
+        .hero { grid-template-columns: 1fr; gap: 2rem; }
+        .hero-mark { width: 110px; justify-self: start; font-size: .9rem; }
+        .approach { grid-template-columns: 1fr; gap: 1.25rem; }
       }
-      .intro { max-width: 650px; color: #485149; font-size: clamp(1.05rem, 2vw, 1.25rem); }
-      .rule { width: 3rem; height: 2px; margin-block: 3rem; background: var(--green); }
-      .columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem; max-width: 850px; }
-      h2 { margin: 0 0 .75rem; font-family: var(--serif); font-size: 1.35rem; font-weight: 400; }
-      .columns p { margin: 0; color: var(--muted); font-size: .95rem; }
-      .status { display: inline-flex; align-items: center; gap: .55rem; margin-top: 3.5rem; color: var(--muted); font-size: .82rem; }
-      .status::before { width: .45rem; height: .45rem; border-radius: 50%; background: #a9ad9f; content: ""; }
-      footer { padding-block: 1.25rem 2rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .78rem; }
-      @media (max-width: 620px) {
-        .page { width: min(100% - 2rem, 1100px); }
-        .columns { grid-template-columns: 1fr; gap: 1.75rem; }
-        .edition { max-width: 9rem; text-align: right; }
+      @media (max-width: 480px) {
+        .site-header { align-items: flex-start; flex-direction: column; gap: .7rem; }
+        nav { gap: 1rem; }
+        footer { flex-direction: column; gap: .4rem; }
+        .section-head { align-items: flex-start; flex-direction: column; gap: .25rem; }
       }
+      @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
     </style>
   </head>
   <body>
     <div class="page">
-      <header>
-        <a class="brand" href="/" aria-label="Research Notes ホーム">unjuno / research</a>
-        <span class="edition">論文を読む、考える、伝える</span>
+      <header class="site-header">
+        <a class="brand" href="#top">unjuno / reading notes</a>
+        <nav aria-label="ページ内ナビゲーション">
+          <a href="#notes">論文ノート</a>
+          <a href="#approach">読み方</a>
+          <a href="#about">このサイトについて</a>
+        </nav>
       </header>
-      <main>
-        <p class="eyebrow">Independent reading notes</p>
-        <h1>研究を読み、<br>自分の言葉で考える。</h1>
-        <p class="intro">ここでは、私が読んだ論文について、何を明らかにしようとしたのか、どのような根拠が示されたのか、そして何がまだ分からないのかを整理して紹介します。</p>
-        <div class="rule" aria-hidden="true"></div>
-        <section class="columns" aria-label="このサイトについて">
+
+      <main id="top">
+        <section class="hero" aria-labelledby="page-title">
           <div>
-            <h2>論文の紹介</h2>
-            <p>研究の問い、方法、主な結果を、原文と出典をたどれる形でまとめます。</p>
+            <p class="eyebrow">Independent reading notes</p>
+            <h1 id="page-title">論文を読み、<br>自分の言葉で考える。</h1>
+            <p class="intro">研究論文が何を問い、どんな根拠を示したのか。読んで分かったことと、読み手として考えたことを分けて記録する場所です。</p>
           </div>
-          <div>
-            <h2>読み手としての評価</h2>
-            <p>研究の強みや限界、自分の解釈を、論文が示す事実と分けて記します。</p>
+          <div class="hero-mark" aria-hidden="true">読むことから<span>Read · Reflect</span></div>
+        </section>
+
+        <section class="section" id="notes" aria-labelledby="notes-title">
+          <div class="section-head">
+            <h2 id="notes-title">論文ノート</h2>
+            <span class="section-label">Paper notes</span>
+          </div>
+          <div class="empty">
+            <span class="empty-mark" aria-hidden="true">—</span>
+            <h3>ノートを準備しています</h3>
+            <p>論文を読んで整理できたものから、出典とともに掲載します。</p>
+          </div>
+          <!--
+            論文ノートを追加するときは、上の .empty を外し、ここに記事を追加します。
+            記事には論文の出典、研究の問い、根拠、限界、自分の評価を記載してください。
+          -->
+        </section>
+
+        <section class="section" id="approach" aria-labelledby="approach-title">
+          <div class="section-head">
+            <h2 id="approach-title">ノートの読み方</h2>
+            <span class="section-label">How to read</span>
+          </div>
+          <div class="approach">
+            <article>
+              <span class="number">01 / 問い</span>
+              <h3>何を調べた研究か</h3>
+              <p>研究の目的や、著者が答えようとした問いを紹介します。</p>
+            </article>
+            <article>
+              <span class="number">02 / 根拠</span>
+              <h3>何が示されたか</h3>
+              <p>方法や結果を確認し、論文から読み取れる範囲を整理します。</p>
+            </article>
+            <article>
+              <span class="number">03 / 考察</span>
+              <h3>どう受け止めたか</h3>
+              <p>研究の限界と、自分の解釈・評価を区別して記します。</p>
+            </article>
           </div>
         </section>
-        <p class="status">論文ノートを準備中</p>
+
+        <section class="section" id="about" aria-labelledby="about-title">
+          <div class="section-head">
+            <h2 id="about-title">このサイトについて</h2>
+            <span class="section-label">About</span>
+          </div>
+          <div class="note">
+            <p>このサイトは、個人による読書と考察の記録です。各ノートでは論文の書誌情報と原文へのリンクを示し、論文著者の主張と筆者自身の評価が混ざらないように構成します。研究の紹介は、原著作物の権利と引用の範囲に配慮して行います。</p>
+          </div>
+        </section>
       </main>
-      <footer>個人による読書・考察の記録です。各論文の著者・出典を明記し、解釈と研究結果を区別して掲載します。</footer>
+
+      <footer>
+        <p>unjuno / Research Notes</p>
+        <p>読んだ研究を、根拠とともに。</p>
+      </footer>
     </div>
   </body>
 </html>
