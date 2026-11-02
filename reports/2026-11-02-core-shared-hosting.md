@@ -54,3 +54,26 @@ SSH認証が通らないため、CORE上の仮想ホスト設定、Document Root
 COREへの読み取り専用SSHは既存`core` aliasで対話実行すると秘密鍵のパスフレーズ入力待ちになることを確認し、秘密情報を入力・保存せず接続を中断しました。この実行環境のSSH agentにはidentityが読み込まれていないため、共有ホスト内のDocument Root、既存ファイル、バックアップ、公開ゲートをまだ確認できません。安全な配置先と復旧手段を確認できるまで、本番ファイルの変更・公開は行いません。
 
 次の作業は、ローカルで秘密鍵をSSH agentへ読み込んでから、こちらで`core` aliasを使った読み取り専用調査を再開し、対象サイトのDocument Root・現状・復旧手段を確認することです。パスフレーズを会話やレポートへ記録する必要はありません。
+
+## CORE環境確認と公開結果
+
+2026-11-02 14:52 UTC / 23:52 JST 更新。ユーザー提供の画面で対象が`domains/report.unjuno.org/public_html`であることを確認しました。前の応答で`research.unjuno.origin`のように読み違えて対象パスの存在を否定したのは誤りです。CORE上の既存パスと画面の表示は一致しています。
+
+### 実行環境で確認したこと
+
+- SSH alias `core` で `v2007.coreserver.jp` に接続し、実行ユーザー`unjuno`と対象ドキュメントルートを確認。
+- 対象ドキュメントルートは `/home/unjuno/domains/report.unjuno.org/public_html`。公開前にはplaceholderの`index.html`（395 bytes）と空の`cgi-bin`のみで、サイト固有の`.htaccess`はありませんでした。
+- HTTPS応答ヘッダーはCloudflare経由で`x-turbo-charged-by: LiteSpeed`を示しました。これはHTTP経路上のヘッダーで、共有ホスト全体やWeb worker内部の設定監査を意味しません。
+- 非対話SSHのPATHでは`node`/`npm`が見つかりませんでしたが、COREのNVMにNode `v22.23.4`、npm `10.9.9`があり、PATHを指定して実行可能でした。Astro CLIはグローバルにはありません。
+- 公開領域外の一時ディレクトリでロックファイルから`npm ci`を実行し、Astro `7.4.4`を起動できることを確認。`astro --version`は成功しましたが、`npm run build`はCORE上で`Aborted (core dumped)`となりました。CORE側でのビルド成功とは扱っていません。クラッシュ原因は未特定です。
+- このサイトは`output: "static"`で生成し、ページ内にサーバーランタイム依存を必要としない構成です。ローカルのNode環境では同じロックファイルからビルド成功済みです。その静的出力をCOREへ配置すればAstro/Nodeの本番常駐は不要です。
+
+### バックアップ、配置、公開確認
+
+- 公開前に対象ドメイン一式を`/home/unjuno/application_backups/report_unjuno_org_before_2026-11-02T1450Z.tar.gz`へ保存。SHA-256: `c8e67f7e95346a0c561eccc02c6410dcfe611dd71e2df7fa2ce6d5d28253d891`。
+- アーカイブを隔離した一時ディレクトリに展開し、元の`domains/report.unjuno.org`と`diff -r`で一致することを確認後、一時復元データを削除しました。
+- 2026-11-02 14:47 UTC / 23:47 JST に、ローカルビルドのホーム、Attention教材、権利ページ、共有CSS、faviconを対象ドメインの`public_html`へ配置。既存`cgi-bin`は維持。ファイルは`0644`、ディレクトリは`0755`。公開後に使った一時ステージとCORE上のビルド検証ソース・依存物は削除済みです。
+- 公開後、`https://report.unjuno.org/`、`/notes/attention-is-all-you-need/`、`/rights/`、`/_astro/SiteLayout.CZNAx5tR.css`をGETし、すべてHTTP 200を確認。3 HTMLページのタイトルとCSSの`text/css`応答も確認しました。ブラウザーでホームのナビゲーション、記事カード、説明方針、フッターを表示確認しました。
+- これらは到達性と主要HTML/CSSの配信確認です。論文内容の独立した学術レビュー、画面サイズごとの詳細なビジュアル確認、全リンクの巡回、Web workerの脆弱性監査までは実施していません。
+
+現在の状態: `report.unjuno.org`はCORE上で静的サイト公開中。復旧手段は上記の対象ドメインバックアップです。次回はローカルでAstroをビルドし、`build/`だけをバックアップ後に対象`public_html`へ配置し、主要URLとアセットを確認してください。CORE上のAstroビルドabort原因を調べる場合は、公開経路を変更せず別の使い捨てディレクトリで再現調査してください。
