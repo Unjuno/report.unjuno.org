@@ -31,3 +31,5 @@ Create `src/pages/notes/<slug>/index.astro`, use `SiteLayout`, and add a card li
 This is a public GitHub repository without a reuse license. Copyright is reserved; see [RIGHTS.md](RIGHTS.md). The website's footer links to the corresponding policy page.
 
 The intended custom domain is `report.unjuno.org` on CORE. CORE's domain configuration and document root have not been verified because the read-only SSH connection was denied on 2026-11-02. Do not treat a GitHub or Codex Sites deployment as publication to that custom domain.
+
+See [`reports/2026-11-02-core-shared-hosting.md`](reports/2026-11-02-core-shared-hosting.md) for the read-only DNS, HTTPS, SSH, and source comparison results.

@@ -1,0 +1,40 @@
+# CORE共有サーバー確認レポート
+
+確認日時: 2026-11-02 10:54 UTC / 2026-11-02 19:54 JST  
+対象: `report.unjuno.org`、既存SSH alias `core`、公開GitHubリポジトリ  
+確認方法: 読み取り専用のSSH試行、DNS照会、HTTPS GET、ローカルソースのSHA-256比較
+
+## 確認できた状態
+
+`report.unjuno.org` はDNSでAレコード2件を返し、HTTPS GETには`200`を返しました。ただし、実際に表示された本文はサブドメイン用のplaceholderでした。現時点で、このドメインからAstroホームやAttention解説が配信されているとは確認できません。
+
+COREの共有サーバーへSSHで読み取り専用接続を試みましたが、`core` aliasの公開鍵認証が拒否されました。認証後に実行する予定だったホスト名、作業ディレクトリ、日時、ディレクトリ一覧の確認は実行できていません。
+
+## 根拠と分かること
+
+| 確認項目 | 結果 | 分かること |
+| --- | --- | --- |
+| DNS | `report.unjuno.org` にAレコード2件 | 名前解決先があること。IPの記録・公開は不要なため、このレポートには値を載せていません。 |
+| HTTPS GET | `200`、`text/html`。ブラウザー本文は `This is a placeholder for the subdomain report.unjuno.org` | HTTPSの応答はあるが、目的のホームではないこと。HTTP応答だけではサーバーの所有者、Document Root、配信元を特定できません。 |
+| `core` SSH | 公開鍵認証が拒否され、終了コード1 | 認証情報やサーバー上の設定は取得できていないこと。リモートの読み取りコマンドは実行されていません。 |
+| GitHubリポジトリ | [Unjuno/report.unjuno.org](https://github.com/Unjuno/report.unjuno.org) にAstroソースあり。`.openai/hosting.json`は静的出力先を`build`に指定 | ローカル保全済みのソース構成。リポジトリがあること自体はCOREへ配置済みである証拠にはなりません。 |
+| 公開中のSites版 | [attention-cinema-unjuno.unjuno.chatgpt.site](https://attention-cinema-unjuno.unjuno.chatgpt.site/)、バージョン10、`public` | Codex Sites側では公開されています。`report.unjuno.org`上の公開とは別です。 |
+| Sites版とGitHub版のソース比較 | 11ファイル中10ファイル一致。差分は`RIGHTS.md`のみ | Astroコード、ビルド設定、論文ページ、CSS、favicon、Sites設定は一致。権利表示ファイルは各リポジトリ/サイト向けに文面が異なります。 |
+
+## 未確認事項
+
+SSH認証が通らないため、CORE上の仮想ホスト設定、Document Root、実ファイル、所有者・権限、`.htaccess`、Webサーバー種別・設定、TLS終端、バックアップ、公開ゲートは未確認です。したがって、CORE上のLinux、Apache/LiteSpeed、PHP等のランタイムやパッチ状態について評価できる根拠もありません。HTTPヘッダーや版表示だけから安全性・更新状況を推定していません。
+
+このサイトは静的ページとして構成されていますが、CORE上でどの設定・経路を通って配信されるかは未確認です。DNSのAレコード数やplaceholder応答だけでは、共有サーバー全体や他サイトの状態は分かりません。
+
+## 実施した変更
+
+サーバー設定、DNS、公開ゲート、ファイル、データベースは変更していません。確認結果だけをこのファイルに記録します。
+
+## 次に行う作業
+
+1. `core` aliasの読み取り専用SSH認証を復旧し、秘密鍵やパスフレーズをリポジトリ・会話へ出さずに再接続する。
+2. 接続後、対象ホストと`report.unjuno.org`のDocument Root、仮想ホスト経路、公開ゲート、既存ファイル、復旧用バックアップを確認する。
+3. 対象ディレクトリと復旧手段が確認できてから、対象サイトだけを配置し、公開URLでホーム・記事・権利方針ページの本文を確認する。
+
+確認した公開経路: 2026-11-02 19:54 JST。COREへの配置・公開は未実施です。
