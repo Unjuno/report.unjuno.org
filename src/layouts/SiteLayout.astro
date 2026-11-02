@@ -1,0 +1,44 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const home = Astro.url.pathname === "/";
+---
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f2eb" />
+    <meta name="description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="shell">
+      <header class="topbar">
+        <a class="wordmark" href="/" aria-label="unjuno 論文ノート ホーム">
+          <span class="wordmark-mark" aria-hidden="true">u.</span>
+          <span>unjuno / paper notes</span>
+        </a>
+        <nav class="nav" aria-label="メインナビゲーション">
+          <a href={home ? "#notes" : "/#notes"}>論文ノート</a>
+          <a href={home ? "#about" : "/#about"}>このサイトについて</a>
+          <span class="nav-index">JP / 01</span>
+        </nav>
+      </header>
+      <slot />
+      <footer class="footer">
+        <p>unjuno / Paper Notes</p>
+        <p>論文の主張と、読み手の考えを分けて記録します。 · <a href="/rights/">著作権・再利用方針</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+
+const title = "論文を、わかる言葉で。 — unjuno";
+const description = "読んだ研究論文を、問い・根拠・限界に分けて自分の言葉で解説するノート。最初のテーマはTransformerを提案したAttention Is All You Need。";
+---
+<SiteLayout title={title} description={description}>
+  <main id="top">
+    <section class="home-hero" aria-labelledby="home-title">
+      <div class="hero-copy">
+        <p class="kicker">A READER'S NOTEBOOK · 研究を読む</p>
+        <h1 id="home-title">論文を、<br /><em>わかる言葉</em>で。</h1>
+        <p>研究論文の問い、方法、結果をたどりながら、むずかしい考えを自分の言葉でほどいていく。分かったことと、まだ言えないことを分けて記録する小さなノートです。</p>
+        <a class="hero-link" href="/notes/attention-is-all-you-need/">最初のノートを読む <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 400 340" role="presentation">
+          <g fill="none" stroke="#b2c4b6" stroke-width="1.2">
+            <path d="M74 176 166 83 268 131 327 60M74 176l91 89 103-134 55 106M166 83l-.5 182M74 176l194-45M268 131l59 47" />
+            <path d="M74 176 327 238" stroke-dasharray="3 7" />
+          </g>
+          <g fill="#f5f2eb" stroke="#47735f" stroke-width="2">
+            <circle cx="74" cy="176" r="8" /><circle cx="166" cy="83" r="7" /><circle cx="166" cy="265" r="7" /><circle cx="327" cy="60" r="6" /><circle cx="327" cy="238" r="6" />
+          </g>
+          <circle cx="268" cy="131" r="13" fill="#c56f4b" />
+          <circle cx="268" cy="131" r="23" fill="none" stroke="#c56f4b" stroke-opacity=".35" />
+          <text x="49" y="208" fill="#52615a" font-size="11" font-family="monospace">問い</text>
+          <text x="247" y="176" fill="#52615a" font-size="11" font-family="monospace">根拠</text>
+          <text x="306" y="275" fill="#52615a" font-size="11" font-family="monospace">考察</text>
+          <text x="198" y="324" text-anchor="middle" fill="#7a847d" font-size="10" font-family="monospace" letter-spacing="2">FOLLOW THE IDEA</text>
+        </svg>
+        <span class="art-caption">問いから、根拠へ。</span>
+      </div>
+    </section>
+
+    <section class="section-block" id="notes" aria-labelledby="notes-title">
+      <div class="section-head">
+        <h2 id="notes-title">論文ノート</h2>
+        <span class="section-index">READING FILES / 001</span>
+      </div>
+      <a class="featured" href="/notes/attention-is-all-you-need/">
+        <div class="featured-art" aria-hidden="true">
+          <svg viewBox="0 0 140 105" fill="none">
+            <path d="M19 67 52 28l40 30 30-27M19 67l34 22 39-31 30 22" stroke="#789582" stroke-width="1.5" />
+            <circle cx="19" cy="67" r="5" fill="#345e4e" /><circle cx="52" cy="28" r="4" fill="#d7e1d7" stroke="#345e4e" /><circle cx="53" cy="89" r="4" fill="#d7e1d7" stroke="#345e4e" /><circle cx="92" cy="58" r="7" fill="#c56f4b" /><circle cx="122" cy="31" r="4" fill="#d7e1d7" stroke="#345e4e" /><circle cx="122" cy="80" r="4" fill="#d7e1d7" stroke="#345e4e" />
+            <text x="91" y="61" text-anchor="middle" fill="white" font-size="7" font-family="sans-serif">ATTN</text>
+          </svg>
+        </div>
+        <div>
+          <span class="meta">01 · MACHINE LEARNING · 2017</span>
+          <h3 class="featured-title">「Attention Is All You Need」<br />Transformerは何を変えたのか</h3>
+          <p class="featured-desc">単語を一つずつ読む仕組みから、文の中の関係をまとめて見る仕組みへ。Self-attentionの考え方と、論文が実験で確かめた範囲を読み解きます。</p>
+        </div>
+        <span class="featured-arrow" aria-hidden="true">↗</span>
+      </a>
+
+      <div class="reading-principle" id="about">
+        <div>
+          <p class="kicker">ABOUT THIS NOTEBOOK</p>
+          <h2>論文の説明と、<br />自分の評価を分ける。</h2>
+        </div>
+        <div class="principle-copy">
+          <p>ここにあるのは、読んだ研究を理解するための個人ノートです。</p>
+          <p><strong>論文が報告したこと</strong>には、原文の出典を添えます。<strong>読み手としての解釈</strong>は、それと区別して書きます。</p>
+          <p>難しい言葉を簡単に言い換えるときも、研究結果が実際に支える範囲を越えないようにします。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</SiteLayout>

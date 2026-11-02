@@ -1,0 +1,32 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+
+const title = "著作権・再利用方針";
+const description = "unjuno Research Notes の著作権と再利用について。";
+---
+<SiteLayout title={`${title} — unjuno`} description={description}>
+  <main>
+    <div class="article-top"><a href="/">ホーム</a> <span aria-hidden="true">/</span> 方針</div>
+    <header class="article-hero">
+      <div>
+        <p class="kicker">SITE POLICY</p>
+        <h1>著作権と、<br />再利用について。</h1>
+        <p class="article-deck">このサイトは閲覧できますが、掲載内容の再利用を許可するライセンスは付与していません。</p>
+      </div>
+    </header>
+    <div class="article-grid">
+      <article class="article-body">
+        <section class="article-section">
+          <h2>このサイトの内容</h2>
+          <p>本サイトの文章、独自に作成した図、デザイン、ソースコード等の著作権は、それぞれの権利者に帰属します。権利者の事前の許可なく、複製、改変、転載、再配布、商用利用などに利用することはできません。サイトが公開されていることは、これらの利用を許諾するものではありません。</p>
+          <p>本サイトは、再利用を認めるオープンソースまたはオープンコンテンツのライセンスを付与していません。許可を希望する場合は、権利者へ事前にお問い合わせください。</p>
+        </section>
+        <section class="article-section">
+          <h2>紹介する論文について</h2>
+          <p>論文の著作権は各著者・出版社等に帰属します。本サイトでは出典を明記し、内容を自分の言葉で要約・解説します。引用は適用される法令と出典の条件に従ってください。原論文の図表や本文を、本サイトの許諾だけで再利用できるものではありません。</p>
+        </section>
+        <div class="next-note"><a class="back-link" href="/">← ホームへ戻る</a></div>
+      </article>
+    </div>
+  </main>
+</SiteLayout>

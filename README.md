@@ -1,29 +1,33 @@
 # report.unjuno.org
 
-読んだ研究論文の要約と個人的な評価を公開するための、静的なホームページです。論文ノートは `index.html` に直接記述して管理します。
+An Astro site for one purpose: explain research papers the author has read in clear, traceable language. Each note separates the paper's claims and evidence from the author's interpretation.
 
-## 現在の状態
+## Pages
 
-- `index.html` は依存ライブラリのない単一ファイルです。新しいノートは「論文ノート」セクションに追加します。
-- 論文ノートはまだ掲載していません。未確認の研究内容や架空の論文は追加していません。
-- GitHub では公開リポジトリにする方針です。再利用を許可するライセンスは付与せず、著作権は権利者に留保します。詳細は `RIGHTS.md` を参照してください。
-- 公開先は `report.unjuno.org` を想定していますが、CORE 上のドメイン設定・公開経路・公開ゲートは未確認です。
-- 2026-11-02 の `core` SSH 読み取り専用接続は公開鍵認証で拒否されました。したがって本番への配置・公開は行っていません。
+- `src/pages/index.astro` — home and paper index
+- `src/pages/notes/attention-is-all-you-need/index.astro` — first note: Vaswani et al. (2017)
+- `src/pages/rights/index.astro` — copyright and reuse policy
+- `src/layouts/SiteLayout.astro` — shared page frame
+- `src/styles/global.css` — responsive styles
+- `archive/previous-static-home.html` — earlier static draft retained for reference
 
-## 公開前に必要な確認
+## Develop
 
-1. CORE の台帳と実際の設定から、このサブドメインの Document Root と Web サーバー経路を確認する。
-2. 既存サイトとの分離、公開ゲート、必要なバックアップと復旧手順を確認する。
-3. 対象の公開領域だけに配置し、本番 URL の応答と表示を確認する。
+Requires Node.js 22.23.4 or newer.
 
-OpenAI Sites の公開領域には作成していません。目的のホストは CORE 上の `report.unjuno.org` です。
+```sh
+npm install
+npm run build
+```
 
-## 論文ノートを追加するとき
+The static site is generated in `build/`. `.openai/hosting.json` points the existing Sites project to that directory.
 
-「論文ノート」セクション内の案内コメントを参考に、記事をHTMLへ直接追加してください。各記事には次の情報を入れると、読者が根拠を追いやすくなります。
+## Add a paper note
 
-- 論文タイトル、著者、掲載誌・年、原文へのリンク
-- 研究の問いと方法
-- 主な結果と、その結果が支える範囲
-- 研究の限界
-- 自分の評価・解釈（論文の結果と区別して記述）
+Create `src/pages/notes/<slug>/index.astro`, use `SiteLayout`, and add a card linking to it from `src/pages/index.astro`. Give the paper's authors, publication, year, and primary-source links. Explain the question, method, evidence, limitations, and interpretation in distinct sections.
+
+## Rights and publication
+
+This is a public GitHub repository without a reuse license. Copyright is reserved; see [RIGHTS.md](RIGHTS.md). The website's footer links to the corresponding policy page.
+
+The intended custom domain is `report.unjuno.org` on CORE. CORE's domain configuration and document root have not been verified because the read-only SSH connection was denied on 2026-11-02. Do not treat a GitHub or Codex Sites deployment as publication to that custom domain.
