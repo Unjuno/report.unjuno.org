@@ -1,0 +1,19 @@
+const fs=require('fs'),vm=require('vm'),path=require('path'),assert=require('assert');const base=path.resolve(__dirname,'..');let image,reads=0,rasters=0,readyCalls=0;const contexts=[];
+function canvas(){const c={width:0,height:0};const ctx=new Proxy({measureText(s){return{width:s.length*10}},getImageData(x,y,w,h){reads++;return{data:new Uint8ClampedArray(w*h*4).fill(180)}},fillText(){rasters++},createLinearGradient(){return{addColorStop(){}}}},{get(t,k){return k in t?t[k]:(()=>{})},set(t,k,v){t[k]=v;return true}});c.getContext=()=>ctx;contexts.push(ctx);return c;}
+class MockImage{constructor(){image=this;this.naturalWidth=1536;this.naturalHeight=1024;}set src(v){assert.equal(v,'/assets/paper-reality.webp');this.source=v;}}
+const context={window:{},document:{createElement:canvas},Image:MockImage};vm.runInNewContext(fs.readFileSync(base+'/dist/assets/home-reality.js','utf8'),context);
+const output=canvas(),app=context.window.ResearchReality.create(output,()=>readyCalls++);assert(app.isReality);app.resize(343,490,2);assert.equal(reads,0);image.onload();assert.equal(readyCalls,1);assert.equal(reads,2);assert(rasters>0);const initial=reads;
+for(let i=0;i<20;i++)app.draw(i/24,0);assert.equal(reads,initial,'no pixel readbacks or text rebuild per frame');app.setTitle('Attention Is All You Need');assert.equal(reads,initial);app.setTitle('論文サンプル A');assert.equal(reads,initial+2);app.setTitle('論文サンプル A');assert.equal(reads,initial+2);
+app.draw(1,1,0,0,0,false);app.draw(1,2,0,0,0,false);assert.equal(reads,initial+2,'paused mode switches reuse shared layers');assert.equal(app.draw(2,0).length,6);app.setBoundary(-999);app.setBoundary(999);assert.equal(reads,initial+2);image.onerror();assert(app.failed);app.draw(3,2);assert.equal(readyCalls,2);
+// Production deck must hide old duplicated locations/viewer and retain real reading paths.
+let setup=fs.readFileSync(base+'/tests/home-renderer-loss.cjs','utf8');setup=setup.slice(0,setup.indexOf("ids['equation-view'].events.click();"));setup=setup.replace('return{resize(){},draw(){','return{isReality:true,setTitle(){},setBoundary(){},resize(){},draw(){');setup=setup.replace('window:{ResearchSurface:renderer','window:{ResearchReality:renderer');setup+='return {ids,nodes,frames};';const a=new Function('require','__dirname',setup)(require,base+'/tests');
+assert(a.ids['view-control'].hidden);assert(a.ids['view-reset'].hidden);assert(a.ids['material-options'].hidden);assert.equal(a.ids['location-map']['aria-hidden'],'true');for(let i=0;i<6;i++){assert.equal(a.ids['location-'+i].style.display,'none');assert.equal(a.ids['location-'+i].tabindex,'-1');}assert.equal(a.ids['open-paper'].href,'/notes/attention-is-all-you-need/');a.ids['equation-view'].events.click();assert(a.ids['geometry-equation'].hidden);a.ids['paper-search'].value='no-match';a.ids['paper-search'].events.input();assert(!a.ids['empty-state'].hidden);a.ids['clear-search'].events.click();assert(!a.ids['open-paper'].hidden);
+console.log('PASS same-image layer caching, selected title rebuild, no per-frame pixel readback, paused states/image failure, hidden legacy viewer and preserved search/read path');
+
+// Failed internal contexts or pixel reads degrade to readable DOM, not an unhandled exception.
+for(const failure of ['layer','readback']){
+ let count=0,img,notifications=0;
+ class FailImage{constructor(){img=this;this.naturalWidth=1536;this.naturalHeight=1024}set src(v){}}
+ const env={window:{},Image:FailImage,document:{createElement(){count++;const c=canvas();if(failure==='layer'&&count===2)c.getContext=()=>null;else if(failure==='readback'&&count===1)c.getContext().getImageData=()=>{throw Error('readback unavailable')};return c;}}};
+ vm.runInNewContext(fs.readFileSync(base+'/dist/assets/home-reality.js','utf8'),env);const r=env.window.ResearchReality.create(canvas(),()=>notifications++);r.resize(343,490,1);if(img?.onload)img.onload();assert(r.failed);assert.equal(r.draw(0,0).length,6);
+}

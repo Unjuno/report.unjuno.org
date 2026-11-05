@@ -1,0 +1,15 @@
+'use strict';
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+const source=fs.readFileSync('dist/assets/cinema-field.js','utf8');
+function setup(){
+ let now=0,id=0;const timers=new Map(),frames=new Map(),requests=[];
+ const c=new Proxy({createLinearGradient:()=>({addColorStop(){}})},{get:(o,k)=>o[k]||(()=>{})});
+ const ctx={Date:{now:()=>now},setTimeout(fn,ms){assert.ok([12000,15000].includes(ms));timers.set(++id,{fn,at:now+ms});return id},clearTimeout(id){timers.delete(id)},window:{},document:{hidden:false,body:{prepend(){},classList:{contains:()=>false}},createElement:()=>({setAttribute(){},getContext:()=>c,remove(){}}),querySelectorAll:()=>[],querySelector:()=>({}),addEventListener(){}},Image:class{constructor(){this.complete=false;}set src(url){if(!url)return;requests.push({url,image:this,load:this.onload,error:this.onerror})}},matchMedia:()=>({matches:false,addEventListener(){}}),scrollY:0,innerWidth:390,innerHeight:844,devicePixelRatio:1,requestAnimationFrame(fn){frames.set(++id,fn);return id},cancelAnimationFrame(id){frames.delete(id)},addEventListener(){},MutationObserver:class{observe(){}}};
+ vm.runInNewContext(source,ctx);
+ return {ctx,timers,frames,requests,advance(ms){now+=ms;for(const [key,t]of [...timers])if(t.at<=now){timers.delete(key);t.fn()}},succeed(request){request.image.naturalWidth=1536;request.image.naturalHeight=1024;request.load()}};
+}
+function paint(r){const queue=[...r.frames.values()];r.frames.clear();queue.forEach(fn=>fn(0));}
+let r=setup();assert.equal(r.requests.length,2);r.advance(11999);assert.equal(r.requests.length,2,'no early timeout');r.advance(1);assert.equal(r.requests.length,4,'timeouts free two slots for later scenes');assert.ok(r.requests[2].url.includes('art-cosmic-cells')&&r.requests[3].url.includes('spaceship-window'));r.succeed(r.requests[3]);paint(r);assert.equal(r.ctx.window.__reportFlow.loaded,1);assert.ok(r.frames.size>0,'successful later asset resumes animation');for(const req of r.requests.slice(0,2))r.succeed(req);paint(r);assert.equal(r.ctx.window.__reportFlow.loaded,1,'late successes after timeout ignored');
+r=setup();for(let i=0;i<60;i++)r.advance(15000);assert.equal(r.requests.length,70,'at most two attempts for each of 35 assets');assert.equal(new Set(r.requests.map(x=>x.url)).size,35);assert.equal(r.timers.size,0);assert.equal(r.frames.size,0);assert.equal(r.ctx.window.__reportFlow.loaded,0);r.advance(120000);assert.equal(r.requests.length,70,'no infinite retry');for(const req of r.requests)r.succeed(req);assert.equal(r.ctx.window.__reportFlow.loaded,0,'late callbacks cannot resurrect timed-out assets');
+r=setup();for(let i=0;i<r.requests.length;i++)r.succeed(r.requests[i]);paint(r);assert.equal(r.timers.size,0,'successful loads clear timeouts');r.advance(120000);assert.equal(r.requests.length,4);assert.equal(r.ctx.window.__reportFlow.loaded,4);
+console.log('PASS 12s load timeout, two concurrent fetches, later recovery, ignored late success, max two attempts/asset, cleared timers and safe stop.');

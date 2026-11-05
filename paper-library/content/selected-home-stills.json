@@ -1,0 +1,98 @@
+{
+  "base_version": 96,
+  "base_commit": "f9361651f8d6afe7b437e161450e5a830ed24642",
+  "items": [
+    {
+      "index_1based": 3,
+      "name": "selected-ceramic-sherds-v1.webp",
+      "sha256": "bfc17eb07f56e90ae745776747e273336f1dd8ff10dac9813aeb03a1c236ffa3",
+      "bytes": 514494,
+      "subject": "ceramic sherds",
+      "type": "optimized-static-webp",
+      "animation": "existing procedural canvas transitions only; no GIF",
+      "quality": "WebP quality 92 at original 1672x941 resolution; visually checked, not device acceptance",
+      "focus": 0.78,
+      "transition": "mist",
+      "original": {
+        "name": "selected-ceramic-sherds-v1.png",
+        "sha256": "071825ec7596f688c5e5dd39bcbce7f4dd33fe00e6a10f428922cc0d49f7e74b",
+        "bytes": 3281388
+      }
+    },
+    {
+      "index_1based": 5,
+      "name": "selected-star-trails-v1.webp",
+      "sha256": "9e726c76fc901947ab85ca9b0240470a5d03afd8b195502e626f804110702262",
+      "bytes": 146526,
+      "subject": "star trails illustration",
+      "type": "optimized-static-webp",
+      "animation": "existing procedural canvas transitions only; no GIF",
+      "quality": "WebP quality 92 at original 1672x941 resolution; visually checked, not device acceptance",
+      "focus": 0.88,
+      "transition": "depth-rings",
+      "original": {
+        "name": "selected-star-trails-v1.png",
+        "sha256": "663b9bab463339beec76e4086897dea78b6c163ae42ad86a2e0809e4bfbbd1e9",
+        "bytes": 2198646
+      }
+    },
+    {
+      "index_1based": 10,
+      "name": "selected-shared-plaza-v1.webp",
+      "sha256": "232b95d149a0c309ed98053657ec2b1f41834d447ff8f09bac8b556bad263a20",
+      "bytes": 210774,
+      "subject": "shared village plaza",
+      "type": "optimized-static-webp",
+      "animation": "existing procedural canvas transitions only; no GIF",
+      "quality": "WebP quality 92 at original 1672x941 resolution; visually checked, not device acceptance",
+      "focus": 0.78,
+      "transition": "local-blends",
+      "original": {
+        "name": "selected-shared-plaza-v1.png",
+        "sha256": "1b8d42065801c36610ce0b45dc638d8eb00f661e4402d388e00e6861b2c40c3b",
+        "bytes": 2353858
+      }
+    },
+    {
+      "index_1based": 11,
+      "name": "selected-fern-cyanotype-v1.webp",
+      "sha256": "af89170cbbdcb0501aa1e764d61b569afa05081f3f66dc3582a66c29d973c9bf",
+      "bytes": 271374,
+      "subject": "fern cyanotype",
+      "type": "optimized-static-webp",
+      "animation": "existing procedural canvas transitions only; no GIF",
+      "quality": "WebP quality 92 at original 1672x941 resolution; visually checked, not device acceptance",
+      "focus": 0.15,
+      "transition": "ribbon",
+      "original": {
+        "name": "selected-fern-cyanotype-v1.png",
+        "sha256": "38589356b33c0f7fe9455747bbebf367c7623342f6300a5e11c5e438e7281878",
+        "bytes": 2412123
+      }
+    },
+    {
+      "index_1based": 13,
+      "name": "selected-milkweed-seeds-v1.webp",
+      "sha256": "e5c68ea266bd69dd82d5be92b0b112017fff4fc80e5f02c6f602f995461dba4b",
+      "bytes": 223924,
+      "subject": "milkweed seeds",
+      "type": "optimized-static-webp",
+      "animation": "existing procedural canvas transitions only; no GIF",
+      "quality": "WebP quality 92 at original 1672x941 resolution; visually checked, not device acceptance",
+      "focus": 0.8,
+      "transition": "particles",
+      "original": {
+        "name": "selected-milkweed-seeds-v1.png",
+        "sha256": "3f984b5caded2f0ef1eeec317cda905dbfc3d75ff79b22b639f3fe52ca7cd0bc",
+        "bytes": 2418442
+      }
+    }
+  ],
+  "deployed": false,
+  "gif_count": 0,
+  "original_bytes_total": 12664457,
+  "optimized_bytes_total": 1367092,
+  "source_commit": "f9361651f8d6afe7b437e161450e5a830ed24642",
+  "source_version": 96,
+  "originals_retained": true
+}

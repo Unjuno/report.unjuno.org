@@ -1,0 +1,10 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert');
+const data=JSON.parse(fs.readFileSync('content/papers.json','utf8'));const make=()=>({events:{},value:'',hidden:false,attrs:{},addEventListener(k,f){this.events[k]=f},setAttribute(k,v){this.attrs[k]=v},focus(){this.focused=true}});
+const search=make(),clear=make(),count=make(),empty=make(),motion=make();const items=data.map(p=>Object.assign(make(),{id:'paper-'+p.slug,dataset:{search:[p.title,p.authors,p.category,p.claim,...p.tags].join(' ')}}));const links=items.map(i=>Object.assign(make(),{hash:'#'+i.id}));let paused=false;
+const map={'#search':search,'#clear':clear,'#count':count,'#empty':empty,'#motion':motion};const document={querySelector:s=>map[s],querySelectorAll:s=>s==='[data-entry]'?items:s==='[data-category]'||s==='[data-sponsor]'?[]:links,body:{classList:{toggle(){return paused=!paused}}}};
+vm.runInNewContext(fs.readFileSync('dist/assets/feed.js','utf8'),{document,window:{}});assert.equal(items.filter(x=>!x.hidden).length,data.length);
+search.value='Transformer';search.events.input({});assert.equal(items.filter(x=>!x.hidden).length,1);assert(!items[0].hidden);
+search.events.compositionstart();search.value='存在しない';search.events.input({isComposing:true});assert(!items[0].hidden);search.events.compositionend();assert(empty.hidden===false);assert(links.every(x=>x.hidden));
+clear.events.click();assert(items.every(x=>!x.hidden));assert(search.focused);assert(empty.hidden);search.value='<script>';search.events.input({});assert(!empty.hidden);clear.events.click();motion.events.click();assert.equal(motion.attrs['aria-pressed'],'true');motion.events.click();assert.equal(motion.attrs['aria-pressed'],'false');
+for(const p of data){assert(fs.existsSync('dist/notes/'+p.slug+'/index.html'));assert(p.url.startsWith('https://'));assert(!p.title.includes('サンプル'))}
+console.log('PASS static feed real records, search/empty/reset/IME, malicious literal query, pause, all direct pages. Mock not browser.');

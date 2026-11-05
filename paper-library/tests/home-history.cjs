@@ -1,0 +1,17 @@
+const fs=require('fs'),path=require('path'),assert=require('assert'),base=path.resolve(__dirname,'..');
+let harness=fs.readFileSync(base+'/tests/home-renderer-loss.cjs','utf8');harness=harness.slice(0,harness.indexOf("ids['equation-view'].events.click();"));harness=harness.replace('window:{ResearchSurface:renderer','window:{history:historyState,ResearchSurface:renderer');harness+='return {ids,nodes,frames};';
+const load=history=>new Function('require','__dirname','historyState',harness)(require,base+'/tests',history);
+const memory=state=>({state,calls:[],replaceState(...args){assert.equal(args.length,2,'no URL rewrite');this.state=JSON.parse(JSON.stringify(args[0]));this.calls.push(args);}});
+const history=memory({unrelated:{keep:true}});let app=load(history);
+app.ids['paper-search'].value='論文';app.ids['paper-search'].events.input();app.ids['next-paper'].events.click({detail:1});assert(history.state.reportHome,'committed exploration is retained in this history entry');assert.equal(history.state.reportHome.selectedId,'p4');assert.deepEqual(history.state.unrelated,{keep:true});
+const writes=history.calls.length;app=load(history);assert.equal(app.ids['paper-search'].value,'論文');assert.equal(app.nodes[4]['aria-pressed'],'true');assert(!app.nodes[4].hidden);assert(app.nodes[1].hidden);assert.equal(history.calls.length,writes,'unchanged restored state is not rewritten');
+app.ids['paper-search'].events.compositionstart();app.ids['paper-search'].value='未確定';app.ids['paper-search'].events.input({isComposing:true});app.nodes[5].events.click();assert.equal(history.state.reportHome.query,'論文','pending IME value is never saved');
+app.ids['paper-search'].value='自然言語処理';app.ids['paper-search'].events.compositionend();assert.equal(history.state.reportHome.query,'自然言語処理');assert.equal(history.state.reportHome.selectedId,'p0');app=load(history);assert(!app.ids['open-paper'].hidden);assert.equal(app.ids['open-paper'].href,'/notes/attention-is-all-you-need/');
+app.ids['clear-search'].events.click();app=load(history);assert.equal(app.ids['paper-search'].value,'');assert.equal(app.nodes.filter(n=>!n.hidden).length,3);
+for(const value of [42,[],new Date()]){const h=memory(value);load(h);assert.equal(h.state,value);assert.equal(h.calls.length,0,'non-record history is not overwritten');}
+const invalid=memory({reportHome:{version:1,query:'ATTENTION',selectedId:'not-a-real-entry'}});const clean=load(invalid);assert.equal(clean.ids['paper-search'].value,'','invalid IDs reject restoration');
+const filtered=load(memory({reportHome:{version:1,query:'ATTENTION',selectedId:'p4'}}));assert.equal(filtered.nodes[0]['aria-pressed'],'true','filtered-out selection resolves to the first result');
+const denied=load({state:null,replaceState(){throw Error('history unavailable')}});denied.ids['paper-search'].value='ATTENTION';denied.ids['paper-search'].events.input();assert(!denied.nodes[0].hidden);
+const inaccessible=load({get state(){throw Error('history inaccessible')},replaceState(){throw Error('denied')}});assert(!inaccessible.nodes[0].hidden);
+const long=memory(null),large=load(long);large.ids['paper-search'].value='x'.repeat(2049);large.ids['paper-search'].events.input();assert.equal(long.state.reportHome,null,'oversized input is not retained');
+console.log('PASS history reload continuity, existing state preservation, no URL writes, IME exclusion, clear, invalid/filtered IDs, length limit and unavailable API');

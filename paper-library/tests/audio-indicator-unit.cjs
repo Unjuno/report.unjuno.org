@@ -1,0 +1,21 @@
+'use strict';
+const fs=require('fs'),vm=require('vm'),assert=require('assert/strict'),path=require('path');
+const source=fs.readFileSync(path.join(__dirname,'../dist/assets/audio-indicator.js'),'utf8');
+function target(extra={}){const handlers=new Map();return Object.assign({addEventListener(k,f){if(!handlers.has(k))handlers.set(k,new Set);handlers.get(k).add(f)},removeEventListener(k,f){handlers.get(k)?.delete(f)},dispatch(k){for(const f of handlers.get(k)||[])f()},count(k){return handlers.get(k)?.size||0}},extra)}
+const attrs={d:'M2 11H56'},pathEl={getAttribute:k=>attrs[k],setAttribute:(k,v)=>attrs[k]=v},label={textContent:''};
+const root={dataset:{},querySelector:s=>s==='path'?pathEl:label,setAttribute(k,v){this[k]=v}};
+const document=target({hidden:false,querySelector:()=>root}),reduced=target({matches:false}),window=target({AudioContext:function(){},matchMedia:()=>reduced});
+let time=0,seq=0,frames=new Map,timers=new Map,reads=0,level=0,ready='running';
+const box={window,document,Float32Array,Number,Math,Object,requestAnimationFrame:f=>{frames.set(++seq,f);return seq},cancelAnimationFrame:id=>frames.delete(id),setTimeout:(f,delay)=>{timers.set(++seq,{f,at:time+delay});return seq},clearTimeout:id=>timers.delete(id)};
+function advance(ms=50){time+=ms;for(const [id,t] of [...timers])if(t.at<=time){timers.delete(id);t.f()}for(const [id,f] of [...frames]){frames.delete(id);f(time)}}
+vm.runInNewContext(source,box);const api=window.HomeSoundIndicator,checks=[];
+assert.equal(root.dataset.state,'waiting');assert.equal(attrs.d,'M2 11H56');assert.equal(frames.size+timers.size,0);checks.push('Waiting is flat, non-animated, with no scheduled work.');
+const context=target({state:'running'}),analyser={fftSize:512,getFloatTimeDomainData(a){reads++;for(let i=0;i<a.length;i++)a[i]=level*Math.sin(i*.1)}};
+api.setSource({context,analyser,getState:()=>ready});advance();assert.equal(root.dataset.state,'silent');assert.equal(attrs.d,'M2 11H56');level=.03;advance();assert.equal(root.dataset.state,'signal');assert.notEqual(attrs.d,'M2 11H56');assert(!attrs.d.includes('NaN'));checks.push('Only real input samples determine the waveform; zero input stays flat.');
+level=0;advance();assert.equal(attrs.d,'M2 11H56');advance(500);assert.equal(root.dataset.state,'silent');checks.push('Silence immediately flattens the line; signal label settles within 350ms.');
+level=.03;advance();context.state='suspended';context.dispatch('statechange');assert.equal(root.dataset.state,'suspended');assert.equal(attrs.d,'M2 11H56');assert.equal(frames.size+timers.size,0);checks.push('Suspension cancels all display work and clears stale waveform.');
+context.state='running';context.dispatch('statechange');advance();reduced.matches=true;reduced.dispatch('change');advance();assert.equal(root.dataset.state,'reduced');assert.equal(attrs.d,'M2 11H56');const prior=reads;advance(100);assert.equal(reads,prior);advance(500);assert.equal(reads,prior+1);checks.push('Reduced-motion display remains static and samples at most twice per second.');
+document.hidden=true;document.dispatch('visibilitychange');assert.equal(root.dataset.state,'suspended');assert.equal(frames.size+timers.size,0);document.hidden=false;document.dispatch('visibilitychange');advance();assert.equal(root.dataset.state,'reduced');checks.push('Hidden document stops work; returning refreshes from current source.');
+ready='waiting';api.refresh();assert.equal(root.dataset.state,'waiting');assert.equal(frames.size+timers.size,0);ready='running';api.refresh();advance();api.setState('unavailable');assert.equal(root.dataset.state,'unavailable');assert.equal(context.count('statechange'),0);assert.equal(attrs.d,'M2 11H56');checks.push('Readiness is required, unavailable state is explicit, and stale listeners are removed.');
+api.setSource({context,analyser:{fftSize:512,getFloatTimeDomainData(){throw Error('closed')}},getState:()=>ready});advance();assert.equal(root.dataset.state,'unmeasured');assert.equal(frames.size+timers.size,0);checks.push('Analyser failure becomes a static unmeasured state, never a fake signal.');
+console.log(JSON.stringify({status:'PASS',checks,limits:['Deterministic DOM/Web Audio mocks, not physical device or browser render proof.']},null,2));

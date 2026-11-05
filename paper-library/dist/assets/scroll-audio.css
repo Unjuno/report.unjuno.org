@@ -1,0 +1,5 @@
+/* Only a browser-policy fallback start control. No volume interface. */
+.audio-control{position:relative;flex:none;font-size:13px}.audio-control>button{min-height:44px;display:flex;align-items:center;cursor:pointer;color:#dce5df;background:transparent;font:inherit;padding:8px 10px;border:1px solid #60766b;border-radius:6px}.audio-control>button[hidden]{display:none}.audio-control>button:focus-visible{outline:2px solid #f2c68c;outline-offset:3px}@media(max-width:650px){header{flex-wrap:wrap;gap:8px}.audio-control{margin-left:auto}}
+
+/* Plain, non-button guidance only when audio needs a genuine tap. */
+.audio-gesture-hint{font-size:11px;color:#bdccc5;line-height:1.5;border:0;background:none;cursor:default}.audio-gesture-hint[hidden]{display:none}

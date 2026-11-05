@@ -1,0 +1,21 @@
+'use strict';const vm=require('node:vm'),fs=require('node:fs'),assert=require('node:assert/strict');
+class N{constructor(tag){this.tag=tag;this.children=[];this.events={};this.value='';this.dataset={};this.content={textContent:''};}append(...xs){this.children.push(...xs)}setAttribute(){}addEventListener(e,f){this.events[e]=f}querySelectorAll(){return []}insertBefore(n,ref){this.children.splice(this.children.indexOf(ref),0,n)}getBoundingClientRect(){return {top:100}}set innerHTML(s){this.content.textContent=s.replace(/<[^>]*>/g,'').replace(/&amp;/g,'&')}set textContent(s){this.text=s}get textContent(){return this.text||''}}
+const root=new N('main'),filter=new N('input'),clear=new N('button'),frames=[];let observer,requests=[],responses=[];
+const record=(id)=>({DOI:'10.1234/'+id,title:['Cooperation '+id],published:{'date-parts':[[2011]]}});
+const ok=(items,next)=>({ok:true,json:async()=>({message:{items,'next-cursor':next}})});
+root.querySelectorAll=s=>s==='[data-doi]'?[{dataset:{doi:'HTTPS://DOI.ORG/10.1234/SEED'}}]:[];responses.push(ok([record('seed'),record('a')],'c1'));
+const context={document:{querySelector:s=>({'#papers':root,'#search':filter,'#clear':clear}[s]),createElement:t=>new N(t)},window:{IntersectionObserver:class{constructor(f){observer=f}observe(){}}},URLSearchParams,AbortController,setTimeout,clearTimeout,innerHeight:800,requestAnimationFrame:f=>{frames.push(f);return frames.length},fetch:async url=>{requests.push(url);const r=responses.shift();if(!r)throw Error('unexpected request');if(r instanceof Error)throw r;return r}};context.IntersectionObserver=context.window.IntersectionObserver;
+const flush=()=>new Promise(r=>setImmediate(r));
+(async()=>{vm.runInNewContext(fs.readFileSync('dist/assets/feed-pagination.js','utf8'),context);await flush();assert.equal(root.children.filter(n=>n.dataset.entry==='').length,1);assert.ok(!requests[0].includes('query.bibliographic'));const sentinel=root.children.at(-1),more=sentinel.children[1];
+// Empty/duplicate pages advance without requiring a fresh intersection, but stop at three.
+for(let i=0;i<3;i++){responses.push(ok([record('a')],'c'+(i+2)));frames.shift()();await flush();}assert.equal(requests.length,4);assert.equal(frames.length,0);observer([{isIntersecting:true}]);assert.equal(requests.length,4);
+// A rejected cursor restarts once, retaining cards and deduplication.
+responses.push({ok:false,status:410},ok([record('a'),record('b')],'new1'));more.events.click();await flush();assert.equal(root.children.filter(n=>n.dataset.entry==='').length,2);assert.match(requests.at(-1),/cursor=\*/);
+// Failures stop automatic retries and retain previous cards.
+responses.push(new Error('offline'));more.events.click();await flush();const n=requests.length;while(frames.length)frames.shift()();await flush();assert.equal(requests.length,n,'scheduled successful RAF cannot retry after later manual failure');observer([{isIntersecting:true}]);assert.equal(requests.length,n);assert.equal(root.children.filter(n=>n.dataset.entry==='').length,2);
+// Local filtering never invokes remote search or changes the existing set.
+filter.value='2011';filter.events.input();assert.equal(requests.length,n);assert.equal(sentinel.hidden,true);
+// Filter on/off while the request is pending must re-arm continuation in the latest epoch.
+more.events.click(); // Reset failure while filtered: no request yet.
+let resolvePending;responses.push(new Promise(resolve=>resolvePending=resolve));filter.value='';filter.events.input();await flush();filter.value='cooperation';filter.events.input();filter.value='';filter.events.input();const pendingCount=requests.length;resolvePending(ok([record('a')],'after-toggle'));await flush();assert.ok(frames.length>0,'success re-arms current filter epoch');responses.push(ok([record('c')],'after-toggle-2'));frames.shift()();await flush();assert.equal(requests.length,pendingCount+1,'latest-epoch callback continues after duplicate response');assert.equal(root.children.filter(n=>n.dataset.entry==='').length,3);frames.length=0;
+console.log('PASS main-feed mock: shared entry structure, query-free pagination, three-page duplicate bound, cursor restart, preserved cards, local-filter freeze. Not browser verification.');})().catch(e=>{console.error(e);process.exitCode=1});

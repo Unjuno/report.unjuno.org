@@ -1,0 +1,88 @@
+/* A single reading surface: typography and six selectable locations. */
+*{box-sizing:border-box}body{margin:0;background:#111517;color:#f5f0e7;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif}#atlas{max-width:1600px;margin:auto;padding:0 5%;color-scheme:dark;overflow:hidden}#atlas [hidden]{display:none!important}a{color:inherit;text-decoration:none}button,input{font:inherit}button{cursor:pointer}button,a,input{-webkit-tap-highlight-color:transparent}:is(button,a,input,[role=button]):focus-visible{outline:2px solid #f4c78a;outline-offset:5px}.top{height:96px;display:flex;align-items:center;gap:40px;position:relative;z-index:3}.brand{font-size:15px;font-weight:700;letter-spacing:-.03em}.search{width:280px;margin-left:auto}.search-line{display:flex;gap:10px;align-items:center;border-bottom:1px solid #657276}.search input{font-size:15px;background:none;border:0;width:100%;min-width:0;padding:12px 0;color:#f5f0e7}.search button{font-size:12px;border:0;background:none;white-space:nowrap;flex-shrink:0;min-height:44px;color:#bbc4c4}.sponsor{display:flex;align-items:center;gap:10px;white-space:nowrap;font-size:13px;font-weight:650}.sponsor img{width:27px;height:27px}.sponsor small{display:block;font-size:11px;font-weight:400;color:#b8c2c1}.sponsor>span:last-child{font-size:20px;margin-left:4px}.world{height:568px;position:relative;isolation:isolate}.world canvas,.location-map{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}.location-map{z-index:1;visibility:hidden}.location-map [role=button]{pointer-events:auto;cursor:pointer;outline-offset:4px}.location-map .location-hit{fill:transparent;stroke:none}.location-map .location-core{fill:none;stroke:#d8ded7;stroke-width:1.5}.location-map [aria-pressed=true] .location-core{fill:none;stroke:#f4c78a;stroke-width:2}.location-map .location-ring{stroke:#f4c78a;stroke-width:1;fill:none;opacity:0}.location-map [aria-pressed=true] .location-ring{opacity:1}.location-map [data-in-group=true] .location-core{stroke:#d8ded7}.location-map [aria-pressed=true] .location-core{stroke:#f4c78a}.location-map [role=button]:hover .location-ring,.location-map [role=button]:focus .location-ring{opacity:1}.hero-copy{position:absolute;top:26px;left:0;z-index:2;pointer-events:none}.hero-copy h1{font-size:clamp(54px,7.2vw,92px);font-weight:650;letter-spacing:-.075em;line-height:1;margin:0}.hero-copy p{font-size:13px;letter-spacing:.08em;margin:24px 0 0;color:#b8c2c1}.library{position:absolute;left:0;top:207px;width:49%;z-index:2;touch-action:pan-y pinch-zoom}#result-status{font-size:11px;color:#aebbbd;margin:0 0 16px}#paper-nodes{display:flex;flex-direction:column;gap:7px}.paper-slot{min-height:68px}.paper-node{display:flex;gap:14px;align-items:baseline;width:100%;min-height:44px;padding:6px 0;background:none;border:0;color:#b8c4c5;text-align:left;touch-action:pan-y pinch-zoom}.node-title{font-size:clamp(20px,2.3vw,29px);line-height:1.3;font-weight:500;letter-spacing:-.03em;overflow-wrap:anywhere}.node-dot{width:6px;height:6px;flex-shrink:0;border-radius:50%;background:#a6b8ba;align-self:center}.paper-node[aria-pressed=true]{color:#fff4df}.paper-node[aria-pressed=true] .node-dot{background:#f4c78a;box-shadow:0 0 0 5px #f4c78a14}.paper-node:hover{color:#f4c78a}.current{padding-left:20px;min-height:27px}.current strong,.selection-label,.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}#open-paper{font-size:14px;color:#f4c78a;display:inline-block;min-height:28px;border-bottom:1px solid #cba771}#unavailable{font-size:12px;color:#afbdbe}.empty{min-height:140px;padding-top:28px;color:#b8c2c1}.paper-nav{position:absolute;left:0;bottom:18px;width:49%;display:flex;gap:16px;align-items:center;justify-content:space-between;z-index:2}.paper-nav button{background:none;border:0;min-height:44px;padding:0;font-size:13px;color:#d2dddc}.paper-nav button:disabled{opacity:.3;cursor:default}#group-status{font-size:12px;font-variant-numeric:tabular-nums;color:#afbdbe}.scene-controls{position:absolute;right:0;bottom:18px;display:flex;gap:23px;z-index:2}.scene-controls button{font-size:12px;background:none;border:0;min-height:44px;color:#b8c4c5;padding:0}.scene-controls .observe-wave{color:#f4c78a}.scene-controls button:disabled{opacity:.45}footer{display:flex;gap:22px;justify-content:space-between;align-items:center;padding:20px 0;border-top:1px solid #354345;color:#aebbbd;font-size:11px}footer p{margin:0}.skip{position:absolute;left:-10000px}.skip:focus{position:static;display:block;padding:10px}@media(max-width:650px){#atlas{padding:0 6%}.top{height:120px;display:grid;grid-template-columns:1fr auto;gap:7px 12px;padding:18px 0 8px}.brand{font-size:12px}.sponsor{font-size:10px;gap:7px}.sponsor img{width:22px;height:22px}.sponsor small{font-size:10px}.sponsor>span:last-child{display:none}.search{grid-column:1/-1;grid-row:2;width:100%;margin:0}.search input{font-size:16px;padding:6px 0}.search button{font-size:12px}.world{height:574px}.hero-copy{top:18px}.hero-copy h1{font-size:52px}.hero-copy p{font-size:11px;margin-top:16px}.library{top:276px;width:100%}#result-status{font-size:11px;margin-bottom:10px}.paper-slot{min-height:64px}.node-title{font-size:20px}.paper-node{padding:6px 0}.paper-nav{bottom:20px;width:100%}.paper-nav button{font-size:12px}.scene-controls{top:280px;bottom:auto;right:0;gap:18px}.scene-controls button{font-size:11px}.current{min-height:25px}#open-paper{font-size:13px}footer{flex-wrap:wrap;font-size:10px;gap:12px;padding:14px 0}footer p{width:100%}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+
+.location-label{font:12px -apple-system,BlinkMacSystemFont,"Yu Gothic",sans-serif;fill:#e8eeea;paint-order:stroke;stroke:#111517;stroke-width:5px;stroke-linejoin:round;opacity:0;pointer-events:none}.location-map [aria-pressed=true] .location-label,.location-map [role=button]:hover .location-label,.location-map [role=button]:focus .location-label{opacity:1}
+/* Reading remains in document flow when text is enlarged. */
+.world{display:grid;grid-template-rows:207px auto 64px;height:auto;min-height:568px}.library{position:relative;top:auto;grid-row:2}.paper-nav{position:relative;bottom:auto;grid-row:3}.scene-controls{gap:18px}@media(max-width:650px){.world{grid-template-rows:340px auto 64px;min-height:638px}.library{top:auto}.paper-nav{bottom:auto}.scene-controls{gap:15px}.location-label{font-size:11px}}
+
+.geometry-equation{position:absolute;right:0;bottom:100px;width:48%;z-index:2;font:13px/1.8 ui-monospace,monospace;white-space:pre-wrap;overflow-wrap:anywhere;color:#eee6d9;pointer-events:none}@media(max-width:650px){.geometry-equation{top:105px;bottom:auto;width:100%;font-size:11px;line-height:1.7}}
+
+.representation-controls{display:flex;gap:2px;margin-right:10px}.representation-controls button{min-width:44px;min-height:44px;text-align:center;color:#b8c4c5}.representation-controls button[aria-pressed=true]{color:#fff4df;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:8px}.scene-controls{gap:16px}@media(max-width:650px){.representation-controls{margin-right:0;gap:0}.scene-controls{gap:10px}.representation-controls button{font-size:12px}}
+
+/* Controls live outside the rendered world: wrapping cannot cover the object or titles. */
+.world{grid-template-rows:207px auto;min-height:504px}.explore-controls{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0 24px;min-height:64px}.explore-controls .paper-nav{position:static;min-width:260px;width:49%;flex:1 1 300px}.explore-controls .scene-controls{position:static;display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;min-width:260px;flex:1 1 300px}.scene-controls button{flex-shrink:0}.representation-controls{flex-shrink:0}@media(max-width:650px){.world{grid-template-rows:270px auto;min-height:510px}.explore-controls{gap:0;min-height:88px}.explore-controls .paper-nav,.explore-controls .scene-controls{width:100%;min-width:0;flex-basis:100%}.explore-controls .scene-controls{justify-content:space-between;row-gap:0}}
+
+.view-control{position:absolute;right:0;top:25px;bottom:15px;width:49%;z-index:0;cursor:grab;touch-action:pan-y pinch-zoom;user-select:none;outline-offset:2px}.view-control[data-dragging=true]{cursor:grabbing}.view-control span{position:absolute;right:0;bottom:0;color:#b8c4c5;font-size:11px;pointer-events:none}.view-control:focus-visible{outline:2px solid #f4c78a;outline-offset:3px}@media(max-width:650px){.view-control{top:110px;bottom:auto;height:154px;width:100%}.view-control span{font-size:10px;bottom:0}}
+
+.view-help{width:100%;margin:0;text-align:right;font-size:11px;line-height:1.6;color:#b8c4c5;pointer-events:none}@media(max-width:650px){.view-help{text-align:center}}
+
+.location-map [role=button]{touch-action:pan-y pinch-zoom}
+
+/* Representation is the primary operation; utilities are a separate, quieter row. */
+.explore-controls{align-items:flex-start;padding-top:8px}
+.explore-controls .scene-controls{flex-direction:column;align-items:flex-end;gap:0}
+.scene-controls .representation-controls{margin:0;gap:12px}
+.scene-controls .representation-controls button{min-width:56px;min-height:44px;font-size:15px;letter-spacing:.06em}
+.scene-controls .representation-controls button[aria-pressed=true]{font-weight:650;text-underline-offset:9px}
+.scene-utilities{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:0 22px}
+.scene-controls .scene-utilities button{min-height:44px;font-size:12px;white-space:nowrap}
+.location-map .location-halo{fill:none;stroke:#111517;stroke-width:4px;stroke-linecap:square;pointer-events:none}
+.location-map .location-core{stroke:#e8eeea;stroke-width:1.8px;fill:none}
+@media(max-width:650px){.explore-controls .scene-controls{align-items:center;padding-top:8px}.scene-controls .representation-controls{gap:24px}.scene-utilities{justify-content:center;gap:0 20px}.view-help{padding-bottom:10px}}
+
+/* A shared selection symbol connects the reading list and the object's locations. */
+.node-dot{width:24px;height:24px;overflow:visible;border-radius:0;background:none;align-self:center;color:#b8c4c5}
+.node-dot path{fill:none;stroke:currentColor;stroke-width:1.8}
+.node-dot .title-marker-ring{opacity:0;stroke-width:1}
+.paper-node[aria-pressed=true] .node-dot{color:#f4c78a;background:none;box-shadow:none}
+.paper-node[aria-pressed=true] .title-marker-ring{opacity:1}
+.location-map [aria-pressed=true] .location-core,.location-map [aria-pressed=true] .location-ring{stroke:#f4c78a}
+.location-map [aria-pressed=true] .location-label{fill:#f4c78a;font-weight:600}
+.current{padding-left:38px}
+
+/* Preview is shared, but only committed selection receives the corner frame. */
+.paper-node[data-preview=true]{color:#f4c78a}
+.paper-node[data-preview=true] .title-marker-core{stroke:#f4c78a;stroke-width:2.4}
+.location-map [data-preview=true] .location-core{stroke:#f4c78a;stroke-width:2.4}
+.location-map [data-preview=true] .location-label{opacity:1;fill:#f4c78a}
+
+/* A light-built stage, with a stable editorial reading lane rather than a viewer panel. */
+body{background-image:radial-gradient(ellipse at 78% 30%,#26363a66,transparent 55%);background-attachment:fixed}
+.top{border-bottom:1px solid #35434580}
+.brand{letter-spacing:-.025em}.sponsor{color:#f5f0e7}.sponsor img{filter:invert(1)}
+.hero-copy h1{font-weight:550;letter-spacing:-.065em;color:#fff4df}
+.hero-copy p{letter-spacing:.15em}
+.world::before{content:"";position:absolute;inset:0 0 0 48%;z-index:-2;pointer-events:none;background:radial-gradient(ellipse at 52% 47%,#52757825,transparent 62%),radial-gradient(ellipse at 50% 88%,#000000aa,transparent 48%)}
+.paper-node[aria-pressed=true]{text-shadow:0 0 24px #f4c78a15}
+#open-paper{min-height:36px;padding-top:3px;font-weight:600}
+.search input::placeholder{color:#aebbbd;opacity:1}
+.location-map .location-halo,.location-label{stroke:#111517}
+.geometry-equation{padding:14px 0;background:linear-gradient(90deg,transparent,#111517e8 16%,#111517f5);text-shadow:0 1px 2px #000}
+.explore-controls{border-top:1px solid #35434580;padding-top:12px}
+.scene-controls .representation-controls button[aria-pressed=true]{color:#f4c78a}
+@media(max-width:650px){body{background-attachment:scroll}.world::before{inset:85px 0 auto;height:190px}.hero-copy h1{font-size:52px}.geometry-equation{background:#111517ed;padding:8px 0}.top{border-bottom:0}}
+
+.hero-copy h1{font-size:clamp(60px,6.8vw,86px);line-height:.9}.hero-copy h1 span{display:block}.hero-copy p{margin-top:18px}
+@media(max-width:650px){.hero-copy h1{font-size:52px;line-height:1}.hero-copy h1 span{display:inline}.hero-copy p{margin-top:16px}}
+/* Reserve the full two-line title and subtitle within the existing 207px reading header. */
+@media(min-width:651px){.hero-copy{top:18px}.hero-copy h1{font-size:clamp(58px,6.3vw,78px);line-height:.88}.hero-copy p{margin-top:14px;line-height:1.5}}
+
+.material-options{display:flex;align-items:center;gap:24px;margin:0 0 4px;color:#b8c4c5}.scene-controls .material-options button{min-width:56px;min-height:44px;font-size:13px}.scene-controls .material-options button[aria-pressed=true]{color:#f4c78a;text-decoration:underline;text-underline-offset:6px}
+
+/* The reading surface is the artwork: no separate object or material showroom. */
+.reality-world{grid-template-rows:120px auto;min-height:500px;margin-top:16px;overflow:hidden}
+.reality-world::before{display:none}.reality-world canvas{opacity:1;z-index:-1}
+.reality-world .hero-copy{top:22px;left:3%;}.reality-world .hero-copy h1{font-size:34px;line-height:1.1;letter-spacing:-.06em}.reality-world .hero-copy h1 span{display:inline}.reality-world .hero-copy p{font-size:12px;margin-top:12px}
+.reality-world .library{width:100%;padding:0 5% 25px}.reality-world #result-status{margin-bottom:24px;color:#e1e1d8}
+.reality-world .paper-slot{min-height:86px;margin-left:3%;max-width:94%}.reality-world .paper-slot:nth-child(3n+2){margin-left:17%;max-width:82%}.reality-world .paper-slot:nth-child(3n){margin-left:9%;max-width:90%}
+.reality-world .node-title{font-size:clamp(24px,3.7vw,46px);font-weight:500;letter-spacing:-.04em;text-shadow:0 2px 14px #000c}.reality-world .paper-node{color:#e1e5e1}.reality-world .paper-node[aria-pressed=true]{color:#fff7df}.reality-world .current{min-height:34px}.reality-world #open-paper{color:#ffe3b4;font-size:16px;text-shadow:0 1px 5px #000}
+.reality-world .node-dot{filter:drop-shadow(0 1px 3px #000)}.reality-world #unavailable{color:#e3ded4;text-shadow:0 1px 5px #000}
+@media(max-width:650px){.reality-world{grid-template-rows:105px auto;min-height:490px}.reality-world .hero-copy{left:5%;top:20px}.reality-world .hero-copy h1{font-size:30px}.reality-world .hero-copy p{font-size:10px;letter-spacing:.08em}.reality-world .library{padding:0 5% 22px}.reality-world .node-title{font-size:23px;line-height:1.4}.reality-world .paper-slot{min-height:91px}.reality-world .paper-slot:nth-child(3n+2){margin-left:7%;max-width:92%}.reality-world .paper-slot:nth-child(3n){margin-left:2%;max-width:97%}}
+.reality-world canvas{mask-image:radial-gradient(ellipse 85% 95% at 50% 50%,#000 60%,transparent 100%)}
+
+/* A single lived-in landscape, with an aligned and stable reading lane. */
+.reality-world{min-height:520px;grid-template-rows:128px auto}.reality-world canvas{mask-image:none}
+.reality-world .hero-copy{left:4%;top:25px}.reality-world .hero-copy h1{font-size:40px}.reality-world .hero-copy p{font-size:12px}
+.reality-world .library{width:57%;padding:0 7% 28px 4%}.reality-world .paper-slot,.reality-world .paper-slot:nth-child(3n+2),.reality-world .paper-slot:nth-child(3n){margin-left:0;max-width:100%;min-height:85px}
+.reality-world .node-title{font-size:clamp(23px,2.8vw,34px);line-height:1.35}.reality-world #result-status{margin-bottom:18px}.reality-world #open-paper{font-size:15px}
+@media(max-width:650px){.reality-world{min-height:540px;grid-template-rows:110px auto}.reality-world .hero-copy{left:6%;top:22px}.reality-world .hero-copy h1{font-size:32px}.reality-world .library{width:100%;padding:0 8% 32px 6%}.reality-world .node-title{font-size:23px}.reality-world .paper-slot,.reality-world .paper-slot:nth-child(3n+2),.reality-world .paper-slot:nth-child(3n){min-height:95px}.reality-world .hero-copy p{font-size:10px}}

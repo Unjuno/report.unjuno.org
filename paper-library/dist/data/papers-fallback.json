@@ -1,0 +1,350 @@
+{
+  "source": "Crossref",
+  "retrieved_at": "2026-11-03",
+  "items": [
+    {
+      "DOI": "10.1016/s0021-9258(19)52451-6",
+      "author": [
+        {
+          "family": "Lowry",
+          "given": "OliverH."
+        },
+        {
+          "family": "Rosebrough",
+          "given": "NiraJ."
+        },
+        {
+          "family": "Farr",
+          "given": "A. Lewis"
+        },
+        {
+          "family": "Randall",
+          "given": "RoseJ."
+        }
+      ],
+      "container-title": [
+        "Journal of Biological Chemistry"
+      ],
+      "published": {
+        "date-parts": [
+          [
+            1951,
+            11
+          ]
+        ]
+      },
+      "subject": [],
+      "title": [
+        "PROTEIN MEASUREMENT WITH THE FOLIN PHENOL REAGENT"
+      ]
+    },
+    {
+      "DOI": "10.1016/0003-2697(76)90527-3",
+      "author": [
+        {
+          "family": "Bradford",
+          "given": "Marion M."
+        }
+      ],
+      "container-title": [
+        "Analytical Biochemistry"
+      ],
+      "published": {
+        "date-parts": [
+          [
+            1976,
+            5
+          ]
+        ]
+      },
+      "subject": [],
+      "title": [
+        "A rapid and sensitive method for the quantitation of microgram quantities of protein utilizing the principle of protein-dye binding"
+      ]
+    },
+    {
+      "DOI": "10.1103/physrevlett.77.3865",
+      "author": [
+        {
+          "family": "Perdew",
+          "given": "John P."
+        },
+        {
+          "family": "Burke",
+          "given": "Kieron"
+        },
+        {
+          "family": "Ernzerhof",
+          "given": "Matthias"
+        }
+      ],
+      "container-title": [
+        "Physical Review Letters"
+      ],
+      "published": {
+        "date-parts": [
+          [
+            1996,
+            10,
+            28
+          ]
+        ]
+      },
+      "subject": [],
+      "title": [
+        "Generalized Gradient Approximation Made Simple"
+      ]
+    },
+    {
+      "DOI": "10.1038/227680a0",
+      "author": [
+        {
+          "family": "LAEMMLI",
+          "given": "U. K."
+        }
+      ],
+      "container-title": [
+        "Nature"
+      ],
+      "published": {
+        "date-parts": [
+          [
+            1970,
+            8
+          ]
+        ]
+      },
+      "subject": [],
+      "title": [
+        "Cleavage of Structural Proteins during the Assembly of the Head of Bacteriophage T4"
+      ]
+    },
+    {
+      "DOI": "10.1006/meth.2001.1262",
+      "author": [
+        {
+          "family": "Livak",
+          "given": "Kenneth J."
+        },
+        {
+          "family": "Schmittgen",
+          "given": "Thomas D."
+        }
+      ],
+      "container-title": [
+        "Methods"
+      ],
+      "published": {
+        "date-parts": [
+          [
+            2001,
+            12
+          ]
+        ]
+      },
+      "subject": [],
+      "title": [
+        "Analysis of Relative Gene Expression Data Using Real-Time Quantitative PCR and the 2−ΔΔCT Method"
+      ]
+    },
+    {
+      "DOI": "10.1191/1478088706qp063oa",
+      "author": [
+        {
+          "family": "Braun",
+          "given": "Virginia"
+        },
+        {
+          "family": "Clarke",
+          "given": "Victoria"
+        }
+      ],
+      "container-title": [
+        "Qualitative Research in Psychology"
+      ],
+      "published": {
+        "date-parts": [
+          [
+            2006,
+            1
+          ]
+        ]
+      },
+      "subject": [],
+      "title": [
+        "Using thematic analysis in psychology"
+      ]
+    },
+    {
+      "DOI": "10.1023/a:1010933404324",
+      "author": [
+        {
+          "family": "Breiman",
+          "given": "Leo"
+        }
+      ],
+      "container-title": [
+        "Machine Learning"
+      ],
+      "published": {
+        "date-parts": [
+          [
+            2001,
+            10
+          ]
+        ]
+      },
+      "subject": [],
+      "title": [
+        "Random Forests"
+      ]
+    },
+    {
+      "DOI": "10.1103/physrevb.54.11169",
+      "author": [
+        {
+          "family": "Kresse",
+          "given": "G."
+        },
+        {
+          "family": "Furthmüller",
+          "given": "J."
+        }
+      ],
+      "container-title": [
+        "Physical Review B"
+      ],
+      "published": {
+        "date-parts": [
+          [
+            1996,
+            10,
+            15
+          ]
+        ]
+      },
+      "subject": [],
+      "title": [
+        "Efficient iterative schemes for\n                    <i>ab initio</i>\n                    total-energy calculations using a plane-wave basis set"
+      ]
+    },
+    {
+      "DOI": "10.2307/258557",
+      "author": [
+        {
+          "family": "Eisenhardt",
+          "given": "Kathleen M."
+        }
+      ],
+      "container-title": [
+        "The Academy of Management Review"
+      ],
+      "published": {
+        "date-parts": [
+          [
+            1989,
+            10
+          ]
+        ]
+      },
+      "subject": [],
+      "title": [
+        "Building Theories from Case Study Research"
+      ]
+    },
+    {
+      "DOI": "10.1016/s0022-2836(05)80360-2",
+      "author": [
+        {
+          "family": "Altschul",
+          "given": "Stephen F."
+        },
+        {
+          "family": "Gish",
+          "given": "Warren"
+        },
+        {
+          "family": "Miller",
+          "given": "Webb"
+        },
+        {
+          "family": "Myers",
+          "given": "Eugene W."
+        },
+        {
+          "family": "Lipman",
+          "given": "David J."
+        }
+      ],
+      "container-title": [
+        "Journal of Molecular Biology"
+      ],
+      "published": {
+        "date-parts": [
+          [
+            1990,
+            10
+          ]
+        ]
+      },
+      "subject": [],
+      "title": [
+        "Basic local alignment search tool"
+      ]
+    },
+    {
+      "DOI": "10.1063/1.464913",
+      "author": [
+        {
+          "family": "Becke",
+          "given": "Axel D."
+        }
+      ],
+      "container-title": [
+        "The Journal of Chemical Physics"
+      ],
+      "published": {
+        "date-parts": [
+          [
+            1993,
+            4,
+            1
+          ]
+        ]
+      },
+      "subject": [],
+      "title": [
+        "Density-functional thermochemistry. III. The role of exact exchange"
+      ]
+    },
+    {
+      "DOI": "10.1111/j.2517-6161.1995.tb02031.x",
+      "author": [
+        {
+          "family": "Benjamini",
+          "given": "Yoav"
+        },
+        {
+          "family": "Hochberg",
+          "given": "Yosef"
+        }
+      ],
+      "container-title": [
+        "Journal of the Royal Statistical Society Series B: Statistical Methodology"
+      ],
+      "published": {
+        "date-parts": [
+          [
+            1995,
+            1,
+            1
+          ]
+        ]
+      },
+      "subject": [],
+      "title": [
+        "Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing"
+      ]
+    }
+  ]
+}
