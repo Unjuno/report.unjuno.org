@@ -58,8 +58,21 @@ test('every scroll chapter preserves no-JS reading, disabled controls and learni
   assert.ok(nodes.indexOf(q)<nodes.indexOf(lab));assert.ok(nodes.indexOf(lab)<nodes.indexOf(answer));
   assert.equal(answer.querySelector('details').open,false);assert.ok(lab.querySelector('.result').textContent.trim());
   assert.ok(unit.querySelector('.next'));assert.ok(unit.querySelector('.previous'));
-  assert.equal(unit.querySelectorAll('.chapter-video video').length,1);assert.ok(!unit.textContent.includes('章別動画は未制作'));assert.match(unit.textContent,/直接試聴と実ブラウザー再生は未確認/);
+  assert.equal(unit.querySelectorAll('.chapter-video video').length,1);assert.ok(!unit.textContent.includes('章別動画は未制作'));assert.doesNotMatch(unit.textContent,/直接試聴|実ブラウザ|未検証|未確認/);
  }
+});
+
+test('media validation caveats appear once in a closed native disclosure after the lessons',()=>{
+ const d=open('index.html').document,notes=d.querySelectorAll('#media-notes');
+ assert.equal(notes.length,1);const note=notes[0];assert.equal(note.tagName,'DETAILS');assert.equal(note.open,false);
+ assert.equal(note.querySelector('summary').textContent,'動画の制作・確認状況');
+ assert.match(note.textContent,/Manimアニメーションと日本語合成音声/);
+ assert.match(note.textContent,/字幕の文境界は合成区間からの推定/);
+ assert.match(note.textContent,/単語単位の整列は未実施/);
+ assert.match(note.textContent,/全動画の通し再生、iPhoneでの表示・操作・再生、直接試聴による音声品質は未検証/);
+ assert.equal((d.body.textContent.match(/全動画の通し再生/g)||[]).length,1);
+ assert.equal(note.previousElementSibling.id,'sources');assert.equal(note.nextElementSibling.id,'rights');
+ assert.ok(!note.querySelector('video,button,input,select'));assert.equal(d.querySelectorAll('video').length,8);
 });
 
 test('all seven demos and quizzes interact and reset independently on the same page',async()=>{
@@ -87,7 +100,7 @@ test('all seven demos and quizzes interact and reset independently on the same p
 
 test('media are preserved and disclosures and primary references remain explicit',()=>{
  const d=open('index.html').document;
- assert.match(d.querySelector('#overview').textContent,/直接試聴と実ブラウザでの再生は未検証/);
+ assert.doesNotMatch(d.querySelector('#overview').textContent,/直接試聴|実ブラウザ|未検証|未確認/);
  assert.match(d.querySelector('#overview').textContent,/章別動画は7本を制作済み/);
  assert.equal(d.querySelector('#rights a').getAttribute('href'),'/rights/');
  assert.match(d.querySelector('#sources').textContent,/命題2/);assert.match(d.querySelector('#sources').textContent,/Parzen/);

@@ -28,3 +28,31 @@ test('keyboard alternatives, static numeric outputs and sources exist without sc
 test('built site prioritizes videos and manipulation, with optional prose preserved in closed details',async()=>{const html=await readFile(new URL('../build-local/index.html',import.meta.url),'utf8');const win=new Window({settings:{enableJavaScriptEvaluation:false}});win.document.write(html);const d=win.document;assert.equal(d.querySelectorAll('[data-attention-flow]').length,1);assert.equal(d.querySelectorAll('.unit-more:not([open]) .unit-intro').length,11);assert.equal(d.querySelectorAll('.unit-more:not([open]) .unit-goal').length,11);assert.equal(d.querySelectorAll('.practice-help:not([open]) .practice-steps').length,11);assert.equal(d.querySelectorAll('.practice-help:not([open]) .practice-note').length,11);assert.equal(d.querySelectorAll('video').length,12);assert.equal(d.querySelectorAll('video track[kind=captions][srclang=ja]').length,12);assert.equal(d.querySelectorAll('video[autoplay]').length,0);assert.equal(d.querySelectorAll('.transcript').length,12);win.close();});
 
 test('each emphasis preset makes its own Key strictly strongest, including C',()=>{const ctx=setup();for(const [i,name] of ['a','b','c'].entries()){ctx.root.querySelector('[data-af-preset='+name+']').click();const w=weights(ctx).map(Number);assert.ok(w.every((v,j)=>i===j||w[i]>v));assert.equal(ctx.doc.getElementById('af-cx').value,'-1');}ctx.destroy();ctx.win.close();});
+
+test('annotated introductory prompts are removed while overview media, paper metadata and hands-on controls remain',async()=>{
+ for(const variant of ['build-local','build-production']){
+  const html=await readFile(new URL('../'+variant+'/index.html',import.meta.url),'utf8');
+  const win=new Window({settings:{enableJavaScriptEvaluation:false}});win.document.write(html);const d=win.document;
+  for(const prompt of ['PAPER EXPERIENCE 01 / MACHINE LEARNING','関係を見て、表現をつくる。','動画で見て、自分で動かす。Transformerの仕組みを確かめよう。','まず、全体を見渡す。','まず、自分で動かす','PLAY / まず動かす'])assert.ok(!d.body.textContent.includes(prompt),prompt);
+  assert.equal(d.querySelectorAll('.site-hero > .hero-deck, .site-hero > .hero-description, .overview-section > .start-link').length,0);
+  assert.equal(d.querySelector('.overview-section').getAttribute('aria-labelledby'),'overview-title');assert.equal(d.getElementById('overview-title').textContent,'論文の概要');assert.equal(d.querySelectorAll('.overview-section video').length,1);
+  assert.equal(d.querySelector('.overview-section').nextElementSibling.id,'attention-playground');
+  assert.match(d.querySelector('.site-hero h1').textContent,/Attention IsAll You Need/);
+  assert.match(d.querySelector('.paper-meta').textContent,/Vaswani et al. · 2017/);assert.match(d.querySelector('.paper-meta').textContent,/機械翻訳 \/ Self-attention/);
+  assert.equal(d.querySelector('.paper-meta a').getAttribute('href'),'https://arxiv.org/abs/1706.03762');
+  assert.equal(d.querySelectorAll('[data-attention-flow]').length,1);assert.equal(d.querySelectorAll('[data-af-control]').length,4);assert.equal(d.getElementById('attention-flow-title').textContent,'Attentionの重みと出力の変化を試す');assert.equal(html.match(/\.attention-flow\{([^}]+)\}/)[1],'margin-block:24px 14px');
+  assert.equal(d.querySelectorAll('video').length,12);assert.equal(d.querySelectorAll('video track[kind=captions]').length,12);win.close();
+ }
+});
+
+test('beginner explanation matches dot-product arithmetic and the implemented score-to-output flow',()=>{
+ const win=new Window({settings:{enableJavaScriptEvaluation:false}});win.document.body.innerHTML=renderAttentionFlow();const d=win.document,guide=d.querySelector('[data-af-beginner]');
+ assert.ok(guide);assert.equal(guide.querySelectorAll('p').length,5);assert.ok(!guide.closest('details'));
+ for(const term of ['W_Q・W_K・W_V','Q=xW_Q、K=xW_K、V=xW_V','埋め込み','位置情報','入力からの変換・学習・位置情報を省略','√d_kで割ります','内積の振れ幅','Transformer全体の構造を示すものではありません','Q（Query）','K（Key）','V（Value）','同じ位置の数を掛けて足します','[1,2]·[3,4] = 1×3 + 2×4 = 11','向きだけでなく、数値の大きさ','2次元','√2','softmax','合計1','V A・V B・V Cに掛けて足した'])assert.ok(guide.textContent.includes(term),term);
+ assert.equal([1,2].reduce((sum,value,index)=>sum+value*[3,4][index],0),11);
+ const result=evaluateAttentionFlow(defaults);assert.equal(result.scores[0],1*2+1*0);assert.equal(result.scores[0],2);
+ const scores=result.scores.map(score=>score/Math.sqrt(2)),exp=scores.map(Math.exp),total=exp.reduce((a,b)=>a+b,0);
+ result.weights.forEach((weight,i)=>close(weight,exp[i]/total));
+ for(let axis=0;axis<2;axis++)close(result.output[axis],result.values.reduce((sum,value,i)=>sum+result.weights[i]*value[axis],0));
+ assert.match(d.querySelector('.af-data-note').textContent,/説明用の2次元・3トークン/);win.close();
+});

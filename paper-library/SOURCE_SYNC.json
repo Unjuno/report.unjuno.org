@@ -2207,8 +2207,8 @@
       "sha256": "ef23f5c633bbd2cc5d3869d5672fff370e2391d3f3b4edab6558a14987cd5cb2"
     },
     "experiences/attention-is-all-you-need/src/site/attention-flow.mjs": {
-      "bytes": 11830,
-      "sha256": "4280e9519bfb93a05466c9bbdaeb2d990132b6c103717a8dabb0f3b9ca77bf81"
+      "bytes": 13196,
+      "sha256": "f6b3b1374ef5d66a67aa089ff9e2c3035f7ad02b85f974a8d3b380d049007691"
     },
     "experiences/attention-is-all-you-need/src/site/guided-practice.mjs": {
       "bytes": 9400,
@@ -2227,8 +2227,8 @@
       "sha256": "9c85547f47f211c8e19f4d26b836f1f067f64a3f376ed5bd8275b3dfb8f50380"
     },
     "experiences/attention-is-all-you-need/src/site/site.css": {
-      "bytes": 17504,
-      "sha256": "f334aa7af30b633ce70da998fd53bd9b712bd42bc845b884cbb0acd82a29d73e"
+      "bytes": 17389,
+      "sha256": "8596de9145413403b0257e840af40157cf03a9487f721e828d07fe2a05d1a94c"
     },
     "experiences/attention-is-all-you-need/tests/qk-dom.test.mjs": {
       "bytes": 5084,
@@ -2239,8 +2239,8 @@
       "sha256": "2e3cd3cb547cde5bd88e4e535b0b757caefdeb6176ba42e0ed14122860970519"
     },
     "experiences/attention-is-all-you-need/tests/site-attention-flow.test.mjs": {
-      "bytes": 9756,
-      "sha256": "b014ef2051c0e535b7160fcae559dd32f78d7dee2d235c859f3160b1d3b2cf46"
+      "bytes": 13401,
+      "sha256": "6765989d73511909bed9eb27efa78bfaf469878b74f0aad35ab8856b36784cf0"
     },
     "experiences/attention-is-all-you-need/tests/site-chrome.test.mjs": {
       "bytes": 6941,
@@ -2299,8 +2299,8 @@
       "sha256": "405261f28abbef5123db76a6cef06a0824b8b953ca2a203945ca30aff717ae9b"
     },
     "experiences/attention-is-all-you-need/tools/build-site.mjs": {
-      "bytes": 13751,
-      "sha256": "78c31ce274ec471cf4f6a9d4e2d53e414a81cc928f6ed7bb194e1f2752739b3d"
+      "bytes": 13378,
+      "sha256": "edd5980a6d127d88c4a74aa2ec04a9bc9902c41fa5a38710ea79f514163606ef"
     },
     "experiences/attention-is-all-you-need/tools/check-structure.mjs": {
       "bytes": 3060,
@@ -2955,8 +2955,8 @@
       "sha256": "4a8ec507daed07a98419bc80c1779477075450c46cf950ca4d1e3a771fc4a6fd"
     },
     "experiences/generative-adversarial-nets/src/build.mjs": {
-      "bytes": 11069,
-      "sha256": "9b39f6f284448ad86c639390228dc8aa5a7dc946d3e735ec71a62e7c2e2b94b8"
+      "bytes": 11155,
+      "sha256": "afd5735d2166bb1d6558a4df5c277f1bfccbc6ee8f896d5cc2b6398d849581f8"
     },
     "experiences/generative-adversarial-nets/src/math.mjs": {
       "bytes": 913,
@@ -2975,8 +2975,8 @@
       "sha256": "5c128affeb2fa900bed994ec2ad534995763ef6e46c51c1a7fb94c8661131df8"
     },
     "experiences/generative-adversarial-nets/tests/dom.test.mjs": {
-      "bytes": 10061,
-      "sha256": "6d6e174d494e0555fe62c0e5a1d51bcf60173acf3d53fb50870a169ca967a351"
+      "bytes": 11148,
+      "sha256": "9a6c5a5c147f582535bb290271fd3e20e287bd89c69996bd12218233f1c7d4ef"
     },
     "experiences/generative-adversarial-nets/tests/math.test.mjs": {
       "bytes": 1771,
