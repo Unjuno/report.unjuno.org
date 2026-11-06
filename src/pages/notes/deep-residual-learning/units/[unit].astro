@@ -1,0 +1,6 @@
+---
+export function getStaticPaths() {
+  return ["residual", "shape", "depth", "blocks", "evidence"].map((unit) => ({ params: { unit } }));
+}
+return Astro.redirect("/notes/deep-residual-learning/learn/#" + Astro.params.unit, 301);
+---

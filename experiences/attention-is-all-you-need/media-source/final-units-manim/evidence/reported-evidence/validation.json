@@ -1,0 +1,184 @@
+{
+  "full_decode": "pass",
+  "captions": "7 complete passage cues; checked bounds, non-overlap, exact narration text",
+  "audio_levels_by_passage": [
+    {
+      "rms_dbfs": -17.467324565446035,
+      "peak": 0.820343017578125
+    },
+    {
+      "rms_dbfs": -18.20981270205332,
+      "peak": 0.624847412109375
+    },
+    {
+      "rms_dbfs": -17.85111802604397,
+      "peak": 0.732025146484375
+    },
+    {
+      "rms_dbfs": -17.941832780859833,
+      "peak": 0.719696044921875
+    },
+    {
+      "rms_dbfs": -17.82111051380962,
+      "peak": 0.712982177734375
+    },
+    {
+      "rms_dbfs": -17.901845355480567,
+      "peak": 0.699249267578125
+    },
+    {
+      "rms_dbfs": -17.967626885438385,
+      "peak": 0.65386962890625
+    }
+  ],
+  "peak": 0.820343017578125,
+  "visual_review": "PASS: five extracted representative frames at scenes 1,2,3,5,7 inspected in a contact sheet; no overlap, clipped text, or missing symbols observed. Evidence bar frame also inspected at native 1280x720.",
+  "actual_listening": false,
+  "browser_or_iphone_playback": false,
+  "probe": {
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "h264",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "profile": "High",
+        "codec_type": "video",
+        "codec_tag_string": "avc1",
+        "codec_tag": "0x31637661",
+        "width": 1280,
+        "height": 720,
+        "coded_width": 1280,
+        "coded_height": 720,
+        "closed_captions": 0,
+        "film_grain": 0,
+        "has_b_frames": 2,
+        "pix_fmt": "yuv420p",
+        "level": 31,
+        "chroma_location": "left",
+        "field_order": "progressive",
+        "refs": 1,
+        "is_avc": "true",
+        "nal_length_size": "4",
+        "id": "0x1",
+        "r_frame_rate": "24/1",
+        "avg_frame_rate": "24/1",
+        "time_base": "1/90000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 6667500,
+        "duration": "74.083333",
+        "bit_rate": "154415",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "1778",
+        "extradata_size": 46,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "VideoHandler",
+          "vendor_id": "[0][0][0][0]"
+        }
+      },
+      {
+        "index": 1,
+        "codec_name": "aac",
+        "codec_long_name": "AAC (Advanced Audio Coding)",
+        "profile": "LC",
+        "codec_type": "audio",
+        "codec_tag_string": "mp4a",
+        "codec_tag": "0x6134706d",
+        "sample_fmt": "fltp",
+        "sample_rate": "96000",
+        "channels": 1,
+        "channel_layout": "mono",
+        "bits_per_sample": 0,
+        "initial_padding": 0,
+        "id": "0x2",
+        "r_frame_rate": "0/0",
+        "avg_frame_rate": "0/0",
+        "time_base": "1/96000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 7123200,
+        "duration": "74.200000",
+        "bit_rate": "117458",
+        "nb_frames": "6951",
+        "extradata_size": 5,
+        "disposition": {
+          "default": 1,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0,
+          "non_diegetic": 0,
+          "captions": 0,
+          "descriptions": 0,
+          "metadata": 0,
+          "dependent": 0,
+          "still_image": 0,
+          "multilayer": 0
+        },
+        "tags": {
+          "language": "und",
+          "handler_name": "SoundHandler",
+          "vendor_id": "[0][0][0][0]"
+        }
+      }
+    ],
+    "format": {
+      "filename": "experiences/attention-is-all-you-need/public/media/videos/reported-evidence-manim.ja.mp4",
+      "nb_streams": 2,
+      "nb_programs": 0,
+      "nb_stream_groups": 0,
+      "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+      "format_long_name": "QuickTime / MOV",
+      "start_time": "0.000000",
+      "duration": "74.200000",
+      "size": "2587877",
+      "bit_rate": "279016",
+      "probe_score": 100,
+      "tags": {
+        "major_brand": "isom",
+        "minor_version": "512",
+        "compatible_brands": "isomiso2avc1mp41",
+        "encoder": "Lavf61.7.103",
+        "comment": "Rendered with Manim Community v0.19.0"
+      }
+    }
+  },
+  "source_checks": "Table 2 values 26.36,27.3,28.4; big - ConvS2S ensemble = 2.04; single model checkpoint averaging §6.1; scope §3–4 and §6–7",
+  "stills": [
+    "media/reported-evidence.frame-1.jpg",
+    "media/reported-evidence.frame-2.jpg",
+    "media/reported-evidence.frame-3.jpg",
+    "media/reported-evidence.frame-5.jpg",
+    "media/reported-evidence.frame-7.jpg"
+  ],
+  "caption_timing_tolerance_seconds": 0.05
+}

@@ -18,11 +18,11 @@ for file in root.rglob('*.html'):
   if url.scheme or url.netloc:continue
   target=(root/url.path.lstrip('/')) if url.path.startswith('/') else (file.parent/url.path if url.path else file)
   if target.is_dir():target=target/'index.html'
-  # This one additional page belongs to the enclosing Astro app, not this feed.
-  if not target.exists() and url.path == '/notes/attention-is-all-you-need/learn/':
+  # Authored learning pages belong to the enclosing Astro app, not this feed.
+  if not target.exists() and re.fullmatch(r'/notes/[a-z0-9-]+/learn/', url.path):
    production = root.parent.parent
-   assert (production/'src/pages/notes/attention-is-all-you-need/learn/index.astro').is_file()
-   target = production/'build/notes/attention-is-all-you-need/learn/index.html'
+   assert (production/'src/pages'/url.path.lstrip('/')/'index.astro').is_file()
+   target = production/'build'/url.path.lstrip('/')/'index.html'
   assert target.exists(),(file,ref)
   if url.fragment:
    dest=Page();dest.feed(target.read_text());assert url.fragment in dest.ids,(file,ref)

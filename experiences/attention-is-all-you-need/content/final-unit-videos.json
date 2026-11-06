@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "videos": {
+    "sequence": {
+      "assets": {
+        "src": {
+          "bytes": 1861931,
+          "sha256": "39d54359c6be705f97a969b04b1e2d62af22147d5eb3c813cf5d175539509b3a"
+        },
+        "poster": {
+          "bytes": 85161,
+          "sha256": "3ccce2d6ac64dca291c3dc49d8fd3367572c9b1477f42e66b376d160c4fd2af4"
+        },
+        "captions": {
+          "bytes": 1207,
+          "sha256": "508e80011514234e254c3077109516304fa07a14b199f4c7bc3da2ba3685c45f"
+        },
+        "transcript": {
+          "bytes": 853,
+          "sha256": "989e2989a9bbcc6a3bf7db5f1b951ea08835e251677c10ea9409ecff8732bf78"
+        }
+      },
+      "source_sections": "§1、§4、Table 1",
+      "transcript_policy": "Only spoken passages, copied verbatim from the narration plan; titles and production notes excluded."
+    },
+    "encoder-decoder": {
+      "assets": {
+        "src": {
+          "bytes": 1735140,
+          "sha256": "3910539af3bf6d0c0015917a9df567892aec2d941f0373b88152c17b1c95d9d2"
+        },
+        "poster": {
+          "bytes": 84010,
+          "sha256": "25eff99715abdac346ca24bb69d353150b652c9c22ec7aae73ec8987b74df74b"
+        },
+        "captions": {
+          "bytes": 1302,
+          "sha256": "8f813cbd15f311face89ceec53ad52e03554dd975ffabf0f4c384ec41b3e73a6"
+        },
+        "transcript": {
+          "bytes": 976,
+          "sha256": "c25c5ec2f9e8f1f1395f5496753dc915cce40a4a50156d2d1ecdaceea344de12"
+        }
+      },
+      "source_sections": "§3.1、§3.2.3",
+      "transcript_policy": "Only spoken passages, copied verbatim from the narration plan; titles and production notes excluded."
+    },
+    "reported-evidence": {
+      "assets": {
+        "src": {
+          "bytes": 2587877,
+          "sha256": "c529aa0b5c5e47d1e0d57f2d0f40bf94db87577bf939144dbe58d41c9e4de512"
+        },
+        "poster": {
+          "bytes": 65651,
+          "sha256": "3a994e339aa7f3ef60506bd4ae044cbbff83b52c397082d8c04e30d4d2a8e6a0"
+        },
+        "captions": {
+          "bytes": 1435,
+          "sha256": "959f1d62b218915b53cc3fa91daf49ab4822d69b60815b93bfab045259f8aa49"
+        },
+        "transcript": {
+          "bytes": 1210,
+          "sha256": "0f4e77fca6e4d1599c2fe4d55c0ab7296dce8bc20a08b5ab2d8f34251b4504fb"
+        }
+      },
+      "source_sections": "§6.1、Table 2",
+      "transcript_policy": "Only spoken passages, copied verbatim from the narration plan; titles and production notes excluded."
+    },
+    "scope": {
+      "assets": {
+        "src": {
+          "bytes": 2826248,
+          "sha256": "7144d4fac377884804bc92a60c73d1ac6ea23eb56449d10742342a2d51529c14"
+        },
+        "poster": {
+          "bytes": 74775,
+          "sha256": "7656c0b03b897d5bf90b7e9ff7d039458e6e2f717272892aa687e21c9900218e"
+        },
+        "captions": {
+          "bytes": 1445,
+          "sha256": "a55c05fd838f9757ad0c2e76dbd2464783b3399660f768957b7716e830a92c93"
+        },
+        "transcript": {
+          "bytes": 1219,
+          "sha256": "5e670e6d92ea16deecb2d3edb6515583a939fbd2de250a4e006eccf39e4fcc6e"
+        }
+      },
+      "source_sections": "§6、§7",
+      "transcript_policy": "Only spoken passages, copied verbatim from the narration plan; titles and production notes excluded."
+    }
+  },
+  "verification_limits": [
+    "Direct listening not performed",
+    "Browser and iPhone playback not performed",
+    "Caption boundaries use measured synthesis intervals; sentence timing is not forced-aligned"
+  ]
+}

@@ -1,0 +1,702 @@
+{
+  "schema_version": 1,
+  "renderer": "Manim Community 0.19.0 / Cairo",
+  "narration": "Kokoro v1.0 / jf_alpha / local ONNX CPU",
+  "chapters": [
+    {
+      "id": "residual",
+      "title": "丸ごとではなく、差分を学ぶ",
+      "video": "/notes/deep-residual-learning/media/chapters/residual.mp4",
+      "poster": "/notes/deep-residual-learning/media/chapters/residual.jpg",
+      "captions": "/notes/deep-residual-learning/media/chapters/residual.ja.vtt",
+      "transcript": "/notes/deep-residual-learning/media/chapters/residual.ja.txt",
+      "duration_seconds": 58.916667,
+      "bytes": 1686087,
+      "sha256": "37c0005a884d530b9b017729df41901867acf389f473b11d4c8308747e255327",
+      "assets": {
+        "residual.mp4": {
+          "bytes": 1686087,
+          "sha256": "37c0005a884d530b9b017729df41901867acf389f473b11d4c8308747e255327"
+        },
+        "residual.jpg": {
+          "bytes": 31132,
+          "sha256": "56e2fa73a2d7ab45bc7b054e7385a15de6a419347ca6004b1071e16beb4a6a0c"
+        },
+        "residual.ja.vtt": {
+          "bytes": 1252,
+          "sha256": "bc5af18c37de73f5b7239cd151409a148b8fc24369919febc6b348933f1ff0b0"
+        },
+        "residual.ja.txt": {
+          "bytes": 1850,
+          "sha256": "75e830a7def7916bd9dc20cebf4c69e6e27a3d0f2238230abb949feaa308bcff"
+        }
+      },
+      "validation": {
+        "decode": "passed: full ffmpeg audiovisual decode",
+        "ffprobe": {
+          "video_codec": "h264",
+          "width": 1280,
+          "height": 720,
+          "fps": "24/1"
+        },
+        "non_silence": {
+          "passed": true,
+          "speech_intervals": [
+            {
+              "segment": 1,
+              "start": 0.65,
+              "end": 12.362,
+              "rms_dbfs": -16.921803440643185,
+              "peak_dbfs": -1.8654124043717537,
+              "speech_not_cut": true,
+              "longest_silence_seconds_below_minus45dbfs": 0.5
+            },
+            {
+              "segment": 2,
+              "start": 14.162,
+              "end": 27.474,
+              "rms_dbfs": -17.008035333159796,
+              "peak_dbfs": -1.5116125376282994,
+              "speech_not_cut": true,
+              "longest_silence_seconds_below_minus45dbfs": 0.6
+            },
+            {
+              "segment": 3,
+              "start": 29.274,
+              "end": 41.370000000000005,
+              "rms_dbfs": -16.88695648138887,
+              "peak_dbfs": -1.5546214724695748,
+              "speech_not_cut": true,
+              "longest_silence_seconds_below_minus45dbfs": 0.6
+            },
+            {
+              "segment": 4,
+              "start": 43.17,
+              "end": 57.80466666666667,
+              "rms_dbfs": -16.9741803313149,
+              "peak_dbfs": -1.9201278888845184,
+              "speech_not_cut": true,
+              "longest_silence_seconds_below_minus45dbfs": 0.6
+            }
+          ],
+          "full_audio_peak_dbfs": -1.5116125376282994
+        },
+        "normalization": {
+          "input_i": "-19.65",
+          "input_tp": "-3.30",
+          "input_lra": "4.30",
+          "input_thresh": "-30.01",
+          "output_i": "-16.95",
+          "output_tp": "-1.50",
+          "output_lra": "2.70",
+          "output_thresh": "-27.29",
+          "normalization_type": "dynamic",
+          "target_offset": "-0.05"
+        },
+        "subtitles": {
+          "valid_ranges": true,
+          "nonempty": true,
+          "cues": 12,
+          "no_overlap": true,
+          "timing": "Sentence-proportional estimates inside exact synthesized speech intervals; not forced-aligned. Captions follow actual speech, with ReLU/110 display spellings; no additional numerical claims. Verbatim speech and supplemental screen wording are separate in transcript.",
+          "intentional_gaps": "Between speech sections only; captions end at speech end, not at scene boundary."
+        },
+        "representative_frames": {
+          "extracted": [
+            {
+              "seconds": 3.0,
+              "file": "media-source/chapters/residual/frame-1-30.jpg"
+            },
+            {
+              "seconds": 6.5,
+              "file": "media-source/chapters/residual/frame-1-65.jpg"
+            },
+            {
+              "seconds": 16.512,
+              "file": "media-source/chapters/residual/frame-2-30.jpg"
+            },
+            {
+              "seconds": 20.012,
+              "file": "media-source/chapters/residual/frame-2-65.jpg"
+            },
+            {
+              "seconds": 31.624000000000002,
+              "file": "media-source/chapters/residual/frame-3-30.jpg"
+            },
+            {
+              "seconds": 35.124,
+              "file": "media-source/chapters/residual/frame-3-65.jpg"
+            },
+            {
+              "seconds": 45.52,
+              "file": "media-source/chapters/residual/frame-4-30.jpg"
+            },
+            {
+              "seconds": 49.02,
+              "file": "media-source/chapters/residual/frame-4-65.jpg"
+            }
+          ],
+          "visual_review": "passed: eight representative frames per chapter reviewed for readable diagrams, mathematical labels, transitions, overlap and cropping; final depth scene rechecked after wording correction"
+        },
+        "browser_playback": "unverified; no browser launch attempted",
+        "direct_listening": "unverified"
+      }
+    },
+    {
+      "id": "shape",
+      "title": "足すには、形をそろえる",
+      "video": "/notes/deep-residual-learning/media/chapters/shape.mp4",
+      "poster": "/notes/deep-residual-learning/media/chapters/shape.jpg",
+      "captions": "/notes/deep-residual-learning/media/chapters/shape.ja.vtt",
+      "transcript": "/notes/deep-residual-learning/media/chapters/shape.ja.txt",
+      "duration_seconds": 59.666667,
+      "bytes": 1874932,
+      "sha256": "3ee4779af2065382827115308bd503faad518cfb971ae3f0b37a1a8530ee4f7e",
+      "assets": {
+        "shape.mp4": {
+          "bytes": 1874932,
+          "sha256": "3ee4779af2065382827115308bd503faad518cfb971ae3f0b37a1a8530ee4f7e"
+        },
+        "shape.jpg": {
+          "bytes": 29130,
+          "sha256": "c0eddf7eef75f3788d1a36ebbcaa377fbe86a9b812b60edf218d8ec012fb1ffd"
+        },
+        "shape.ja.vtt": {
+          "bytes": 1214,
+          "sha256": "c1b44114bd2c96e445d798d92ed0a2774c4946f71c69e68e5c3ad9ff2e76db74"
+        },
+        "shape.ja.txt": {
+          "bytes": 1780,
+          "sha256": "fdc6dad87a2f88ee5371c61bf96eb98eb4d7dbe8a555482277797c2385356e18"
+        }
+      },
+      "validation": {
+        "decode": "passed: full ffmpeg audiovisual decode",
+        "ffprobe": {
+          "video_codec": "h264",
+          "width": 1280,
+          "height": 720,
+          "fps": "24/1"
+        },
+        "non_silence": {
+          "passed": true,
+          "speech_intervals": [
+            {
+              "segment": 1,
+              "start": 0.65,
+              "end": 11.380666666666666,
+              "rms_dbfs": -16.836317448949394,
+              "peak_dbfs": -2.5690372449932535,
+              "speech_not_cut": true,
+              "longest_silence_seconds_below_minus45dbfs": 0.5
+            },
+            {
+              "segment": 2,
+              "start": 13.180666666666667,
+              "end": 26.172666666666668,
+              "rms_dbfs": -17.105780241982984,
+              "peak_dbfs": -1.637762006235137,
+              "speech_not_cut": true,
+              "longest_silence_seconds_below_minus45dbfs": 0.6
+            },
+            {
+              "segment": 3,
+              "start": 27.97266666666667,
+              "end": 40.602000000000004,
+              "rms_dbfs": -16.841708910561003,
+              "peak_dbfs": -1.5251879426429529,
+              "speech_not_cut": true,
+              "longest_silence_seconds_below_minus45dbfs": 0.6
+            },
+            {
+              "segment": 4,
+              "start": 42.402,
+              "end": 58.53,
+              "rms_dbfs": -16.984978140437338,
+              "peak_dbfs": -1.7927732595705812,
+              "speech_not_cut": true,
+              "longest_silence_seconds_below_minus45dbfs": 0.6
+            }
+          ],
+          "full_audio_peak_dbfs": -1.5251879426429529
+        },
+        "normalization": {
+          "input_i": "-19.70",
+          "input_tp": "-3.60",
+          "input_lra": "3.10",
+          "input_thresh": "-30.04",
+          "output_i": "-16.98",
+          "output_tp": "-1.50",
+          "output_lra": "3.00",
+          "output_thresh": "-27.33",
+          "normalization_type": "dynamic",
+          "target_offset": "-0.02"
+        },
+        "subtitles": {
+          "valid_ranges": true,
+          "nonempty": true,
+          "cues": 10,
+          "no_overlap": true,
+          "timing": "Sentence-proportional estimates inside exact synthesized speech intervals; not forced-aligned. Captions follow actual speech, with ReLU/110 display spellings; no additional numerical claims. Verbatim speech and supplemental screen wording are separate in transcript.",
+          "intentional_gaps": "Between speech sections only; captions end at speech end, not at scene boundary."
+        },
+        "representative_frames": {
+          "extracted": [
+            {
+              "seconds": 3.0,
+              "file": "media-source/chapters/shape/frame-1-30.jpg"
+            },
+            {
+              "seconds": 6.5,
+              "file": "media-source/chapters/shape/frame-1-65.jpg"
+            },
+            {
+              "seconds": 15.530666666666667,
+              "file": "media-source/chapters/shape/frame-2-30.jpg"
+            },
+            {
+              "seconds": 19.03066666666667,
+              "file": "media-source/chapters/shape/frame-2-65.jpg"
+            },
+            {
+              "seconds": 30.32266666666667,
+              "file": "media-source/chapters/shape/frame-3-30.jpg"
+            },
+            {
+              "seconds": 33.82266666666667,
+              "file": "media-source/chapters/shape/frame-3-65.jpg"
+            },
+            {
+              "seconds": 44.752,
+              "file": "media-source/chapters/shape/frame-4-30.jpg"
+            },
+            {
+              "seconds": 48.252,
+              "file": "media-source/chapters/shape/frame-4-65.jpg"
+            }
+          ],
+          "visual_review": "passed: eight representative frames per chapter reviewed for readable diagrams, mathematical labels, transitions, overlap and cropping; final depth scene rechecked after wording correction"
+        },
+        "browser_playback": "unverified; no browser launch attempted",
+        "direct_listening": "unverified"
+      }
+    },
+    {
+      "id": "depth",
+      "title": "深くすれば、必ず良くなる？",
+      "video": "/notes/deep-residual-learning/media/chapters/depth.mp4",
+      "poster": "/notes/deep-residual-learning/media/chapters/depth.jpg",
+      "captions": "/notes/deep-residual-learning/media/chapters/depth.ja.vtt",
+      "transcript": "/notes/deep-residual-learning/media/chapters/depth.ja.txt",
+      "duration_seconds": 62.25,
+      "bytes": 1954993,
+      "sha256": "5d40e1f227f5db32435cbc8650dd1310ef2589120cf7d5e4f817d77fa5bc8177",
+      "assets": {
+        "depth.mp4": {
+          "bytes": 1954993,
+          "sha256": "5d40e1f227f5db32435cbc8650dd1310ef2589120cf7d5e4f817d77fa5bc8177"
+        },
+        "depth.jpg": {
+          "bytes": 34331,
+          "sha256": "925ac96415e891a5a2a203b3ef7fb27f4de3ae068388cb5e9eaaf6cdde752606"
+        },
+        "depth.ja.vtt": {
+          "bytes": 1321,
+          "sha256": "26d26aa9db644d3a152dc0fc85cd9b80a78a27b0f5d5708936245f37a8d431ee"
+        },
+        "depth.ja.txt": {
+          "bytes": 2038,
+          "sha256": "8c8feaafe0ed9a34af3215e5be88fb3fa1a24ad620c11f2da3fdaf2a4ce7e186"
+        }
+      },
+      "validation": {
+        "decode": "passed: full ffmpeg audiovisual decode",
+        "ffprobe": {
+          "video_codec": "h264",
+          "width": 1280,
+          "height": 720,
+          "fps": "24/1"
+        },
+        "non_silence": {
+          "passed": true,
+          "speech_intervals": [
+            {
+              "segment": 1,
+              "start": 0.65,
+              "end": 14.196666666666667,
+              "rms_dbfs": -17.332020330382772,
+              "peak_dbfs": -2.127251310237657,
+              "speech_not_cut": true,
+              "longest_silence_seconds_below_minus45dbfs": 0.6
+            },
+            {
+              "segment": 2,
+              "start": 15.996666666666668,
+              "end": 28.903333333333336,
+              "rms_dbfs": -17.141815850373373,
+              "peak_dbfs": -2.1093223746635292,
+              "speech_not_cut": true,
+              "longest_silence_seconds_below_minus45dbfs": 0.6
+            },
+            {
+              "segment": 3,
+              "start": 30.703333333333333,
+              "end": 43.71666666666667,
+              "rms_dbfs": -17.03360700463939,
+              "peak_dbfs": -2.1608406598907166,
+              "speech_not_cut": true,
+              "longest_silence_seconds_below_minus45dbfs": 0.6
+            },
+            {
+              "segment": 4,
+              "start": 45.516666666666666,
+              "end": 61.111333333333334,
+              "rms_dbfs": -17.066419539573864,
+              "peak_dbfs": -1.821167610988808,
+              "speech_not_cut": true,
+              "longest_silence_seconds_below_minus45dbfs": 0.6
+            }
+          ],
+          "full_audio_peak_dbfs": -1.821167610988808
+        },
+        "normalization": {
+          "input_i": "-19.63",
+          "input_tp": "-4.18",
+          "input_lra": "3.60",
+          "input_thresh": "-29.98",
+          "output_i": "-17.15",
+          "output_tp": "-1.62",
+          "output_lra": "3.40",
+          "output_thresh": "-27.47",
+          "normalization_type": "dynamic",
+          "target_offset": "0.15"
+        },
+        "subtitles": {
+          "valid_ranges": true,
+          "nonempty": true,
+          "cues": 11,
+          "no_overlap": true,
+          "timing": "Sentence-proportional estimates inside exact synthesized speech intervals; not forced-aligned. Captions follow actual speech, with ReLU/110 display spellings; no additional numerical claims. Verbatim speech and supplemental screen wording are separate in transcript.",
+          "intentional_gaps": "Between speech sections only; captions end at speech end, not at scene boundary."
+        },
+        "representative_frames": {
+          "extracted": [
+            {
+              "seconds": 3.0,
+              "file": "media-source/chapters/depth/frame-1-30.jpg"
+            },
+            {
+              "seconds": 6.5,
+              "file": "media-source/chapters/depth/frame-1-65.jpg"
+            },
+            {
+              "seconds": 18.346666666666668,
+              "file": "media-source/chapters/depth/frame-2-30.jpg"
+            },
+            {
+              "seconds": 21.846666666666668,
+              "file": "media-source/chapters/depth/frame-2-65.jpg"
+            },
+            {
+              "seconds": 33.053333333333335,
+              "file": "media-source/chapters/depth/frame-3-30.jpg"
+            },
+            {
+              "seconds": 36.553333333333335,
+              "file": "media-source/chapters/depth/frame-3-65.jpg"
+            },
+            {
+              "seconds": 47.86666666666667,
+              "file": "media-source/chapters/depth/frame-4-30.jpg"
+            },
+            {
+              "seconds": 51.36666666666667,
+              "file": "media-source/chapters/depth/frame-4-65.jpg"
+            }
+          ],
+          "visual_review": "passed: eight representative frames per chapter reviewed for readable diagrams, mathematical labels, transitions, overlap and cropping; final depth scene rechecked after wording correction"
+        },
+        "browser_playback": "unverified; no browser launch attempted",
+        "direct_listening": "unverified"
+      }
+    },
+    {
+      "id": "blocks",
+      "title": "2層と3層のブロック",
+      "video": "/notes/deep-residual-learning/media/chapters/blocks.mp4",
+      "poster": "/notes/deep-residual-learning/media/chapters/blocks.jpg",
+      "captions": "/notes/deep-residual-learning/media/chapters/blocks.ja.vtt",
+      "transcript": "/notes/deep-residual-learning/media/chapters/blocks.ja.txt",
+      "duration_seconds": 68.166667,
+      "bytes": 1918975,
+      "sha256": "4b281f55bba1da6caa6fee44878a2d526ec810aa291cfcca20248d77901666d4",
+      "assets": {
+        "blocks.mp4": {
+          "bytes": 1918975,
+          "sha256": "4b281f55bba1da6caa6fee44878a2d526ec810aa291cfcca20248d77901666d4"
+        },
+        "blocks.jpg": {
+          "bytes": 29828,
+          "sha256": "7b5e1b6dd3f1a19c424b872e0cd9736e345aa184409a61181dd2c81828f712cb"
+        },
+        "blocks.ja.vtt": {
+          "bytes": 1371,
+          "sha256": "05fc7f3f9b78066803df9c90b2e1b27072ad432920c9ed50b0b13ffee6853f6c"
+        },
+        "blocks.ja.txt": {
+          "bytes": 1974,
+          "sha256": "7bf1afb70aaccd186e74c2664ea50812999ac864ff5984752c3e02ee360c2736"
+        }
+      },
+      "validation": {
+        "decode": "passed: full ffmpeg audiovisual decode",
+        "ffprobe": {
+          "video_codec": "h264",
+          "width": 1280,
+          "height": 720,
+          "fps": "24/1"
+        },
+        "non_silence": {
+          "passed": true,
+          "speech_intervals": [
+            {
+              "segment": 1,
+              "start": 0.65,
+              "end": 15.199333333333334,
+              "rms_dbfs": -17.025849582128508,
+              "peak_dbfs": -1.7498686544192354,
+              "speech_not_cut": true,
+              "longest_silence_seconds_below_minus45dbfs": 0.6
+            },
+            {
+              "segment": 2,
+              "start": 16.999333333333333,
+              "end": 32.06066666666666,
+              "rms_dbfs": -17.004983500873717,
+              "peak_dbfs": -1.905921489702393,
+              "speech_not_cut": true,
+              "longest_silence_seconds_below_minus45dbfs": 0.6
+            },
+            {
+              "segment": 3,
+              "start": 33.86066666666667,
+              "end": 47.769999999999996,
+              "rms_dbfs": -17.10940457212535,
+              "peak_dbfs": -1.9975134417974483,
+              "speech_not_cut": true,
+              "longest_silence_seconds_below_minus45dbfs": 0.5
+            },
+            {
+              "segment": 4,
+              "start": 49.57,
+              "end": 67.042,
+              "rms_dbfs": -17.086217059334,
+              "peak_dbfs": -1.6000749719200473,
+              "speech_not_cut": true,
+              "longest_silence_seconds_below_minus45dbfs": 0.5
+            }
+          ],
+          "full_audio_peak_dbfs": -1.6000749719200473
+        },
+        "normalization": {
+          "input_i": "-19.69",
+          "input_tp": "-3.33",
+          "input_lra": "4.10",
+          "input_thresh": "-30.00",
+          "output_i": "-17.01",
+          "output_tp": "-1.50",
+          "output_lra": "3.40",
+          "output_thresh": "-27.34",
+          "normalization_type": "dynamic",
+          "target_offset": "0.01"
+        },
+        "subtitles": {
+          "valid_ranges": true,
+          "nonempty": true,
+          "cues": 12,
+          "no_overlap": true,
+          "timing": "Sentence-proportional estimates inside exact synthesized speech intervals; not forced-aligned. Captions follow actual speech, with ReLU/110 display spellings; no additional numerical claims. Verbatim speech and supplemental screen wording are separate in transcript.",
+          "intentional_gaps": "Between speech sections only; captions end at speech end, not at scene boundary."
+        },
+        "representative_frames": {
+          "extracted": [
+            {
+              "seconds": 3.0,
+              "file": "media-source/chapters/blocks/frame-1-30.jpg"
+            },
+            {
+              "seconds": 6.5,
+              "file": "media-source/chapters/blocks/frame-1-65.jpg"
+            },
+            {
+              "seconds": 19.349333333333334,
+              "file": "media-source/chapters/blocks/frame-2-30.jpg"
+            },
+            {
+              "seconds": 22.849333333333334,
+              "file": "media-source/chapters/blocks/frame-2-65.jpg"
+            },
+            {
+              "seconds": 36.21066666666667,
+              "file": "media-source/chapters/blocks/frame-3-30.jpg"
+            },
+            {
+              "seconds": 39.71066666666667,
+              "file": "media-source/chapters/blocks/frame-3-65.jpg"
+            },
+            {
+              "seconds": 51.92,
+              "file": "media-source/chapters/blocks/frame-4-30.jpg"
+            },
+            {
+              "seconds": 55.42,
+              "file": "media-source/chapters/blocks/frame-4-65.jpg"
+            }
+          ],
+          "visual_review": "passed: eight representative frames per chapter reviewed for readable diagrams, mathematical labels, transitions, overlap and cropping; final depth scene rechecked after wording correction"
+        },
+        "browser_playback": "unverified; no browser launch attempted",
+        "direct_listening": "unverified"
+      }
+    },
+    {
+      "id": "evidence",
+      "title": "数値を、条件つきで読む",
+      "video": "/notes/deep-residual-learning/media/chapters/evidence.mp4",
+      "poster": "/notes/deep-residual-learning/media/chapters/evidence.jpg",
+      "captions": "/notes/deep-residual-learning/media/chapters/evidence.ja.vtt",
+      "transcript": "/notes/deep-residual-learning/media/chapters/evidence.ja.txt",
+      "duration_seconds": 69.083333,
+      "bytes": 1995056,
+      "sha256": "75e893b0941304f83584c4668f9a23c58782b02804816aad2e71bd46968518f7",
+      "assets": {
+        "evidence.mp4": {
+          "bytes": 1995056,
+          "sha256": "75e893b0941304f83584c4668f9a23c58782b02804816aad2e71bd46968518f7"
+        },
+        "evidence.jpg": {
+          "bytes": 26689,
+          "sha256": "5ae92cbc28b25ccee19cf5203ed00ac3e4d9025f6486c7f30ff513f3a454d21e"
+        },
+        "evidence.ja.vtt": {
+          "bytes": 1334,
+          "sha256": "99c1e15ef59c7bb6db3ca0d881a4da127da399217d4268ee6d42d015c83ccd02"
+        },
+        "evidence.ja.txt": {
+          "bytes": 2042,
+          "sha256": "ded32f90bde6fcef032c20584bfd273318d502e228034173e0c12eba1c328f5e"
+        }
+      },
+      "validation": {
+        "decode": "passed: full ffmpeg audiovisual decode",
+        "ffprobe": {
+          "video_codec": "h264",
+          "width": 1280,
+          "height": 720,
+          "fps": "24/1"
+        },
+        "non_silence": {
+          "passed": true,
+          "speech_intervals": [
+            {
+              "segment": 1,
+              "start": 0.65,
+              "end": 15.519333333333334,
+              "rms_dbfs": -17.22673389909997,
+              "peak_dbfs": -2.1911484230931855,
+              "speech_not_cut": true,
+              "longest_silence_seconds_below_minus45dbfs": 0.6
+            },
+            {
+              "segment": 2,
+              "start": 17.319333333333333,
+              "end": 32.80733333333333,
+              "rms_dbfs": -17.030291454347804,
+              "peak_dbfs": -2.3331908441515727,
+              "speech_not_cut": true,
+              "longest_silence_seconds_below_minus45dbfs": 0.6
+            },
+            {
+              "segment": 3,
+              "start": 34.60733333333334,
+              "end": 50.095333333333336,
+              "rms_dbfs": -17.00613407897396,
+              "peak_dbfs": -2.8474468556964134,
+              "speech_not_cut": true,
+              "longest_silence_seconds_below_minus45dbfs": 0.6
+            },
+            {
+              "segment": 4,
+              "start": 51.89533333333333,
+              "end": 67.938,
+              "rms_dbfs": -16.93373485204255,
+              "peak_dbfs": -1.6920239089360485,
+              "speech_not_cut": true,
+              "longest_silence_seconds_below_minus45dbfs": 0.6
+            }
+          ],
+          "full_audio_peak_dbfs": -1.6920239089360485
+        },
+        "normalization": {
+          "input_i": "-19.75",
+          "input_tp": "-4.31",
+          "input_lra": "4.40",
+          "input_thresh": "-30.10",
+          "output_i": "-17.04",
+          "output_tp": "-1.68",
+          "output_lra": "3.60",
+          "output_thresh": "-27.38",
+          "normalization_type": "dynamic",
+          "target_offset": "0.04"
+        },
+        "subtitles": {
+          "valid_ranges": true,
+          "nonempty": true,
+          "cues": 10,
+          "no_overlap": true,
+          "timing": "Sentence-proportional estimates inside exact synthesized speech intervals; not forced-aligned. Captions follow actual speech, with ReLU/110 display spellings; no additional numerical claims. Verbatim speech and supplemental screen wording are separate in transcript.",
+          "intentional_gaps": "Between speech sections only; captions end at speech end, not at scene boundary."
+        },
+        "representative_frames": {
+          "extracted": [
+            {
+              "seconds": 3.0,
+              "file": "media-source/chapters/evidence/frame-1-30.jpg"
+            },
+            {
+              "seconds": 6.5,
+              "file": "media-source/chapters/evidence/frame-1-65.jpg"
+            },
+            {
+              "seconds": 19.669333333333334,
+              "file": "media-source/chapters/evidence/frame-2-30.jpg"
+            },
+            {
+              "seconds": 23.169333333333334,
+              "file": "media-source/chapters/evidence/frame-2-65.jpg"
+            },
+            {
+              "seconds": 36.95733333333334,
+              "file": "media-source/chapters/evidence/frame-3-30.jpg"
+            },
+            {
+              "seconds": 40.45733333333334,
+              "file": "media-source/chapters/evidence/frame-3-65.jpg"
+            },
+            {
+              "seconds": 54.245333333333335,
+              "file": "media-source/chapters/evidence/frame-4-30.jpg"
+            },
+            {
+              "seconds": 57.745333333333335,
+              "file": "media-source/chapters/evidence/frame-4-65.jpg"
+            }
+          ],
+          "visual_review": "passed: eight representative frames per chapter reviewed for readable diagrams, mathematical labels, transitions, overlap and cropping; final depth scene rechecked after wording correction"
+        },
+        "browser_playback": "unverified; no browser launch attempted",
+        "direct_listening": "unverified"
+      }
+    }
+  ]
+}

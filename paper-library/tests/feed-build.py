@@ -31,7 +31,9 @@ with tempfile.TemporaryDirectory() as t:
     for name in ('favicon.ico', 'favicon-16x16.png', 'favicon-32x32.png', 'favicon.svg', 'apple-touch-icon.png'):
         shutil.copy(root / 'dist' / name, p / 'dist' / name)
     shutil.copytree(root / 'dist/notes', p / 'dist/notes')
-    records = json.loads((p / 'content/integrated-materials.json').read_text())
+    # This isolated admission fixture deliberately uses one Attention source.
+    records = json.loads((p / 'content/integrated-materials.json').read_text())[:1]
+    (p / 'content/integrated-materials.json').write_text(json.dumps(records))
     wrapper = (root.parent / 'src/pages/notes/attention-is-all-you-need/learn/index.astro').read_text()
     def integrate(slug):
         route = project / f'src/pages/notes/{slug}/learn/index.astro'

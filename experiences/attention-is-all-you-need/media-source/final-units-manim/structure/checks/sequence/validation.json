@@ -1,0 +1,53 @@
+{
+  "full_av_decode": "passed",
+  "audio_intervals": [
+    {
+      "start": 0.7,
+      "end": 11.707999999999998,
+      "rms": 0.10552999115534438,
+      "fits_scene": true
+    },
+    {
+      "start": 17.7,
+      "end": 29.177333333333333,
+      "rms": 0.10640327314107802,
+      "fits_scene": true
+    },
+    {
+      "start": 34.7,
+      "end": 48.92933333333333,
+      "rms": 0.10472994420296845,
+      "fits_scene": true
+    },
+    {
+      "start": 51.7,
+      "end": 66.14266666666667,
+      "rms": 0.10536840456888615,
+      "fits_scene": true
+    }
+  ],
+  "audio_peak": 0.6142578125,
+  "subtitle_checks": "Passed bounds/order/full-text coverage. Sentence times proportionally estimated, not forced aligned. Burned captions and external VTT provided.",
+  "frames": [
+    {
+      "time": 10,
+      "path": "checks/sequence/frame-1.jpg"
+    },
+    {
+      "time": 27,
+      "path": "checks/sequence/frame-2.jpg"
+    },
+    {
+      "time": 44,
+      "path": "checks/sequence/frame-3.jpg"
+    },
+    {
+      "time": 61,
+      "path": "checks/sequence/frame-4.jpg"
+    }
+  ],
+  "visual_review": "passed: inspected all four final representative frames (10, 27, 44, 61 seconds), plus full-size caption/diagram checks. No clipped labels or caption overlap. Not continuous playback.",
+  "direct_listening": "not performed",
+  "browser_playback": "not performed",
+  "iphone_playback": "not performed"
+}

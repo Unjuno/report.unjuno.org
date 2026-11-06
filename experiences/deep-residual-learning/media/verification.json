@@ -1,0 +1,59 @@
+{
+  "renderer": "Manim Community 0.19.0 (Cairo)",
+  "video": "overview-ja.mp4",
+  "resolution": [
+    1280,
+    720
+  ],
+  "fps": 24,
+  "duration_seconds": 82.291667,
+  "audio": "AAC mono 48000 Hz, Kokoro v1.0 jf_alpha",
+  "full_av_decode": "passed ffmpeg -f null",
+  "reviewed_frames_seconds": [
+    18,
+    46
+  ],
+  "segments": [
+    {
+      "segment": 1,
+      "speech_duration": 11.114666666666666,
+      "allocated_duration": 12.614666666666666,
+      "rms_dbfs": -19.453153165041545
+    },
+    {
+      "segment": 2,
+      "speech_duration": 10.282666666666668,
+      "allocated_duration": 11.78266666666667,
+      "rms_dbfs": -19.570156721493873
+    },
+    {
+      "segment": 3,
+      "speech_duration": 12.224,
+      "allocated_duration": 13.724000000000004,
+      "rms_dbfs": -19.516385820362753
+    },
+    {
+      "segment": 4,
+      "speech_duration": 13.333333333333334,
+      "allocated_duration": 14.833333333333336,
+      "rms_dbfs": -19.615426047633054
+    },
+    {
+      "segment": 5,
+      "speech_duration": 10.965333333333334,
+      "allocated_duration": 12.46533333333334,
+      "rms_dbfs": -19.706476031727856
+    },
+    {
+      "segment": 6,
+      "speech_duration": 15.381333333333334,
+      "allocated_duration": 16.88133333333333,
+      "rms_dbfs": -19.47541859166868
+    }
+  ],
+  "subtitle_timing": "Sentence durations estimated proportionally within each exact synthesized speech segment; not forced-aligned.",
+  "direct_listening": "unverified",
+  "browser_playback": "unverified",
+  "per_unit_videos": "All five chapter videos produced in the independent chapter phase; see chapter-videos.json for authoritative details and verification limits.",
+  "sha256": "6836b0de9b8becd396d40b86c51d9c7cbd17120ac1c84863c6e3a315d21d2f23"
+}

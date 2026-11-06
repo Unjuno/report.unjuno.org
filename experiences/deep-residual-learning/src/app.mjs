@@ -1,0 +1,20 @@
+import{residual,shape,chain,blockParams,evidence}from'./math.mjs';
+export function init(doc){
+try {
+const q=s=>doc.querySelector(s),out=(id,s)=>q('#'+id).textContent=s;
+doc.querySelectorAll('[data-lab],[data-quiz]').forEach(form=>form.reset());
+function chart(id,items,{signed=false,log=false}={}){const host=q('#'+id+'-chart'); if(!host)return; const ns='http://www.w3.org/2000/svg';host.replaceChildren();const max=Math.max(...items.map(z=>Math.abs(z[1])),1e-20);items.forEach(([label,value,color],i)=>{const row=24+i*55;const text=doc.createElementNS(ns,'text');text.setAttribute('x','8');text.setAttribute('y',row);text.textContent=label+' '+(Math.abs(value)>=10000?value.toLocaleString():Number(value.toPrecision(4)));host.append(text);const rect=doc.createElementNS(ns,'rect');const width=log?Math.max(2,(Math.log10(Math.max(Math.abs(value),1e-40))+40)/55*240):Math.abs(value)/max*(signed?130:265);rect.setAttribute('x',signed?(value<0?300-width:300):190);rect.setAttribute('y',row-15);rect.setAttribute('width',Math.max(.8,width));rect.setAttribute('height','20');rect.setAttribute('fill',color);host.append(rect);});if(signed){const line=doc.createElementNS(ns,'line');for(const[k,v]of Object.entries({x1:300,x2:300,y1:4,y2:220,stroke:'#192a31'}))line.setAttribute(k,v);host.append(line);}}
+function update(scope=doc){if(scope.querySelector('#residual-result')){let r=residual(+q('#x').value,+q('#f').value);out('residual-result',`x=${q('#x').value} ＋ F(x)=${q('#f').value} → y=${r.sum} → ReLU(y)=${r.output}`);
+chart('residual',[['入力 x',+q('#x').value,'#526e68'],['残差 F(x)',+q('#f').value,'#2955de'],['和 y',r.sum,'#d96b40'],['ReLU(y)',r.output,'#4f8073']],{signed:true});
+}if(scope.querySelector('#shape-result')){let s=shape(q('#shape-mode').value);out('shape-result',`入力 ${s.input} → F(x) ${s.branch} ＋ shortcut ${s.shortcut}。${s.note}`);
+chart('shape',[['入力チャネル',64,'#526e68'],['Fのチャネル',q('#shape-mode').value==='same'?64:128,'#2955de'],['shortcut',q('#shape-mode').value==='same'?64:128,'#4f8073']]);
+}if(scope.querySelector('#depth-result')){let n=+q('#depth-n').value,a=+q('#slope').value,c=chain(n,a);out('depth-result',`n=${n}、係数 a=${a}。plain: aⁿ=${c.plain.toExponential(3)} ／ residual: (1+a)ⁿ=${c.residual.toExponential(3)}`);
+chart('depth',[['|plainの微分|',Math.abs(c.plain),'#d96b40'],['|residualの微分|',Math.abs(c.residual),'#2955de']],{log:true});
+}if(scope.querySelector('#blocks-result')){let width=+q('#width').value,b=width/4,p=blockParams(width,b);out('blocks-result',`入出力 ${width}、中間 ${b}。基本: 18C²=${p.basic.toLocaleString()}個 ／ ボトルネック: 2Cb+9b²=${p.bottleneck.toLocaleString()}個。畳み込み重みのみ。BN・バイアス・shortcutを除外。`);
+chart('blocks',[['基本の重み',p.basic,'#526e68'],['細い経路の重み',p.bottleneck,'#2955de']]);q('#block-flow').style.setProperty('--middle',b/width*100+'%');
+}if(scope.querySelector('#evidence-result')){let key=q('#model').value,vals=evidence[key];out('evidence-result',`${key==='plain'?'plain':'ResNet'}：18層 ${vals[0]}% → 34層 ${vals[1]}%（${(vals[1]-vals[0]).toFixed(2)}ポイント）。誤り率なので低いほど良い。`);chart('evidence',[['18層',vals[0],'#526e68'],['34層',vals[1],'#2955de']]);}}
+doc.querySelectorAll('[data-lab]').forEach(form=>{const updateOwn=()=>update(form);form.addEventListener('input',updateOwn);form.addEventListener('change',updateOwn);form.addEventListener('reset',()=>queueMicrotask(updateOwn));});
+doc.querySelectorAll('[data-quiz]').forEach(form=>{form.addEventListener('submit',e=>{e.preventDefault();let picked=form.querySelector('input:checked'),feedback=form.querySelector('[role=status]');feedback.textContent=picked?(+picked.value===+form.dataset.answer?'正解。':'もう一度考えてみよう。')+form.dataset.explanation:'先に予想を選んでください。';});form.addEventListener('reset',()=>form.querySelector('[role=status]').textContent='');});update();doc.querySelectorAll('[data-lab] input,[data-lab] select,[data-lab] button,[data-quiz] input,[data-quiz] button').forEach(control=>control.disabled=false);q('#interaction-status').textContent='数値操作と答え合わせを利用できます。';
+} catch(error) { const status=doc.querySelector('#interaction-status'); if(status)status.textContent='操作の読み込みに失敗しました。解説と答えは引き続き読めます。'; throw error; }
+}
+if(typeof document!=='undefined')init(document);

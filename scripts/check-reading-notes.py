@@ -54,6 +54,12 @@ def check(build):
         home_anchor(root.all('a','wordmark'),slug+' wordmark')
         home_anchor(one(main.all('div','article-top'),slug+' breadcrumb').all('a'),slug+' breadcrumb HOME')
         home_anchor(one(article.all('div','next-note'),slug+' next-note').all('a','back-link'),slug+' bottom HOME')
+        course = 'generative-adversarial-nets' if slug == 'gan' else 'deep-residual-learning'
+        entry = one(main.all('aside','course-entry'),slug+' prominent course entry')
+        link = one(entry.all('a'),slug+' course link')
+        assert link.attrs.get('href') == f'/notes/{course}/' and '動画で学ぶ' in link.text(),slug+' course destination'
+        assert (build/f'notes/{course}/index.html').is_file(),slug+' course missing'
+        assert '未実施' in entry.text(),slug+' verification disclosure'
         text=article.text()
         assert 'このページは原論文の読解ノートです。' in text and disclaimer in text,slug+' disclaimer'
         assert not main.all('video'),slug+' unexpected video'

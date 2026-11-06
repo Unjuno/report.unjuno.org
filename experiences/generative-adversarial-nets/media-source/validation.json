@@ -1,0 +1,80 @@
+{
+  "renderer": "Manim Community 0.19.0 Cairo",
+  "probe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "24/1"
+      },
+      {
+        "codec_name": "aac",
+        "sample_rate": "24000",
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "77.958333",
+      "size": "2053733"
+    }
+  },
+  "sha256": "6e272e57b59b44b8f38ccdb5d5006e81c43ff2b3a282e796f40942996dd3439f",
+  "audio_intervals": [
+    {
+      "start": 0.6,
+      "end": 11.202666666666666,
+      "rms": 0.105576822556354,
+      "fits_scene": true
+    },
+    {
+      "start": 13.6,
+      "end": 23.562666666666665,
+      "rms": 0.10568902466375132,
+      "fits_scene": true
+    },
+    {
+      "start": 26.6,
+      "end": 38.16266666666667,
+      "rms": 0.10603022114858482,
+      "fits_scene": true
+    },
+    {
+      "start": 39.6,
+      "end": 50.650666666666666,
+      "rms": 0.10617802260007236,
+      "fits_scene": true
+    },
+    {
+      "start": 52.6,
+      "end": 63.480000000000004,
+      "rms": 0.10516783951210579,
+      "fits_scene": true
+    },
+    {
+      "start": 65.6,
+      "end": 75.83999999999999,
+      "rms": 0.10777747137666482,
+      "fits_scene": true
+    }
+  ],
+  "checks": [
+    "Full audiovisual decode passed",
+    "Six representative frames visually inspected; no clipping",
+    "All six narration intervals contain non-silent audio and fit scenes",
+    "VTT and full spoken transcript included"
+  ],
+  "unverified": [
+    "Browser playback",
+    "Direct subjective listening",
+    "ASR pronunciation verification"
+  ],
+  "files": [
+    "media/gan-overview-ja.mp4",
+    "media/gan-overview-ja.vtt",
+    "media/gan-overview-transcript-ja.txt"
+  ],
+  "revision": "Scene 6 label changed to 勾配への対策 to clarify alternative objective is not limited to early training; rerendered and muxed, full decode passed."
+}

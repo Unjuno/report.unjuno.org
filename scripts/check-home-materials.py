@@ -69,12 +69,16 @@ for paper, card in zip(papers, page.cards):
     assert len(read) == 1 and read[0]['href'] == route
     if args.built:
         target = root / 'build' / route.lstrip('/') / 'index.html'
-        expected = root / 'experiences' / paper['slug'] / 'build-production/index.html'
+        attention = paper['slug'] == 'attention-is-all-you-need'
+        expected = root / 'experiences' / paper['slug'] / ('build-production/index.html' if attention else 'public/index.html')
         assert target.is_file() and expected.is_file(), f'Missing built material: {route}'
         content = target.read_text()
         assert content.strip() == expected.read_text().strip(), f'Built material differs from authored package: {route}'
-        assert '<main ' in content and '<h1>' in content and 'class="learning-unit"' in content
-        assert '制作中' in content, 'Do not turn partial authored work into a completion claim'
+        assert '<main ' in content and '<h1>' in content
+        assert '論文ノートを読む' not in content
+        counts = {'attention-is-all-you-need': 12, 'deep-residual-learning': 6, 'generative-adversarial-nets': 8}
+        assert content.count('<video ') == counts[paper['slug']], 'Preserve every supplied course video'
+        assert '未確認' in content or '未検証' in content or '未実施' in content
 assert ('hidden' not in page.ids['empty']) == (not papers)
 assert f'{len(papers)}件の論文' in html, 'Count must exist before JavaScript'
 if not papers:

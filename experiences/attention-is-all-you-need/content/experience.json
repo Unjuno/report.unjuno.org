@@ -57,11 +57,19 @@
       "learning_goal": "並列に計算できる部分と依存する部分を区別する",
       "status": "interactive_local",
       "video": {
-        "status": "planned",
-        "src": null,
-        "poster": null,
-        "captions": null,
-        "transcript": null
+        "status": "ready",
+        "src": "media/videos/sequence-manim.ja.mp4",
+        "poster": "media/posters/sequence-manim.ja.jpg",
+        "captions": "media/captions/sequence-manim.ja.vtt",
+        "transcript": "content/video-scripts/sequence-manim.ja.txt",
+        "duration_seconds": 68.0,
+        "width": 1280,
+        "height": 720,
+        "audio": "narration",
+        "audio_label": "合成音声（日本語）",
+        "renderer": "Manim Community 0.19.0, Cairo",
+        "review_status": "technical_checks_passed",
+        "notes": "原稿の出典・数値照合、全音声映像デコード、字幕境界、代表フレームを確認。実聴・ブラウザー・iPhone再生は未確認。字幕焼き込み済みでVTTの初期表示は無効。"
       },
       "interaction": {
         "component_id": "sequence-paths",
@@ -315,11 +323,19 @@
       "learning_goal": "Encoder、Decoder、学習時の並列計算、逐次生成を区別する",
       "status": "interactive_local",
       "video": {
-        "status": "planned",
-        "src": null,
-        "poster": null,
-        "captions": null,
-        "transcript": null
+        "status": "ready",
+        "src": "media/videos/encoder-decoder-manim.ja.mp4",
+        "poster": "media/posters/encoder-decoder-manim.ja.jpg",
+        "captions": "media/captions/encoder-decoder-manim.ja.vtt",
+        "transcript": "content/video-scripts/encoder-decoder-manim.ja.txt",
+        "duration_seconds": 68.0,
+        "width": 1280,
+        "height": 720,
+        "audio": "narration",
+        "audio_label": "合成音声（日本語）",
+        "renderer": "Manim Community 0.19.0, Cairo",
+        "review_status": "technical_checks_passed",
+        "notes": "原稿の出典・数値照合、全音声映像デコード、字幕境界、代表フレームを確認。実聴・ブラウザー・iPhone再生は未確認。字幕焼き込み済みでVTTの初期表示は無効。"
       },
       "interaction": {
         "component_id": "encoder-decoder-flow",
@@ -383,11 +399,19 @@
       "learning_goal": "報告された実験結果と自分で動かした例を区別する",
       "status": "interactive_local",
       "video": {
-        "status": "planned",
-        "src": null,
-        "poster": null,
-        "captions": null,
-        "transcript": null
+        "status": "ready",
+        "src": "media/videos/reported-evidence-manim.ja.mp4",
+        "poster": "media/posters/reported-evidence-manim.ja.jpg",
+        "captions": "media/captions/reported-evidence-manim.ja.vtt",
+        "transcript": "content/video-scripts/reported-evidence-manim.ja.txt",
+        "duration_seconds": 74.2,
+        "width": 1280,
+        "height": 720,
+        "audio": "narration",
+        "audio_label": "合成音声（日本語）",
+        "renderer": "Manim Community 0.19.0, Cairo",
+        "review_status": "technical_checks_passed",
+        "notes": "原稿の出典・数値照合、全音声映像デコード、字幕境界、代表フレームを確認。実聴・ブラウザー・iPhone再生は未確認。字幕焼き込み済みでVTTの初期表示は無効。"
       },
       "interaction": {
         "component_id": "reported-evidence",
@@ -413,11 +437,19 @@
       "learning_goal": "主張、根拠、適用範囲を結び付ける",
       "status": "interactive_local",
       "video": {
-        "status": "planned",
-        "src": null,
-        "poster": null,
-        "captions": null,
-        "transcript": null
+        "status": "ready",
+        "src": "media/videos/scope-manim.ja.mp4",
+        "poster": "media/posters/scope-manim.ja.jpg",
+        "captions": "media/captions/scope-manim.ja.vtt",
+        "transcript": "content/video-scripts/scope-manim.ja.txt",
+        "duration_seconds": 76.3,
+        "width": 1280,
+        "height": 720,
+        "audio": "narration",
+        "audio_label": "合成音声（日本語）",
+        "renderer": "Manim Community 0.19.0, Cairo",
+        "review_status": "technical_checks_passed",
+        "notes": "原稿の出典・数値照合、全音声映像デコード、字幕境界、代表フレームを確認。実聴・ブラウザー・iPhone再生は未確認。字幕焼き込み済みでVTTの初期表示は無効。"
       },
       "interaction": {
         "component_id": "claim-evidence",

@@ -1,0 +1,10 @@
+public/
+index.html
+node_modules/
+media-source/*.wav
+media-source/*.log
+media-source/__pycache__/
+media-source/chapters/render/
+media-source/chapters/**/*.wav
+media-source/chapters/**/*.log
+media-source/chapters/**/__pycache__/

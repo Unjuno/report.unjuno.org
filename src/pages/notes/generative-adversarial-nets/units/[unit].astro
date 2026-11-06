@@ -1,0 +1,6 @@
+---
+export function getStaticPaths() {
+  return ["roles", "objective", "optimal", "equilibrium", "training", "saturation", "evidence"].map((unit) => ({ params: { unit } }));
+}
+return Astro.redirect("/notes/generative-adversarial-nets/learn/#chapter-" + Astro.params.unit, 301);
+---

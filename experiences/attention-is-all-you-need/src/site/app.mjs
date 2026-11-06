@@ -1,11 +1,13 @@
 import {mountQK} from '../interactives/qk-matching.mjs';
 import {mountConceptLabs} from './labs.mjs';
+import {mountAttentionFlow} from './attention-flow.mjs';
 export function initSite(document=globalThis.document) {
   const cleanups=[];
   for(const root of document.querySelectorAll('[data-qk-interactive]')){
     const controller=mountQK(root,{theme:'editorial'});cleanups.push(()=>controller.destroy());
   }
   cleanups.push(mountConceptLabs(document));
+  cleanups.push(mountAttentionFlow(document));
   for(const video of document.querySelectorAll('video')){
     const pauseOthers=()=>{document.querySelectorAll('video').forEach(other=>{if(other!==video)other.pause();});};
     const onError=()=>{const message=video.closest('.unit-media')?.querySelector('[data-media-error]');if(message)message.hidden=false;};

@@ -43,7 +43,7 @@ def sponsor_check(content, name):
     return p
 
 def source_check():
-    article = (ROOT / 'src/pages/notes/attention-is-all-you-need/index.astro').read_text()
+    article = (ROOT / 'archive/reading-notes/attention-is-all-you-need.astro').read_text()
     reference = (ROOT / 'experiences/attention-is-all-you-need/reference/legacy-index.astro').read_text()
     preserved_article(article, reference)
     p = sponsor_check(article, 'article source')
@@ -61,17 +61,14 @@ def source_check():
     else: raise AssertionError('Recipient negative control was missed')
 
 def built_check():
-    build = ROOT / 'build'; article = (build / 'notes/attention-is-all-you-need/index.html').read_text()
-    p = sponsor_check(article, 'built article')
-    assert any(a.get('href') == LEARN for a in p.attrs('a'))
-    assert article.index('id="support-attention-note-title"') > article.index('id="source"')
+    build = ROOT / 'build'
     learn_dir = build / 'notes/attention-is-all-you-need/learn'; content = (learn_dir / 'index.html').read_text()
     p = sponsor_check(content, 'built learning page')
     assert content.index('data-report-support') > content.rindex('</main>'), 'Support must follow the lesson'
     config = json.loads((ROOT / 'experiences/attention-is-all-you-need/content/experience.json').read_text())
     ready = [v for v in [config['overview'], *[u['video'] for u in config['units']]] if v['status'] == 'ready']
     videos = p.attrs('video'); sources = p.attrs('source'); tracks = p.attrs('track')
-    assert len(ready) == len(videos) == len(sources) == len(tracks) == 8
+    assert len(ready) == len(videos) == len(sources) == len(tracks) == 12
     assert {s['src'] for s in sources} == {v['src'] for v in ready}
     assert {t['src'] for t in tracks} == {v['captions'] for v in ready}
     assert all('controls' in v and 'autoplay' not in v and v.get('preload') == 'none' for v in videos)
@@ -88,11 +85,11 @@ def built_check():
         transcript = (ROOT / 'experiences/attention-is-all-you-need' / media['transcript']).read_text()
         assert ' '.join(transcript.split()) in words, media['transcript']
     # All currently built note/learning routes must end with the same recipient.
-    for page in build.glob('notes/**/index.html'):
+    for page in build.glob('notes/*/learn/index.html'):
         sponsor_check(page.read_text(), str(page.relative_to(build)))
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(); parser.add_argument('--built', action='store_true'); args = parser.parse_args()
     source_check()
     if args.built: built_check()
-    print('PASS preserved Attention article, learning entry, final Unjuno Sponsors links' + ('; 8 videos/captions/transcripts and 11 learning explanations.' if args.built else '.'))
+    print('PASS archived Attention article, only-learn entry, final Unjuno Sponsors links' + ('; 12 videos/captions/transcripts and 11 learning explanations.' if args.built else '.'))

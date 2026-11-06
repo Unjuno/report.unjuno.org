@@ -31,6 +31,50 @@
       "preserve": true,
       "doi": "10.48550/arXiv.1706.03762",
       "primary_paper_url": "https://arxiv.org/abs/1706.03762"
+    },
+    {
+      "slug": "generative-adversarial-nets",
+      "title": "Generative Adversarial Nets",
+      "authors": "Ian Goodfellow et al.",
+      "authors_full": [
+        "Ian Goodfellow",
+        "Jean Pouget-Abadie",
+        "Mehdi Mirza",
+        "Bing Xu",
+        "David Warde-Farley",
+        "Sherjil Ozair",
+        "Aaron Courville",
+        "Yoshua Bengio"
+      ],
+      "summary_ja": "生成器と識別器が競いながら学ぶGANの原理。動画と小さな確率分布の操作で、目的関数、交互学習、理論の条件と限界を確かめます。",
+      "claim": "生成器と識別器が競いながら学ぶGANの原理。動画と小さな確率分布の操作で、目的関数、交互学習、理論の条件と限界を確かめます。",
+      "url": "/notes/generative-adversarial-nets/learn/",
+      "year": "",
+      "category": "",
+      "tags": [],
+      "visual": "network",
+      "preserve": false,
+      "primary_paper_url": "https://arxiv.org/abs/1406.2661"
+    },
+    {
+      "slug": "deep-residual-learning",
+      "title": "Deep Residual Learning for Image Recognition",
+      "authors": "Kaiming He et al.",
+      "authors_full": [
+        "Kaiming He",
+        "Xiangyu Zhang",
+        "Shaoqing Ren",
+        "Jian Sun"
+      ],
+      "summary_ja": "入力からの差分を学ぶResNet。動画と操作で残差接続、形の調整、深さ、ブロック構成を学び、原論文の実験結果と限界を読み解きます。",
+      "claim": "入力からの差分を学ぶResNet。動画と操作で残差接続、形の調整、深さ、ブロック構成を学び、原論文の実験結果と限界を読み解きます。",
+      "url": "/notes/deep-residual-learning/learn/",
+      "year": "",
+      "category": "",
+      "tags": [],
+      "visual": "network",
+      "preserve": false,
+      "primary_paper_url": "https://arxiv.org/abs/1512.03385"
     }
   ]
 }

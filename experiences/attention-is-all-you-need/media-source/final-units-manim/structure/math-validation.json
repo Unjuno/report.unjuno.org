@@ -1,0 +1,109 @@
+{
+  "status": "passed",
+  "sequence": {
+    "paths": [
+      {
+        "n": 6,
+        "adjacent_connections": 5,
+        "direct_connections": 1
+      },
+      {
+        "n": 12,
+        "adjacent_connections": 11,
+        "direct_connections": 1
+      }
+    ],
+    "asymptotic_maximum_path_length": {
+      "recurrent": "O(n)",
+      "self_attention": "O(1)"
+    },
+    "sequential_operations_per_layer": {
+      "recurrent": "O(n)",
+      "self_attention": "O(1)"
+    },
+    "caveat": "Schematic connections, not timing; generation remains autoregressive."
+  },
+  "encoder-decoder": {
+    "shifted_input": [
+      "BOS",
+      "A",
+      "B",
+      "C"
+    ],
+    "prediction_targets": [
+      "A",
+      "B",
+      "C",
+      "EOS"
+    ],
+    "causal_allowed_mask": [
+      [
+        true,
+        false,
+        false,
+        false
+      ],
+      [
+        true,
+        true,
+        false,
+        false
+      ],
+      [
+        true,
+        true,
+        true,
+        false
+      ],
+      [
+        true,
+        true,
+        true,
+        true
+      ]
+    ],
+    "generation": [
+      {
+        "step": 0,
+        "decoder_input": [
+          "BOS"
+        ],
+        "next_target": "A"
+      },
+      {
+        "step": 1,
+        "decoder_input": [
+          "BOS",
+          "A"
+        ],
+        "next_target": "B"
+      },
+      {
+        "step": 2,
+        "decoder_input": [
+          "BOS",
+          "A",
+          "B"
+        ],
+        "next_target": "C"
+      },
+      {
+        "step": 3,
+        "decoder_input": [
+          "BOS",
+          "A",
+          "B",
+          "C"
+        ],
+        "next_target": "EOS"
+      }
+    ],
+    "cross_attention": {
+      "Q": "previous decoder layer",
+      "K": "encoder output",
+      "V": "encoder output"
+    }
+  },
+  "source": "Vaswani et al. 2017, sections 1, 3.1, 3.2.3, 4 and Table 1",
+  "reference_content": "candidate/experiences/attention-is-all-you-need/src/site/lessons.mjs and labs.mjs"
+}

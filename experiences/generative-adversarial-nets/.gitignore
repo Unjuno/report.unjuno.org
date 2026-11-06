@@ -1,0 +1,14 @@
+public/index.html
+public/*.mjs
+public/*.css
+node_modules/
+media-source/*.wav
+media-source/*.log
+media-source/__pycache__/
+public/units/
+public/routes.json
+media-source/render/
+media-source/chapters/render/
+media-source/chapters/**/*.wav
+media-source/chapters/**/*.log
+media-source/chapters/**/__pycache__/

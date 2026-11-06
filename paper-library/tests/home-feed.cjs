@@ -6,5 +6,5 @@ vm.runInNewContext(fs.readFileSync('dist/assets/feed.js','utf8'),{document,windo
 search.value='Transformer';search.events.input({});assert.equal(items.filter(x=>!x.hidden).length,1);assert(!items[0].hidden);
 search.events.compositionstart();search.value='存在しない';search.events.input({isComposing:true});assert(!items[0].hidden);search.events.compositionend();assert(empty.hidden===false);assert(links.every(x=>x.hidden));
 clear.events.click();assert(items.every(x=>!x.hidden));assert(search.focused);assert(empty.hidden);search.value='<script>';search.events.input({});assert(!empty.hidden);clear.events.click();motion.events.click();assert.equal(motion.attrs['aria-pressed'],'true');motion.events.click();assert.equal(motion.attrs['aria-pressed'],'false');
-for(const p of data){assert(fs.existsSync('dist/notes/'+p.slug+'/index.html'));assert.equal(p.url,'/notes/'+p.slug+'/learn/');assert(!p.title.includes('サンプル'))}
+for(const p of data){assert(fs.existsSync('../src/pages/notes/'+p.slug+'/learn/index.astro'));assert.equal(p.url,'/notes/'+p.slug+'/learn/');assert(!p.title.includes('サンプル'))}
 console.log('PASS static feed real records, search/empty/reset/IME, malicious literal query, pause, all direct pages. Mock not browser.');

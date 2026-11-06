@@ -29,7 +29,7 @@ for name, expected in preserved.items():
 sys.path.insert(0, str(LIBRARY))
 from material_policy import load_materials
 papers, _ = load_materials(LIBRARY)
-assert [p['slug'] for p in papers] == ['attention-is-all-you-need']
+assert [p['slug'] for p in papers] == ['attention-is-all-you-need', 'generative-adversarial-nets', 'deep-residual-learning']
 assert papers[0]['preserve'] is True
 assert json.loads((DIST / 'data/papers.json').read_text())['papers'] == papers
 assert sorted(str(p.relative_to(DIST)) for p in (DIST / 'notes').rglob('*.html')) == ['notes/attention-is-all-you-need/index.html']
@@ -75,13 +75,20 @@ class Page(HTMLParser):
 if args.built:
     build = ROOT / 'build'
     pages = sorted(str(p.relative_to(build)) for p in build.rglob('*.html'))
-    assert pages == ['index.html', 'notes/attention-is-all-you-need/index.html', 'notes/attention-is-all-you-need/learn/index.html', 'notes/gan/index.html', 'notes/resnet/index.html', 'rights/index.html'], pages
-    subprocess.run(['python3', str(ROOT / 'scripts/check-reading-notes.py'), str(build)], check=True)
+    expected_pages = ['index.html', 'notes/attention-is-all-you-need/index.html', 'notes/attention-is-all-you-need/learn/index.html', 'notes/gan/index.html', 'notes/resnet/index.html', 'rights/index.html']
+    for slug, units in {'deep-residual-learning': ['residual','shape','depth','blocks','evidence'], 'generative-adversarial-nets': ['roles','objective','optimal','equilibrium','training','saturation','evidence']}.items():
+        expected_pages.append(f'notes/{slug}/index.html')
+        expected_pages.append(f'notes/{slug}/learn/index.html')
+        expected_pages.extend(f'notes/{slug}/units/{unit}/index.html' for unit in units)
+    assert pages == sorted(expected_pages), pages
+    assert len(list(build.rglob('*.mp4'))) == 26, 'Exactly 26 existing videos'
+
+    subprocess.run(['python3', str(ROOT / 'scripts/check-learning-redirects.py')], check=True)
     home = (build / 'index.html').read_text()
     assert home.lower().count('<!doctype html>') == 1
     assert home.count('<html ') == home.count('</html>') == 1
     home_page = Page(); home_page.feed(home)
-    assert home_page.card_count == 1
+    assert home_page.card_count == 3
     assert 'id="notes"' in home and 'id="papers"' in home and 'id="about"' in home
     for name in registry['assets']:
         assert (build / 'assets' / name).read_bytes() == (DIST / 'assets' / name).read_bytes()
@@ -110,5 +117,7 @@ if args.built:
                 destination = Page()
                 destination.feed(target.read_text())
                 assert url.fragment in destination.ids, (name, ref)
-    print('PASS root build: exactly 6 routes; 1 preserved article, 2 new reading notes and 1 learning experience; all links/anchors; 130 images and 50 tracks.')
+    print('PASS root build: exactly 22 routes; 3 learning pages, 17 legacy redirects, HOME and rights; all links/anchors; 130 images and 50 tracks.')
 print('PASS production source preservation, registered authored materials only, no production discovery, and complete media.')
+
+subprocess.run(['python3', str(ROOT / 'scripts/check-extra-papers.py'), *(['--built'] if args.built else [])], check=True)

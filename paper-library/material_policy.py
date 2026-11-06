@@ -73,21 +73,35 @@ def load_materials(library: Path) -> tuple[list, dict]:
             r'\s*---\s*import\s+(\w+)\s+from\s+["\']([^"\']+)["\'];?\s*---\s*'
             r'<Fragment\s+set:html=\{\1\}\s*/>\s*', wrapper
         )
-        expected = library.parent / 'experiences' / slug / 'build-production/index.html'
+        extra = {
+            'deep-residual-learning': ('build.mjs', 'content/units.json', 'https://arxiv.org/abs/1512.03385'),
+            'generative-adversarial-nets': ('src/build.mjs', 'content/units.mjs', 'https://arxiv.org/abs/1406.2661'),
+        }.get(slug)
+        expected = library.parent / 'experiences' / slug / ('public/index.html' if extra else 'build-production/index.html')
         if not imported or not imported[2].endswith('?raw') or (
             source.parent / imported[2][:-4]
         ).resolve() != expected.resolve():
             raise ValueError(f'Unimplemented learning route wrapper: {route}')
         package = expected.parent.parent
-        for required in ('content/experience.json', 'tools/build-site.mjs', 'src/site/lessons.mjs'):
+        required_files = (extra[0], extra[1], 'src/app.mjs', 'src/math.mjs') if extra else ('content/experience.json', 'tools/build-site.mjs', 'src/site/lessons.mjs')
+        for required in required_files:
             path = package / required
             if not path.is_file() or not path.read_text().strip():
                 raise ValueError(f'Missing authored learning source: {slug}/{required}')
-        experience = json.loads((package / 'content/experience.json').read_text())
-        if not isinstance(experience, dict) or not isinstance(experience.get('units'), list) or not experience['units']:
-            raise ValueError(f'Learning material has no authored units: {slug}')
-        if experience.get('slug') != slug:
-            raise ValueError(f'Authored learning source identity does not match URL: {slug}')
+        if extra:
+            if slug == 'deep-residual-learning':
+                units = json.loads((package / extra[1]).read_text())
+                if not isinstance(units, list) or len(units) != 5:
+                    raise ValueError(f'Learning material has no authored units: {slug}')
+            elif not all(f"lab:'{unit}'" in (package / extra[1]).read_text() for unit in ['roles', 'objective', 'optimal', 'equilibrium', 'training', 'saturation', 'evidence']):
+                raise ValueError(f'Learning material has no authored units: {slug}')
+            experience = {'primary_paper_url': extra[2]}
+        else:
+            experience = json.loads((package / 'content/experience.json').read_text())
+            if not isinstance(experience, dict) or not isinstance(experience.get('units'), list) or not experience['units']:
+                raise ValueError(f'Learning material has no authored units: {slug}')
+            if experience.get('slug') != slug:
+                raise ValueError(f'Authored learning source identity does not match URL: {slug}')
         paper = {
             'slug': slug, 'title': record['title'].strip(),
             'authors': authors[0] + (' et al.' if len(authors) > 1 else ''),

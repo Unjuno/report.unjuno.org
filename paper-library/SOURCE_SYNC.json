@@ -4,15 +4,28 @@
     "version": 106,
     "commit": "7d406b0025056a58c5cccbd7c6b11fdf971c8434"
   },
-  "production_base": "24c37f1a6f5d17fe69aa5d991493540f7e377e89",
+  "production_base": "e9d09a9cbbc24c442765ccc41a94f942b8dbc8c6",
   "runtime": {
     "registered_images": 130,
     "generated_selection_images": 100,
     "scenes": 146,
     "registered_audio_tracks": 50,
-    "local_authored_articles": [
-      "attention-is-all-you-need"
-    ]
+    "local_authored_articles": [],
+    "home_materials": [
+      "attention-is-all-you-need",
+      "generative-adversarial-nets",
+      "deep-residual-learning"
+    ],
+    "reading_notes": [],
+    "learning_courses": [
+      "attention-is-all-you-need",
+      "deep-residual-learning",
+      "generative-adversarial-nets"
+    ],
+    "authored_html_routes": 22,
+    "learning_videos": 26,
+    "learning_pages": 3,
+    "legacy_redirects": 17
   },
   "files": {
     ".gitignore": {
@@ -32,8 +45,8 @@
       "sha256": "6b4b8a123f7f0ee9c727dfc8cca88e93bedb391b81b3dfbcde26482e5da1ccfc"
     },
     "SYNCHRONIZATION.md": {
-      "bytes": 4299,
-      "sha256": "65adca993308ffe00ee4f0843211a6d6f65a4409e932bb2b17cfdbe5bbc0dd26"
+      "bytes": 2048,
+      "sha256": "107d2664dbb252c6605afa614742d6afe267629ddb416e0a686dbf5fcc7469be"
     },
     "baseline-scroll-audio.js": {
       "bytes": 7063,
@@ -44,8 +57,8 @@
       "sha256": "8a7677e1848f49876f10d352b5d65c8a91874241d675305badf579ac27ba5838"
     },
     "check_static.py": {
-      "bytes": 2279,
-      "sha256": "bd56e2e0ebb2fd425380923a57c6b4f42f2ef2944511d381855a24c9ea0cdce3"
+      "bytes": 2245,
+      "sha256": "54eacf73c694479f59ddfd2fef93c2c3dd7e09b093056be2d4bd1ba2dfad6bfa"
     },
     "content/all-generated-images.json": {
       "bytes": 39469,
@@ -64,8 +77,8 @@
       "sha256": "83c5231f6b7fe182d425c027f340ba41877281955fac7db6c46e15215f38b25a"
     },
     "content/integrated-materials.json": {
-      "bytes": 521,
-      "sha256": "6b4f26f936b82a65de6a6c95edc28dcf7e611c634a71bc3ec164f939bb61c50d"
+      "bytes": 1468,
+      "sha256": "26ddff230119178763bc702cf5a4974b179a870c908dc963cd67772dddbe1c3e"
     },
     "content/quality-replacements-20261105.json": {
       "bytes": 5806,
@@ -980,8 +993,8 @@
       "sha256": "2c0469115928e47fc5c77575bfd2eafcccd60d982f71d48a98e94df5e108df99"
     },
     "dist/data/papers.json": {
-      "bytes": 1268,
-      "sha256": "a41307db61b95a2ad3b3cbf88f1e7f4219ff35b01bc03e3dcebf554e687b0270"
+      "bytes": 3194,
+      "sha256": "ebd88ce342d704d1f05e468ba8735bc29d1befd6d438f60934703b46e19a8f9a"
     },
     "dist/favicon-16x16.png": {
       "bytes": 736,
@@ -1000,8 +1013,8 @@
       "sha256": "cb3497b75ea8c07a708cd12fb723e9e2745f781e469188d69992a07cdeeb9921"
     },
     "dist/index.html": {
-      "bytes": 9395,
-      "sha256": "12f678bd2cc8206a7a976e964b6f346b4c4645324e7ee96f003c4f26bb6a3697"
+      "bytes": 25431,
+      "sha256": "3e662173e56828de37e2b366ace372818761836fa1c644c1a1b4c6221a552d83"
     },
     "dist/notes/attention-is-all-you-need/index.html": {
       "bytes": 16865,
@@ -1012,8 +1025,8 @@
       "sha256": "50f99bbb40ab89ac4bc3f5ad1b763bcaf8d6ac29d1e3c6acd4605d161fba3bff"
     },
     "material_policy.py": {
-      "bytes": 5512,
-      "sha256": "fb612e05235a86a63a69af45e065aa4f846515caad77ac6f6a3d359c91ddc2f4"
+      "bytes": 6567,
+      "sha256": "11fb385666ceb5923875209fad09317b3beea29a2a5f22133a16092a0caa47ed"
     },
     "package-lock.json": {
       "bytes": 1410,
@@ -1208,8 +1221,8 @@
       "sha256": "aaa38836900ad1ce7294ab8939be1039677592cd669db6687c218a31f0d0759f"
     },
     "tests/feed-build.py": {
-      "bytes": 10643,
-      "sha256": "a42250307aea39b8f4f738c99d724727b26f599b621881bd9906ba4bc2dfa232"
+      "bytes": 10803,
+      "sha256": "6ec329b015ba426e0be808a9ff87d69e9a299265a4b52e61674ee499ecb4d9d9"
     },
     "tests/feed-decoration-work.cjs": {
       "bytes": 2953,
@@ -1264,8 +1277,8 @@
       "sha256": "bc5605e4c51548d443621da90a5acdec73a35924e4311547299c0aea9bc8048e"
     },
     "tests/home-feed.cjs": {
-      "bytes": 2030,
-      "sha256": "9be19c01afea9e5d627e7660c675e9b2e28bec3441413628942a9299f44a2e90"
+      "bytes": 2045,
+      "sha256": "be5772894c73acb105620adb049efb41c248c26e2ab5b47f933d4fe47290daf4"
     },
     "tests/home-field.cjs": {
       "bytes": 5524,
@@ -1510,8 +1523,8 @@
       "sha256": "ed208961802d2f3bad3f5fcbee1deb5b500ae8857280187d6d254c842a385060"
     },
     "README.md": {
-      "bytes": 2565,
-      "sha256": "5290728afefa3e382f161f6f9b189276e96211301a8015fa999fe7f0713e065d"
+      "bytes": 3923,
+      "sha256": "c3de4ffdefb5c840bb39378eb4f92c32126270f6ff749a4a3ab87c3114234295"
     },
     "RIGHTS.md": {
       "bytes": 2575,
@@ -1521,17 +1534,1473 @@
       "bytes": 8736,
       "sha256": "be4a444c11bbfaf0d03614e50b3aa965b2aa06dbef15319e4cadea93df83740d"
     },
+    "archive/reading-notes/attention-is-all-you-need.astro": {
+      "bytes": 17234,
+      "sha256": "c4733aa854e62b40a644582ca664ba5805072f5dda0b7cd9b944431e0bbc23a5"
+    },
+    "archive/reading-notes/gan.astro": {
+      "bytes": 9933,
+      "sha256": "c8dde72619917832f37d47a605d66f29e9da164afb4a49ec281ca7c58d175d54"
+    },
+    "archive/reading-notes/resnet.astro": {
+      "bytes": 10580,
+      "sha256": "4cbdb5d7b944e67a4081ef5eb4bd7301384d745f257f86efd794484287d160a0"
+    },
     "astro.config.mjs": {
       "bytes": 222,
       "sha256": "717d57d82e376731aa0bab90affc99c9f7c1c4abfade3aa99d5fbe3e2189c0f3"
+    },
+    "experiences/attention-is-all-you-need/.gitignore": {
+      "bytes": 349,
+      "sha256": "cacaf74940441f05ed2a8f9034b632c61e3d63771077032ced76214b5163c611"
+    },
+    "experiences/attention-is-all-you-need/LESSON-REVIEW.md": {
+      "bytes": 5100,
+      "sha256": "6d689e77e71033032d3209122d47a6de79fad79ad7119603f4d460ae9d2e2f65"
+    },
+    "experiences/attention-is-all-you-need/README.md": {
+      "bytes": 4191,
+      "sha256": "accf09dfe6fdebbeb3f28c5c0d988fc2edbb5bfe848682244d77889346a263cf"
+    },
+    "experiences/attention-is-all-you-need/content/experience.json": {
+      "bytes": 19167,
+      "sha256": "e5e3b59791ba6bc157e62a089e83cad029fc665e2808faab67b7aadc5bdda010"
+    },
+    "experiences/attention-is-all-you-need/content/final-unit-videos.json": {
+      "bytes": 3485,
+      "sha256": "62586479a592d448fbe7d7ab36169a9fbf6351b5feba42c6bc41f9f59e2e7410"
+    },
+    "experiences/attention-is-all-you-need/content/site-chrome.json": {
+      "bytes": 1166,
+      "sha256": "0497850e136ebdff0b2b8864b0647746d518c70cd07f24dd1017207c6f559652"
+    },
+    "experiences/attention-is-all-you-need/content/video-scripts/README.md": {
+      "bytes": 576,
+      "sha256": "b6ab3a8d9d9057a64ff228209d96db2aa2629dc9c0c04acc626979009fc69704"
+    },
+    "experiences/attention-is-all-you-need/content/video-scripts/cost-manim.ja.txt": {
+      "bytes": 689,
+      "sha256": "05b1a4f7bbfa41ce36dd48c719ccd0a0e01bc1cf6e9e1b9c696cf2a9c004a227"
+    },
+    "experiences/attention-is-all-you-need/content/video-scripts/encoder-decoder-manim.ja.txt": {
+      "bytes": 976,
+      "sha256": "c25c5ec2f9e8f1f1395f5496753dc915cce40a4a50156d2d1ecdaceea344de12"
+    },
+    "experiences/attention-is-all-you-need/content/video-scripts/mask-manim.ja.txt": {
+      "bytes": 779,
+      "sha256": "bdeba895e6cb003463e9effb937d378c69db411a6d7c15b57df1e1c3f049e850"
+    },
+    "experiences/attention-is-all-you-need/content/video-scripts/multihead-manim.ja.txt": {
+      "bytes": 818,
+      "sha256": "4b0d0e1bb908ad8b54a1a8277ed78c4770bfe5eb91dcb0745a6ce22ed106b499"
+    },
+    "experiences/attention-is-all-you-need/content/video-scripts/overview-manim.ja.txt": {
+      "bytes": 1511,
+      "sha256": "b9b49a48a981f22a9fac28cfc17d2353d3b5946d023d7b5388ceb3fb36d3f3fc"
+    },
+    "experiences/attention-is-all-you-need/content/video-scripts/overview.ja.md": {
+      "bytes": 1810,
+      "sha256": "b29f81c8fb7738a2d60732b778bba78fa7ff10e15105ec31b572890eae3d1eba"
+    },
+    "experiences/attention-is-all-you-need/content/video-scripts/position-manim.ja.txt": {
+      "bytes": 702,
+      "sha256": "6be99b562714a0a9b515db3fc7d8f2f9da82d5f41af802ba00dfd842bd7c8aa3"
+    },
+    "experiences/attention-is-all-you-need/content/video-scripts/qk-manim.ja.txt": {
+      "bytes": 723,
+      "sha256": "75a0dfa9e2484389b0445d9a2bef5a61fc2f665160739d978e5af0d140ca25cd"
+    },
+    "experiences/attention-is-all-you-need/content/video-scripts/qk-matching.editorial.ja.md": {
+      "bytes": 1267,
+      "sha256": "2ce13216a4452c63b83ac669f8e44597493162c3a4cf2b7b44991cdc592f4609"
+    },
+    "experiences/attention-is-all-you-need/content/video-scripts/qk-matching.ja.md": {
+      "bytes": 1614,
+      "sha256": "c8e88088d8341efbaec3050cc2e0f17ce86431d75cbd037f30f829875e97c2df"
+    },
+    "experiences/attention-is-all-you-need/content/video-scripts/reported-evidence-manim.ja.txt": {
+      "bytes": 1210,
+      "sha256": "0f4e77fca6e4d1599c2fe4d55c0ab7296dce8bc20a08b5ab2d8f34251b4504fb"
+    },
+    "experiences/attention-is-all-you-need/content/video-scripts/scope-manim.ja.txt": {
+      "bytes": 1219,
+      "sha256": "5e670e6d92ea16deecb2d3edb6515583a939fbd2de250a4e006eccf39e4fcc6e"
+    },
+    "experiences/attention-is-all-you-need/content/video-scripts/sequence-manim.ja.txt": {
+      "bytes": 853,
+      "sha256": "989e2989a9bbcc6a3bf7db5f1b951ea08835e251677c10ea9409ecff8732bf78"
+    },
+    "experiences/attention-is-all-you-need/content/video-scripts/softmax-manim.ja.txt": {
+      "bytes": 839,
+      "sha256": "2f1e1e4c8b949c3842fc692f26521d14041c126c8ae77dc3d65789c0a36b674b"
+    },
+    "experiences/attention-is-all-you-need/content/video-scripts/value-manim.ja.txt": {
+      "bytes": 687,
+      "sha256": "184a3e7a3ae6df2502a04a6a87b02488634f6ddc8e0b0c988c880aacc8431f68"
+    },
+    "experiences/attention-is-all-you-need/media-source/cost-manim/README.md": {
+      "bytes": 3463,
+      "sha256": "e4399cfbb3463c40aac7138c84e96762b9ccbd3106387021131b2f7ec3b8a998"
+    },
+    "experiences/attention-is-all-you-need/media-source/cost-manim/audio_sync_validation.json": {
+      "bytes": 533,
+      "sha256": "af6a4e374a072e8226b9cdf43b09e4336019b86f09bb73024002ac3336d87686"
+    },
+    "experiences/attention-is-all-you-need/media-source/cost-manim/cost_video.py": {
+      "bytes": 8196,
+      "sha256": "7f5989b1e377cea7c36cb99ca3e452f0c1b867afeb4c05c7b8aa257897eebca2"
+    },
+    "experiences/attention-is-all-you-need/media-source/cost-manim/math_validation.json": {
+      "bytes": 4538,
+      "sha256": "a74b62915cb23b20f48f5f9151c6c9a42948932ae433374e11e37fbfa7b64bec"
+    },
+    "experiences/attention-is-all-you-need/media-source/cost-manim/narration_plan.json": {
+      "bytes": 2220,
+      "sha256": "d8f206dba686555aea940620ec31875043f961b22b9112d457a474fc2b168a0b"
+    },
+    "experiences/attention-is-all-you-need/media-source/cost-manim/production_notes.json": {
+      "bytes": 1801,
+      "sha256": "8bccad2f075004e0d90c1be200d517253881f722bab23e9409f12b4124ad39b9"
+    },
+    "experiences/attention-is-all-you-need/media-source/cost-manim/sequence_cost_ja.srt": {
+      "bytes": 950,
+      "sha256": "426c095aebc010bf348d662cf7e184916669c6c1474cba38cc6fadf232280338"
+    },
+    "experiences/attention-is-all-you-need/media-source/cost-manim/validate_delivery.py": {
+      "bytes": 2932,
+      "sha256": "13db00004d189e945551769d5259855fdebea73e0dfd766db456d4bdf688a624"
+    },
+    "experiences/attention-is-all-you-need/media-source/final-units-manim/README.md": {
+      "bytes": 1601,
+      "sha256": "c463c54d2f04941595668f261425d7d3a3dfdf1602a75b9e12d0bffe31af626d"
+    },
+    "experiences/attention-is-all-you-need/media-source/final-units-manim/SOURCE-CHECK.md": {
+      "bytes": 1389,
+      "sha256": "775eab5c99419d595b77d5498074d64b4d58288a7457cf503c15eaa291a67c03"
+    },
+    "experiences/attention-is-all-you-need/media-source/final-units-manim/evidence/README.md": {
+      "bytes": 3686,
+      "sha256": "7bc8537a85aa0055307b48a9c2ef4870522f03ab9ed111c2fdee307b307db0b6"
+    },
+    "experiences/attention-is-all-you-need/media-source/final-units-manim/evidence/make_plan.py": {
+      "bytes": 4791,
+      "sha256": "7aaeef0c0f2ea4187e6c311d7ab1deaf38b316863a85596e98c6d40c06b9be05"
+    },
+    "experiences/attention-is-all-you-need/media-source/final-units-manim/evidence/package_media.py": {
+      "bytes": 3830,
+      "sha256": "18ef8b5f10ce07d161d46fd7ef85e0f4cd5a41beca4e5dee4e4186b8960eb034"
+    },
+    "experiences/attention-is-all-you-need/media-source/final-units-manim/evidence/plan.json": {
+      "bytes": 6227,
+      "sha256": "0edacf5651928ff5878b1daccd307499ac51fba99bf74408b34fe1f97788b5f4"
+    },
+    "experiences/attention-is-all-you-need/media-source/final-units-manim/evidence/reported-evidence/narration_plan.json": {
+      "bytes": 3834,
+      "sha256": "acee56167d9686bf497634cca924e50013f0d56c1badee96c49549c8754e073e"
+    },
+    "experiences/attention-is-all-you-need/media-source/final-units-manim/evidence/reported-evidence/validation.json": {
+      "bytes": 5345,
+      "sha256": "fc957d2b16ee0bb22718579ebe1c1fd2d6f94d32f840474c6016991cb142bd55"
+    },
+    "experiences/attention-is-all-you-need/media-source/final-units-manim/evidence/scenes.py": {
+      "bytes": 2906,
+      "sha256": "67d187f5efb981569e9119243b404d20c8c53cac566be6e1dcbc2c5ddb9ff841"
+    },
+    "experiences/attention-is-all-you-need/media-source/final-units-manim/evidence/scope/narration_plan.json": {
+      "bytes": 4104,
+      "sha256": "fb535c09e2504a338aeccdac8d15816d2e173e491f155df2021a16db1f35a8d9"
+    },
+    "experiences/attention-is-all-you-need/media-source/final-units-manim/evidence/scope/validation.json": {
+      "bytes": 5266,
+      "sha256": "f72dce374823d809c6ce2b0d840c0095dc9968a870e5f0b80caa27d5f422ab48"
+    },
+    "experiences/attention-is-all-you-need/media-source/final-units-manim/evidence/synthesize.py": {
+      "bytes": 2453,
+      "sha256": "267a27ef5c3f5c27e8a606db47fff38cd49dd549169977428f11014ddc9d7e61"
+    },
+    "experiences/attention-is-all-you-need/media-source/final-units-manim/structure/README.md": {
+      "bytes": 3108,
+      "sha256": "a139a165bca9b598f91c34750d0e232d4d60750b152ed60eb29d6e999bf5c16b"
+    },
+    "experiences/attention-is-all-you-need/media-source/final-units-manim/structure/audio/encoder-decoder/cues.json": {
+      "bytes": 1758,
+      "sha256": "a32613d9f24a8774e778cd017f2bced14fc921c22be2a2da91806d8cb6a0e68e"
+    },
+    "experiences/attention-is-all-you-need/media-source/final-units-manim/structure/audio/encoder-decoder/segments.json": {
+      "bytes": 1798,
+      "sha256": "9f883f00de8a90f358dda224f093222103be32c5a23a3fa099a9a348600ef95c"
+    },
+    "experiences/attention-is-all-you-need/media-source/final-units-manim/structure/audio/sequence/cues.json": {
+      "bytes": 1748,
+      "sha256": "6a233dc501d42de42c14bc70f063ff7b8e3a003c0434724e176e17e1ca40049a"
+    },
+    "experiences/attention-is-all-you-need/media-source/final-units-manim/structure/audio/sequence/segments.json": {
+      "bytes": 1712,
+      "sha256": "ad14a94eeb1b89a9e41421419548f04cefab96d5b626fa37803d9b1b6106cce4"
+    },
+    "experiences/attention-is-all-you-need/media-source/final-units-manim/structure/checks/encoder-decoder/probe.json": {
+      "bytes": 3612,
+      "sha256": "3f311afe3a7e55f354b043590d621d81bfb00c031556a11c0b1b149060fd12f8"
+    },
+    "experiences/attention-is-all-you-need/media-source/final-units-manim/structure/checks/encoder-decoder/validation.json": {
+      "bytes": 1393,
+      "sha256": "e7001ecc1c82844c7a41fd66652a1ba8b64e3bbc341a263037d1582911218e7d"
+    },
+    "experiences/attention-is-all-you-need/media-source/final-units-manim/structure/checks/sequence/probe.json": {
+      "bytes": 3605,
+      "sha256": "85bda26ab22c8ad3f64eadc501d1392724d3bb55090a1f2826884fc6980af3f8"
+    },
+    "experiences/attention-is-all-you-need/media-source/final-units-manim/structure/checks/sequence/validation.json": {
+      "bytes": 1397,
+      "sha256": "f8129aabfcfae489adf99f31d06b5b3a7df4928ff22756384b336dd64fd2fff5"
+    },
+    "experiences/attention-is-all-you-need/media-source/final-units-manim/structure/finalize.py": {
+      "bytes": 3913,
+      "sha256": "3d970834ae2775bed6b12090eeef99a9cbd1c454d69f4fc204e0a5e9570a73a5"
+    },
+    "experiences/attention-is-all-you-need/media-source/final-units-manim/structure/make_plan.py": {
+      "bytes": 2798,
+      "sha256": "8a227b285bf6d14c2dbc399885d241802c9ac565ade0750d7c390491b34dc335"
+    },
+    "experiences/attention-is-all-you-need/media-source/final-units-manim/structure/math-validation.json": {
+      "bytes": 1970,
+      "sha256": "2c4ba570002ca4e5c6475171be16469a6378ed7f2bb22ce456555e619d058b7f"
+    },
+    "experiences/attention-is-all-you-need/media-source/final-units-manim/structure/plan.json": {
+      "bytes": 3606,
+      "sha256": "e7a8023eebb92ad1d456b82c118409c455ce79ae312760e13b891e7a4c8ae5bb"
+    },
+    "experiences/attention-is-all-you-need/media-source/final-units-manim/structure/scenes.py": {
+      "bytes": 6373,
+      "sha256": "896986afa04fd7909600ffccc2a7682551f3e0632290bc1d3c309e4718a8bf02"
+    },
+    "experiences/attention-is-all-you-need/media-source/final-units-manim/structure/synthesize.py": {
+      "bytes": 3352,
+      "sha256": "810f7386eadb0bd4671db7c0dd33145f81885fb72272013bcc66741c6fe0c56b"
+    },
+    "experiences/attention-is-all-you-need/media-source/final-units-manim/structure/validate_math.py": {
+      "bytes": 1478,
+      "sha256": "79847e4d268f5357a222228ce867aa8801df9c8581feb3800a5ba3605532178a"
+    },
+    "experiences/attention-is-all-you-need/media-source/mask-manim/README.md": {
+      "bytes": 2680,
+      "sha256": "dd55d2930d80809498ead7c3d98e58c463c5dc37de527a10bb7491618aa7970d"
+    },
+    "experiences/attention-is-all-you-need/media-source/mask-manim/audio_sync_validation.json": {
+      "bytes": 950,
+      "sha256": "3e0a955862af838dee884c063bb5d9dbe48ead1388d310c3f73e29305abd1979"
+    },
+    "experiences/attention-is-all-you-need/media-source/mask-manim/causal_mask_ja.srt": {
+      "bytes": 1059,
+      "sha256": "9680beeb69b34e4647709396acf2cc873a441e7bda72ffff405946baf6f87e88"
+    },
+    "experiences/attention-is-all-you-need/media-source/mask-manim/mask_video.py": {
+      "bytes": 8313,
+      "sha256": "82b141d3a52328b1f0b5baced867fc585ca49a2d88f28ddb659cce1d11e8537f"
+    },
+    "experiences/attention-is-all-you-need/media-source/mask-manim/math_validation.json": {
+      "bytes": 5305,
+      "sha256": "b08c6ccbfcf85115b1e07fcf4bf1a14a539129317005b4b6addc1745f36b95c3"
+    },
+    "experiences/attention-is-all-you-need/media-source/mask-manim/narration_plan.json": {
+      "bytes": 2420,
+      "sha256": "f3568d20fbd69e917189f5e0a5a5e21039d7bf3e896f9b244e8d2e2e01f3e9e4"
+    },
+    "experiences/attention-is-all-you-need/media-source/mask-manim/production_notes.json": {
+      "bytes": 1594,
+      "sha256": "505f7128c835745c673dfda74d2c136931dd49742b768ab07179467ce4ce181a"
+    },
+    "experiences/attention-is-all-you-need/media-source/multihead-manim/README.md": {
+      "bytes": 2948,
+      "sha256": "9b506e9e2a8271ab0be679e8614a91c1a99ea09e8e2d7b7088e7fefef126751f"
+    },
+    "experiences/attention-is-all-you-need/media-source/multihead-manim/audio_sync_validation.json": {
+      "bytes": 950,
+      "sha256": "abee711b8af39b834c1679ad60f4973e61887f4574f70d3aa2e2e01c0cf32ad7"
+    },
+    "experiences/attention-is-all-you-need/media-source/multihead-manim/math_validation.json": {
+      "bytes": 8091,
+      "sha256": "5bf4c4f9ebc2a15c3474948cbc5302d5cfdd2e01fd23c000d704d2031994c8a2"
+    },
+    "experiences/attention-is-all-you-need/media-source/multihead-manim/multihead_attention_ja.srt": {
+      "bytes": 1038,
+      "sha256": "23e7cda9540e775cc7e48b31f18f5a4d1ac5860c062cf9553831029799bda804"
+    },
+    "experiences/attention-is-all-you-need/media-source/multihead-manim/multihead_video.py": {
+      "bytes": 10730,
+      "sha256": "e93e480f27d89f4768d2f700a45a2fa2f9e674e063cc04098b182966d488c41d"
+    },
+    "experiences/attention-is-all-you-need/media-source/multihead-manim/narration_plan.json": {
+      "bytes": 2438,
+      "sha256": "95885db1d9d9a8be07037f06759838d2fd94fb1539b99cded849ee4ee5697dc8"
+    },
+    "experiences/attention-is-all-you-need/media-source/multihead-manim/production_notes.json": {
+      "bytes": 1613,
+      "sha256": "cddb7787e6d4b861457d02bd701b4f5aad35c44a169b0aa1c51b92b13166d668"
+    },
+    "experiences/attention-is-all-you-need/media-source/overview-manim/attention_equation.svg": {
+      "bytes": 12638,
+      "sha256": "eaba4e477c9b54668a15521c37258afb255ec933135400d4e2d98bb88532fa25"
+    },
+    "experiences/attention-is-all-you-need/media-source/overview-manim/attention_overview_ja.srt": {
+      "bytes": 1841,
+      "sha256": "2e8a61147db6eb82b0e733ff392f4c030051605dc9d1dcde4ec642d65b01f60c"
+    },
+    "experiences/attention-is-all-you-need/media-source/overview-manim/audio_sync_validation.json": {
+      "bytes": 2678,
+      "sha256": "ac32b47fe8ac00faa808642e8dedf445fb0cea782d4bf29e395816d1d98e9d58"
+    },
+    "experiences/attention-is-all-you-need/media-source/overview-manim/narration_plan.json": {
+      "bytes": 2768,
+      "sha256": "3afd8a300d0c682ab7c13a65b48ed499763a64c5f25bd5cf1faa4bccae95ee23"
+    },
+    "experiences/attention-is-all-you-need/media-source/overview-manim/overview.py": {
+      "bytes": 16350,
+      "sha256": "6f98dd8ace08d2c4b6046b9c82d74231795772494addf2179c67a81c6b5beb38"
+    },
+    "experiences/attention-is-all-you-need/media-source/overview-manim/production_notes.json": {
+      "bytes": 848,
+      "sha256": "d0ef7e2a35df000324994685505cd2047708e10fa33f6f49bb37445f6ff595bc"
+    },
+    "experiences/attention-is-all-you-need/media-source/overview-manim/requirements.txt": {
+      "bytes": 14,
+      "sha256": "91aa7058f50e820c019837ad204210be5bea34fed2cf8dd7eecf23344183747c"
+    },
+    "experiences/attention-is-all-you-need/media-source/position-manim/README.md": {
+      "bytes": 2519,
+      "sha256": "7b7f8792112b613a116cbc1ccc22b9fefbdcb76c28fd77b9d329ac1b54d8d555"
+    },
+    "experiences/attention-is-all-you-need/media-source/position-manim/audio_sync_validation.json": {
+      "bytes": 860,
+      "sha256": "81798fedc509996f1746821dc843a6a91f394e65e59c0a066ba05c03536f9a79"
+    },
+    "experiences/attention-is-all-you-need/media-source/position-manim/cos_equation.svg": {
+      "bytes": 10218,
+      "sha256": "c5bf4de7b3db4bbe0b6c375a417b558ab27c37f3a607fe42aa1de5d435f0392a"
+    },
+    "experiences/attention-is-all-you-need/media-source/position-manim/math_validation.json": {
+      "bytes": 7697,
+      "sha256": "39aef8b6bedc744360dc404ba7fed4028e9f213e9ee61758dbf118a85e4e46c3"
+    },
+    "experiences/attention-is-all-you-need/media-source/position-manim/narration_plan.json": {
+      "bytes": 2075,
+      "sha256": "357126c47f6b629e7813d75bbf06e9dc43967128e0d157b6c2d23f62244f9b40"
+    },
+    "experiences/attention-is-all-you-need/media-source/position-manim/position_encoding_ja.srt": {
+      "bytes": 849,
+      "sha256": "5ce5425c96fe4bc0a51800959bea29a3996b466a3b84991ec47ffabe037e1cc9"
+    },
+    "experiences/attention-is-all-you-need/media-source/position-manim/position_video.py": {
+      "bytes": 9617,
+      "sha256": "2fb39f3655d7c4757db14e18a404d0f60bab5b770f7ef36a59f4706fac57791a"
+    },
+    "experiences/attention-is-all-you-need/media-source/position-manim/production_notes.json": {
+      "bytes": 1415,
+      "sha256": "e8d6e0c0e37d5441f84df3e79340ca73be1f5c497150d101473d546805b6d772"
+    },
+    "experiences/attention-is-all-you-need/media-source/position-manim/sin_equation.svg": {
+      "bytes": 9470,
+      "sha256": "6424b50dea310a7b54ef05467f674f949ffc7b8227bd4026e6941012bbe3f393"
+    },
+    "experiences/attention-is-all-you-need/media-source/qk-manim/README.md": {
+      "bytes": 1452,
+      "sha256": "c0b445b3fba31fa8652db91d78c1e98cb1688c1d526f91cbdb5515af680ceda4"
+    },
+    "experiences/attention-is-all-you-need/media-source/qk-manim/dot_equation.svg": {
+      "bytes": 4345,
+      "sha256": "7da70d63c6dd21cfae2ed3e28792600e4079dc2979e8a398b3dea86476a3350f"
+    },
+    "experiences/attention-is-all-you-need/media-source/qk-manim/math_validation.json": {
+      "bytes": 3645,
+      "sha256": "56a20cdb8b9560aa81abfa10d8ea00df1d41196584400e81a4a70ddc752f81d2"
+    },
+    "experiences/attention-is-all-you-need/media-source/qk-manim/narration_plan.json": {
+      "bytes": 2047,
+      "sha256": "930f955ca5130a5fb4b858410b41c9ff7c3d834f779ae466bfce54655187bcc5"
+    },
+    "experiences/attention-is-all-you-need/media-source/qk-manim/production_notes.json": {
+      "bytes": 1317,
+      "sha256": "790af6405c63b6b3ff929f802dd090c0ed11a63128759222369155389f1a319b"
+    },
+    "experiences/attention-is-all-you-need/media-source/qk-manim/qk_matching_ja.srt": {
+      "bytes": 801,
+      "sha256": "df6ea93d1d8151bfa7ac295a33276ffedc21ab2da7fb8250089f4fc110f9b9ea"
+    },
+    "experiences/attention-is-all-you-need/media-source/qk-manim/qk_video.py": {
+      "bytes": 9112,
+      "sha256": "9da0072ec78445ab7f5ad20ed9146e50f1b833bb02ed2b9dc4b86463a1032d2e"
+    },
+    "experiences/attention-is-all-you-need/media-source/softmax-manim/README.md": {
+      "bytes": 2442,
+      "sha256": "7323ab615a5ab162055716528c18ab39dbb7d356984c675867d326169cca99f5"
+    },
+    "experiences/attention-is-all-you-need/media-source/softmax-manim/audio_sync_validation.json": {
+      "bytes": 949,
+      "sha256": "822b685485f545c0d26522550039decb5763645401edb2a8be4d24b917d614ba"
+    },
+    "experiences/attention-is-all-you-need/media-source/softmax-manim/math_validation.json": {
+      "bytes": 5536,
+      "sha256": "b2c89aa06d9945a4ad8cf077777eec2927044c1e70a423812198495870ed0e40"
+    },
+    "experiences/attention-is-all-you-need/media-source/softmax-manim/narration_plan.json": {
+      "bytes": 2371,
+      "sha256": "34918f037ff2deb1c80c05d42146a9f96a89184948183c71440a0d096bea9915"
+    },
+    "experiences/attention-is-all-you-need/media-source/softmax-manim/production_notes.json": {
+      "bytes": 1521,
+      "sha256": "3f44e1cfb07a8e8ddf6a8c47b297c6c643255afdf2b8b9576f4c78980822c2cf"
+    },
+    "experiences/attention-is-all-you-need/media-source/softmax-manim/render_edits.json": {
+      "bytes": 1158,
+      "sha256": "ca0982f12b635b0059b4dbbcfdfb5a84a546a65ccbb4a77c0686f3731e47fe09"
+    },
+    "experiences/attention-is-all-you-need/media-source/softmax-manim/softmax_video.py": {
+      "bytes": 9272,
+      "sha256": "2a9b11b81a471b98765c7fa6c790c164478d456b637c6389ac1eab6062ab0a6a"
+    },
+    "experiences/attention-is-all-you-need/media-source/softmax-manim/softmax_weights_ja.srt": {
+      "bytes": 951,
+      "sha256": "482d16feec095a4cd06d9fb39b85cfbd083375b417b4e4d7ab404d164bd2e02b"
+    },
+    "experiences/attention-is-all-you-need/media-source/value-manim/README.md": {
+      "bytes": 2110,
+      "sha256": "6e764c8023ab1aea8b9f4265c02fe1c0281e34188d5951ea96aab548808180f9"
+    },
+    "experiences/attention-is-all-you-need/media-source/value-manim/audio_sync_validation.json": {
+      "bytes": 859,
+      "sha256": "61f9fab113f58380d2ed3391f55f1de36b532d8011fc82d794dbcb67ce8b08e2"
+    },
+    "experiences/attention-is-all-you-need/media-source/value-manim/math_validation.json": {
+      "bytes": 2969,
+      "sha256": "7bb675a96159111d37eb92bc373864d19e5e7ff556a03997dd3f370e4f8ea562"
+    },
+    "experiences/attention-is-all-you-need/media-source/value-manim/narration_plan.json": {
+      "bytes": 2061,
+      "sha256": "5c2d92e31cb82ddae49ce5122eb686d8b1e6e01657aab691eadaa97e963c984b"
+    },
+    "experiences/attention-is-all-you-need/media-source/value-manim/production_notes.json": {
+      "bytes": 1504,
+      "sha256": "b0575c5db1aaf0a74e5ce299949de5b07e3f4697aaeefad3072e6a0ad5ee78ea"
+    },
+    "experiences/attention-is-all-you-need/media-source/value-manim/render_edits.json": {
+      "bytes": 651,
+      "sha256": "72826e3b21d94e61797ff66d5f4e7dcfffad31b8ad4e6a84f2e8366a48f16629"
+    },
+    "experiences/attention-is-all-you-need/media-source/value-manim/value_mixing_ja.srt": {
+      "bytes": 850,
+      "sha256": "1734a99531f7a8c9a1a843b7998055bc67a3bf28e13eff65bdb20d7f7a5c5a38"
+    },
+    "experiences/attention-is-all-you-need/media-source/value-manim/value_video.py": {
+      "bytes": 10253,
+      "sha256": "a83a92e6eba1ec37927977f731a170a081e097a422a3f24cb5e79ac6b9613d8a"
+    },
+    "experiences/attention-is-all-you-need/package.json": {
+      "bytes": 756,
+      "sha256": "8614f1e54f63ca4f7aa3e9d7c5291bab30addd64e4513fed9cdfdc6ae3d12bb6"
+    },
+    "experiences/attention-is-all-you-need/public/fonts/qk-editorial-numbers.woff": {
+      "bytes": 15660,
+      "sha256": "347d2d4cc1f4bd993731bb382dd64670ab5a9df5fef3ded08328f26c4608106f"
+    },
+    "experiences/attention-is-all-you-need/public/fonts/qk-editorial-serif.woff": {
+      "bytes": 110120,
+      "sha256": "78c7f7580214080e1f7397ad26b684794eea22022ecac7c535ba9a9a9299eed2"
+    },
+    "experiences/attention-is-all-you-need/public/fonts/qk-fonts-LICENSE.txt": {
+      "bytes": 19920,
+      "sha256": "14336520c461c45075f7ade69df2632bd80023f9e766ecf12474db3f94a2e8cc"
+    },
+    "experiences/attention-is-all-you-need/public/media/captions/attention-overview-manim.ja.vtt": {
+      "bytes": 1849,
+      "sha256": "6d06623abd82b7c3d771753d772ece9a66321386463666111eebe7663298a242"
+    },
+    "experiences/attention-is-all-you-need/public/media/captions/causal-mask-manim.ja.vtt": {
+      "bytes": 1049,
+      "sha256": "c5dfbc078b60510774c4930a0a6bee15ece42bace633d3434ee49e97982bea01"
+    },
+    "experiences/attention-is-all-you-need/public/media/captions/encoder-decoder-manim.ja.vtt": {
+      "bytes": 1302,
+      "sha256": "8f813cbd15f311face89ceec53ad52e03554dd975ffabf0f4c384ec41b3e73a6"
+    },
+    "experiences/attention-is-all-you-need/public/media/captions/multihead-attention-manim.ja.vtt": {
+      "bytes": 1028,
+      "sha256": "7ae14711c7cfb6289477dc16700f39ec93a5956c3615b096929290bc225a9ad3"
+    },
+    "experiences/attention-is-all-you-need/public/media/captions/position-encoding-manim.ja.vtt": {
+      "bytes": 841,
+      "sha256": "af93432e773159286d1a3762f4dd62122ce7599da5e39319783fd44b908d6518"
+    },
+    "experiences/attention-is-all-you-need/public/media/captions/qk-matching-manim.ja.vtt": {
+      "bytes": 793,
+      "sha256": "2fc23b916f4cf57dbe4608027af90de77689dcd9b9e2a7a45592267d462c5501"
+    },
+    "experiences/attention-is-all-you-need/public/media/captions/reported-evidence-manim.ja.vtt": {
+      "bytes": 1435,
+      "sha256": "959f1d62b218915b53cc3fa91daf49ab4822d69b60815b93bfab045259f8aa49"
+    },
+    "experiences/attention-is-all-you-need/public/media/captions/scope-manim.ja.vtt": {
+      "bytes": 1445,
+      "sha256": "a55c05fd838f9757ad0c2e76dbd2464783b3399660f768957b7716e830a92c93"
+    },
+    "experiences/attention-is-all-you-need/public/media/captions/sequence-cost-manim.ja.vtt": {
+      "bytes": 940,
+      "sha256": "603e9dac91e16ab7d1beeb439c65875a28063d323edc217900ea32bf08afb10b"
+    },
+    "experiences/attention-is-all-you-need/public/media/captions/sequence-manim.ja.vtt": {
+      "bytes": 1207,
+      "sha256": "508e80011514234e254c3077109516304fa07a14b199f4c7bc3da2ba3685c45f"
+    },
+    "experiences/attention-is-all-you-need/public/media/captions/softmax-weights-manim.ja.vtt": {
+      "bytes": 941,
+      "sha256": "d10887c07df8ab555d6d6de6ccf173eb70e95c7a15195561463112c3d8a1e28d"
+    },
+    "experiences/attention-is-all-you-need/public/media/captions/value-mixing-manim.ja.vtt": {
+      "bytes": 842,
+      "sha256": "a3ecb38843ad8be0719976c41d6e2bd85c18d756e7623e53aa00329cce0366f8"
+    },
+    "experiences/attention-is-all-you-need/public/media/posters/attention-overview-manim.ja.jpg": {
+      "bytes": 60567,
+      "sha256": "bfc0cce7431850cfdeddb7e78b6be4fc49a0ed165166f48af81021a9ec04dad9"
+    },
+    "experiences/attention-is-all-you-need/public/media/posters/causal-mask-manim.ja.jpg": {
+      "bytes": 85635,
+      "sha256": "ad67132ebcf992e4a1f2421c08a0cfccfad5d8b5a95781972b1942f11e735fa1"
+    },
+    "experiences/attention-is-all-you-need/public/media/posters/encoder-decoder-manim.ja.jpg": {
+      "bytes": 84010,
+      "sha256": "25eff99715abdac346ca24bb69d353150b652c9c22ec7aae73ec8987b74df74b"
+    },
+    "experiences/attention-is-all-you-need/public/media/posters/multihead-attention-manim.ja.jpg": {
+      "bytes": 86374,
+      "sha256": "ff8d630fe374e8406861861c3865226fbdfced5be0528a7599a497bcf2930c11"
+    },
+    "experiences/attention-is-all-you-need/public/media/posters/position-encoding-manim.ja.jpg": {
+      "bytes": 102382,
+      "sha256": "9d846bcd4ce183b061ce5ced4fe417f5bd17802cc26fe48dfd23b3f59521e5d6"
+    },
+    "experiences/attention-is-all-you-need/public/media/posters/qk-matching-manim.ja.jpg": {
+      "bytes": 80085,
+      "sha256": "be27997ef14c627da71b4f79df2af3e7e274a45dcc6430e9083bfbd1abc44449"
+    },
+    "experiences/attention-is-all-you-need/public/media/posters/reported-evidence-manim.ja.jpg": {
+      "bytes": 65651,
+      "sha256": "3a994e339aa7f3ef60506bd4ae044cbbff83b52c397082d8c04e30d4d2a8e6a0"
+    },
+    "experiences/attention-is-all-you-need/public/media/posters/scope-manim.ja.jpg": {
+      "bytes": 74775,
+      "sha256": "7656c0b03b897d5bf90b7e9ff7d039458e6e2f717272892aa687e21c9900218e"
+    },
+    "experiences/attention-is-all-you-need/public/media/posters/sequence-cost-manim.ja.jpg": {
+      "bytes": 81558,
+      "sha256": "46044ab3e284fd86cca19951f92bbd64c5d09883098a5a8e887024c7ea5ef480"
+    },
+    "experiences/attention-is-all-you-need/public/media/posters/sequence-manim.ja.jpg": {
+      "bytes": 85161,
+      "sha256": "3ccce2d6ac64dca291c3dc49d8fd3367572c9b1477f42e66b376d160c4fd2af4"
+    },
+    "experiences/attention-is-all-you-need/public/media/posters/softmax-weights-manim.ja.jpg": {
+      "bytes": 74398,
+      "sha256": "a909f9d3912dd9931c6496792db272b5fef331287e42aaa16130fe1299feea22"
+    },
+    "experiences/attention-is-all-you-need/public/media/posters/value-mixing-manim.ja.jpg": {
+      "bytes": 73390,
+      "sha256": "d91f9cee72910783eeff8a91e1202e677c41d4502f3cb60ca19698fba2473bc2"
+    },
+    "experiences/attention-is-all-you-need/public/media/videos/attention-overview-manim.ja.mp4": {
+      "bytes": 7416832,
+      "sha256": "460a225c1669ba91b182123f034a8c84e4389b3760f583320d673e4f51338884"
+    },
+    "experiences/attention-is-all-you-need/public/media/videos/causal-mask-manim.ja.mp4": {
+      "bytes": 3483371,
+      "sha256": "a433f51cb6e696b4b8403576c3c35c07560434fc34f39ee6bf72bcb4a26fb40c"
+    },
+    "experiences/attention-is-all-you-need/public/media/videos/encoder-decoder-manim.ja.mp4": {
+      "bytes": 1735140,
+      "sha256": "3910539af3bf6d0c0015917a9df567892aec2d941f0373b88152c17b1c95d9d2"
+    },
+    "experiences/attention-is-all-you-need/public/media/videos/multihead-attention-manim.ja.mp4": {
+      "bytes": 3894459,
+      "sha256": "2e7a3c77acacdad128bbd767cc40918892496af42acef1d3fa205a977a67cfa4"
+    },
+    "experiences/attention-is-all-you-need/public/media/videos/position-encoding-manim.ja.mp4": {
+      "bytes": 3415836,
+      "sha256": "f910b64153cd1bfe06cfd8ef127d62e7322a03f1b6732f5d4c11ba8dca1e3ca8"
+    },
+    "experiences/attention-is-all-you-need/public/media/videos/qk-matching-manim.ja.mp4": {
+      "bytes": 2936296,
+      "sha256": "5cf1db55207b0f06f293b13c971d34877edd1e8809a31cd5517680a65e242c5f"
+    },
+    "experiences/attention-is-all-you-need/public/media/videos/reported-evidence-manim.ja.mp4": {
+      "bytes": 2587877,
+      "sha256": "c529aa0b5c5e47d1e0d57f2d0f40bf94db87577bf939144dbe58d41c9e4de512"
+    },
+    "experiences/attention-is-all-you-need/public/media/videos/scope-manim.ja.mp4": {
+      "bytes": 2826248,
+      "sha256": "7144d4fac377884804bc92a60c73d1ac6ea23eb56449d10742342a2d51529c14"
+    },
+    "experiences/attention-is-all-you-need/public/media/videos/sequence-cost-manim.ja.mp4": {
+      "bytes": 3475949,
+      "sha256": "467cbccc419d1f21401238df532bd63bfb55073e02277517b382b049a8e979eb"
+    },
+    "experiences/attention-is-all-you-need/public/media/videos/sequence-manim.ja.mp4": {
+      "bytes": 1861931,
+      "sha256": "39d54359c6be705f97a969b04b1e2d62af22147d5eb3c813cf5d175539509b3a"
+    },
+    "experiences/attention-is-all-you-need/public/media/videos/softmax-weights-manim.ja.mp4": {
+      "bytes": 3413172,
+      "sha256": "0dedd02d423a7f4ebbfa7d85bef196db06db2b8b047c31b77b726453b022394b"
+    },
+    "experiences/attention-is-all-you-need/public/media/videos/value-mixing-manim.ja.mp4": {
+      "bytes": 3070266,
+      "sha256": "f680e96e573d6b5352b0a4207d9489eebf68579ec3b6f53c198b6454ced315d4"
+    },
+    "experiences/attention-is-all-you-need/reference/legacy-index.astro": {
+      "bytes": 15906,
+      "sha256": "8382ebf12498e3ff8b80d928360dade016a89478350f6692ada0ba3a14ec75b0"
+    },
+    "experiences/attention-is-all-you-need/reference/provenance.json": {
+      "bytes": 485,
+      "sha256": "4ffe557084df8ec4e7225731ce7e1cd4d236ccd45331e0e723c838479113f4c7"
+    },
+    "experiences/attention-is-all-you-need/src/components/README.md": {
+      "bytes": 524,
+      "sha256": "8252178b6d38d3c2e57e515deac32e399058eee14a4a3c7392f16267eaa8ac5f"
+    },
+    "experiences/attention-is-all-you-need/src/interactives/README.md": {
+      "bytes": 554,
+      "sha256": "05367f03bce929d1a1663f33f66ed1b56027f8c70253aa2f1155083f38780fc5"
+    },
+    "experiences/attention-is-all-you-need/src/interactives/qk-matching.css": {
+      "bytes": 6025,
+      "sha256": "1ecd58f1293fabdcb809a6f37a05ded4a36ec628a75158481a947288b2981137"
+    },
+    "experiences/attention-is-all-you-need/src/interactives/qk-matching.editorial.css": {
+      "bytes": 4020,
+      "sha256": "a4d60e5b254c5a8a46f9d9929543da67b05b1ea6f4aab40739d158c041c79485"
+    },
+    "experiences/attention-is-all-you-need/src/interactives/qk-matching.mjs": {
+      "bytes": 10435,
+      "sha256": "c0304e988f48b19ca446780fae70e656b0ab8fa06b57093268a2500e585b152d"
+    },
+    "experiences/attention-is-all-you-need/src/math/README.md": {
+      "bytes": 532,
+      "sha256": "53ea3093f07c2f55099bfd1cdc9c59e9e53930a365423730168a151e2f00c1ed"
+    },
+    "experiences/attention-is-all-you-need/src/math/qk-matching.mjs": {
+      "bytes": 1526,
+      "sha256": "d297b64012fece4984fb00890f5cc0d6fefe732cb5e6446e6a8d1094383498cf"
+    },
+    "experiences/attention-is-all-you-need/src/shared/README.md": {
+      "bytes": 3183,
+      "sha256": "2ca390302019baa9d5cfc9235f1547e08e58895acb6f1ee62481bed1e63310ba"
+    },
+    "experiences/attention-is-all-you-need/src/shared/site-chrome.css": {
+      "bytes": 125,
+      "sha256": "07c316a24580e2770f952d0e4c05e963b476ba4b8147220ef01320738a6a8b12"
+    },
+    "experiences/attention-is-all-you-need/src/shared/site-chrome.mjs": {
+      "bytes": 117,
+      "sha256": "8ddff68b40d3157a7fc08c5ac1136a74825247132d4179aba59211ac5c136b0c"
+    },
+    "experiences/attention-is-all-you-need/src/site/app.mjs": {
+      "bytes": 2749,
+      "sha256": "ef23f5c633bbd2cc5d3869d5672fff370e2391d3f3b4edab6558a14987cd5cb2"
+    },
+    "experiences/attention-is-all-you-need/src/site/attention-flow.mjs": {
+      "bytes": 11830,
+      "sha256": "4280e9519bfb93a05466c9bbdaeb2d990132b6c103717a8dabb0f3b9ca77bf81"
+    },
+    "experiences/attention-is-all-you-need/src/site/guided-practice.mjs": {
+      "bytes": 9400,
+      "sha256": "f72339e5cc43326462a3123e931c08187e39ce54b4e17882feecef27e896e7df"
+    },
+    "experiences/attention-is-all-you-need/src/site/labs.mjs": {
+      "bytes": 10805,
+      "sha256": "be08bc186fdf7dfff6f006a8f65d9761d996097873a451d597346767b575316e"
+    },
+    "experiences/attention-is-all-you-need/src/site/lessons.mjs": {
+      "bytes": 6462,
+      "sha256": "4de49fb43e15951a1e3b899bb8f7cfe368d7b73e964aa3c72065c0b1b6a4fd24"
+    },
+    "experiences/attention-is-all-you-need/src/site/math.mjs": {
+      "bytes": 2310,
+      "sha256": "9c85547f47f211c8e19f4d26b836f1f067f64a3f376ed5bd8275b3dfb8f50380"
+    },
+    "experiences/attention-is-all-you-need/src/site/site.css": {
+      "bytes": 17504,
+      "sha256": "f334aa7af30b633ce70da998fd53bd9b712bd42bc845b884cbb0acd82a29d73e"
+    },
+    "experiences/attention-is-all-you-need/tests/qk-dom.test.mjs": {
+      "bytes": 5084,
+      "sha256": "6770152f82d7ab519f0b5895f704d42b04be953f6916a3c77428bfe6d5153f8d"
+    },
+    "experiences/attention-is-all-you-need/tests/qk-math.test.mjs": {
+      "bytes": 1706,
+      "sha256": "2e3cd3cb547cde5bd88e4e535b0b757caefdeb6176ba42e0ed14122860970519"
+    },
+    "experiences/attention-is-all-you-need/tests/site-attention-flow.test.mjs": {
+      "bytes": 9756,
+      "sha256": "b014ef2051c0e535b7160fcae559dd32f78d7dee2d235c859f3160b1d3b2cf46"
+    },
+    "experiences/attention-is-all-you-need/tests/site-chrome.test.mjs": {
+      "bytes": 6941,
+      "sha256": "b97e13c6add89316a77a6ddb1260af86be58026dd7e02f62e97a305bf639b1e5"
+    },
+    "experiences/attention-is-all-you-need/tests/site-cost-media.test.mjs": {
+      "bytes": 5953,
+      "sha256": "9ed9c2b17cec0380284d4a14d9afde8902fbbefca6522f0c6cc32457bf8893b2"
+    },
+    "experiences/attention-is-all-you-need/tests/site-final-units-media.test.mjs": {
+      "bytes": 6840,
+      "sha256": "2cb5467500def1ca85b5d04c122954963b5a5bafa978fb7a44c2aaef235465fc"
+    },
+    "experiences/attention-is-all-you-need/tests/site-guided-practice.test.mjs": {
+      "bytes": 11907,
+      "sha256": "a21f0781d8fd99ed516c6548b0824eb9e6e727514fc774bb3b009237540e3567"
+    },
+    "experiences/attention-is-all-you-need/tests/site-integration.test.mjs": {
+      "bytes": 7413,
+      "sha256": "da1998566f1dd383cbbfb9bfa8ce3e63d2c73dc6dd78daa68c5c30a431daa325"
+    },
+    "experiences/attention-is-all-you-need/tests/site-mask-media.test.mjs": {
+      "bytes": 6220,
+      "sha256": "bc6c256fff3d20cda6aeff47e0209d9339abf46cb004dc96a50adc7ec7a0676a"
+    },
+    "experiences/attention-is-all-you-need/tests/site-math.test.mjs": {
+      "bytes": 2190,
+      "sha256": "9c92a059b13e125bb6f92b81d9c762941080bef74109009d3877100cd622b5a8"
+    },
+    "experiences/attention-is-all-you-need/tests/site-media.test.mjs": {
+      "bytes": 4849,
+      "sha256": "e93d5199851017d4479d30fc1ad7fc84ce408eba9a7550f7ae929d700fe59a3d"
+    },
+    "experiences/attention-is-all-you-need/tests/site-multihead-media.test.mjs": {
+      "bytes": 5977,
+      "sha256": "d97566e7a69acc33a4cae587dd80bc89e707a10099dbfbd6b1d68f99da285f2f"
+    },
+    "experiences/attention-is-all-you-need/tests/site-position-media.test.mjs": {
+      "bytes": 5687,
+      "sha256": "3438d75e97f2f866006811277edf2e6573a3450b8b25beaaca32cdb6b6483485"
+    },
+    "experiences/attention-is-all-you-need/tests/site-production.test.mjs": {
+      "bytes": 3328,
+      "sha256": "d02ffdf852c9be9d50dce2bb8c353221444b953924060be3db22674cb583acfd"
+    },
+    "experiences/attention-is-all-you-need/tests/site-qk-media.test.mjs": {
+      "bytes": 4488,
+      "sha256": "ba10bc10b6893a2e1c85b107fbd8fdf58a720e031053d31a3e7a7fa349ecea9f"
+    },
+    "experiences/attention-is-all-you-need/tests/site-softmax-media.test.mjs": {
+      "bytes": 5647,
+      "sha256": "e894a15c952a7bc865e2fa408d98bcbb35cf8e3ce37357aaa8d7367a370ce5ee"
+    },
+    "experiences/attention-is-all-you-need/tests/site-value-media.test.mjs": {
+      "bytes": 5914,
+      "sha256": "405261f28abbef5123db76a6cef06a0824b8b953ca2a203945ca30aff717ae9b"
+    },
+    "experiences/attention-is-all-you-need/tools/build-site.mjs": {
+      "bytes": 13751,
+      "sha256": "78c31ce274ec471cf4f6a9d4e2d53e414a81cc928f6ed7bb194e1f2752739b3d"
+    },
+    "experiences/attention-is-all-you-need/tools/check-structure.mjs": {
+      "bytes": 3060,
+      "sha256": "97f569b97784ed51ddc5b75fde92d7269ade421a181bc7da84cc123c8477d2d7"
+    },
+    "experiences/deep-residual-learning/.gitignore": {
+      "bytes": 227,
+      "sha256": "7ed2ea6ebc8a95ac27906a02dcb9211e9a69a1d13daa18b1528084fca9308c7d"
+    },
+    "experiences/deep-residual-learning/README.md": {
+      "bytes": 5831,
+      "sha256": "e14a662facb003faf19c08eddac2b8d0493294950494e4ee6de35f1e5e14b1aa"
+    },
+    "experiences/deep-residual-learning/build.mjs": {
+      "bytes": 12760,
+      "sha256": "596f9d5337eeceaa2647fc3f356c322230754abdc45b397f851d116442971acc"
+    },
+    "experiences/deep-residual-learning/content/units.json": {
+      "bytes": 4407,
+      "sha256": "cace93d62550aa83253e2797846ddfffcf0bf0718364b416386dd0b6e2dd17e7"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/README.md": {
+      "bytes": 4353,
+      "sha256": "0e53101a87fb3c6a1924b1136bc53b92d03b32dc5a567d8650426cdf79230e77"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/blocks/contact.jpg": {
+      "bytes": 42989,
+      "sha256": "1ac4262b1dbb98ed9892aedb6d8d66c0986694d7a7bbb59853b397b83f04175e"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/blocks/ffprobe.json": {
+      "bytes": 3544,
+      "sha256": "3fad8b22cc5d352c4cb9e5e2662a5f51947649b1bf31242143aed1f541f726a8"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/blocks/frame-1-30.jpg": {
+      "bytes": 27684,
+      "sha256": "6e9d5c3d2f3f80301833cc2cb0ee903828e7a94f1d230dc1742b8b166d1d8c77"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/blocks/frame-1-65.jpg": {
+      "bytes": 30315,
+      "sha256": "85eb01135c943eef93a2d095844fbc5b0b2e5157a27a85cb47c6eb6dd5da02e8"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/blocks/frame-2-30.jpg": {
+      "bytes": 23476,
+      "sha256": "0a73d929b11bb83f2eac42013a25781ae29559c0e9168a794c8026a36126be2b"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/blocks/frame-2-65.jpg": {
+      "bytes": 25687,
+      "sha256": "dcbf15f47b0357e2f1c393ca7735b66895f8da8ed08c227029c8844fd8931ceb"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/blocks/frame-3-30.jpg": {
+      "bytes": 30117,
+      "sha256": "a417ae9efbaf6cd5a0c26aa12376d94b9a24746d315ce8d78c7036b4dad4a3dc"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/blocks/frame-3-65.jpg": {
+      "bytes": 29724,
+      "sha256": "f0d1e53346fab06f2323ad922ed1307d724af8f71beecf5e3c145457d38a7013"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/blocks/frame-4-30.jpg": {
+      "bytes": 32204,
+      "sha256": "0a3d91d8f78c85b1697465ca5b4d5cc69d6a2a1de2703790f48a758c84b8675a"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/blocks/frame-4-65.jpg": {
+      "bytes": 34710,
+      "sha256": "f09311500a0e9db2478b2f9816a795a761836544b94eeb3b4f96549c3c01050e"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/blocks/timing.json": {
+      "bytes": 2659,
+      "sha256": "381421b15ea47b102d2641c47e949ef263b849c60beaf0b42e4bf24fba76d7c6"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/depth/contact.jpg": {
+      "bytes": 40889,
+      "sha256": "2cd8bd3ceb35c1f703d1dc5416f49aee8de880b532889bf2782d717a6cc6c507"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/depth/ffprobe.json": {
+      "bytes": 3543,
+      "sha256": "90c96a4025a651aeead3b295a5f72f62123970b90e63c7c7e482ad214aa90342"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/depth/frame-1-30.jpg": {
+      "bytes": 33614,
+      "sha256": "e8ffb7cfa30fb45f4494c794b7c6763dc3eebeada9eda8e5cd0a8de239697df3"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/depth/frame-1-65.jpg": {
+      "bytes": 34331,
+      "sha256": "925ac96415e891a5a2a203b3ef7fb27f4de3ae068388cb5e9eaaf6cdde752606"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/depth/frame-2-30.jpg": {
+      "bytes": 27187,
+      "sha256": "374d19d4e0d305b61aa71170e3c1961d11c337cdd9feca42fb708374639ec60e"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/depth/frame-2-65.jpg": {
+      "bytes": 32070,
+      "sha256": "cf8be831c0c5929f1f03176ad64cb0a49cf61f13c5d2a2d1c6ca8f49df8a826a"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/depth/frame-3-30.jpg": {
+      "bytes": 27117,
+      "sha256": "a72696bdf64c4987a5b3d820285450e73d34ad38abc10f28bbcc02f2c140de6d"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/depth/frame-3-65.jpg": {
+      "bytes": 28005,
+      "sha256": "362736e24f5e994f11d33800cecb46bcc2801f66153e395943da015868bddadf"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/depth/frame-4-30.jpg": {
+      "bytes": 25688,
+      "sha256": "ad5e267aaad7fdf0175a7519cfa575856446dc5942bb98f54127b1a76cd63e4d"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/depth/frame-4-65.jpg": {
+      "bytes": 29218,
+      "sha256": "ae273d5bd3b997822696a35bb8f0ffeeb0fdf9292af6aa0598b81b1a7a26d39d"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/depth/timing.json": {
+      "bytes": 2784,
+      "sha256": "fa22c99db5fb71f81fb5ffe9739c1109ce313de3511d72441ef980077145e17e"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/evidence/contact.jpg": {
+      "bytes": 42277,
+      "sha256": "bc722902e469b11b83a4393099752746c24eb9c4405176d57f756e61d1200500"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/evidence/ffprobe.json": {
+      "bytes": 3546,
+      "sha256": "f30165543a36a5ee03b179666033482bcaf5d8cc4aa872455b86bf7385d87380"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/evidence/frame-1-30.jpg": {
+      "bytes": 26659,
+      "sha256": "3876e367018eabc731867c157fe47ea81b738310b4c9c9182b867132f364eaea"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/evidence/frame-1-65.jpg": {
+      "bytes": 26689,
+      "sha256": "5ae92cbc28b25ccee19cf5203ed00ac3e4d9025f6486c7f30ff513f3a454d21e"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/evidence/frame-2-30.jpg": {
+      "bytes": 27824,
+      "sha256": "2aff2238a175ee4a07087d4d2012e86606557dea602e610432959ae7fa9082a9"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/evidence/frame-2-65.jpg": {
+      "bytes": 27779,
+      "sha256": "1747da1312de762aa6b0e7cb0bc13f3345e30409e0714937c83f36a4cd06daa8"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/evidence/frame-3-30.jpg": {
+      "bytes": 29290,
+      "sha256": "bbd864a8c0fb7a1d17d3ebcba48c145acfdc2eb77a4a335533b7bcac75f61f8b"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/evidence/frame-3-65.jpg": {
+      "bytes": 33569,
+      "sha256": "cc9d20ceea92038982af98255b9099ee0419845828cabc7b1ed7f95bd93cd873"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/evidence/frame-4-30.jpg": {
+      "bytes": 26674,
+      "sha256": "ec65f4a0d53afd13f8557407f5004e195f855de3ccc3fdf74aa60d4f02f5700e"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/evidence/frame-4-65.jpg": {
+      "bytes": 30743,
+      "sha256": "c3c9adc5ce6fdd47360a0273006ab9b1eedb112dbba93ff0d7ae51fc664adaae"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/evidence/timing.json": {
+      "bytes": 2754,
+      "sha256": "7f67a9820af7ed47a4b56956a52716a21c542bd86145d0cef25953e1e146db42"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/integrate.mjs": {
+      "bytes": 2509,
+      "sha256": "8a74a5874ba621201185d5299f122b72d804b0c353a4b64578cc19c911872f7d"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/package.py": {
+      "bytes": 6631,
+      "sha256": "775ffcfd8a1dd0fe0f4dc48b7e1a647ce27b2313d59d5d8a4b51c27fef19ee20"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/plan.json": {
+      "bytes": 10264,
+      "sha256": "22b86c81650d645d7901f9da4b1b9a284eb924b7e3d99d4c212deb4725476996"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/residual/contact.jpg": {
+      "bytes": 42646,
+      "sha256": "25dddabe4bea85989a3ec2cd3e5ca7d100235b1e8c14fdefb93e79cc83526205"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/residual/ffprobe.json": {
+      "bytes": 3546,
+      "sha256": "267456438c52750b2ffcba32c70e0073c0a9bb753d8dfc6a0f4054f4da541e9d"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/residual/frame-1-30.jpg": {
+      "bytes": 30315,
+      "sha256": "635adae1e0137332e47f729ca6941f9eeb60a17fa3ff7cc3ae99bbd76620a8fb"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/residual/frame-1-65.jpg": {
+      "bytes": 31058,
+      "sha256": "c89ef04e16c06599e51c572640a625aa09860cd32432f39e5fdc7aa9ee8ddacb"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/residual/frame-2-30.jpg": {
+      "bytes": 26000,
+      "sha256": "ac258eb8ea4acaa95f41bc70d8746291afbd1274b4e82d2c940a1f388d5b816e"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/residual/frame-2-65.jpg": {
+      "bytes": 25616,
+      "sha256": "99ea2d534391be23bd00872bfe64def96cff48b2e7058cdff113aa09e7a0e761"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/residual/frame-3-30.jpg": {
+      "bytes": 24612,
+      "sha256": "2fae771c73306568547930e86db12b1426c55f490d3e1fa0f5545ca331765909"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/residual/frame-3-65.jpg": {
+      "bytes": 27649,
+      "sha256": "5f20d8b0881abd7b6b487c7a6cbfec30bd2c3db70d0d95ce26df79eb71ba6929"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/residual/frame-4-30.jpg": {
+      "bytes": 28462,
+      "sha256": "2cde9d63100a1d222ec4e9236daa3ac8cb89a70fe66fe8a779f8fa06e698c6c5"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/residual/frame-4-65.jpg": {
+      "bytes": 34203,
+      "sha256": "dd346d6361bb41714eabb436e2413b3dd0ce2c2f53cf2f4d37df134698c26c41"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/residual/timing.json": {
+      "bytes": 2465,
+      "sha256": "c72595e3e9d1d8480fe90618e894b509b916f952c1c069e42f9aff6af5c02984"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/review.json": {
+      "bytes": 6747,
+      "sha256": "cfab05d18fda9de83692b9f64b6372baccbdd931543339fa23e3bf8c51e43cd8"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/scenes.py": {
+      "bytes": 12505,
+      "sha256": "791004bc000477ae7ccaa57972bafb274dce36a2bfff0cf081d6571a7349791d"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/shape/contact.jpg": {
+      "bytes": 42351,
+      "sha256": "50602d076ff0981284d04f4cfcd662337219fb1cf2099b6e12fb3a3fe744f84d"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/shape/ffprobe.json": {
+      "bytes": 3543,
+      "sha256": "7f7449d824b0e4bb6964ce64b0f360f7691f20d58137bc3819e6cfd97e32bf7a"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/shape/frame-1-30.jpg": {
+      "bytes": 30400,
+      "sha256": "e0218e380b32f54168f7e9c0b627de97e8edd4e44cf2312e4f02f3a9cff13bb6"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/shape/frame-1-65.jpg": {
+      "bytes": 32665,
+      "sha256": "784cefb75bdc725ccfbdf5a88b8e191974212ca66c2c76cb4963defefea03270"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/shape/frame-2-30.jpg": {
+      "bytes": 29167,
+      "sha256": "99e99a7a727adcf03e45835fb133c0b05980b7ea2222607bd1b21b0be44382d3"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/shape/frame-2-65.jpg": {
+      "bytes": 31512,
+      "sha256": "d72ef43f1b6541a10024e4a4cb981544804a3b62c6ee62eb17b75c94c575dda3"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/shape/frame-3-30.jpg": {
+      "bytes": 30626,
+      "sha256": "df1b9ce667622e3cb9dad6dbe49a288c2e63a670affcd8379e104856af675781"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/shape/frame-3-65.jpg": {
+      "bytes": 35424,
+      "sha256": "36658f4748e7bfc5778060291a40eef55512db6f382087cf7b8966368427cd3b"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/shape/frame-4-30.jpg": {
+      "bytes": 24356,
+      "sha256": "951bc1a5c9329240fda76c625eab434006394640df349c57fc296baa0f73c8e1"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/shape/frame-4-65.jpg": {
+      "bytes": 32740,
+      "sha256": "36c825ba222a6d60e2d472095de3c3d6005d556ff0d85a7c8acad63e44828b92"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/shape/timing.json": {
+      "bytes": 2481,
+      "sha256": "e9829439d569e5b3541b63d0f70e359cdc5984709a7a526d195ab5e98c7b5dc3"
+    },
+    "experiences/deep-residual-learning/media-source/chapters/synthesize.py": {
+      "bytes": 2754,
+      "sha256": "31291d840f16cb8456b9a4c0e68449b34fc037bca20ea43099cfbb5395311e33"
+    },
+    "experiences/deep-residual-learning/media-source/finalize.py": {
+      "bytes": 2223,
+      "sha256": "25febe1274ba882d2e5a6a2f6b83fbdd9087cfe6b78c20ab0bf7c71c9ce0eeb2"
+    },
+    "experiences/deep-residual-learning/media-source/overview.py": {
+      "bytes": 2430,
+      "sha256": "ce3a757e8a01f53c1cb7a653d357961bb0ec4789e8086d89900d60531fa3308c"
+    },
+    "experiences/deep-residual-learning/media-source/segments.json": {
+      "bytes": 1825,
+      "sha256": "6dbd2b68c72d008eeafe152b095de930f056513d167c484ef7cf0e97c81769d4"
+    },
+    "experiences/deep-residual-learning/media-source/synthesize.py": {
+      "bytes": 2807,
+      "sha256": "589cd661743932a422cbb8089473df8886cf816a1ab092a2cb453e0d6dd26985"
+    },
+    "experiences/deep-residual-learning/media-source/timing.json": {
+      "bytes": 2547,
+      "sha256": "d13e9df676d3d89b0e0f12f2730572f8a88ddd90b8e1945f59d3ecc3f366d16e"
+    },
+    "experiences/deep-residual-learning/media/chapter-videos.json": {
+      "bytes": 26596,
+      "sha256": "9aceabb488ffa2d098edff842165cb579af86175fd8bf65c7df498f512465247"
+    },
+    "experiences/deep-residual-learning/media/chapters/blocks.ja.txt": {
+      "bytes": 1974,
+      "sha256": "7bf1afb70aaccd186e74c2664ea50812999ac864ff5984752c3e02ee360c2736"
+    },
+    "experiences/deep-residual-learning/media/chapters/blocks.ja.vtt": {
+      "bytes": 1371,
+      "sha256": "05fc7f3f9b78066803df9c90b2e1b27072ad432920c9ed50b0b13ffee6853f6c"
+    },
+    "experiences/deep-residual-learning/media/chapters/blocks.jpg": {
+      "bytes": 29828,
+      "sha256": "7b5e1b6dd3f1a19c424b872e0cd9736e345aa184409a61181dd2c81828f712cb"
+    },
+    "experiences/deep-residual-learning/media/chapters/blocks.mp4": {
+      "bytes": 1918975,
+      "sha256": "4b281f55bba1da6caa6fee44878a2d526ec810aa291cfcca20248d77901666d4"
+    },
+    "experiences/deep-residual-learning/media/chapters/depth.ja.txt": {
+      "bytes": 2038,
+      "sha256": "8c8feaafe0ed9a34af3215e5be88fb3fa1a24ad620c11f2da3fdaf2a4ce7e186"
+    },
+    "experiences/deep-residual-learning/media/chapters/depth.ja.vtt": {
+      "bytes": 1321,
+      "sha256": "26d26aa9db644d3a152dc0fc85cd9b80a78a27b0f5d5708936245f37a8d431ee"
+    },
+    "experiences/deep-residual-learning/media/chapters/depth.jpg": {
+      "bytes": 34331,
+      "sha256": "925ac96415e891a5a2a203b3ef7fb27f4de3ae068388cb5e9eaaf6cdde752606"
+    },
+    "experiences/deep-residual-learning/media/chapters/depth.mp4": {
+      "bytes": 1954993,
+      "sha256": "5d40e1f227f5db32435cbc8650dd1310ef2589120cf7d5e4f817d77fa5bc8177"
+    },
+    "experiences/deep-residual-learning/media/chapters/evidence.ja.txt": {
+      "bytes": 2042,
+      "sha256": "ded32f90bde6fcef032c20584bfd273318d502e228034173e0c12eba1c328f5e"
+    },
+    "experiences/deep-residual-learning/media/chapters/evidence.ja.vtt": {
+      "bytes": 1334,
+      "sha256": "99c1e15ef59c7bb6db3ca0d881a4da127da399217d4268ee6d42d015c83ccd02"
+    },
+    "experiences/deep-residual-learning/media/chapters/evidence.jpg": {
+      "bytes": 26689,
+      "sha256": "5ae92cbc28b25ccee19cf5203ed00ac3e4d9025f6486c7f30ff513f3a454d21e"
+    },
+    "experiences/deep-residual-learning/media/chapters/evidence.mp4": {
+      "bytes": 1995056,
+      "sha256": "75e893b0941304f83584c4668f9a23c58782b02804816aad2e71bd46968518f7"
+    },
+    "experiences/deep-residual-learning/media/chapters/residual.ja.txt": {
+      "bytes": 1850,
+      "sha256": "75e830a7def7916bd9dc20cebf4c69e6e27a3d0f2238230abb949feaa308bcff"
+    },
+    "experiences/deep-residual-learning/media/chapters/residual.ja.vtt": {
+      "bytes": 1252,
+      "sha256": "bc5af18c37de73f5b7239cd151409a148b8fc24369919febc6b348933f1ff0b0"
+    },
+    "experiences/deep-residual-learning/media/chapters/residual.jpg": {
+      "bytes": 31132,
+      "sha256": "56e2fa73a2d7ab45bc7b054e7385a15de6a419347ca6004b1071e16beb4a6a0c"
+    },
+    "experiences/deep-residual-learning/media/chapters/residual.mp4": {
+      "bytes": 1686087,
+      "sha256": "37c0005a884d530b9b017729df41901867acf389f473b11d4c8308747e255327"
+    },
+    "experiences/deep-residual-learning/media/chapters/shape.ja.txt": {
+      "bytes": 1780,
+      "sha256": "fdc6dad87a2f88ee5371c61bf96eb98eb4d7dbe8a555482277797c2385356e18"
+    },
+    "experiences/deep-residual-learning/media/chapters/shape.ja.vtt": {
+      "bytes": 1214,
+      "sha256": "c1b44114bd2c96e445d798d92ed0a2774c4946f71c69e68e5c3ad9ff2e76db74"
+    },
+    "experiences/deep-residual-learning/media/chapters/shape.jpg": {
+      "bytes": 29130,
+      "sha256": "c0eddf7eef75f3788d1a36ebbcaa377fbe86a9b812b60edf218d8ec012fb1ffd"
+    },
+    "experiences/deep-residual-learning/media/chapters/shape.mp4": {
+      "bytes": 1874932,
+      "sha256": "3ee4779af2065382827115308bd503faad518cfb971ae3f0b37a1a8530ee4f7e"
+    },
+    "experiences/deep-residual-learning/media/overview-ja.mp4": {
+      "bytes": 2117480,
+      "sha256": "6836b0de9b8becd396d40b86c51d9c7cbd17120ac1c84863c6e3a315d21d2f23"
+    },
+    "experiences/deep-residual-learning/media/overview-ja.vtt": {
+      "bytes": 1703,
+      "sha256": "4b79117acbb81054ce51c4d4f6b97eb720f415e029e0f0773308e076e5d3c8fa"
+    },
+    "experiences/deep-residual-learning/media/poster.jpg": {
+      "bytes": 25995,
+      "sha256": "c9bb17357990dfecf72e695f1afee4b91e54b118c034b7bc8462046c717610a6"
+    },
+    "experiences/deep-residual-learning/media/transcript-ja.txt": {
+      "bytes": 1363,
+      "sha256": "7675984025c3cc4c0919ef05754e3b77c800b1d26b1710c83fa12012624d6684"
+    },
+    "experiences/deep-residual-learning/media/verification.json": {
+      "bytes": 1758,
+      "sha256": "49b982c14f13a1439b09d6c01f63515ce4af95dacd9367d0db3fe30166735c56"
+    },
+    "experiences/deep-residual-learning/package.json": {
+      "bytes": 205,
+      "sha256": "4dbd0e97cf1921e0936d06a7e769d9eafb9e6d61f10d2a16ce72a65ffdd85cf6"
+    },
+    "experiences/deep-residual-learning/reference/SOURCE-CHECK.md": {
+      "bytes": 2814,
+      "sha256": "45869599f41df3be7c752c233fa57a7758fbad54a31b8408557955992943a0ee"
+    },
+    "experiences/deep-residual-learning/src/app.mjs": {
+      "bytes": 4540,
+      "sha256": "f9979b5f2663445dee578cdf9d8b0b6bf2d93bbf1eeed1e13563cb474af4a2ca"
+    },
+    "experiences/deep-residual-learning/src/math.mjs": {
+      "bytes": 638,
+      "sha256": "fbe668f953e1d8b5194717b0104abacbd78744d8974ad915c37be3e7ce7a8e1e"
+    },
+    "experiences/deep-residual-learning/src/shared/site-chrome.css": {
+      "bytes": 125,
+      "sha256": "07c316a24580e2770f952d0e4c05e963b476ba4b8147220ef01320738a6a8b12"
+    },
+    "experiences/deep-residual-learning/src/shared/site-chrome.mjs": {
+      "bytes": 117,
+      "sha256": "8ddff68b40d3157a7fc08c5ac1136a74825247132d4179aba59211ac5c136b0c"
+    },
+    "experiences/deep-residual-learning/src/style.css": {
+      "bytes": 3898,
+      "sha256": "40faa831e073c71f7cac18d9f7ce1583c0f00a57d533aa151cc207fcb320689d"
+    },
+    "experiences/deep-residual-learning/tests/chapter-media.test.mjs": {
+      "bytes": 3427,
+      "sha256": "55f6eb1adcf1a78080f382cee8cf09bea8f1ea0c928e867646145f2500ccca1f"
+    },
+    "experiences/deep-residual-learning/tests/single-page.test.mjs": {
+      "bytes": 6006,
+      "sha256": "347b89728dc0262b41117c76980a31a9456210a970df55b4f36d4a756270d00f"
+    },
+    "experiences/deep-residual-learning/tests/site.test.mjs": {
+      "bytes": 6596,
+      "sha256": "c25e29549b3a02edf1fe2fc20a3ac8b19355b7a1984e61b543546aa1fac5b08b"
+    },
+    "experiences/generative-adversarial-nets/.gitignore": {
+      "bytes": 306,
+      "sha256": "f4756d5d729c75526c15a08504571de64147b01b8874f77e347106921f527d40"
+    },
+    "experiences/generative-adversarial-nets/README.md": {
+      "bytes": 7541,
+      "sha256": "f0ba67bc4c91dd3401b6a1bd038790736196fcdc8ee21046f3dd233a4b64d27d"
+    },
+    "experiences/generative-adversarial-nets/content/units.mjs": {
+      "bytes": 6471,
+      "sha256": "9f25ef9df5b075d71cd7bcf6ff42b7e67d5effd5ca67e5677b96754ef0e71574"
+    },
+    "experiences/generative-adversarial-nets/integration-manifest.json": {
+      "bytes": 1645,
+      "sha256": "c21903db805e31a9def975c5ac563e50f6ebc1b63e9b8a9c69335de33637f6c0"
+    },
+    "experiences/generative-adversarial-nets/media-source/Kokoro-Apache-2.0.txt": {
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "experiences/generative-adversarial-nets/media-source/README.md": {
+      "bytes": 2306,
+      "sha256": "c6a5bb1c3dea9a302723eda735949211526b05b120e331d397dddb9dda703031"
+    },
+    "experiences/generative-adversarial-nets/media-source/chapters/README.md": {
+      "bytes": 6025,
+      "sha256": "1e26792c623e27dc4c8d811ab106ca911ab72362dd074d01c5a823536f2c9d7c"
+    },
+    "experiences/generative-adversarial-nets/media-source/chapters/check_math.py": {
+      "bytes": 1879,
+      "sha256": "1ae0842951262de90b5f3fd9e25bfbbba5883efc0bf7dbbd4e1427dfb707c1e7"
+    },
+    "experiences/generative-adversarial-nets/media-source/chapters/make_plan.py": {
+      "bytes": 7410,
+      "sha256": "7cc6fc1a67736373ede10249eb7f3bbf2624cf6e14d2b27bfa7c51dd9ccf17a2"
+    },
+    "experiences/generative-adversarial-nets/media-source/chapters/math-validation.json": {
+      "bytes": 2252,
+      "sha256": "80301d9d7ed262d11202fca4b10007d58be52dd71f84967877ade6b22e950389"
+    },
+    "experiences/generative-adversarial-nets/media-source/chapters/package_media.py": {
+      "bytes": 4323,
+      "sha256": "6d5511687425c3f92341c57a6a00929aa3a1cb2985b01695374b3f5aa57a6068"
+    },
+    "experiences/generative-adversarial-nets/media-source/chapters/plan.json": {
+      "bytes": 10968,
+      "sha256": "b4c07f2a9dafa729a7d6ea3e117a578e33c7f12aaac35ab6e31d739b2f5b1045"
+    },
+    "experiences/generative-adversarial-nets/media-source/chapters/scenes.py": {
+      "bytes": 15230,
+      "sha256": "4b5f49930ae20a8c3b4766f4f921ad509fe553ff008a006886d5fd97c39a8d18"
+    },
+    "experiences/generative-adversarial-nets/media-source/chapters/synthesize.py": {
+      "bytes": 3308,
+      "sha256": "2d27537968550409251bd00f7d67c39ad9f297c448bb06096dcef4c48f369526"
+    },
+    "experiences/generative-adversarial-nets/media-source/narrate.py": {
+      "bytes": 3171,
+      "sha256": "16b0053bd2aed6657016602f89ab4d48995b7ae25f3060244c04799bbe843842"
+    },
+    "experiences/generative-adversarial-nets/media-source/narration.json": {
+      "bytes": 1700,
+      "sha256": "583e3ff3eb623c2f8ed30efa90326127a5e4b5e09a852f79995fb7e6e3f894dc"
+    },
+    "experiences/generative-adversarial-nets/media-source/overview.py": {
+      "bytes": 3888,
+      "sha256": "3951cd53e0e38f6b8164ab80aab538938d7ec574bf36c3ac8430a28e35bf3a5f"
+    },
+    "experiences/generative-adversarial-nets/media-source/validation.json": {
+      "bytes": 1960,
+      "sha256": "baf13d170b1c3afbb1d46e41875ee2c83a6112ffee9885ca32a26a804dc4ebc3"
+    },
+    "experiences/generative-adversarial-nets/package.json": {
+      "bytes": 156,
+      "sha256": "86707f278df58f860eec5b64616c93d9817a04cb2eeb1d4bd61ffc7f402825d0"
+    },
+    "experiences/generative-adversarial-nets/public/media/chapter-videos.json": {
+      "bytes": 22437,
+      "sha256": "8b5cb001642fb9f54422ce443cf436db6f1db47448f6d39458cddb284460cf81"
+    },
+    "experiences/generative-adversarial-nets/public/media/chapters/equilibrium.ja.vtt": {
+      "bytes": 998,
+      "sha256": "41d578b75b491967330acbc093b899b25cf61adc24ca46de80a72b9a88c26615"
+    },
+    "experiences/generative-adversarial-nets/public/media/chapters/equilibrium.mp4": {
+      "bytes": 1790507,
+      "sha256": "da70b1ac362e064bd050be3ea4addf250bfbbe4f7c62101a433fa5ecd84bb83f"
+    },
+    "experiences/generative-adversarial-nets/public/media/chapters/equilibrium.poster.jpg": {
+      "bytes": 70381,
+      "sha256": "6567cec0faf5e5a915857c1cfd7b92a34b2de7027ff5f9b1f2c4c88ca29e9199"
+    },
+    "experiences/generative-adversarial-nets/public/media/chapters/equilibrium.transcript.ja.txt": {
+      "bytes": 1136,
+      "sha256": "2030cf410bd843ed7bf2d91c61b6c996b5f285767362a8ed433cbddbb1f4bb05"
+    },
+    "experiences/generative-adversarial-nets/public/media/chapters/evidence.ja.vtt": {
+      "bytes": 1217,
+      "sha256": "cef24074804f74d8f7a11dc4041451f016ceffeb76168f4016882b4dede1da38"
+    },
+    "experiences/generative-adversarial-nets/public/media/chapters/evidence.mp4": {
+      "bytes": 2183362,
+      "sha256": "dff09dde6eb9eb22405835c7e91b844891b262ddce62d11a3457507e682dcd02"
+    },
+    "experiences/generative-adversarial-nets/public/media/chapters/evidence.poster.jpg": {
+      "bytes": 67036,
+      "sha256": "9e38835fd5a6da1062a4568c0c415e8f1c62758e7888d5ae886355fe2406afd2"
+    },
+    "experiences/generative-adversarial-nets/public/media/chapters/evidence.transcript.ja.txt": {
+      "bytes": 1261,
+      "sha256": "cb7a0d7a18388909f3dcdbe39777da89b57c355606af8156e175ad589e7bb13f"
+    },
+    "experiences/generative-adversarial-nets/public/media/chapters/objective.ja.vtt": {
+      "bytes": 1096,
+      "sha256": "13fcb903ee5ac9f9c6db249464c6304827bbe3be87067533c8234c5d465286b0"
+    },
+    "experiences/generative-adversarial-nets/public/media/chapters/objective.mp4": {
+      "bytes": 1780567,
+      "sha256": "695267215550518e2ca24d0f10f09d6e1cc0718374080ca895fd2ee1947632af"
+    },
+    "experiences/generative-adversarial-nets/public/media/chapters/objective.poster.jpg": {
+      "bytes": 58303,
+      "sha256": "2956c66b3a2e10d7d6c507eca4228a9a11fb8432ff58c470bf63fed2c8a08714"
+    },
+    "experiences/generative-adversarial-nets/public/media/chapters/objective.transcript.ja.txt": {
+      "bytes": 1082,
+      "sha256": "9d49fad6a42b22cc2a532c0d62d1f4c186be7415900489fbc96b4a3d29d29652"
+    },
+    "experiences/generative-adversarial-nets/public/media/chapters/optimal.ja.vtt": {
+      "bytes": 1036,
+      "sha256": "e3ede6b355c5687a7fe5397b9b56e8df76510957ce9cf657e7da5523e94cd493"
+    },
+    "experiences/generative-adversarial-nets/public/media/chapters/optimal.mp4": {
+      "bytes": 1876085,
+      "sha256": "c66e36dd07fb02941e4a7ef86a9f8ae0bff06cf5e510ccdd0ea8fc52d5674791"
+    },
+    "experiences/generative-adversarial-nets/public/media/chapters/optimal.poster.jpg": {
+      "bytes": 64438,
+      "sha256": "b2609dd3b80c2ad369ce0039cbda4d2206a9c719417026152ee3a37bda8e7b11"
+    },
+    "experiences/generative-adversarial-nets/public/media/chapters/optimal.transcript.ja.txt": {
+      "bytes": 1085,
+      "sha256": "ae55c77dd30d774874ed7e139160875e2b4fdbc5e5aef68599f3f217b379ab8c"
+    },
+    "experiences/generative-adversarial-nets/public/media/chapters/roles.ja.vtt": {
+      "bytes": 997,
+      "sha256": "c6b84b8a0e5a3e9f34b3bea71f6416c00b9546787a049d5d756b5f7cf6c6e4f0"
+    },
+    "experiences/generative-adversarial-nets/public/media/chapters/roles.mp4": {
+      "bytes": 1648590,
+      "sha256": "cc60c7ed940c66e814caa716010ace179ee05922e59b821399fade2c969ec0ab"
+    },
+    "experiences/generative-adversarial-nets/public/media/chapters/roles.poster.jpg": {
+      "bytes": 49143,
+      "sha256": "140c27832bd05587eb16389b56f10a768c818bc4f79ef05eaa78bcb15c336a3c"
+    },
+    "experiences/generative-adversarial-nets/public/media/chapters/roles.transcript.ja.txt": {
+      "bytes": 1031,
+      "sha256": "a3a811becc4c05094a5852e35001756d39604677d5973d54925593935ae46f3a"
+    },
+    "experiences/generative-adversarial-nets/public/media/chapters/saturation.ja.vtt": {
+      "bytes": 1063,
+      "sha256": "05ebeef39bf8db290369562af544446062f0577329c34fbc19eb20f959356f3c"
+    },
+    "experiences/generative-adversarial-nets/public/media/chapters/saturation.mp4": {
+      "bytes": 1681208,
+      "sha256": "c2f88479c83014fa0cef789b04aed7ffad0c2be96d48e39da3955c101c63ca98"
+    },
+    "experiences/generative-adversarial-nets/public/media/chapters/saturation.poster.jpg": {
+      "bytes": 54122,
+      "sha256": "c23eec4ec0d2b925b28a2f55e5840b9914c1603a1198b916a5ca87b7f84803ef"
+    },
+    "experiences/generative-adversarial-nets/public/media/chapters/saturation.transcript.ja.txt": {
+      "bytes": 1121,
+      "sha256": "386e6b84ea465e1edcceb546bc0102b1f96a0fb9b2500d4717c7f94a140b0edb"
+    },
+    "experiences/generative-adversarial-nets/public/media/chapters/training.ja.vtt": {
+      "bytes": 1060,
+      "sha256": "4b9fa252a50a0a432ad658156f3cd66f610eaa2ef84752a982c95e2ffb8d4c69"
+    },
+    "experiences/generative-adversarial-nets/public/media/chapters/training.mp4": {
+      "bytes": 1863309,
+      "sha256": "4c32c22dd523636f6d9c29c66443839bd7094dcd1f0636fc6e5af59662074c79"
+    },
+    "experiences/generative-adversarial-nets/public/media/chapters/training.poster.jpg": {
+      "bytes": 62860,
+      "sha256": "c8788ad57697096436fa944cdb99c4a6be1ed711b18ed9acdef265d82653dffa"
+    },
+    "experiences/generative-adversarial-nets/public/media/chapters/training.transcript.ja.txt": {
+      "bytes": 1108,
+      "sha256": "54ca12ab21bd6ba929da2def4c7f16275f539d32324b60d652fddc8e3a5afe89"
+    },
+    "experiences/generative-adversarial-nets/public/media/gan-overview-ja.mp4": {
+      "bytes": 2053733,
+      "sha256": "6e272e57b59b44b8f38ccdb5d5006e81c43ff2b3a282e796f40942996dd3439f"
+    },
+    "experiences/generative-adversarial-nets/public/media/gan-overview-ja.vtt": {
+      "bytes": 1273,
+      "sha256": "b46e8aa1ff786bf2d25835d7da792f985ac08cce731ec81fa5709ac9bf805c72"
+    },
+    "experiences/generative-adversarial-nets/public/media/gan-overview-poster.jpg": {
+      "bytes": 42455,
+      "sha256": "5d8f2a00c61187b44126344a3cd0721eff1f95ad4fbe1e6e5d5434fe5e50f7d4"
+    },
+    "experiences/generative-adversarial-nets/public/media/gan-overview-transcript-ja.txt": {
+      "bytes": 1338,
+      "sha256": "929048452f6f7191f91d8b730886561c60ba06db8a4d7dfae3875a0f897c156b"
+    },
+    "experiences/generative-adversarial-nets/reference/SOURCE-CHECK.md": {
+      "bytes": 3032,
+      "sha256": "f5b7d83ffd63266705f817f3dbc8f247bdb0b5ebe96f30e691257d5313220d8f"
+    },
+    "experiences/generative-adversarial-nets/reference/sources.json": {
+      "bytes": 702,
+      "sha256": "059e10439dc14a77e664adeb989b55603d8a943be02a506641e1486de7ab4ada"
+    },
+    "experiences/generative-adversarial-nets/src/app.mjs": {
+      "bytes": 6177,
+      "sha256": "4a8ec507daed07a98419bc80c1779477075450c46cf950ca4d1e3a771fc4a6fd"
+    },
+    "experiences/generative-adversarial-nets/src/build.mjs": {
+      "bytes": 11069,
+      "sha256": "9b39f6f284448ad86c639390228dc8aa5a7dc946d3e735ec71a62e7c2e2b94b8"
+    },
+    "experiences/generative-adversarial-nets/src/math.mjs": {
+      "bytes": 913,
+      "sha256": "d97c75480a6efc2e14e1e29074e44dd9f5089b0702613fb9712a49cc9a8d18cb"
+    },
+    "experiences/generative-adversarial-nets/src/shared/site-chrome.css": {
+      "bytes": 125,
+      "sha256": "07c316a24580e2770f952d0e4c05e963b476ba4b8147220ef01320738a6a8b12"
+    },
+    "experiences/generative-adversarial-nets/src/shared/site-chrome.mjs": {
+      "bytes": 117,
+      "sha256": "8ddff68b40d3157a7fc08c5ac1136a74825247132d4179aba59211ac5c136b0c"
+    },
+    "experiences/generative-adversarial-nets/src/style.css": {
+      "bytes": 3470,
+      "sha256": "5c128affeb2fa900bed994ec2ad534995763ef6e46c51c1a7fb94c8661131df8"
+    },
+    "experiences/generative-adversarial-nets/tests/dom.test.mjs": {
+      "bytes": 10061,
+      "sha256": "6d6e174d494e0555fe62c0e5a1d51bcf60173acf3d53fb50870a169ca967a351"
+    },
+    "experiences/generative-adversarial-nets/tests/math.test.mjs": {
+      "bytes": 1771,
+      "sha256": "11f54d174e1984927011846796808e88c1e2390ad8874edf852b13e871053b99"
+    },
+    "experiences/shared/README.md": {
+      "bytes": 1820,
+      "sha256": "22d27c7e6e00a73f3b20df3b0c948a6efab7c0f820f845d61698483b6dbe8ab8"
+    },
+    "experiences/shared/site-chrome.css": {
+      "bytes": 5926,
+      "sha256": "9666fb8464ac8c98fe2bf8a95ad0392135fe6a18a9f18e87772568e457fd16d2"
+    },
+    "experiences/shared/site-chrome.mjs": {
+      "bytes": 6633,
+      "sha256": "342caff71068e3fec7a788aab20465f10f14bc5cb755a0c1538c59d776ad0708"
     },
     "package-lock.json": {
       "bytes": 129520,
       "sha256": "030427eacdbe482cc23f2954725b4c9b311c69bddaf3790cd4a9063732b02f36"
     },
     "package.json": {
-      "bytes": 721,
-      "sha256": "9a336e045f426fed0fcbfa03e596cbf26613e199441ae7176c16d020dcb9ec56"
+      "bytes": 1544,
+      "sha256": "5858976349908f6f8a582e3565140c217fddf93bf6c18fcd6e9ebc255a9891f2"
     },
     "public/favicon.svg": {
       "bytes": 393,
@@ -1545,13 +3014,61 @@
       "bytes": 4079,
       "sha256": "d8a5573fa28734df6fbcfcb9fee3357e59beb47a532fe23658e47c06519fda8f"
     },
+    "reports/2026-11-06-home-v106-integration.md": {
+      "bytes": 2641,
+      "sha256": "00ffed63d1c8d826db2ce87840bdbfb4315ab25d70e7abf87e15054bf0cb3648"
+    },
+    "scripts/check-attention-entry.py": {
+      "bytes": 5581,
+      "sha256": "22b637c9efbe58ec35fb6154d121d370a09edd98a3e7c02efb18273abb594f97"
+    },
+    "scripts/check-attention-final-media.py": {
+      "bytes": 6416,
+      "sha256": "ff048ef2073d310e6be6e19233631ae656ecc768f17827903891d30726d68446"
+    },
+    "scripts/check-chapter-media.py": {
+      "bytes": 5697,
+      "sha256": "8487e1f0c8aa88b9cbea6f89d9881e915d56454e6807ab6bdb4f72c563135258"
+    },
+    "scripts/check-extra-papers.py": {
+      "bytes": 5949,
+      "sha256": "999abc09da38e9667b88987bdab5260f4b601002898b899685101f682ffb4bb0"
+    },
+    "scripts/check-home-materials.py": {
+      "bytes": 5407,
+      "sha256": "7e32521a2f1ff0cd0a279334dacb16ead593d54dfe571bf0d77641f809523e80"
+    },
+    "scripts/check-learning-redirects.py": {
+      "bytes": 1829,
+      "sha256": "831e45c0684f6fa3dae8a5aa5c1ffed89f7d3d2407027c4be2812f6a563a4daf"
+    },
+    "scripts/check-reading-notes.py": {
+      "bytes": 4922,
+      "sha256": "bc1e3552e874f7b24ac7a6cee81d7a83cb43a2b7d9442f68c2d41d9d1053eb57"
+    },
+    "scripts/check-shared-learning-chrome.py": {
+      "bytes": 4740,
+      "sha256": "96f830253b7de151cd2f153c952812e1d799c12d772d60517e151b9236be74de"
+    },
+    "scripts/check-source-portability.py": {
+      "bytes": 1447,
+      "sha256": "f76965e33b564bf106aace0dfc0d2847b49d00aacd6dc532a94b476bedf70258"
+    },
+    "scripts/prepare-attention.mjs": {
+      "bytes": 992,
+      "sha256": "193bdfe3c2b723c16124fc8c0c9753b2a7be9da2f9ec8a3a875bd028a8c0cee4"
+    },
+    "scripts/prepare-extra-papers.mjs": {
+      "bytes": 1296,
+      "sha256": "35638a7d3cfe4b6e9e75ec29caa19eab68f5fe99afeeb48ed76fcddb06882e20"
+    },
     "scripts/prepare-home.py": {
-      "bytes": 2167,
-      "sha256": "e8343c972ce2715df7839831823cfcb8abc7a24f3c45bb0af3e8368eb2b16be1"
+      "bytes": 2683,
+      "sha256": "e7c44d7d7e8774fa6c4ae993861a1d24a60a6c264146d8c33199bff84e035c0c"
     },
     "scripts/verify-production.py": {
-      "bytes": 5579,
-      "sha256": "2d074cd524a585f4406f1e15b7e7445bcae4555ae5dc3b6a0cd97d93a78f338c"
+      "bytes": 6895,
+      "sha256": "66f4cbcd42a1b82b48e9dc748448a523f5fa5b474ad63f737cbd4bc25333ea59"
     },
     "src/layouts/SiteLayout.astro": {
       "bytes": 1532,
@@ -1562,28 +3079,62 @@
       "sha256": "5b9383c0180f6eabe1e47b0fded1b49c1ac39c3da08953277b7895b38002a6a4"
     },
     "src/pages/notes/attention-is-all-you-need/index.astro": {
-      "bytes": 15906,
-      "sha256": "8382ebf12498e3ff8b80d928360dade016a89478350f6692ada0ba3a14ec75b0"
+      "bytes": 79,
+      "sha256": "a089f8ea52d95977991117982cf5851bda8fc011fb0c78d855d6ea5638c4e7e1"
+    },
+    "src/pages/notes/attention-is-all-you-need/learn/index.astro": {
+      "bytes": 166,
+      "sha256": "aac6784dafe0d8193cc716a67bb557816771967e207cfeb1e2c22ded79c92c49"
+    },
+    "src/pages/notes/deep-residual-learning/index.astro": {
+      "bytes": 76,
+      "sha256": "35314920795d8f3636c0d7e8ed359a15b682c35c636a82095cceb6f56b4e16e5"
+    },
+    "src/pages/notes/deep-residual-learning/learn/index.astro": {
+      "bytes": 143,
+      "sha256": "99e18ea61dbae5ac82306be4073d40088cd24371bcafd1e92165893d9a811ebe"
+    },
+    "src/pages/notes/deep-residual-learning/units/[unit].astro": {
+      "bytes": 235,
+      "sha256": "1fcaef7d89b714681ca0f02d94e9ebd40313022be3ef0aa3feada23d09dbf3f0"
+    },
+    "src/pages/notes/gan/index.astro": {
+      "bytes": 81,
+      "sha256": "3e892799a21f9849c2321f93652bd7f1e233bf4c3964533f382639adf1e2ce47"
+    },
+    "src/pages/notes/generative-adversarial-nets/index.astro": {
+      "bytes": 81,
+      "sha256": "3e892799a21f9849c2321f93652bd7f1e233bf4c3964533f382639adf1e2ce47"
+    },
+    "src/pages/notes/generative-adversarial-nets/learn/index.astro": {
+      "bytes": 148,
+      "sha256": "3946422fed80f31ee7f3024c0580839b3452f06828d6b7cd5e065c115c30cbce"
+    },
+    "src/pages/notes/generative-adversarial-nets/units/[unit].astro": {
+      "bytes": 282,
+      "sha256": "f9c4e5eb08155a779222fbd2679c8b5c1f9145ceae89aa7ad473178bc96953a2"
+    },
+    "src/pages/notes/resnet/index.astro": {
+      "bytes": 76,
+      "sha256": "35314920795d8f3636c0d7e8ed359a15b682c35c636a82095cceb6f56b4e16e5"
     },
     "src/pages/rights/index.astro": {
-      "bytes": 11344,
-      "sha256": "d618a4dfef22da451e3dee28bc643c6cf681e11af9d30b858601ddebf0cf1b34"
+      "bytes": 11368,
+      "sha256": "ca132ff35d9f5820c7767f9b6a0ea37531fc9405288406701dc01b758051e42c"
     },
     "src/styles/global.css": {
       "bytes": 12788,
       "sha256": "d730832579484b928c94d862ad50758df098bb71ca5a5e1083e3984e2b4b9e88"
     }
   },
-  "publication_status": "Prepared GitHub synchronization candidate; no GitHub branch update or deployment performed. Sites v106 save is confirmed; Sites deployment outcome remains unconfirmed.",
+  "publication_status": "Isolated source integration candidate; no external write or deployment performed by this integration.",
   "production_additions": [
-    "Native HOME top anchor",
-    "Authored-material registry and local-only HOME search",
-    "Attention learning primary link and preserved old article entry",
-    "Eight narrated Attention videos, captions and transcripts",
-    "Unjuno Sponsors at both article-route endings",
-    "Reduced-motion initial image adoption",
-    "Arabic-script native title shaping",
-    "Single four-field editor JSON with generated metadata output"
+    "12 existing Attention videos",
+    "6 existing ResNet videos",
+    "8 existing GAN videos",
+    "Two preserved scientific reading notes with prominent separate-course links",
+    "Attention-only HOME and unchanged feed policy/runtime",
+    "Exact 20-route and reading-note semantic guards"
   ],
   "production_policy": {
     "authored_materials_only": true,
@@ -1599,5 +3150,6 @@
     ],
     "editor_file": "content/integrated-materials.json",
     "metadata_output": "dist/data/papers.json"
-  }
+  },
+  "record_scope": "Every selected source file except SOURCE_SYNC itself; files relative to paper-library; root_files relative to repository excluding paper-library. No generated root builds, dependencies or caches."
 }

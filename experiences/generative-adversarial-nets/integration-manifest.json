@@ -1,0 +1,50 @@
+{
+  "route": "/notes/generative-adversarial-nets/",
+  "deploy_root": "public/",
+  "source_include": [
+    "src/",
+    "content/",
+    "tests/",
+    "package.json",
+    "README.md",
+    "integration-manifest.json",
+    "public/",
+    "media-source/README.md",
+    "media-source/overview.py",
+    "media-source/narrate.py",
+    "media-source/narration.json",
+    "media-source/Kokoro-Apache-2.0.txt",
+    "media-source/validation.json",
+    "reference/sources.json",
+    "media-source/chapters/README.md",
+    "media-source/chapters/make_plan.py",
+    "media-source/chapters/plan.json",
+    "media-source/chapters/synthesize.py",
+    "media-source/chapters/scenes.py",
+    "media-source/chapters/package_media.py",
+    "media-source/chapters/check_math.py",
+    "media-source/chapters/math-validation.json",
+    "chapter-integration-diff.json",
+    "reference/SOURCE-CHECK.md"
+  ],
+  "source_exclude": [
+    "reference/paper.html",
+    "reference/paper.txt",
+    "media-source/render/",
+    "media-source/__pycache__/",
+    "media-source/*.log",
+    "media-source/*.png",
+    "media-source/narration.wav",
+    "media-source/chapters/audio/",
+    "media-source/chapters/render/",
+    "media-source/chapters/checks/",
+    "media-source/chapters/__pycache__/",
+    "media-source/chapters/*.log"
+  ],
+  "notes": [
+    "Do not upload original-paper full text. Local reference copies are research-only.",
+    "Deploy public directory over HTTP(S); file:// module execution is unsupported.",
+    "No deployment or GitHub write has been performed.",
+    "All seven unit videos are produced; browser playback and direct listening remain unverified."
+  ]
+}

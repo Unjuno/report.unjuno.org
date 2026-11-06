@@ -4,3 +4,10 @@ node_modules/
 .cache/
 *.zip
 .DS_Store
+
+# Local regeneration intermediates for final four unit clips
+media-source/final-units-manim/**/render/
+media-source/final-units-manim/**/*.wav
+media-source/final-units-manim/**/__pycache__/
+media-source/final-units-manim/**/deliverables/
+media-source/final-units-manim/**/media/

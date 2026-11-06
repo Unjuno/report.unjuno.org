@@ -7,17 +7,22 @@ const config=JSON.parse(await readFile(new URL('content/experience.json',root),'
 const html=await readFile(new URL('build-production/index.html',root),'utf8');
 const w=new Window({url:'https://report.unjuno.org/notes/attention-is-all-you-need/learn/',settings:{enableJavaScriptEvaluation:false,disableCSSFileLoading:true,disableJavaScriptFileLoading:true}});
 w.document.write(html);const d=w.document;
-test('learning-page brand returns to this origin HOME, while the old article remains linked',()=>{
+test('learning-page brand returns to this origin HOME, without a separate reading-note link',()=>{
  assert.equal(d.querySelector('.report-header__brand').getAttribute('href'),'/');
  assert.equal(d.querySelector('.report-header__brand').href,'https://report.unjuno.org/');
- assert.ok(d.querySelector('a[href="/notes/attention-is-all-you-need/"]'));
+ assert.equal(d.querySelector('a[href="/notes/attention-is-all-you-need/"]'),null);
+ assert.ok(!html.includes('論文ノートを読む'));
  assert.equal(d.querySelector('.report-header__rights').getAttribute('href'),'/rights/');
 });
 test('release status accurately counts playable videos and missing units',()=>{
  const ready=[config.overview,...config.units.map(u=>u.video)].filter(m=>m.status==='ready');
- assert.equal(ready.length,8);assert.equal(d.querySelectorAll('video').length,8);
- assert.equal(d.querySelectorAll('.media-pending').length,4);
- assert.ok(d.querySelector('.status-strip').textContent.includes('残る4単位の動画は制作中'));
+ const pending=config.units.length+1-ready.length;
+ assert.equal(d.querySelectorAll('video').length,ready.length);
+ assert.equal(d.querySelectorAll('.media-pending').length,pending);
+ const status=d.querySelector('.status-strip').textContent;
+ assert.ok(status.includes('概要を含む'+ready.length+'本の動画'));
+ if(pending)assert.ok(status.includes('残る'+pending+'単位の動画は制作中'));
+ else {assert.ok(status.includes('すべての理解単位に動画を用意'));assert.ok(!status.includes('残る0単位'));}
  assert.ok(d.querySelector('.status-strip').textContent.includes('実聴は未確認'));
  assert.ok(!d.querySelector('.status-strip').textContent.includes('ローカル版'));
 });

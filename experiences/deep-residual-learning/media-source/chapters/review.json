@@ -1,0 +1,202 @@
+{
+  "overview_sha256_unchanged": "6836b0de9b8becd396d40b86c51d9c7cbd17120ac1c84863c6e3a315d21d2f23",
+  "reviewed_media": [
+    {
+      "id": "residual",
+      "sha256": "37c0005a884d530b9b017729df41901867acf389f473b11d4c8308747e255327",
+      "frames": [
+        {
+          "seconds": 3.0,
+          "file": "media-source/chapters/residual/frame-1-30.jpg"
+        },
+        {
+          "seconds": 6.5,
+          "file": "media-source/chapters/residual/frame-1-65.jpg"
+        },
+        {
+          "seconds": 16.512,
+          "file": "media-source/chapters/residual/frame-2-30.jpg"
+        },
+        {
+          "seconds": 20.012,
+          "file": "media-source/chapters/residual/frame-2-65.jpg"
+        },
+        {
+          "seconds": 31.624000000000002,
+          "file": "media-source/chapters/residual/frame-3-30.jpg"
+        },
+        {
+          "seconds": 35.124,
+          "file": "media-source/chapters/residual/frame-3-65.jpg"
+        },
+        {
+          "seconds": 45.52,
+          "file": "media-source/chapters/residual/frame-4-30.jpg"
+        },
+        {
+          "seconds": 49.02,
+          "file": "media-source/chapters/residual/frame-4-65.jpg"
+        }
+      ],
+      "result": "passed: eight representative frames per chapter reviewed for readable diagrams, mathematical labels, transitions, overlap and cropping; final depth scene rechecked after wording correction"
+    },
+    {
+      "id": "shape",
+      "sha256": "3ee4779af2065382827115308bd503faad518cfb971ae3f0b37a1a8530ee4f7e",
+      "frames": [
+        {
+          "seconds": 3.0,
+          "file": "media-source/chapters/shape/frame-1-30.jpg"
+        },
+        {
+          "seconds": 6.5,
+          "file": "media-source/chapters/shape/frame-1-65.jpg"
+        },
+        {
+          "seconds": 15.530666666666667,
+          "file": "media-source/chapters/shape/frame-2-30.jpg"
+        },
+        {
+          "seconds": 19.03066666666667,
+          "file": "media-source/chapters/shape/frame-2-65.jpg"
+        },
+        {
+          "seconds": 30.32266666666667,
+          "file": "media-source/chapters/shape/frame-3-30.jpg"
+        },
+        {
+          "seconds": 33.82266666666667,
+          "file": "media-source/chapters/shape/frame-3-65.jpg"
+        },
+        {
+          "seconds": 44.752,
+          "file": "media-source/chapters/shape/frame-4-30.jpg"
+        },
+        {
+          "seconds": 48.252,
+          "file": "media-source/chapters/shape/frame-4-65.jpg"
+        }
+      ],
+      "result": "passed: eight representative frames per chapter reviewed for readable diagrams, mathematical labels, transitions, overlap and cropping; final depth scene rechecked after wording correction"
+    },
+    {
+      "id": "depth",
+      "sha256": "5d40e1f227f5db32435cbc8650dd1310ef2589120cf7d5e4f817d77fa5bc8177",
+      "frames": [
+        {
+          "seconds": 3.0,
+          "file": "media-source/chapters/depth/frame-1-30.jpg"
+        },
+        {
+          "seconds": 6.5,
+          "file": "media-source/chapters/depth/frame-1-65.jpg"
+        },
+        {
+          "seconds": 18.346666666666668,
+          "file": "media-source/chapters/depth/frame-2-30.jpg"
+        },
+        {
+          "seconds": 21.846666666666668,
+          "file": "media-source/chapters/depth/frame-2-65.jpg"
+        },
+        {
+          "seconds": 33.053333333333335,
+          "file": "media-source/chapters/depth/frame-3-30.jpg"
+        },
+        {
+          "seconds": 36.553333333333335,
+          "file": "media-source/chapters/depth/frame-3-65.jpg"
+        },
+        {
+          "seconds": 47.86666666666667,
+          "file": "media-source/chapters/depth/frame-4-30.jpg"
+        },
+        {
+          "seconds": 51.36666666666667,
+          "file": "media-source/chapters/depth/frame-4-65.jpg"
+        }
+      ],
+      "result": "passed: eight representative frames per chapter reviewed for readable diagrams, mathematical labels, transitions, overlap and cropping; final depth scene rechecked after wording correction"
+    },
+    {
+      "id": "blocks",
+      "sha256": "4b281f55bba1da6caa6fee44878a2d526ec810aa291cfcca20248d77901666d4",
+      "frames": [
+        {
+          "seconds": 3.0,
+          "file": "media-source/chapters/blocks/frame-1-30.jpg"
+        },
+        {
+          "seconds": 6.5,
+          "file": "media-source/chapters/blocks/frame-1-65.jpg"
+        },
+        {
+          "seconds": 19.349333333333334,
+          "file": "media-source/chapters/blocks/frame-2-30.jpg"
+        },
+        {
+          "seconds": 22.849333333333334,
+          "file": "media-source/chapters/blocks/frame-2-65.jpg"
+        },
+        {
+          "seconds": 36.21066666666667,
+          "file": "media-source/chapters/blocks/frame-3-30.jpg"
+        },
+        {
+          "seconds": 39.71066666666667,
+          "file": "media-source/chapters/blocks/frame-3-65.jpg"
+        },
+        {
+          "seconds": 51.92,
+          "file": "media-source/chapters/blocks/frame-4-30.jpg"
+        },
+        {
+          "seconds": 55.42,
+          "file": "media-source/chapters/blocks/frame-4-65.jpg"
+        }
+      ],
+      "result": "passed: eight representative frames per chapter reviewed for readable diagrams, mathematical labels, transitions, overlap and cropping; final depth scene rechecked after wording correction"
+    },
+    {
+      "id": "evidence",
+      "sha256": "75e893b0941304f83584c4668f9a23c58782b02804816aad2e71bd46968518f7",
+      "frames": [
+        {
+          "seconds": 3.0,
+          "file": "media-source/chapters/evidence/frame-1-30.jpg"
+        },
+        {
+          "seconds": 6.5,
+          "file": "media-source/chapters/evidence/frame-1-65.jpg"
+        },
+        {
+          "seconds": 19.669333333333334,
+          "file": "media-source/chapters/evidence/frame-2-30.jpg"
+        },
+        {
+          "seconds": 23.169333333333334,
+          "file": "media-source/chapters/evidence/frame-2-65.jpg"
+        },
+        {
+          "seconds": 36.95733333333334,
+          "file": "media-source/chapters/evidence/frame-3-30.jpg"
+        },
+        {
+          "seconds": 40.45733333333334,
+          "file": "media-source/chapters/evidence/frame-3-65.jpg"
+        },
+        {
+          "seconds": 54.245333333333335,
+          "file": "media-source/chapters/evidence/frame-4-30.jpg"
+        },
+        {
+          "seconds": 57.745333333333335,
+          "file": "media-source/chapters/evidence/frame-4-65.jpg"
+        }
+      ],
+      "result": "passed: eight representative frames per chapter reviewed for readable diagrams, mathematical labels, transitions, overlap and cropping; final depth scene rechecked after wording correction"
+    }
+  ],
+  "browser_playback": "unverified",
+  "direct_listening": "unverified"
+}

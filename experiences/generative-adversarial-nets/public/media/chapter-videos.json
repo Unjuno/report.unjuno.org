@@ -1,0 +1,621 @@
+{
+  "source": "https://arxiv.org/abs/1406.2661",
+  "chapters": [
+    {
+      "id": "roles",
+      "title": "作る役と、見分ける役",
+      "video": "media/chapters/roles.mp4",
+      "poster": "media/chapters/roles.poster.jpg",
+      "captions": "media/chapters/roles.ja.vtt",
+      "transcript": "media/chapters/roles.transcript.ja.txt",
+      "duration_seconds": 56.0,
+      "bytes": 1648590,
+      "sha256": "cc60c7ed940c66e814caa716010ace179ee05922e59b821399fade2c969ec0ab",
+      "assets": [
+        {
+          "path": "media/chapters/roles.mp4",
+          "bytes": 1648590,
+          "sha256": "cc60c7ed940c66e814caa716010ace179ee05922e59b821399fade2c969ec0ab"
+        },
+        {
+          "path": "media/chapters/roles.poster.jpg",
+          "bytes": 49143,
+          "sha256": "140c27832bd05587eb16389b56f10a768c818bc4f79ef05eaa78bcb15c336a3c"
+        },
+        {
+          "path": "media/chapters/roles.ja.vtt",
+          "bytes": 997,
+          "sha256": "c6b84b8a0e5a3e9f34b3bea71f6416c00b9546787a049d5d756b5f7cf6c6e4f0"
+        },
+        {
+          "path": "media/chapters/roles.transcript.ja.txt",
+          "bytes": 1031,
+          "sha256": "a3a811becc4c05094a5852e35001756d39604677d5973d54925593935ae46f3a"
+        }
+      ],
+      "source_sections": "§3",
+      "validation": {
+        "full_av_decode": "passed",
+        "non_silence": "passed; decoded AAC narration intervals checked",
+        "audio_intervals": [
+          {
+            "start": 0.6,
+            "end": 9.986666666666666,
+            "rms": 0.10522886198244746,
+            "fits_scene": true
+          },
+          {
+            "start": 14.6,
+            "end": 24.584,
+            "rms": 0.10406924534174525,
+            "fits_scene": true
+          },
+          {
+            "start": 28.6,
+            "end": 39.117333333333335,
+            "rms": 0.10394605710395888,
+            "fits_scene": true
+          },
+          {
+            "start": 42.6,
+            "end": 51.496,
+            "rms": 0.10638409626188274,
+            "fits_scene": true
+          }
+        ],
+        "subtitles": "bounds, order, full narration coverage, <=30 chars/line passed; sentence timings proportional estimates, not forced aligned",
+        "representative_frames": [
+          {
+            "time": 10.08,
+            "path": "media-source/chapters/checks/roles/frame-1.jpg"
+          },
+          {
+            "time": 24.08,
+            "path": "media-source/chapters/checks/roles/frame-2.jpg"
+          },
+          {
+            "time": 38.08,
+            "path": "media-source/chapters/checks/roles/frame-3.jpg"
+          },
+          {
+            "time": 52.08,
+            "path": "media-source/chapters/checks/roles/frame-4.jpg"
+          }
+        ],
+        "frame_visual_review": "passed",
+        "browser_playback": "not performed",
+        "direct_listening": "not performed",
+        "asr": "not performed",
+        "visual_review_notes": "Four representative final-state frames inspected for each chapter; readable labels, no clipping/overlap. Equilibrium revised to relabel untrained D after changing q; evidence original values explicitly attributed."
+      }
+    },
+    {
+      "id": "objective",
+      "title": "同じ式を、逆向きに動かす",
+      "video": "media/chapters/objective.mp4",
+      "poster": "media/chapters/objective.poster.jpg",
+      "captions": "media/chapters/objective.ja.vtt",
+      "transcript": "media/chapters/objective.transcript.ja.txt",
+      "duration_seconds": 56.0,
+      "bytes": 1780567,
+      "sha256": "695267215550518e2ca24d0f10f09d6e1cc0718374080ca895fd2ee1947632af",
+      "assets": [
+        {
+          "path": "media/chapters/objective.mp4",
+          "bytes": 1780567,
+          "sha256": "695267215550518e2ca24d0f10f09d6e1cc0718374080ca895fd2ee1947632af"
+        },
+        {
+          "path": "media/chapters/objective.poster.jpg",
+          "bytes": 58303,
+          "sha256": "2956c66b3a2e10d7d6c507eca4228a9a11fb8432ff58c470bf63fed2c8a08714"
+        },
+        {
+          "path": "media/chapters/objective.ja.vtt",
+          "bytes": 1096,
+          "sha256": "13fcb903ee5ac9f9c6db249464c6304827bbe3be87067533c8234c5d465286b0"
+        },
+        {
+          "path": "media/chapters/objective.transcript.ja.txt",
+          "bytes": 1082,
+          "sha256": "9d49fad6a42b22cc2a532c0d62d1f4c186be7415900489fbc96b4a3d29d29652"
+        }
+      ],
+      "source_sections": "§3・式(1)",
+      "validation": {
+        "full_av_decode": "passed",
+        "non_silence": "passed; decoded AAC narration intervals checked",
+        "audio_intervals": [
+          {
+            "start": 0.6,
+            "end": 11.586666666666666,
+            "rms": 0.10706230246985078,
+            "fits_scene": true
+          },
+          {
+            "start": 14.6,
+            "end": 25.544,
+            "rms": 0.10760789161171541,
+            "fits_scene": true
+          },
+          {
+            "start": 28.6,
+            "end": 38.989333333333335,
+            "rms": 0.10469267960595353,
+            "fits_scene": true
+          },
+          {
+            "start": 42.6,
+            "end": 53.501333333333335,
+            "rms": 0.10532502087651423,
+            "fits_scene": true
+          }
+        ],
+        "subtitles": "bounds, order, full narration coverage, <=30 chars/line passed; sentence timings proportional estimates, not forced aligned",
+        "representative_frames": [
+          {
+            "time": 10.08,
+            "path": "media-source/chapters/checks/objective/frame-1.jpg"
+          },
+          {
+            "time": 24.08,
+            "path": "media-source/chapters/checks/objective/frame-2.jpg"
+          },
+          {
+            "time": 38.08,
+            "path": "media-source/chapters/checks/objective/frame-3.jpg"
+          },
+          {
+            "time": 52.08,
+            "path": "media-source/chapters/checks/objective/frame-4.jpg"
+          }
+        ],
+        "frame_visual_review": "passed",
+        "browser_playback": "not performed",
+        "direct_listening": "not performed",
+        "asr": "not performed",
+        "visual_review_notes": "Four representative final-state frames inspected for each chapter; readable labels, no clipping/overlap. Equilibrium revised to relabel untrained D after changing q; evidence original values explicitly attributed."
+      }
+    },
+    {
+      "id": "optimal",
+      "title": "最適な識別器を計算する",
+      "video": "media/chapters/optimal.mp4",
+      "poster": "media/chapters/optimal.poster.jpg",
+      "captions": "media/chapters/optimal.ja.vtt",
+      "transcript": "media/chapters/optimal.transcript.ja.txt",
+      "duration_seconds": 56.0,
+      "bytes": 1876085,
+      "sha256": "c66e36dd07fb02941e4a7ef86a9f8ae0bff06cf5e510ccdd0ea8fc52d5674791",
+      "assets": [
+        {
+          "path": "media/chapters/optimal.mp4",
+          "bytes": 1876085,
+          "sha256": "c66e36dd07fb02941e4a7ef86a9f8ae0bff06cf5e510ccdd0ea8fc52d5674791"
+        },
+        {
+          "path": "media/chapters/optimal.poster.jpg",
+          "bytes": 64438,
+          "sha256": "b2609dd3b80c2ad369ce0039cbda4d2206a9c719417026152ee3a37bda8e7b11"
+        },
+        {
+          "path": "media/chapters/optimal.ja.vtt",
+          "bytes": 1036,
+          "sha256": "e3ede6b355c5687a7fe5397b9b56e8df76510957ce9cf657e7da5523e94cd493"
+        },
+        {
+          "path": "media/chapters/optimal.transcript.ja.txt",
+          "bytes": 1085,
+          "sha256": "ae55c77dd30d774874ed7e139160875e2b4fdbc5e5aef68599f3f217b379ab8c"
+        }
+      ],
+      "source_sections": "§4.1・命題1",
+      "validation": {
+        "full_av_decode": "passed",
+        "non_silence": "passed; decoded AAC narration intervals checked",
+        "audio_intervals": [
+          {
+            "start": 0.6,
+            "end": 12.376,
+            "rms": 0.10648734541747551,
+            "fits_scene": true
+          },
+          {
+            "start": 14.6,
+            "end": 23.709333333333333,
+            "rms": 0.10571803706412414,
+            "fits_scene": true
+          },
+          {
+            "start": 28.6,
+            "end": 38.712,
+            "rms": 0.1058335851005601,
+            "fits_scene": true
+          },
+          {
+            "start": 42.6,
+            "end": 55.22933333333334,
+            "rms": 0.10549786794973257,
+            "fits_scene": true
+          }
+        ],
+        "subtitles": "bounds, order, full narration coverage, <=30 chars/line passed; sentence timings proportional estimates, not forced aligned",
+        "representative_frames": [
+          {
+            "time": 10.08,
+            "path": "media-source/chapters/checks/optimal/frame-1.jpg"
+          },
+          {
+            "time": 24.08,
+            "path": "media-source/chapters/checks/optimal/frame-2.jpg"
+          },
+          {
+            "time": 38.08,
+            "path": "media-source/chapters/checks/optimal/frame-3.jpg"
+          },
+          {
+            "time": 52.08,
+            "path": "media-source/chapters/checks/optimal/frame-4.jpg"
+          }
+        ],
+        "frame_visual_review": "passed",
+        "browser_playback": "not performed",
+        "direct_listening": "not performed",
+        "asr": "not performed",
+        "visual_review_notes": "Four representative final-state frames inspected for each chapter; readable labels, no clipping/overlap. Equilibrium revised to relabel untrained D after changing q; evidence original values explicitly attributed."
+      }
+    },
+    {
+      "id": "equilibrium",
+      "title": "見分けられない、を数式にする",
+      "video": "media/chapters/equilibrium.mp4",
+      "poster": "media/chapters/equilibrium.poster.jpg",
+      "captions": "media/chapters/equilibrium.ja.vtt",
+      "transcript": "media/chapters/equilibrium.transcript.ja.txt",
+      "duration_seconds": 56.0,
+      "bytes": 1790507,
+      "sha256": "da70b1ac362e064bd050be3ea4addf250bfbbe4f7c62101a433fa5ecd84bb83f",
+      "assets": [
+        {
+          "path": "media/chapters/equilibrium.mp4",
+          "bytes": 1790507,
+          "sha256": "da70b1ac362e064bd050be3ea4addf250bfbbe4f7c62101a433fa5ecd84bb83f"
+        },
+        {
+          "path": "media/chapters/equilibrium.poster.jpg",
+          "bytes": 70381,
+          "sha256": "6567cec0faf5e5a915857c1cfd7b92a34b2de7027ff5f9b1f2c4c88ca29e9199"
+        },
+        {
+          "path": "media/chapters/equilibrium.ja.vtt",
+          "bytes": 998,
+          "sha256": "41d578b75b491967330acbc093b899b25cf61adc24ca46de80a72b9a88c26615"
+        },
+        {
+          "path": "media/chapters/equilibrium.transcript.ja.txt",
+          "bytes": 1136,
+          "sha256": "2030cf410bd843ed7bf2d91c61b6c996b5f285767362a8ed433cbddbb1f4bb05"
+        }
+      ],
+      "source_sections": "§4.1・定理1／§4.2・命題2",
+      "validation": {
+        "full_av_decode": "passed",
+        "non_silence": "passed; decoded AAC narration intervals checked",
+        "audio_intervals": [
+          {
+            "start": 0.6,
+            "end": 9.709333333333333,
+            "rms": 0.10517301484242968,
+            "fits_scene": true
+          },
+          {
+            "start": 14.6,
+            "end": 25.373333333333335,
+            "rms": 0.10438598971265058,
+            "fits_scene": true
+          },
+          {
+            "start": 28.6,
+            "end": 38.754666666666665,
+            "rms": 0.10487636117250206,
+            "fits_scene": true
+          },
+          {
+            "start": 42.6,
+            "end": 55.37866666666667,
+            "rms": 0.10512201095934944,
+            "fits_scene": true
+          }
+        ],
+        "subtitles": "bounds, order, full narration coverage, <=30 chars/line passed; sentence timings proportional estimates, not forced aligned",
+        "representative_frames": [
+          {
+            "time": 10.08,
+            "path": "media-source/chapters/checks/equilibrium/frame-1.jpg"
+          },
+          {
+            "time": 24.08,
+            "path": "media-source/chapters/checks/equilibrium/frame-2.jpg"
+          },
+          {
+            "time": 38.08,
+            "path": "media-source/chapters/checks/equilibrium/frame-3.jpg"
+          },
+          {
+            "time": 52.08,
+            "path": "media-source/chapters/checks/equilibrium/frame-4.jpg"
+          }
+        ],
+        "frame_visual_review": "passed",
+        "browser_playback": "not performed",
+        "direct_listening": "not performed",
+        "asr": "not performed",
+        "visual_review_notes": "Four representative final-state frames inspected for each chapter; readable labels, no clipping/overlap. Equilibrium revised to relabel untrained D after changing q; evidence original values explicitly attributed."
+      }
+    },
+    {
+      "id": "training",
+      "title": "二人を交互に更新する",
+      "video": "media/chapters/training.mp4",
+      "poster": "media/chapters/training.poster.jpg",
+      "captions": "media/chapters/training.ja.vtt",
+      "transcript": "media/chapters/training.transcript.ja.txt",
+      "duration_seconds": 56.0,
+      "bytes": 1863309,
+      "sha256": "4c32c22dd523636f6d9c29c66443839bd7094dcd1f0636fc6e5af59662074c79",
+      "assets": [
+        {
+          "path": "media/chapters/training.mp4",
+          "bytes": 1863309,
+          "sha256": "4c32c22dd523636f6d9c29c66443839bd7094dcd1f0636fc6e5af59662074c79"
+        },
+        {
+          "path": "media/chapters/training.poster.jpg",
+          "bytes": 62860,
+          "sha256": "c8788ad57697096436fa944cdb99c4a6be1ed711b18ed9acdef265d82653dffa"
+        },
+        {
+          "path": "media/chapters/training.ja.vtt",
+          "bytes": 1060,
+          "sha256": "4b9fa252a50a0a432ad658156f3cd66f610eaa2ef84752a982c95e2ffb8d4c69"
+        },
+        {
+          "path": "media/chapters/training.transcript.ja.txt",
+          "bytes": 1108,
+          "sha256": "54ca12ab21bd6ba929da2def4c7f16275f539d32324b60d652fddc8e3a5afe89"
+        }
+      ],
+      "source_sections": "Algorithm 1／§6",
+      "validation": {
+        "full_av_decode": "passed",
+        "non_silence": "passed; decoded AAC narration intervals checked",
+        "audio_intervals": [
+          {
+            "start": 0.6,
+            "end": 10.178666666666667,
+            "rms": 0.10763742923749764,
+            "fits_scene": true
+          },
+          {
+            "start": 14.6,
+            "end": 26.183999999999997,
+            "rms": 0.1060630465349935,
+            "fits_scene": true
+          },
+          {
+            "start": 28.6,
+            "end": 39.714666666666666,
+            "rms": 0.10761032612095577,
+            "fits_scene": true
+          },
+          {
+            "start": 42.6,
+            "end": 53.629333333333335,
+            "rms": 0.10484219734026845,
+            "fits_scene": true
+          }
+        ],
+        "subtitles": "bounds, order, full narration coverage, <=30 chars/line passed; sentence timings proportional estimates, not forced aligned",
+        "representative_frames": [
+          {
+            "time": 10.08,
+            "path": "media-source/chapters/checks/training/frame-1.jpg"
+          },
+          {
+            "time": 24.08,
+            "path": "media-source/chapters/checks/training/frame-2.jpg"
+          },
+          {
+            "time": 38.08,
+            "path": "media-source/chapters/checks/training/frame-3.jpg"
+          },
+          {
+            "time": 52.08,
+            "path": "media-source/chapters/checks/training/frame-4.jpg"
+          }
+        ],
+        "frame_visual_review": "passed",
+        "browser_playback": "not performed",
+        "direct_listening": "not performed",
+        "asr": "not performed",
+        "visual_review_notes": "Four representative final-state frames inspected for each chapter; readable labels, no clipping/overlap. Equilibrium revised to relabel untrained D after changing q; evidence original values explicitly attributed."
+      }
+    },
+    {
+      "id": "saturation",
+      "title": "損失の値と、勾配を分ける",
+      "video": "media/chapters/saturation.mp4",
+      "poster": "media/chapters/saturation.poster.jpg",
+      "captions": "media/chapters/saturation.ja.vtt",
+      "transcript": "media/chapters/saturation.transcript.ja.txt",
+      "duration_seconds": 56.0,
+      "bytes": 1681208,
+      "sha256": "c2f88479c83014fa0cef789b04aed7ffad0c2be96d48e39da3955c101c63ca98",
+      "assets": [
+        {
+          "path": "media/chapters/saturation.mp4",
+          "bytes": 1681208,
+          "sha256": "c2f88479c83014fa0cef789b04aed7ffad0c2be96d48e39da3955c101c63ca98"
+        },
+        {
+          "path": "media/chapters/saturation.poster.jpg",
+          "bytes": 54122,
+          "sha256": "c23eec4ec0d2b925b28a2f55e5840b9914c1603a1198b916a5ca87b7f84803ef"
+        },
+        {
+          "path": "media/chapters/saturation.ja.vtt",
+          "bytes": 1063,
+          "sha256": "05ebeef39bf8db290369562af544446062f0577329c34fbc19eb20f959356f3c"
+        },
+        {
+          "path": "media/chapters/saturation.transcript.ja.txt",
+          "bytes": 1121,
+          "sha256": "386e6b84ea465e1edcceb546bc0102b1f96a0fb9b2500d4717c7f94a140b0edb"
+        }
+      ],
+      "source_sections": "§3・非飽和目的",
+      "validation": {
+        "full_av_decode": "passed",
+        "non_silence": "passed; decoded AAC narration intervals checked",
+        "audio_intervals": [
+          {
+            "start": 0.6,
+            "end": 11.245333333333333,
+            "rms": 0.10544521063166425,
+            "fits_scene": true
+          },
+          {
+            "start": 14.6,
+            "end": 24.328,
+            "rms": 0.10562497730690895,
+            "fits_scene": true
+          },
+          {
+            "start": 28.6,
+            "end": 39.458666666666666,
+            "rms": 0.10562439071389672,
+            "fits_scene": true
+          },
+          {
+            "start": 42.6,
+            "end": 54.61066666666667,
+            "rms": 0.10606367991767905,
+            "fits_scene": true
+          }
+        ],
+        "subtitles": "bounds, order, full narration coverage, <=30 chars/line passed; sentence timings proportional estimates, not forced aligned",
+        "representative_frames": [
+          {
+            "time": 10.08,
+            "path": "media-source/chapters/checks/saturation/frame-1.jpg"
+          },
+          {
+            "time": 24.08,
+            "path": "media-source/chapters/checks/saturation/frame-2.jpg"
+          },
+          {
+            "time": 38.08,
+            "path": "media-source/chapters/checks/saturation/frame-3.jpg"
+          },
+          {
+            "time": 52.08,
+            "path": "media-source/chapters/checks/saturation/frame-4.jpg"
+          }
+        ],
+        "frame_visual_review": "passed",
+        "browser_playback": "not performed",
+        "direct_listening": "not performed",
+        "asr": "not performed",
+        "visual_review_notes": "Four representative final-state frames inspected for each chapter; readable labels, no clipping/overlap. Equilibrium revised to relabel untrained D after changing q; evidence original values explicitly attributed."
+      }
+    },
+    {
+      "id": "evidence",
+      "title": "2014年の証拠と、限界",
+      "video": "media/chapters/evidence.mp4",
+      "poster": "media/chapters/evidence.poster.jpg",
+      "captions": "media/chapters/evidence.ja.vtt",
+      "transcript": "media/chapters/evidence.transcript.ja.txt",
+      "duration_seconds": 68.0,
+      "bytes": 2183362,
+      "sha256": "dff09dde6eb9eb22405835c7e91b844891b262ddce62d11a3457507e682dcd02",
+      "assets": [
+        {
+          "path": "media/chapters/evidence.mp4",
+          "bytes": 2183362,
+          "sha256": "dff09dde6eb9eb22405835c7e91b844891b262ddce62d11a3457507e682dcd02"
+        },
+        {
+          "path": "media/chapters/evidence.poster.jpg",
+          "bytes": 67036,
+          "sha256": "9e38835fd5a6da1062a4568c0c415e8f1c62758e7888d5ae886355fe2406afd2"
+        },
+        {
+          "path": "media/chapters/evidence.ja.vtt",
+          "bytes": 1217,
+          "sha256": "cef24074804f74d8f7a11dc4041451f016ceffeb76168f4016882b4dede1da38"
+        },
+        {
+          "path": "media/chapters/evidence.transcript.ja.txt",
+          "bytes": 1261,
+          "sha256": "cb7a0d7a18388909f3dcdbe39777da89b57c355606af8156e175ad589e7bb13f"
+        }
+      ],
+      "source_sections": "§5・Table 1／§6",
+      "validation": {
+        "full_av_decode": "passed",
+        "non_silence": "passed; decoded AAC narration intervals checked",
+        "audio_intervals": [
+          {
+            "start": 0.6,
+            "end": 10.541333333333332,
+            "rms": 0.10558151329687741,
+            "fits_scene": true
+          },
+          {
+            "start": 17.6,
+            "end": 31.317333333333334,
+            "rms": 0.10390463090456445,
+            "fits_scene": true
+          },
+          {
+            "start": 34.6,
+            "end": 46.504000000000005,
+            "rms": 0.10460909891325493,
+            "fits_scene": true
+          },
+          {
+            "start": 51.6,
+            "end": 64.93333333333334,
+            "rms": 0.1049392056117514,
+            "fits_scene": true
+          }
+        ],
+        "subtitles": "bounds, order, full narration coverage, <=30 chars/line passed; sentence timings proportional estimates, not forced aligned",
+        "representative_frames": [
+          {
+            "time": 12.24,
+            "path": "media-source/chapters/checks/evidence/frame-1.jpg"
+          },
+          {
+            "time": 29.24,
+            "path": "media-source/chapters/checks/evidence/frame-2.jpg"
+          },
+          {
+            "time": 46.239999999999995,
+            "path": "media-source/chapters/checks/evidence/frame-3.jpg"
+          },
+          {
+            "time": 63.239999999999995,
+            "path": "media-source/chapters/checks/evidence/frame-4.jpg"
+          }
+        ],
+        "frame_visual_review": "passed",
+        "browser_playback": "not performed",
+        "direct_listening": "not performed",
+        "asr": "not performed",
+        "visual_review_notes": "Four representative final-state frames inspected for each chapter; readable labels, no clipping/overlap. Equilibrium revised to relabel untrained D after changing q; evidence original values explicitly attributed."
+      }
+    }
+  ]
+}
