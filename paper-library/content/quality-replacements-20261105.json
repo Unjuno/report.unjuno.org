@@ -1,0 +1,172 @@
+{
+  "base_commit": "f915185060390c41b05427d57407226fc543de85",
+  "active_generated_image_count": 100,
+  "active_scene_count": 146,
+  "images": [
+    {
+      "candidate": 27,
+      "previous": {
+        "name": "selected-api-candidate-27-v1.webp",
+        "candidate": 27,
+        "source_sha256": "dde7407c3d2381a07028cf0bc862d4274b3b447167e6f3e82550cfaba4c992e2",
+        "sha256": "a6e5ad39733e105cc19033e1c4c0866fb941d96453274df4bca3df6669b4ca4a",
+        "bytes": 78858,
+        "dimensions": [
+          1672,
+          941
+        ],
+        "focus": 0.78,
+        "transition": "local-blends",
+        "label": "赤血球"
+      },
+      "current": {
+        "name": "selected-api-candidate-27-v2.webp",
+        "candidate": 27,
+        "source_sha256": "f9dc255f3c6539ec387e7c45868a94cc6026c031e5b399ddfab89bed61548d1f",
+        "sha256": "ae856884b267fa4f4924c360e4025dde53ae2b55f213d5f655b756b6a0000121",
+        "bytes": 278822,
+        "dimensions": [
+          1672,
+          941
+        ],
+        "focus": 0.5,
+        "transition": "local-blends",
+        "label": "葉の断面",
+        "replaces": "selected-api-candidate-27-v1.webp"
+      },
+      "source_file": "source/quality-20261105/images/exec-a051e5e5-b799-4c0f-8a12-9d36a402afd9.png"
+    },
+    {
+      "candidate": 75,
+      "previous": {
+        "name": "selected-api-candidate-75-v1.webp",
+        "candidate": 75,
+        "source_sha256": "b8b4a37e50d1b8a01e0d17679cbb25f72af32136d395ae3852b207885a346517",
+        "sha256": "446a6b9210b2efa1cf5bd6c63262911d958d3da46e145e4a2f0bb6411b7bc4dd",
+        "bytes": 423230,
+        "dimensions": [
+          1672,
+          941
+        ],
+        "focus": 0.5,
+        "transition": "local-blends",
+        "label": "氷の気泡"
+      },
+      "current": {
+        "name": "selected-api-candidate-75-v2.webp",
+        "candidate": 75,
+        "source_sha256": "0c1adad8560a860c16984fd84be49ebf32d15d66ff051bacd7968134e1b88c24",
+        "sha256": "2bc1256aa983a090c0daaa537d75e09613c399480e62c41374856d2cb59506d6",
+        "bytes": 150580,
+        "dimensions": [
+          1672,
+          941
+        ],
+        "focus": 0.65,
+        "transition": "local-blends",
+        "label": "氷の気泡",
+        "replaces": "selected-api-candidate-75-v1.webp"
+      },
+      "source_file": "source/quality-20261105/images/exec-e80e01ca-18d0-48d7-b327-8dfb640cc20c.png"
+    },
+    {
+      "candidate": 51,
+      "previous": {
+        "name": "selected-api-candidate-51-v1.webp",
+        "candidate": 51,
+        "source_sha256": "76925107ad24944059995f96d4354781a2dc0f2f168cc84b457437632dbc5cc7",
+        "sha256": "eb18985e7475727585b1140eaa595d24a272e9d7723d5193458919b0cbfecf8d",
+        "bytes": 206548,
+        "dimensions": [
+          1672,
+          941
+        ],
+        "focus": 0.5,
+        "transition": "local-blends",
+        "label": "釉薬の器"
+      },
+      "current": {
+        "name": "selected-api-candidate-51-v2.webp",
+        "candidate": 51,
+        "source_sha256": "0a03e1a3cf22aaa057dd2e4ca89257c4b46463c243dcc2876ba5670b612da43c",
+        "sha256": "95068b3bdcbf99ffb6f90d252cece03ce20281285fe0211f850756fe19756565",
+        "bytes": 135734,
+        "dimensions": [
+          1672,
+          941
+        ],
+        "focus": 0.73,
+        "transition": "local-blends",
+        "label": "陶器の貫入",
+        "replaces": "selected-api-candidate-51-v1.webp"
+      },
+      "source_file": "source/quality-20261105/images/exec-7b1c1190-c93d-4668-8b36-eee0382a8dc5.png"
+    },
+    {
+      "candidate": 38,
+      "previous": {
+        "name": "selected-api-candidate-38-v1.webp",
+        "candidate": 38,
+        "source_sha256": "ce59e2df6f236f39df32c95913b68be4f6879daab43d706477aab370353fa8f8",
+        "sha256": "1c689f96f70987c7dcc64c806103671df19a13450a170a93b859dd7937d194b7",
+        "bytes": 348106,
+        "dimensions": [
+          1672,
+          941
+        ],
+        "focus": 0.5,
+        "transition": "contour-bands",
+        "label": "紙と花びら"
+      },
+      "current": {
+        "name": "selected-api-candidate-38-v2.webp",
+        "candidate": 38,
+        "source_sha256": "4740426c2e16842bb9c1bbc416b4a9ca49ac488f635939648ac010fdce22c1c8",
+        "sha256": "adec5983dc61ac6a454a799a21c3e1a3b872676468fa9b8416c38c995eaf5a6d",
+        "bytes": 377812,
+        "dimensions": [
+          1672,
+          941
+        ],
+        "focus": 0.45,
+        "transition": "contour-bands",
+        "label": "手製本の作業台",
+        "replaces": "selected-api-candidate-38-v1.webp"
+      },
+      "source_file": "source/quality-20261105/images/exec-a1566d6e-358b-4de9-8ca9-ce44939f1413.png"
+    },
+    {
+      "candidate": 22,
+      "previous": {
+        "name": "selected-api-candidate-22-v1.webp",
+        "candidate": 22,
+        "source_sha256": "5033d7974a30d41b848a06f249b6b739a2c2c3c90d96680b7e5af66933f5ccb7",
+        "sha256": "94c411f0c212f20efa00e678cb1945f217207361424424066e2086c9a28bae4a",
+        "bytes": 115978,
+        "dimensions": [
+          1672,
+          941
+        ],
+        "focus": 0.77,
+        "transition": "ribbon",
+        "label": "虹色の流れ"
+      },
+      "current": {
+        "name": "selected-api-candidate-22-v2.webp",
+        "candidate": 22,
+        "source_sha256": "278b5989d9c6c5c8d369e1fd402703def7454ae403c32a5bbd4cf896af34100f",
+        "sha256": "7db09af2cbcad69531a5ed49323f10f769a2036d0564cbc836c6396e387048bd",
+        "bytes": 252820,
+        "dimensions": [
+          1672,
+          941
+        ],
+        "focus": 0.78,
+        "transition": "ribbon",
+        "label": "火山岩の海岸",
+        "replaces": "selected-api-candidate-22-v1.webp"
+      },
+      "source_file": "source/quality-20261105/images/exec-97915aa8-9f2b-46f1-a3ef-b36bb4af8fa4.png"
+    }
+  ]
+}

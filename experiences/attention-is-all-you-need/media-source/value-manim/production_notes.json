@@ -1,0 +1,50 @@
+{
+  "title": "重みでValueを混ぜる",
+  "duration_seconds": 48,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "fps": 30,
+  "frames": 1440,
+  "renderer": "Manim Community 0.19.0 (Cairo)",
+  "animation_count": 25,
+  "narration": "Japanese Kokoro jf_alpha, speed 1.0, eight synchronized sections, no music",
+  "captions": "Burned in Japanese captions plus SRT/WebVTT",
+  "reference": "https://arxiv.org/abs/1706.03762 §3.2.1",
+  "checks": [
+    "Full audiovisual decode passed",
+    "Eight final-video frames visually inspected",
+    "All eight narration sections fit with at least 0.273 second end padding, no cuts or speed-up",
+    "ASR covers all eight sections; punctuation and numeral formatting differ",
+    "139 numerical checks against actual site math and value-mix output, including two 0.1-step trajectories",
+    "Outputs [0.337,0.554], [0.663,0.554], [0.663,0.229] match interaction rounding",
+    "Video and audio both exactly 48 seconds"
+  ],
+  "limits": [
+    "Narration not directly listened to in this runtime; no claim of word-perfect pronunciation or subjective voice quality."
+  ],
+  "sha256": "f680e96e573d6b5352b0a4207d9489eebf68579ec3b6f53c198b6454ced315d4",
+  "file_size_bytes": 3070266,
+  "fixed_weights_from_scores": [
+    2,
+    2,
+    0
+  ],
+  "key_dimensions": 2,
+  "initial_values": [
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      -1,
+      1
+    ]
+  ],
+  "subtitle_default": "No default WebVTT overlay because Japanese captions are burned in."
+}

@@ -1,0 +1,30 @@
+{
+  "purpose": "Clarify the opening subtitle: Value is made FROM the input representation.",
+  "native_manim_clips_replaced": [
+    {
+      "animation": 0,
+      "width": 1920,
+      "height": 1080,
+      "r_frame_rate": "30/1",
+      "duration": "1.500000",
+      "nb_frames": "45"
+    },
+    {
+      "animation": 1,
+      "width": 1920,
+      "height": 1080,
+      "r_frame_rate": "30/1",
+      "duration": "4.200000",
+      "nb_frames": "126"
+    },
+    {
+      "animation": 2,
+      "width": 1920,
+      "height": 1080,
+      "r_frame_rate": "30/1",
+      "duration": "0.500000",
+      "nb_frames": "15"
+    }
+  ],
+  "all_timing_identical": true
+}

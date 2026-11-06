@@ -1,0 +1,370 @@
+{
+  "id": 69,
+  "title_ja": "問いの余白",
+  "title_en": "Room for a Question",
+  "family": "dialogue",
+  "tonic_midi": 55,
+  "scale": [
+    0,
+    2,
+    3,
+    5,
+    7,
+    9,
+    10
+  ],
+  "bpm": 64,
+  "beats_per_bar": 3,
+  "bars": 8,
+  "chord_degrees": [
+    0,
+    5,
+    3,
+    0,
+    2,
+    1,
+    4,
+    0
+  ],
+  "motif": [
+    4,
+    null,
+    2,
+    3,
+    1,
+    0,
+    2,
+    null
+  ],
+  "rhythm_weights": [
+    2,
+    1,
+    1,
+    2,
+    1,
+    3,
+    1,
+    1
+  ],
+  "form": [
+    "intro",
+    "theme",
+    "answer",
+    "theme",
+    "bridge",
+    "answer",
+    "reprise",
+    "outro"
+  ],
+  "arrangement_revision": 2,
+  "intact_theme_bars": [
+    3,
+    4
+  ],
+  "midi_note_gates": "Repeated same-pitch gates shortened; audio resonance tails retained.",
+  "stem": "069_room_for_a_question",
+  "duration_seconds": 26.5,
+  "sample_rate": 32000,
+  "mp3_bitrate_kbps": 160,
+  "clipped_samples": 0,
+  "all_finite": true,
+  "integrated_loudness_lufs": -18.4,
+  "true_peak_dbtp": -7.1,
+  "full_decode": "pass",
+  "auditory_review": "pending",
+  "final_status": "prototype",
+  "additional_generation_fees": 0,
+  "third_party_audio_assets": [],
+  "composition_fingerprint": "b3a56b401e0fcc201392b03cdec68e9e24f1f8302076cc732d49b97d92878310",
+  "audio_sha256": "3eb0641cd2228a29fa5f9530eca415b73fc0b88a5954e1633badd4d4585f0c8b",
+  "notes": [
+    {
+      "pitch": 43,
+      "start_beats": 0.0,
+      "duration_beats": 1.65,
+      "voice": "tine",
+      "velocity": 0.32
+    },
+    {
+      "pitch": 67,
+      "start_beats": 1.2,
+      "duration_beats": 2.4,
+      "voice": "tine",
+      "velocity": 0.31
+    },
+    {
+      "pitch": 52,
+      "start_beats": 4.5,
+      "duration_beats": 1.65,
+      "voice": "tine",
+      "velocity": 0.32
+    },
+    {
+      "pitch": 64,
+      "start_beats": 6.45,
+      "duration_beats": 2.7,
+      "voice": "organ",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 67,
+      "start_beats": 6.459,
+      "duration_beats": 2.7,
+      "voice": "organ",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 48,
+      "start_beats": 6.0,
+      "duration_beats": 1.65,
+      "voice": "tine",
+      "velocity": 0.32
+    },
+    {
+      "pitch": 43,
+      "start_beats": 10.5,
+      "duration_beats": 1.65,
+      "voice": "tine",
+      "velocity": 0.32
+    },
+    {
+      "pitch": 62,
+      "start_beats": 12.45,
+      "duration_beats": 2.7,
+      "voice": "organ",
+      "velocity": 0.552
+    },
+    {
+      "pitch": 65,
+      "start_beats": 12.459,
+      "duration_beats": 2.7,
+      "voice": "organ",
+      "velocity": 0.552
+    },
+    {
+      "pitch": 46,
+      "start_beats": 12.0,
+      "duration_beats": 1.65,
+      "voice": "tine",
+      "velocity": 0.32
+    },
+    {
+      "pitch": 60,
+      "start_beats": 15.45,
+      "duration_beats": 2.7,
+      "voice": "organ",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 64,
+      "start_beats": 15.459,
+      "duration_beats": 2.7,
+      "voice": "organ",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 45,
+      "start_beats": 16.5,
+      "duration_beats": 1.65,
+      "voice": "tine",
+      "velocity": 0.32
+    },
+    {
+      "pitch": 65,
+      "start_beats": 18.45,
+      "duration_beats": 2.7,
+      "voice": "organ",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 69,
+      "start_beats": 18.459,
+      "duration_beats": 2.7,
+      "voice": "organ",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 50,
+      "start_beats": 18.0,
+      "duration_beats": 1.65,
+      "voice": "tine",
+      "velocity": 0.32
+    },
+    {
+      "pitch": 58,
+      "start_beats": 21.45,
+      "duration_beats": 2.7,
+      "voice": "organ",
+      "velocity": 0.4
+    },
+    {
+      "pitch": 62,
+      "start_beats": 21.459,
+      "duration_beats": 2.7,
+      "voice": "organ",
+      "velocity": 0.4
+    },
+    {
+      "pitch": 43,
+      "start_beats": 22.5,
+      "duration_beats": 1.65,
+      "voice": "tine",
+      "velocity": 0.32
+    },
+    {
+      "pitch": 69,
+      "start_beats": 3.0,
+      "duration_beats": 0.41,
+      "voice": "reed",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 67,
+      "start_beats": 3.512,
+      "duration_beats": 1.23,
+      "voice": "reed",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 70,
+      "start_beats": 5.0,
+      "duration_beats": 0.41,
+      "voice": "reed",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 74,
+      "start_beats": 6.0,
+      "duration_beats": 1.75,
+      "voice": "tine",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 70,
+      "start_beats": 7.5,
+      "duration_beats": 1.1,
+      "voice": "tine",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 72,
+      "start_beats": 8.012,
+      "duration_beats": 1.75,
+      "voice": "tine",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 69,
+      "start_beats": 9.0,
+      "duration_beats": 0.41,
+      "voice": "reed",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 67,
+      "start_beats": 9.512,
+      "duration_beats": 1.23,
+      "voice": "reed",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 70,
+      "start_beats": 11.0,
+      "duration_beats": 0.41,
+      "voice": "reed",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 74,
+      "start_beats": 12.0,
+      "duration_beats": 1.75,
+      "voice": "tine",
+      "velocity": 0.53
+    },
+    {
+      "pitch": 67,
+      "start_beats": 13.5,
+      "duration_beats": 1.1,
+      "voice": "tine",
+      "velocity": 0.53
+    },
+    {
+      "pitch": 69,
+      "start_beats": 14.012,
+      "duration_beats": 1.75,
+      "voice": "tine",
+      "velocity": 0.53
+    },
+    {
+      "pitch": 67,
+      "start_beats": 15.0,
+      "duration_beats": 0.41,
+      "voice": "reed",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 67,
+      "start_beats": 15.512,
+      "duration_beats": 1.23,
+      "voice": "reed",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 67,
+      "start_beats": 17.0,
+      "duration_beats": 0.41,
+      "voice": "reed",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 74,
+      "start_beats": 18.0,
+      "duration_beats": 1.75,
+      "voice": "tine",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 70,
+      "start_beats": 19.5,
+      "duration_beats": 1.1,
+      "voice": "tine",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 72,
+      "start_beats": 20.012,
+      "duration_beats": 1.75,
+      "voice": "tine",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 69,
+      "start_beats": 21.0,
+      "duration_beats": 0.41,
+      "voice": "reed",
+      "velocity": 0.42
+    },
+    {
+      "pitch": 69,
+      "start_beats": 21.512,
+      "duration_beats": 1.23,
+      "voice": "reed",
+      "velocity": 0.42
+    },
+    {
+      "pitch": 67,
+      "start_beats": 23.0,
+      "duration_beats": 0.41,
+      "voice": "reed",
+      "velocity": 0.42
+    }
+  ],
+  "render_loudness_before_gain_lufs": -14.3,
+  "final_gain_db": -3.7,
+  "target_loudness_lufs": -18,
+  "mp3_file_size_bytes": 532275,
+  "midi_note_count": 40,
+  "midi_same_pitch_gate_overlaps": 0,
+  "listening_status": "未試聴。採用前に実際の聴覚評価が必要。",
+  "file": "audio/069_room_for_a_question.mp3"
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "brand": {
+    "brandLabel": "report.unjuno.org",
+    "homeHref": "https://report.unjuno.org/",
+    "rightsHref": "https://report.unjuno.org/rights/"
+  },
+  "variants": {
+    "home": {
+      "header": {
+        "mainId": "main-content",
+        "context": null,
+        "links": []
+      },
+      "sponsor": {
+        "id": "support-home",
+        "title": "この場所を、つくり続ける。",
+        "description": "論文との出会いを、これからも。",
+        "href": "https://github.com/sponsors/Unjuno"
+      }
+    },
+    "attention": {
+      "header": {
+        "mainId": "main-content",
+        "context": "Attention Is All You Need",
+        "links": [
+          {
+            "label": "目次",
+            "href": "#chapter-index"
+          }
+        ]
+      },
+      "sponsor": {
+        "id": "support-attention",
+        "title": "理解する体験を、つくり続ける。",
+        "description": "短い動画と、触って確かめる仕組み。論文を自分のペースで学べる場所づくりを支えられます。",
+        "href": "https://github.com/sponsors/Unjuno"
+      }
+    }
+  }
+}
+

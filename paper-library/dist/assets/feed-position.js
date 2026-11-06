@@ -1,27 +1,50 @@
-/* Reset explicit reloads only. Normal links and history keep native scrolling. */
+/* Start fresh visits at the top; preserve anchors and native history scrolling. */
 (() => {
   'use strict';
   const navigation = performance.getEntriesByType?.('navigation')[0];
-  const reloading = navigation ? navigation.type === 'reload' : performance.navigation?.type === 1;
-  if (!reloading) return;
+  const legacy = performance.navigation?.type;
+  const type = navigation?.type ?? (legacy === 0 ? 'navigate' : legacy === 1 ? 'reload' : 'other');
+  if ((type !== 'navigate' && type !== 'reload') || location.hash) return;
   const previous = history.scrollRestoration;
   if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-  let interacted = false;
-  const stopReset = () => { interacted = true; };
-  const events = ['pointerdown', 'touchstart', 'wheel', 'keydown'];
-  for (const event of events) addEventListener(event, stopReset, {passive: true});
-  const reset = () => {
-    if (!interacted) window.scrollTo({top: 0, left: 0, behavior: 'instant'});
-  };
-  const restore = () => {
+  let active = true, frame = 0;
+  const events = ['pointerdown', 'touchstart', 'wheel', 'keydown', 'hashchange', 'popstate'];
+  const finish = () => {
+    if (!active) return;
+    active = false;
+    if (frame) cancelAnimationFrame(frame);
+    frame = 0;
     if ('scrollRestoration' in history) history.scrollRestoration = previous;
-    for (const event of events) removeEventListener(event, stopReset);
+    for (const event of events) removeEventListener(event, finish, true);
+    document.removeEventListener('DOMContentLoaded', reset);
+    removeEventListener('pageshow', shown);
+    removeEventListener('pagehide', finish);
   };
+  const reset = () => {
+    if (!active) return;
+    if (location.hash) { finish(); return; }
+    window.scrollTo({top: 0, left: 0, behavior: 'instant'});
+  };
+  const shown = event => {
+    if (event.persisted) { finish(); return; }
+    reset();
+    if (!active) return;
+    // Native scroll restoration can run after pageshow. Keep it manual until
+    // startup has settled, then release it for normal Back/Forward behavior.
+    frame = requestAnimationFrame(() => {
+      frame = 0;
+      reset();
+      if (!active) return;
+      frame = requestAnimationFrame(() => {
+        frame = 0;
+        reset();
+        finish();
+      });
+    });
+  };
+  // Never pull the reader back after they start scrolling or follow an anchor.
+  for (const event of events) addEventListener(event, finish, {passive: true, capture: true});
   document.addEventListener('DOMContentLoaded', reset, {once: true});
-  addEventListener('pageshow', event => {
-    if (!event.persisted) reset();
-    restore();
-  }, {once: true});
-  // Save native restoration before leaving, including a departure before load.
-  addEventListener('pagehide', restore, {once: true});
+  addEventListener('pageshow', shown, {once: true});
+  addEventListener('pagehide', finish, {once: true});
 })();

@@ -1,0 +1,478 @@
+{
+  "id": 2,
+  "title_ja": "余白の朝",
+  "title_en": "Morning Margins",
+  "family": "chamber",
+  "tonic_midi": 48,
+  "scale": [
+    0,
+    2,
+    4,
+    7,
+    9
+  ],
+  "bpm": 64,
+  "beats_per_bar": 4,
+  "bars": 8,
+  "chord_degrees": [
+    0,
+    3,
+    1,
+    4,
+    0,
+    2,
+    3,
+    0
+  ],
+  "motif": [
+    0,
+    2,
+    4,
+    3,
+    1,
+    2,
+    0
+  ],
+  "rhythm_weights": [
+    2,
+    1,
+    3,
+    1,
+    1,
+    2,
+    4
+  ],
+  "form": [
+    "intro",
+    "theme",
+    "theme",
+    "answer",
+    "bridge",
+    "reprise",
+    "reprise",
+    "outro"
+  ],
+  "arrangement_revision": 2,
+  "intact_theme_bars": [
+    3,
+    4
+  ],
+  "midi_note_gates": "Repeated same-pitch gates shortened; audio resonance tails retained.",
+  "stem": "002_morning_margins",
+  "duration_seconds": 34.0,
+  "sample_rate": 32000,
+  "mp3_bitrate_kbps": 160,
+  "clipped_samples": 0,
+  "all_finite": true,
+  "integrated_loudness_lufs": -18.5,
+  "true_peak_dbtp": -6.7,
+  "full_decode": "pass",
+  "auditory_review": "pending",
+  "final_status": "prototype",
+  "additional_generation_fees": 0,
+  "third_party_audio_assets": [],
+  "composition_fingerprint": "71b3d7ae04c0790f3775a6941d8717a4d7d2c53649f9b3806de1e30488d4a777",
+  "audio_sha256": "f4ce7e39d73b278c3553cad41dc14fd296c4775e47c03b1063f32ced464b7b95",
+  "notes": [
+    {
+      "pitch": 36,
+      "start_beats": 0,
+      "duration_beats": 2.6,
+      "voice": "tine",
+      "velocity": 0.35
+    },
+    {
+      "pitch": 57,
+      "start_beats": 1.84,
+      "duration_beats": 2.08,
+      "voice": "tine",
+      "velocity": 0.28
+    },
+    {
+      "pitch": 60,
+      "start_beats": 1.6,
+      "duration_beats": 2.4,
+      "voice": "tine",
+      "velocity": 0.31
+    },
+    {
+      "pitch": 43,
+      "start_beats": 4,
+      "duration_beats": 2.6,
+      "voice": "tine",
+      "velocity": 0.35
+    },
+    {
+      "pitch": 64,
+      "start_beats": 5.84,
+      "duration_beats": 2.08,
+      "voice": "tine",
+      "velocity": 0.28
+    },
+    {
+      "pitch": 38,
+      "start_beats": 8,
+      "duration_beats": 2.6,
+      "voice": "tine",
+      "velocity": 0.35
+    },
+    {
+      "pitch": 60,
+      "start_beats": 9.84,
+      "duration_beats": 2.08,
+      "voice": "tine",
+      "velocity": 0.28
+    },
+    {
+      "pitch": 45,
+      "start_beats": 12,
+      "duration_beats": 2.6,
+      "voice": "tine",
+      "velocity": 0.35
+    },
+    {
+      "pitch": 67,
+      "start_beats": 13.84,
+      "duration_beats": 2.08,
+      "voice": "tine",
+      "velocity": 0.28
+    },
+    {
+      "pitch": 57,
+      "start_beats": 12.0,
+      "duration_beats": 5.2,
+      "voice": "pad",
+      "velocity": 0.492
+    },
+    {
+      "pitch": 60,
+      "start_beats": 12.009,
+      "duration_beats": 5.2,
+      "voice": "pad",
+      "velocity": 0.492
+    },
+    {
+      "pitch": 62,
+      "start_beats": 12.018,
+      "duration_beats": 5.2,
+      "voice": "pad",
+      "velocity": 0.492
+    },
+    {
+      "pitch": 36,
+      "start_beats": 16,
+      "duration_beats": 2.6,
+      "voice": "tine",
+      "velocity": 0.35
+    },
+    {
+      "pitch": 57,
+      "start_beats": 17.84,
+      "duration_beats": 2.08,
+      "voice": "tine",
+      "velocity": 0.28
+    },
+    {
+      "pitch": 48,
+      "start_beats": 16.0,
+      "duration_beats": 5.2,
+      "voice": "pad",
+      "velocity": 0.566
+    },
+    {
+      "pitch": 50,
+      "start_beats": 16.009,
+      "duration_beats": 5.2,
+      "voice": "pad",
+      "velocity": 0.566
+    },
+    {
+      "pitch": 52,
+      "start_beats": 16.018,
+      "duration_beats": 5.2,
+      "voice": "pad",
+      "velocity": 0.566
+    },
+    {
+      "pitch": 40,
+      "start_beats": 20,
+      "duration_beats": 2.6,
+      "voice": "tine",
+      "velocity": 0.35
+    },
+    {
+      "pitch": 62,
+      "start_beats": 21.84,
+      "duration_beats": 2.08,
+      "voice": "tine",
+      "velocity": 0.28
+    },
+    {
+      "pitch": 52,
+      "start_beats": 20.0,
+      "duration_beats": 5.2,
+      "voice": "pad",
+      "velocity": 0.492
+    },
+    {
+      "pitch": 55,
+      "start_beats": 20.009,
+      "duration_beats": 5.2,
+      "voice": "pad",
+      "velocity": 0.492
+    },
+    {
+      "pitch": 57,
+      "start_beats": 20.018,
+      "duration_beats": 5.2,
+      "voice": "pad",
+      "velocity": 0.492
+    },
+    {
+      "pitch": 43,
+      "start_beats": 24,
+      "duration_beats": 2.6,
+      "voice": "tine",
+      "velocity": 0.35
+    },
+    {
+      "pitch": 64,
+      "start_beats": 25.84,
+      "duration_beats": 2.08,
+      "voice": "tine",
+      "velocity": 0.28
+    },
+    {
+      "pitch": 55,
+      "start_beats": 24.0,
+      "duration_beats": 5.2,
+      "voice": "pad",
+      "velocity": 0.492
+    },
+    {
+      "pitch": 57,
+      "start_beats": 24.009,
+      "duration_beats": 5.2,
+      "voice": "pad",
+      "velocity": 0.492
+    },
+    {
+      "pitch": 60,
+      "start_beats": 24.018,
+      "duration_beats": 5.2,
+      "voice": "pad",
+      "velocity": 0.492
+    },
+    {
+      "pitch": 36,
+      "start_beats": 28,
+      "duration_beats": 2.6,
+      "voice": "tine",
+      "velocity": 0.35
+    },
+    {
+      "pitch": 57,
+      "start_beats": 29.84,
+      "duration_beats": 2.08,
+      "voice": "tine",
+      "velocity": 0.28
+    },
+    {
+      "pitch": 48,
+      "start_beats": 28.0,
+      "duration_beats": 5.2,
+      "voice": "pad",
+      "velocity": 0.41
+    },
+    {
+      "pitch": 50,
+      "start_beats": 28.009,
+      "duration_beats": 5.2,
+      "voice": "pad",
+      "velocity": 0.41
+    },
+    {
+      "pitch": 52,
+      "start_beats": 28.018,
+      "duration_beats": 5.2,
+      "voice": "pad",
+      "velocity": 0.41
+    },
+    {
+      "pitch": 62,
+      "start_beats": 4.0,
+      "duration_beats": 1.1929,
+      "voice": "tine",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 64,
+      "start_beats": 4.5834,
+      "duration_beats": 1.9357,
+      "voice": "tine",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 60,
+      "start_beats": 5.7143,
+      "duration_beats": 3.4214,
+      "voice": "tine",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 60,
+      "start_beats": 8.0,
+      "duration_beats": 1.9357,
+      "voice": "tine",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 64,
+      "start_beats": 9.1549,
+      "duration_beats": 1.1929,
+      "voice": "tine",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 69,
+      "start_beats": 9.7143,
+      "duration_beats": 2.6786,
+      "voice": "tine",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 67,
+      "start_beats": 11.4406,
+      "duration_beats": 1.1929,
+      "voice": "tine",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 62,
+      "start_beats": 12.0,
+      "duration_beats": 1.1929,
+      "voice": "tine",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 64,
+      "start_beats": 12.5834,
+      "duration_beats": 1.9357,
+      "voice": "tine",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 60,
+      "start_beats": 13.7143,
+      "duration_beats": 3.4214,
+      "voice": "tine",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 60,
+      "start_beats": 16.0,
+      "duration_beats": 1.9357,
+      "voice": "tine",
+      "velocity": 0.53
+    },
+    {
+      "pitch": 64,
+      "start_beats": 17.1549,
+      "duration_beats": 1.1929,
+      "voice": "tine",
+      "velocity": 0.53
+    },
+    {
+      "pitch": 62,
+      "start_beats": 17.7143,
+      "duration_beats": 2.6786,
+      "voice": "tine",
+      "velocity": 0.53
+    },
+    {
+      "pitch": 67,
+      "start_beats": 19.4406,
+      "duration_beats": 1.1929,
+      "voice": "tine",
+      "velocity": 0.53
+    },
+    {
+      "pitch": 62,
+      "start_beats": 20.0,
+      "duration_beats": 1.1929,
+      "voice": "tine",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 64,
+      "start_beats": 20.5834,
+      "duration_beats": 1.9357,
+      "voice": "tine",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 60,
+      "start_beats": 21.7143,
+      "duration_beats": 3.4214,
+      "voice": "tine",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 60,
+      "start_beats": 24.0,
+      "duration_beats": 1.9357,
+      "voice": "tine",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 64,
+      "start_beats": 25.1549,
+      "duration_beats": 1.1929,
+      "voice": "tine",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 69,
+      "start_beats": 25.7143,
+      "duration_beats": 2.6786,
+      "voice": "tine",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 67,
+      "start_beats": 27.4406,
+      "duration_beats": 1.1929,
+      "voice": "tine",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 62,
+      "start_beats": 28.0,
+      "duration_beats": 1.1929,
+      "voice": "tine",
+      "velocity": 0.42
+    },
+    {
+      "pitch": 60,
+      "start_beats": 28.5834,
+      "duration_beats": 1.9357,
+      "voice": "tine",
+      "velocity": 0.42
+    },
+    {
+      "pitch": 60,
+      "start_beats": 29.7143,
+      "duration_beats": 3.4214,
+      "voice": "tine",
+      "velocity": 0.42
+    }
+  ],
+  "render_loudness_before_gain_lufs": -14.7,
+  "final_gain_db": -3.3,
+  "target_loudness_lufs": -18,
+  "mp3_file_size_bytes": 682028,
+  "midi_note_count": 56,
+  "midi_same_pitch_gate_overlaps": 0,
+  "listening_status": "未試聴。採用前に実際の聴覚評価が必要。",
+  "file": "audio/002_morning_margins.mp3"
+}

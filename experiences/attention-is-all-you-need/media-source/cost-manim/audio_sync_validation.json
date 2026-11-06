@@ -1,0 +1,21 @@
+{
+  "decoded_video_duration": 54.0,
+  "decoded_audio_duration": 54.0,
+  "frames": 1620,
+  "sample_rate": 24000,
+  "section_rms": [
+    0.11180382966995239,
+    0.11533159017562866,
+    0.1036188006401062,
+    0.12002433091402054,
+    0.1151505634188652,
+    0.11763987690210342,
+    0.10152216255664825,
+    0.11789264529943466,
+    0.1102459654211998
+  ],
+  "peak": 0.7279171943664551,
+  "clipped_samples": 0,
+  "direct_listening": false,
+  "timing_basis": "Placed section WAVs using narration_plan start/end, not ASR timestamps"
+}

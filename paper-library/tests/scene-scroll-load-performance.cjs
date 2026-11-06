@@ -49,6 +49,6 @@ async function run(scrollPixels){
  assert.ok(Math.abs(idle.phase-144)<1e-6,'120 seconds at the calmer idle pace');
  assert.ok(scrolling.phase>idle.phase&&scrolling.phase<=288,'continuous scroll cannot exceed twice idle motion');
  assert.ok(scrolling.reportedSpeed<=2.4,'continuous scroll speed remains capped');
- assert.ok(scrolling.imageRequests<=32,'two-minute continuous scroll stays within the measured loading budget');
+ assert.ok(scrolling.imageRequests<=scrolling.sceneChanges+4,'two-minute scroll uses at most one request per scene change plus four look-ahead assets');
  console.log('PASS calmer motion bounds image turnover without synchronous scroll loads or paints; decode concurrency/cache remain bounded. Mock only.');
 })().catch(error=>{console.error(error);process.exitCode=1});

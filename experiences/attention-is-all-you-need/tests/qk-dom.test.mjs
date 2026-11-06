@@ -1,0 +1,26 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+// The test dependency lives outside the deliverable. See media-source/qk-matching/README.md.
+const {Window}=await import(process.env.QK_DOM_MODULE || 'happy-dom');
+const window=new Window({url:'http://localhost/'});
+for(const name of ['HTMLElement','CustomEvent','AbortController']) globalThis[name]=window[name];
+const {mountQK}=await import('../src/interactives/qk-matching.mjs');
+const root=window.document.createElement('section');window.document.body.append(root);
+let changes=0;root.addEventListener('qk:change',()=>changes++);
+let controller=mountQK(root);
+const scores=()=>[...root.querySelectorAll('[data-score]')].map(el=>el.textContent);
+const click=selector=>root.querySelector(selector).click();
+const input=(vector,axis,value)=>{const el=root.querySelector(`input[data-vector="${vector}"][data-axis="${axis}"]`);el.value=String(value);el.dispatchEvent(new window.Event('input',{bubbles:true}));};
+test('mount draws correct scores and vectors',()=>{assert.deepEqual(scores(),['2','2','0']);assert.equal(root.querySelectorAll('[data-arrows] g').length,4);assert.equal(root.querySelector('svg').getAttribute('role'),'img');});
+test('all presets recompute exact expected scores',()=>{for(const [id,wanted] of Object.entries({horizontal:['4','0','-2'],vertical:['0','4','2'],opposite:['-4','0','2'],zero:['0','0','0']})){click(`[data-preset="${id}"]`);assert.deepEqual(scores(),wanted);}click('[data-action="reset"]');});
+test('query input recomputes arithmetic and labels',()=>{input('q',0,1.1);assert.deepEqual(scores(),['2.2','2','-0.1']);assert.equal(root.querySelector('[data-query-label]').textContent,'[1.1, 1]');assert.equal(root.querySelector('[data-value="q-0"]').textContent,'1.1');});
+test('editing B changes B and preserves other keys',()=>{const radio=root.querySelector('input[type="radio"][value="B"]');radio.checked=true;radio.dispatchEvent(new window.Event('change',{bubbles:true}));input('k',0,1);assert.deepEqual(scores(),['2.2','3.1','-0.1']);assert.equal(root.querySelector('input[data-vector="k"]').getAttribute('aria-label'),'Key B の第1成分');});
+test('reset restores every editable state',()=>{click('[data-action="reset"]');assert.deepEqual(scores(),['2','2','0']);assert.deepEqual(controller.getState().query,[1,1]);assert.equal(controller.getState().selected,'A');assert.equal(root.querySelector('input[value="A"]').checked,true);});
+test('repeated reset and presets are stable',()=>{for(let n=0;n<20;n++){click('[data-preset="opposite"]');click('[data-action="reset"]');}assert.deepEqual(scores(),['2','2','0']);});
+test('all range controls have visible labels and keyboard-native semantics',()=>{for(const range of root.querySelectorAll('input[type="range"]')){assert.ok(root.querySelector(`label[for="${range.id}"]`));assert.equal(range.min,'-2');assert.equal(range.max,'2');assert.equal(range.step,'0.1');assert.ok(range.getAttribute('aria-label'));}});
+test('SVG, live region and disclosure have accessible text',()=>{assert.ok(root.querySelector('svg title').textContent);assert.ok(root.querySelector('svg desc').textContent.includes('[1, 1]'));assert.equal(root.querySelector('[data-summary]').getAttribute('aria-live'),'polite');assert.ok(root.querySelector('.qk-disclosure').textContent.includes('学習済みモデルの出力ではありません'));});
+test('mount twice does not duplicate UI or listeners',()=>{const before=changes;assert.equal(mountQK(root),controller);click('[data-action="reset"]');assert.equal(changes,before+1);assert.equal(root.querySelectorAll('.qk-results').length,1);});
+test('getState does not expose mutable arrays',()=>{const state=controller.getState();state.query[0]=99;state.keys[0].vector[0]=99;assert.deepEqual(controller.getState().query,[1,1]);assert.equal(controller.getState().keys[0].vector[0],2);});
+test('two instances have unique IDs and radio groups',()=>{const other=window.document.createElement('div');window.document.body.append(other);const second=mountQK(other);const ids=[...window.document.querySelectorAll('[id]')].map(el=>el.id);assert.equal(new Set(ids).size,ids.length);assert.notEqual(root.querySelector('input[type="radio"]').name,other.querySelector('input[type="radio"]').name);second.destroy();other.remove();});
+test('editorial theme uses coordinated colors without changing arithmetic',()=>{const other=window.document.createElement('div');window.document.body.append(other);const second=mountQK(other,{theme:'editorial'});assert.equal(other.dataset.qkTheme,'editorial');assert.equal(other.querySelector('[data-score=\"A\"]').textContent,'2');assert.ok(other.querySelector('[data-arrows]').innerHTML.includes('#2a55eb'));second.destroy();other.remove();});
+test('destroy/remount supports clean lifecycle',()=>{controller.destroy();assert.equal(root.children.length,0);assert.equal(root.dataset.qkMounted,undefined);controller=mountQK(root);const before=changes;click('[data-preset="horizontal"]');assert.equal(changes,before+1);assert.deepEqual(scores(),['4','0','-2']);controller.destroy();});

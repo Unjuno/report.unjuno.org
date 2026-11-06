@@ -1,0 +1,12 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {dot,evaluateQuery,INITIAL_QUERY,INITIAL_KEYS,formatNumber} from '../src/math/qk-matching.mjs';
+test('video and interaction initial values agree',()=>{assert.deepEqual(evaluateQuery(INITIAL_QUERY).rows.map(row=>row.score),[2,2,0]);assert.deepEqual(evaluateQuery(INITIAL_QUERY).winnerIds,['A','B']);});
+test('horizontal query produces 4,0,-2',()=>{assert.deepEqual(evaluateQuery([2,0]).rows.map(row=>row.score),[4,0,-2]);});
+test('zero query ties at zero',()=>{assert.deepEqual(evaluateQuery([0,0]).winnerIds,['A','B','C']);assert.equal(evaluateQuery([0,0]).maximum,0);});
+test('opposite query has signed scores',()=>{assert.deepEqual(evaluateQuery([-2,0]).rows.map(row=>row.score),[-4,0,2]);});
+test('magnitude matters even for same angle',()=>{assert.equal(dot([1,0],[1,0]),1);assert.equal(dot([2,0],[1,0]),2);});
+test('length mismatch and invalid numbers rejected',()=>{for(const fn of [()=>dot([],[]),()=>dot([1],[1,2]),()=>dot([NaN],[1]),()=>dot([1],[Infinity]),()=>evaluateQuery([1,1],[])]) assert.throws(fn);});
+test('results do not expose mutable initial state',()=>{const result=evaluateQuery([1,1]);result.rows[0].vector[0]=9;assert.equal(INITIAL_KEYS[0].vector[0],2);});
+test('bilinear and symmetric on a deterministic grid',()=>{for(let a=-2;a<=2;a+=.5)for(let b=-2;b<=2;b+=.5){assert.equal(dot([a,b],[2,-1]),2*a-b);assert.equal(dot([a,b],[2,-1]),dot([2,-1],[a,b]));assert.ok(Math.abs(dot([a,b],[2,-1]))<=6);}});
+test('formatting suppresses floating noise and negative zero',()=>{assert.equal(formatNumber(.1+.2),'.3'.replace(/^\./,'0.'));assert.equal(formatNumber(-.00001),'0');assert.equal(formatNumber(2),'2');});

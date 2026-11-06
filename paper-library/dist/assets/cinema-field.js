@@ -2,8 +2,10 @@
 (()=>{'use strict';
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');
 const canvas=document.createElement('canvas');canvas.className='continuous-canvas';canvas.setAttribute('aria-hidden','true');document.body.prepend(canvas);
-const c=canvas.getContext('2d');if(!c){canvas.remove();return;}
+// The viewport world is opaque. Keep transparency only on the dissolve masks.
+const c=canvas.getContext('2d',{alpha:false});if(!c){canvas.remove();return;}
 const f={w:0,h:0,d:1};
+let contextLost=false,revealLost=false,mistLost=false;
 // A small, smoothly sampled opacity field, not a shader or full-frame pixel filter.
 const reveal=document.createElement('canvas'),rc=reveal.getContext('2d');
 const mist=document.createElement('canvas'),mc=mist.getContext('2d');
@@ -11,13 +13,17 @@ const bloom=document.createElement('canvas'),bc=bloom.getContext('2d');bloom.wid
 // One reusable soft cloud texture. Six bounded draws, no particle system or blur filter.
 const cloud=document.createElement('canvas'),cc=cloud.getContext('2d');cloud.width=128;cloud.height=128;
 let cloudReady=false;
-if(cc&&typeof cc.createRadialGradient==='function'){
- const glow=cc.createRadialGradient(64,64,4,64,64,64);
- if(glow&&typeof glow.addColorStop==='function'){
-  glow.addColorStop(0,'rgba(177,201,196,.8)');glow.addColorStop(.35,'rgba(139,179,181,.5)');glow.addColorStop(1,'rgba(100,155,167,0)');
-  cc.fillStyle=glow;cc.fillRect(0,0,128,128);cloudReady=true;
+function rebuildCloud(){
+ cloudReady=false;
+ if(cc&&typeof cc.createRadialGradient==='function'){
+  const glow=cc.createRadialGradient(64,64,4,64,64,64);
+  if(glow&&typeof glow.addColorStop==='function'){
+   glow.addColorStop(0,'rgba(177,201,196,.8)');glow.addColorStop(.35,'rgba(139,179,181,.5)');glow.addColorStop(1,'rgba(100,155,167,0)');
+   cc.clearRect(0,0,128,128);cc.fillStyle=glow;cc.fillRect(0,0,128,128);cloudReady=true;
+  }
  }
 }
+rebuildCloud();
 const MASK_W=64,MASK_H=48;mist.width=MASK_W;mist.height=MASK_H;
 let maskPixels=null,maskStep=-1,maskStyle=null,maskSeed=-1,maskField=null;
 if(rc&&mc&&typeof mc.createImageData==='function'){
@@ -26,14 +32,16 @@ if(rc&&mc&&typeof mc.createImageData==='function'){
 }
 // Choose the overlap from the incoming image's subject, never from a random cut.
 // Names describe procedural alpha fields, not semantic image analysis.
-const transitionNames=['mist','horizontal-wave','lateral-blend','particles','vortex','depth-rings','light-bloom','chromatic-veil','contour-bands','local-blends','diagonal-flow','ribbon'];
+const transitionNames=['mist','horizontal-wave','lateral-blend','particles','vortex','depth-rings','light-bloom','chromatic-veil','contour-bands','local-blends','diagonal-flow','ribbon','soft-waves','cloud-banks','petal-blend'];
 const transitionModes=new Set(transitionNames);
 function transitionFor(scene){
  if(transitionModes.has(scene?.transition))return scene.transition;
  const name=scene?.asset===undefined?'':assets[scene.asset].name;
  if(scene?.tile!==undefined)return transitionNames[scene.tile%transitionNames.length];
  if(/cosmic/.test(name))return 'vortex';
- if(/organic-cells/.test(name))return 'local-blends';
+ if(/organic-cells/.test(name))return 'petal-blend';
+ if(/garden/.test(name))return 'cloud-banks';
+ if(/ocean|submerged/.test(name))return 'soft-waves';
  if(/optical|wave-light/.test(name))return 'light-bloom';
  if(/mountain|history/.test(name))return 'contour-bands';
  if(/gallery|social-dialogue/.test(name))return 'chromatic-veil';
@@ -79,7 +87,15 @@ function overlapField(nx,ny,style,seed){
 // A moving, feathered reveal spans both scene shoulders. Its position does
 // not reset to a uniform half-opacity image at a scene handover.
 function revealThreshold(x,y,style,seed){
+ // Four source-stable orientations vary familiar families without moving the
+ // boundary pattern during a handover or adding textures, canvases or draws.
+ const turn=Math.floor(seed*11)%4,ox=x,oy=y;
+ if(turn===1){x=oy;y=1-ox;}else if(turn===2){x=1-ox;y=1-oy;}else if(turn===3){x=1-oy;y=ox;}
  const dx=x-.5,dy=y-.5;
+ // These low-frequency variations are evaluated once per cached field, not per frame.
+ if(style==='soft-waves')return clamp(.5+.26*Math.sin((x*.8+y)*4+seed*.3)+.16*Math.cos(x*3-seed*.5));
+ if(style==='cloud-banks')return clamp(.5+overlapField(x,y,'mist',seed)*.65+.13*Math.sin((x-y)*3+seed*.5));
+ if(style==='petal-blend'){const r=Math.hypot(dx,dy);return clamp(.18+r*(.95+.22*Math.sin(Math.atan2(dy,dx)*3+seed)));}
  if(style==='lateral-blend')return x;
  if(style==='horizontal-wave')return clamp(x+.12*Math.sin(y*7+seed));
  if(style==='diagonal-flow')return (x+y)/2;
@@ -105,11 +121,11 @@ function revealAlpha(progress,threshold,style){
  const outgoing=progress>.6,t=clamp(outgoing?(progress-.6)/.4:progress/.4);
  const power=style==='particles'?1.5:style==='light-bloom'?.75:style==='local-blends'?1.2:1;
  const u=smooth(t),q=outgoing?.5*Math.pow(u,power):.5+.5*(1-Math.pow(1-u,power));
- const feather=style==='mist'?.42:style==='chromatic-veil'?.34:style==='particles'?.18:.24;
+ const feather=(style==='mist'||style==='cloud-banks')?.52:style==='chromatic-veil'?.44:style==='particles'?.30:.36;
  const spatial=smooth(clamp((q*(1+feather)-threshold)/feather));
  // Retain the traveling shape, but soften its pure-image regions with a
  // wide overlap around the handover. Clear endpoints remain untouched.
- const diffuse=.30;
+ const diffuse=.42;
  return spatial*(1-diffuse)+q*diffuse;
 }
 // Smooth only the tiny alpha surface, never the full-resolution image.
@@ -166,7 +182,7 @@ function dissolve(previous,a,b,progress,step){
  // Draw the current scene directly as the base instead of drawing, fully
  // covering, and masking an invisible previous scene.
  const outgoing=progress>.6,base=outgoing?a:(previous||a);
- const spatial=rc&&mc&&maskPixels;
+ const spatial=rc&&mc&&maskPixels&&!revealLost&&!mistLost;
  if(spatial){
   const scale=f.d;
   const rw=Math.max(1,Math.round(w*scale)),rh=Math.max(1,Math.round(h*scale));
@@ -230,14 +246,33 @@ for(const [name,position,focus] of [['art-cosmic-cells-v2.webp',2,0.55],['art-mo
 for(const [name,framing] of [['bruegel-harvesters-2048.webp','bruegel'],['atkins-ptilota-2560.webp','atkins']]){const asset=assets.length;assets.push({name,image:new Image(),ready:false,failed:false,attempts:0,retryAt:0});scenes.push({asset,framing,transition:'mist'});}
 // Five reviewed stills served as smaller WebP copies; original PNG bytes remain archived here.
 // Keep all existing scenes and the existing bounded decoder/cache.
-for(const [name,position,focus,transition] of [["selected-ceramic-sherds-v1.webp", 4, 0.78, "mist"], ["selected-star-trails-v1.webp", 12, 0.88, "depth-rings"], ["selected-shared-plaza-v1.webp", 20, 0.78, "local-blends"], ["selected-fern-cyanotype-v1.webp", 28, 0.15, "ribbon"], ["selected-milkweed-seeds-v1.webp", 36, 0.8, "particles"]]){const asset=assets.length;assets.push({name,image:new Image(),ready:false,failed:false,attempts:0,retryAt:0});scenes.splice(position,0,{asset,focus,transition});}
-// Optional reduced distribution: retain procedural scenes and explicitly bundled images.
-// Applied before timing and loading; absent configuration preserves the complete source reel.
-if(Array.isArray(window.__reportBundledImages)){
- const allowed=new Set(window.__reportBundledImages),remap=new Map(),included=[];
- assets.forEach((asset,index)=>{if(allowed.has(asset.name)){remap.set(index,included.length);included.push(asset);}});
- const available=scenes.filter(scene=>scene.asset===undefined||remap.has(scene.asset)).map(scene=>scene.asset===undefined?scene:{...scene,asset:remap.get(scene.asset)});
- assets.splice(0,assets.length,...included);scenes.splice(0,scenes.length,...available);
+for(const [name,position,focus,transition] of [["selected-ceramic-sherds-v1.webp", 4, 0.78, "mist"], ["selected-star-trails-v1.webp", 12, 0.88, "depth-rings"], ["selected-shared-plaza-v1.webp", 20, 0.78, "local-blends"], ["selected-milkweed-seeds-v1.webp", 36, 0.8, "particles"]]){const asset=assets.length;assets.push({name,image:new Image(),ready:false,failed:false,attempts:0,retryAt:0});scenes.splice(position,0,{asset,focus,transition});}
+// Fifteen further approved illustrations. First four selected stills remain once; white fern excluded.
+for(const [name,position,focus,transition] of [["selected-api-06-woven-air.webp", 5, 0.58, "mist"], ["selected-api-07-folded-city.webp", 7, 0.65, "diagonal-flow"], ["selected-api-08-magnetic-field.webp", 11, 0.65, "contour-bands"], ["selected-api-09-glass-river.webp", 15, 0.65, "horizontal-wave"], ["selected-api-10-listening-room.webp", 19, 0.72, "local-blends"], ["selected-api-11-amber-network.webp", 23, 0.64, "particles"], ["selected-api-12-felt-mobius.webp", 27, 0.55, "ribbon"], ["selected-api-13-dune-markers.webp", 31, 0.68, "contour-bands"], ["selected-api-14-blue-fabric.webp", 35, 0.68, "ribbon"], ["selected-api-15-singing-bowls.webp", 39, 0.65, "light-bloom"], ["selected-api-16-night-flock.webp", 43, 0.7, "particles"], ["selected-api-17-blue-mended-paper.webp", 47, 0.85, "mist"], ["selected-api-18-ripple-orbits.webp", 51, 0.78, "depth-rings"], ["selected-api-19-woven-corridor.webp", 55, 0.56, "depth-rings"], ["selected-api-20-rose-orbits.webp", 59, 0.66, "ribbon"]]){const asset=assets.length;assets.push({name,image:new Image(),ready:false,failed:false,attempts:0,retryAt:0});scenes.splice(position,0,{asset,focus,transition});}
+// Eleven further reviewed illustrations; additions only. Retain every prior scene.
+// Names, rather than numeric offsets, keep the v99 authored sequence stable.
+for (const item of [{"name":"selected-api-next-observatory-v1.webp","after":"spaceship-window.webp","focus":0.99,"transition":"depth-rings"},{"name":"selected-api-next-library-v1.webp","after":"books-vault-v1.webp","focus":0.93,"transition":"mist"},{"name":"selected-api-next-bamboo-v1.webp","after":"forest-theater.webp","focus":0.9,"transition":"mist"},{"name":"selected-api-next-polarized-mineral-v1.webp","after":"art-optical-bench-v2.webp","focus":0.7,"transition":"contour-bands"},{"name":"selected-api-next-silver-sculpture-v1.webp","after":"selected-api-12-felt-mobius.webp","focus":0.83,"transition":"ribbon"},{"name":"selected-api-next-piano-room-v1.webp","after":"acoustics-hall-v1.webp","focus":0.9,"transition":"mist"},{"name":"selected-api-next-city-print-v1.webp","after":"city-reflection.webp","focus":0.85,"transition":"lateral-blend"},{"name":"selected-api-next-watercolor-hills-v1.webp","after":"anime-mountain-archive-v2.webp","focus":0.76,"transition":"contour-bands"},{"name":"selected-api-next-desert-v1.webp","after":"selected-api-13-dune-markers.webp","focus":0.5,"transition":"contour-bands"},{"name":"selected-api-next-plaster-v1.webp","after":"history-atelier-v1.webp","focus":0.45,"transition":"mist"},{"name":"selected-api-next-sea-glass-v1.webp","after":"submerged-city.webp","focus":0.6,"transition":"local-blends"}]) {
+ const asset=assets.length;
+ assets.push({name:item.name,image:new Image(),ready:false,failed:false,attempts:0,retryAt:0});
+ const after=scenes.findIndex(scene=>scene.asset!==undefined&&assets[scene.asset].name===item.after);
+ scenes.splice(after<0?scenes.length:after+1,0,{asset,focus:item.focus,transition:item.transition});
+}
+// Complete the requested 99-image generated collection in one batch. The excluded white fern stays unused.
+// Preserve the first four scenes and every existing scene's relative order; interleave the remaining images.
+const remainingGenerated=[{"name":"selected-api-candidate-02-v1.webp","focus":0.77,"transition":"contour-bands"},{"name":"selected-api-candidate-03-v1.webp","focus":0.78,"transition":"local-blends"},{"name":"selected-api-candidate-04-v1.webp","focus":0.84,"transition":"ribbon"},{"name":"selected-api-candidate-05-v1.webp","focus":0.75,"transition":"lateral-blend"},{"name":"selected-api-candidate-06-v1.webp","focus":0.73,"transition":"mist"},{"name":"selected-api-candidate-07-v1.webp","focus":0.8,"transition":"depth-rings"},{"name":"selected-api-candidate-08-v1.webp","focus":0.74,"transition":"contour-bands"},{"name":"selected-api-candidate-10-v1.webp","focus":0.81,"transition":"ribbon"},{"name":"selected-api-candidate-11-v1.webp","focus":0.73,"transition":"lateral-blend"},{"name":"selected-api-candidate-12-v1.webp","focus":0.8,"transition":"mist"},{"name":"selected-api-candidate-13-v1.webp","focus":0.8,"transition":"depth-rings"},{"name":"selected-api-candidate-14-v1.webp","focus":0.8,"transition":"contour-bands"},{"name":"selected-api-candidate-15-v1.webp","focus":0.72,"transition":"local-blends"},{"name":"selected-api-candidate-16-v1.webp","focus":0.78,"transition":"ribbon"},{"name":"selected-api-candidate-18-v1.webp","focus":0.77,"transition":"mist"},{"name":"selected-api-candidate-19-v1.webp","focus":0.79,"transition":"depth-rings"},{"name":"selected-api-candidate-20-v1.webp","focus":0.75,"transition":"contour-bands"},{"name":"selected-api-candidate-21-v1.webp","focus":0.74,"transition":"local-blends"},{"name":"selected-api-candidate-22-v2.webp","focus":0.78,"transition":"ribbon"},{"name":"selected-api-candidate-23-v1.webp","focus":0.79,"transition":"lateral-blend"},{"name":"selected-api-candidate-24-v1.webp","focus":0.76,"transition":"mist"},{"name":"selected-api-candidate-25-v1.webp","focus":0.76,"transition":"depth-rings"},{"name":"selected-api-candidate-26-v1.webp","focus":0.77,"transition":"contour-bands"},{"name":"selected-api-candidate-27-v2.webp","focus":0.5,"transition":"local-blends"},{"name":"selected-api-candidate-28-v1.webp","focus":0.8,"transition":"ribbon"},{"name":"selected-api-candidate-29-v1.webp","focus":0.74,"transition":"lateral-blend"},{"name":"selected-api-candidate-31-v1.webp","focus":0.76,"transition":"depth-rings"},{"name":"selected-api-candidate-32-v1.webp","focus":0.77,"transition":"contour-bands"},{"name":"selected-api-candidate-33-v1.webp","focus":0.71,"transition":"local-blends"},{"name":"selected-api-candidate-34-v1.webp","focus":0.8,"transition":"ribbon"},{"name":"selected-api-candidate-36-v1.webp","focus":0.72,"transition":"mist"},{"name":"selected-api-candidate-37-v1.webp","focus":0.5,"transition":"depth-rings"},{"name":"selected-api-candidate-38-v2.webp","focus":0.45,"transition":"contour-bands"},{"name":"selected-api-candidate-40-v1.webp","focus":0.5,"transition":"ribbon"},{"name":"selected-api-candidate-41-v1.webp","focus":0.78,"transition":"lateral-blend"},{"name":"selected-api-candidate-42-v1.webp","focus":0.45,"transition":"mist"},{"name":"selected-api-candidate-43-v1.webp","focus":0.31,"transition":"depth-rings"},{"name":"selected-api-candidate-44-v1.webp","focus":0.32,"transition":"contour-bands"},{"name":"selected-api-candidate-45-v1.webp","focus":0.4,"transition":"local-blends"},{"name":"selected-api-candidate-46-v1.webp","focus":0.65,"transition":"ribbon"},{"name":"selected-api-candidate-47-v1.webp","focus":0.4,"transition":"lateral-blend"},{"name":"selected-api-candidate-49-v1.webp","focus":0.3,"transition":"depth-rings"},{"name":"selected-api-candidate-50-v1.webp","focus":0.66,"transition":"contour-bands"},{"name":"selected-api-candidate-51-v2.webp","focus":0.73,"transition":"local-blends"},{"name":"selected-api-candidate-54-v1.webp","focus":0.25,"transition":"mist"},{"name":"selected-api-candidate-55-v1.webp","focus":0.28,"transition":"depth-rings"},{"name":"selected-api-candidate-56-v1.webp","focus":0.77,"transition":"contour-bands"},{"name":"selected-api-candidate-57-v1.webp","focus":0.25,"transition":"local-blends"},{"name":"selected-api-candidate-58-v1.webp","focus":0.5,"transition":"ribbon"},{"name":"selected-api-candidate-59-v1.webp","focus":0.28,"transition":"lateral-blend"},{"name":"selected-api-candidate-60-v1.webp","focus":0.3,"transition":"mist"},{"name":"selected-api-candidate-61-v1.webp","focus":0.5,"transition":"depth-rings"},{"name":"selected-api-candidate-62-v1.webp","focus":0.5,"transition":"contour-bands"},{"name":"selected-api-candidate-63-v1.webp","focus":0.45,"transition":"local-blends"},{"name":"selected-api-candidate-64-v1.webp","focus":0.23,"transition":"ribbon"},{"name":"selected-api-candidate-65-v1.webp","focus":0.35,"transition":"lateral-blend"},{"name":"selected-api-candidate-66-v1.webp","focus":0.68,"transition":"mist"},{"name":"selected-api-candidate-67-v1.webp","focus":0.35,"transition":"depth-rings"},{"name":"selected-api-candidate-68-v1.webp","focus":0.5,"transition":"contour-bands"},{"name":"selected-api-candidate-70-v1.webp","focus":0.69,"transition":"ribbon"},{"name":"selected-api-candidate-72-v1.webp","focus":0.4,"transition":"mist"},{"name":"selected-api-candidate-73-v1.webp","focus":0.45,"transition":"depth-rings"},{"name":"selected-api-candidate-74-v1.webp","focus":0.4,"transition":"contour-bands"},{"name":"selected-api-candidate-75-v2.webp","focus":0.65,"transition":"local-blends"},{"name":"selected-api-candidate-76-v1.webp","focus":0.5,"transition":"ribbon"},{"name":"selected-api-candidate-77-v1.webp","focus":0.5,"transition":"lateral-blend"},{"name":"selected-api-candidate-78-v1.webp","focus":0.5,"transition":"mist"},{"name":"selected-api-candidate-79-v1.webp","focus":0.38,"transition":"depth-rings"},{"name":"selected-api-candidate-80-v1.webp","focus":0.63,"transition":"contour-bands"}];
+const priorSceneCount=scenes.length;
+for(let index=remainingGenerated.length-1;index>=0;index--){
+ const item=remainingGenerated[index],asset=assets.length;
+ assets.push({name:item.name,image:new Image(),ready:false,failed:false,attempts:0,retryAt:0});
+ const position=4+Math.floor(index*(priorSceneCount-4)/remainingGenerated.length);
+ scenes.splice(position,0,{asset,focus:item.focus,transition:item.transition});
+}
+// The 100th generated image is additive: the full prior sequence stays in order.
+{
+ const asset=assets.length;
+ assets.push({name:'selected-api-100-dawn-lake-v1.webp',image:new Image(),ready:false,failed:false,attempts:0,retryAt:0});
+ const after=scenes.findIndex(scene=>scene.asset!==undefined&&assets[scene.asset].name==='selected-api-next-watercolor-hills-v1.webp');
+ scenes.splice(after<0?scenes.length:after+1,0,{asset,focus:.57,transition:'mist'});
 }
 // Each source keeps its own camera identity across both sides of a dissolve.
 const sceneBeats=scenes.map(scene=>{
@@ -251,24 +286,79 @@ const sceneBeats=scenes.map(scene=>{
 });
 const sceneStarts=[0];for(const beat of sceneBeats)sceneStarts.push(sceneStarts[sceneStarts.length-1]+beat.seconds);
 const reelSeconds=sceneStarts[scenes.length];
+// One visit-local random seed; no identity, storage, cookie or network request.
+// Keep the authored registry intact. Playback uses bounded, reproducible-per-cycle bags.
+const sessionSeed=Math.floor(Math.random()*4294967296)>>>0,sequences=new Map();
+const sourceKey=index=>scenes[index].asset===undefined?'procedural':'image:'+scenes[index].asset;
+function validSwap(order,a,b){
+ const at=i=>order[i===a?b:i===b?a:i];
+ for(const edge of new Set([a-1,a,b-1,b]))if(edge>=0&&edge<order.length-1&&sourceKey(at(edge))===sourceKey(at(edge+1)))return false;
+ return true;
+}
+function shuffledOrder(lap){
+ let state=(sessionSeed^Math.imul(lap+1,0x9e3779b9))>>>0;
+ const random=()=>{state=(state+0x6d2b79f5)>>>0;let n=state;n=Math.imul(n^(n>>>15),n|1);n^=n+Math.imul(n^(n>>>7),n|61);return ((n^(n>>>14))>>>0)/4294967296;};
+ const order=scenes.map((_,index)=>index);
+ for(let i=order.length-1;i>0;i--){const j=Math.floor(random()*(i+1));[order[i],order[j]]=[order[j],order[i]];}
+ // Start with a painting, including in reduced motion; procedural interludes still appear once.
+ if(scenes[order[0]].kind){const first=order.findIndex(index=>!scenes[index].kind);[order[0],order[first]]=[order[first],order[0]];}
+ // Atlas crops share a source. Keep those and procedural scenes apart without
+ // dropping a scene, retrying randomness indefinitely or changing source metadata.
+ for(let i=1;i<order.length;i++)if(sourceKey(order[i])===sourceKey(order[i-1])){
+  const j=order.findIndex((_,j)=>j>0&&j!==i&&validSwap(order,i,j));
+  if(j>0)[order[i],order[j]]=[order[j],order[i]];
+ }
+ return order;
+}
+function sequenceFor(lap){
+ if(sequences.has(lap))return sequences.get(lap);
+ const order=shuffledOrder(lap),last=order.length-1,nextFirst=shuffledOrder(lap+1)[0];
+ // The next bag's first entry never changes during its own tail repair.
+ // Resolve the seam in advance, so look-ahead loading sees the final order.
+ if(sourceKey(order[last])===sourceKey(nextFirst)){
+  const j=order.findIndex((_,j)=>j>0&&j<last&&sourceKey(order[j])!==sourceKey(nextFirst)&&validSwap(order,last,j));
+  if(j>0)[order[last],order[j]]=[order[j],order[last]];
+ }
+ const starts=[0];let tenths=0;for(const index of order){tenths+=Math.round(sceneBeats[index].seconds*10);starts.push(tenths/10);}
+ const sequence={order,starts};sequences.set(lap,sequence);
+ while(sequences.size>3)sequences.delete(sequences.keys().next().value);
+ return sequence;
+}
+function sceneAt(step){const lap=Math.floor(step/scenes.length),index=step-lap*scenes.length;return scenes[sequenceFor(lap).order[index]];}
 function sceneTime(time){
- const lap=Math.floor(time/reelSeconds),local=time-lap*reelSeconds;
- let index=0;while(index<scenes.length-1&&local>=sceneStarts[index+1])index++;
- return {step:lap*scenes.length+index,index,progress:clamp((local-sceneStarts[index])/sceneBeats[index].seconds),...sceneBeats[index]};
+ const lap=Math.floor(time/reelSeconds),local=time-lap*reelSeconds,sequence=sequenceFor(lap);
+ let index=0;while(index<scenes.length-1&&local>=sequence.starts[index+1])index++;
+ const sourceIndex=sequence.order[index],beat=sceneBeats[sourceIndex];
+ return {step:lap*scenes.length+index,index,sourceIndex,progress:clamp((local-sequence.starts[index])/beat.seconds),...beat};
 }
 const FRAME=1000/24,ASSET_TIMEOUT=12000,MAX_LOADING=2,MAX_READY=6;
 // Keep paintings readable: a slightly calmer idle pace and at most 2x while scrolling.
 // Input still adds speed, never a position jump, then eases back to the idle pace.
-// Scale gain and cap together so the normalized cloud/camera response is unchanged.
+// Scroll energy affects the soft overlay only, never the image framing.
 const IDLE_SPEED=1.2,SCROLL_GAIN=.0048,MAX_BOOST=1.2,BOOST_DECAY=2.2;
 let phase=0,last=null,lastPaint=-Infinity,raf=0,previousScroll=scrollY,paintPending=true,scrollBoost=0,scrollEnergy=0,cloudTravel=0,flowDirection=0,scrollDirection=1;
 let activeLoads=0,pairStep=-1,pairPrevious=null,pairA=null,pairB=null,initialImageReady=false,preloadStep=-1,preloadDirty=true;
 const clamp=x=>Math.max(0,Math.min(1,x)),smooth=x=>x*x*(3-2*x);
 const paused=()=>reduced.matches||document.body.classList.contains('paused');
 const ready=()=>assets.some(a=>a.ready);
-function mark(){document.querySelectorAll('[data-entry]').forEach(card=>card.classList.add('has-living-field','cinema-field'));}
-function size(){f.w=innerWidth;f.h=innerHeight;f.d=Math.min(devicePixelRatio||1,1.5,Math.sqrt(2200000/Math.max(1,f.w*f.h)));canvas.width=Math.round(f.w*f.d);canvas.height=Math.round(f.h*f.d);paintPending=true;if(!document.hidden)paint();}
-function available(index){for(let offset=0;offset<scenes.length;offset++){const scene=scenes[(index+offset)%scenes.length];if(scene.kind||assets[scene.asset].ready)return scene;}return null;}
+function mark(root=document){
+ const cards=[];if(root.matches?.('[data-entry]'))cards.push(root);
+ cards.push(...(root.querySelectorAll?.('[data-entry]')||[]));
+ for(const card of cards)card.classList.add('has-living-field','cinema-field');
+}
+function size(){
+ // CSS uses the large viewport height so mobile browser bars can slide without
+ // repeatedly clearing/reallocating the canvas bitmap during a scroll.
+ const w=canvas.clientWidth||innerWidth,h=canvas.clientHeight||innerHeight;
+ const d=Math.min(devicePixelRatio||1,1.5,Math.sqrt(2200000/Math.max(1,w*h)));
+ if(f.w===w&&f.h===h&&f.d===d)return;
+ f.w=w;f.h=h;f.d=d;
+ const width=Math.round(w*d),height=Math.round(h*d);
+ if(canvas.width!==width)canvas.width=width;
+ if(canvas.height!==height)canvas.height=height;
+ paintPending=true;if(!document.hidden)paint();
+}
+function available(index,imagesOnly=false){for(let offset=0;offset<scenes.length;offset++){const scene=sceneAt(index+offset);if(scene.kind?!imagesOnly:assets[scene.asset].ready)return scene;}return null;}
 // Text-free imagined research landscapes, not plots of measured paper data.
 // Fixed geometry keeps the dissolve calm; bounded paths avoid per-frame particles.
 function diagram(kind,alpha,c){const {w,h}=f;
@@ -349,23 +439,20 @@ function layer(scene,alpha,c=canvas.getContext('2d')){if(!scene||alpha<.001)retu
   c.drawImage(image,rx,ry,rw,rh,(w-dw)/2,(h-dh)/2,dw,dh);c.globalAlpha=1;return;
  }
  // Cover the whole viewport, including the spaces between cards. No slice distortion.
- const beat=sceneBeats[scenes.indexOf(scene)]||sceneBeats[0];
- const camera=phase*beat.tempo;
- // A continuous restrained push/pull, never a scene-entry reset or sudden zoom.
- const scale=Math.max(w/sw,h/sh)*(1.035+(1-Math.cos(camera))*.009*beat.motion+scrollEnergy*.065),dw=sw*scale,dh=sh*scale;
- const drift=Math.sin(camera)*.012*beat.motion+Math.sin(cloudTravel*.23+phase*.09)*scrollEnergy*.018;
+ // Stable cover framing: scrolling and scene time never push an image closer.
+ // Keep the existing cover margin and authored mobile focal point.
+ const scale=Math.max(w/sw,h/sh)*1.035,dw=sw*scale,dh=sh*scale;
  const focus=w<650?(scene.focus??.5):.5;
- // Clamp the camera inside its overscan: fast or reversed scrolling never reveals an edge.
- const x=Math.max(w-dw,Math.min(0,(w-dw)*focus+drift*w));
- const y=Math.max(h-dh,Math.min(0,(h-dh)*.5+Math.sin(cloudTravel*.17)*scrollEnergy*h*.015));
+ const x=(w-dw)*focus,y=(h-dh)*.5;
  c.globalAlpha=alpha;c.drawImage(image,sx,sy,sw,sh,x,y,dw,dh);c.globalAlpha=1;
 }
 function preload(step){
  // Recheck the working set only at a scene boundary or when a request settles.
  if(step===preloadStep&&!preloadDirty)return;preloadStep=step;preloadDirty=false;
  // Keep a short runway, but never let speculative requests crowd out the feed.
- const wanted=[];for(let offset=0;offset<4;offset++){const index=scenes[(step+offset)%scenes.length].asset;if(index!==undefined&&!wanted.includes(index))wanted.push(index);}
- const pinned=new Set([...wanted,pairPrevious?.asset,pairA?.asset,pairB?.asset]);
+ const wanted=[],visible=new Set([pairPrevious?.asset,pairA?.asset,pairB?.asset].filter(index=>index!==undefined));
+ for(let offset=0;offset<4;offset++){const index=sceneAt(step+offset).asset;if(index!==undefined&&!wanted.includes(index)&&new Set([...visible,...wanted,index]).size<=MAX_READY)wanted.push(index);}
+ const pinned=new Set([...wanted,...visible]);
  for(const asset of assets){if(assets.filter(a=>a.ready).length<=MAX_READY)break;if(asset.ready&&!pinned.has(assets.indexOf(asset))){asset.ready=false;asset.requested=false;asset.image=new Image();asset.attempts=0;}}
  for(const index of wanted){if(activeLoads>=MAX_LOADING)break;loadAsset(index);}
 }
@@ -383,11 +470,16 @@ function clouds(softness=1){
  }
  c.restore();
 }
-function paint(){if(!f.w||document.hidden)return;const {w,h,d}=f;c.setTransform(d,0,0,d,0,0);c.clearRect(0,0,w,h);
+function paint(){if(!f.w||document.hidden||contextLost)return;const {w,h,d}=f;c.setTransform(d,0,0,d,0,0);
+ // Never expose a transparent viewport between frames, even before a decoded
+ // image is available. The CSS backing also covers a discarded browser layer.
+ c.globalAlpha=1;c.globalCompositeOperation='source-over';c.fillStyle='#101719';c.fillRect(0,0,w,h);
  const timing=sceneTime(phase),{step,progress}=timing,blend=smooth(progress);
  preload(step);
  // Freeze each dissolve's endpoints. A late image must not replace a visible layer mid-fade.
- if(pairStep!==step){pairStep=step;pairPrevious=pairA||available(step%scenes.length);pairA=pairB||pairPrevious;pairB=available((step+1)%scenes.length);}
+ // The first decoded image must replace a procedural startup fallback, even
+ // when a nearer interlude precedes it and reduced motion freezes this step.
+ if(pairStep!==step){pairStep=step;pairPrevious=pairA||available(step,initialImageReady);pairA=pairB||pairPrevious;pairB=available(step+1);}
  // A's weights already ease each shoulder to zero velocity. Use one raw
  // duration-normalized progress for both composition and cloud attenuation.
  dissolve(pairPrevious,pairA,pairB,progress,step);
@@ -395,24 +487,37 @@ function paint(){if(!f.w||document.hidden)return;const {w,h,d}=f;c.setTransform(
  c.save();c.globalAlpha=.16;c.strokeStyle='#c7e2cf';c.lineWidth=1;
  for(let line=0;line<3;line++){const y=h*(.2+line*.28),drift=Math.sin(phase*.08+line)*h*.035;c.beginPath();c.moveTo(w*.35,y+drift);c.bezierCurveTo(w*.55,y-h*.16,w*.74,y+h*.16,w*1.08,y-drift);c.stroke();}c.restore();
  const shade=c.createLinearGradient(0,0,w,0);shade.addColorStop(0,'#101719ed');shade.addColorStop(.55,'#101719cc');shade.addColorStop(.84,'#101719cc');shade.addColorStop(1,w<650?'#101719cc':'#10171966');c.fillStyle=shade;c.fillRect(0,0,w,h);
- window.__reportFlow={pvSpeed:IDLE_SPEED+scrollBoost,transitionVersion:3,transitionMix:2*(1-Math.max(...weights(progress))),phase,scrollEnergy,cloudTravel,flowDirection,paused:paused(),scene:step%scenes.length,sceneDuration:timing.seconds,sceneRole:timing.role,transition:transitionFor(progress<.5?pairA:pairB),sceneProgress:progress,reelSeconds,blend,loaded:assets.filter(a=>a.ready).length};paintPending=false;
+ window.__reportFlow={pvSpeed:IDLE_SPEED+scrollBoost,transitionVersion:4,transitionMix:2*(1-Math.max(...weights(progress))),phase,scrollEnergy,cloudTravel,flowDirection,paused:paused(),scene:step%scenes.length,sceneIndex:timing.sourceIndex,sequenceCycle:Math.floor(step/scenes.length),sequenceMode:'shuffle-bag',sceneDuration:timing.seconds,sceneRole:timing.role,transition:transitionFor(progress<.5?pairA:pairB),sceneProgress:progress,reelSeconds,blend,loaded:assets.filter(a=>a.ready).length};paintPending=false;
 }
-function tick(now){raf=0;if(document.hidden||paused()||!ready()){last=null;scrollBoost=0;return;}
+function tick(now){raf=0;if(document.hidden||contextLost||paused()||!ready()){last=null;scrollBoost=0;return;}
  const dt=last===null?0:Math.min((now-last)/1000,.1);last=now;
  const nextBoost=scrollBoost*Math.exp(-BOOST_DECAY*dt);
  phase+=IDLE_SPEED*dt+(scrollBoost-nextBoost)/BOOST_DECAY;
- // Input changes a target, never pixels directly. Clouds and camera follow smoothly.
+ // Input changes a target, never pixels directly. Only the soft overlay follows.
  const follow=1-Math.exp(-6*dt);
  scrollEnergy+=(clamp(scrollBoost/MAX_BOOST)-scrollEnergy)*follow;
  flowDirection+=(scrollDirection-flowDirection)*follow;
  cloudTravel+=dt*scrollEnergy*flowDirection*1.7;
  scrollBoost=nextBoost;
- if(paintPending||now-lastPaint>=FRAME){paint();lastPaint=now;}raf=requestAnimationFrame(tick);
+ if(paintPending||now-lastPaint>=FRAME){paint();lastPaint=now;}if(!raf)raf=requestAnimationFrame(tick);
 }
-function sync(){if(raf)cancelAnimationFrame(raf);raf=0;last=null;if(paused()||document.hidden)scrollBoost=0;paintPending=true;if(document.hidden)return;paint();if(!paused()&&ready())raf=requestAnimationFrame(tick);}
-addEventListener('scroll',()=>{const movement=scrollY-previousScroll,delta=Math.abs(movement);previousScroll=scrollY;if(!paused()&&!document.hidden&&ready()&&delta){scrollDirection=Math.sign(movement);scrollBoost=Math.min(MAX_BOOST,scrollBoost+delta*SCROLL_GAIN);}},{passive:true});
+function sync(){if(raf)cancelAnimationFrame(raf);raf=0;last=null;if(paused()||document.hidden||contextLost)scrollBoost=0;paintPending=true;if(document.hidden||contextLost)return;paint();if(!raf&&!paused()&&ready())raf=requestAnimationFrame(tick);}
+addEventListener('scroll',()=>{const movement=scrollY-previousScroll,delta=Math.abs(movement);previousScroll=scrollY;if(!paused()&&!document.hidden&&!contextLost&&ready()&&delta){scrollDirection=Math.sign(movement);scrollBoost=Math.min(MAX_BOOST,scrollBoost+delta*SCROLL_GAIN);}},{passive:true});
 addEventListener('resize',size);reduced.addEventListener('change',sync);document.addEventListener('visibilitychange',sync);
-const cards=document.querySelector('#papers');if(cards)new MutationObserver(mark).observe(cards,{childList:true});
+// Canvas 2D restores by default: do not cancel contextlost (unlike WebGL).
+// Restore a paused/reduced-motion frame too, without changing its scene clock.
+canvas.addEventListener?.('contextlost',()=>{contextLost=true;scrollBoost=0;if(raf)cancelAnimationFrame(raf);raf=0;last=null;paintPending=true;});
+canvas.addEventListener?.('contextrestored',()=>{contextLost=false;sync();});
+function restoreMask(){maskStep=-1;maskStyle=null;maskSeed=-1;maskField=null;sync();}
+reveal.addEventListener?.('contextlost',()=>{revealLost=true;sync();});
+reveal.addEventListener?.('contextrestored',()=>{revealLost=false;restoreMask();});
+mist.addEventListener?.('contextlost',()=>{mistLost=true;sync();});
+mist.addEventListener?.('contextrestored',()=>{mistLost=false;restoreMask();});
+cloud.addEventListener?.('contextlost',()=>{cloudReady=false;sync();});
+cloud.addEventListener?.('contextrestored',()=>{rebuildCloud();sync();});
+// A BFCache return can restore a paused page without a visibility transition.
+addEventListener('pageshow',()=>{size();sync();});
+const cards=document.querySelector('#papers');if(cards)new MutationObserver(changes=>{for(const change of changes)for(const node of change.addedNodes)if(node.nodeType===1)mark(node);}).observe(cards,{childList:true});
 // The feed's existing pause button changes body.paused. Stop scheduling, not only motion.
 new MutationObserver(sync).observe(document.body,{attributes:true,attributeFilter:['class']});mark();size();
 // Requests are bounded, decoded before drawing, and retried once after a timeout/error.
@@ -434,9 +539,9 @@ function loadAsset(index){
   if(ok&&!initialImageReady){initialImageReady=true;pairStep=-1;pairPrevious=pairA=pairB=null;}
   paintPending=true;
   preload(sceneTime(phase).step);recoverAssets();
-  if(!document.hidden&&ready()){if(paused())paint();else if(!raf)raf=requestAnimationFrame(tick);}
+  if(!document.hidden&&!contextLost&&ready()){if(paused())paint();else if(!raf)raf=requestAnimationFrame(tick);}
  }
- image.decoding='async';image.fetchPriority=index===scenes[0].asset?'high':'low';
+ image.decoding='async';image.fetchPriority=index===sceneAt(0).asset?'high':'low';
  function decoded(){if(settled)return;if(typeof image.decode==='function')image.decode().then(()=>finish(!!image.naturalWidth),()=>finish(false));else finish(!!image.naturalWidth);}
  image.onload=decoded;image.onerror=()=>finish(false);
  image.src='/assets/'+asset.name;if(image.complete&&image.naturalWidth)decoded();

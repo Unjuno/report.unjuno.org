@@ -1,6 +1,7 @@
 'use strict';
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
 const source=fs.readFileSync('dist/assets/cinema-field.js','utf8');
+const assetCount=require('./scene-registry.cjs')().assets.length;
 function harness(reduced=false){
  let clock=0,id=0,draws=[];const frames=new Map(),timers=new Map(),requests=[],listeners={};
  const ctx=new Proxy({drawImage(image){if(image.url)draws.push(image.url)},createLinearGradient:()=>({addColorStop(){}})},{get:(o,k)=>o[k]||(()=>{})});
@@ -20,9 +21,9 @@ function harness(reduced=false){
  for(let i=2;i<h.requests.length;i++)await h.load(h.requests[i]);
  for(let t=300;t<=300000;t+=100){h.frame(t);for(const image of h.requests.filter(i=>i.onload&&!i.decodeReady))await h.load(image);assert.ok(h.flow().loaded<=6,'decoded working set stays bounded');}
  assert.ok(h.flow().scene!==0,'automatic animation advances through repeated loops');
- const fail=harness();for(let turn=0;turn<20;turn++){const batch=fail.requests.filter(i=>i.onerror);if(!batch.length)break;batch.forEach(i=>i.onerror());}
- assert.equal(fail.requests.length,35,'total initial failure probes all assets');assert.equal(fail.frames.size,0,'no spinning render loop when every image failed');
- fail.timersAt(15000);assert.equal(fail.requests.length,37,'retry restarts at most two concurrent requests');await fail.load(fail.requests[35]);fail.frame(15000);fail.frame(15100);assert.ok(fail.flow().phase>0,'a recovered image restarts animation');
+ const fail=harness();for(let turn=0;turn<assetCount;turn++){const batch=fail.requests.filter(i=>i.onerror);if(!batch.length)break;batch.forEach(i=>i.onerror());}
+ assert.equal(fail.requests.length,assetCount,'total initial failure probes all assets');assert.equal(fail.frames.size,0,'no spinning render loop when every image failed');
+ fail.timersAt(15000);assert.equal(fail.requests.length,assetCount+2,'retry restarts at most two concurrent requests');await fail.load(fail.requests[assetCount]);fail.frame(15000);fail.frame(15100);assert.ok(fail.flow().phase>0,'a recovered image restarts animation');
  const still=harness(true);await still.load(still.requests[0]);assert.equal(still.flow().loaded,1,'reduced motion paints first decoded image');assert.equal(still.frames.size,0,'reduced motion has no animation loop');const stillDraws=[...new Set(still.draws())];await still.load(still.requests[1]);assert.deepEqual([...new Set(still.draws())],stillDraws,'later initial images do not replace the frozen endpoint');
  const slow=harness(),late=slow.requests[0];late.naturalWidth=1536;late.onload();slow.timersAt(12000);late.decodeReady();await Promise.resolve();slow.listeners.resize();assert.equal(slow.flow().loaded,0,'late decode after timeout cannot resurrect an abandoned request');assert.equal(late.src,'','timeout cancels stale image request');
  console.log('PASS bounded fetches/cache, decode gating, late-image continuity, clock continuity, 5-minute rotation, all-fail recovery and stale-decode timeout (mock DOM).');

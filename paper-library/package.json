@@ -2,7 +2,7 @@
   "name": "report-paper-library-preview",
   "private": true,
   "scripts": {
-    "test": "npm run test:static && node tests/home-feed.cjs && node tests/feed-search-performance.cjs && python3 tests/feed-build.py && npm run test:favicon && node tests/minimal-bundle.cjs && npm run test:scroll-performance",
+    "test": "npm run test:static && node tests/home-feed.cjs && node tests/feed-search-performance.cjs && python3 tests/feed-build.py && npm run test:favicon && npm run test:touch-compositor && python3 tests/home-logo-navigation.py && node tests/home-materials-runtime.cjs",
     "test:static": "python3 check_static.py",
     "test:menu": "node tests/home-menu.cjs",
     "test:field": "node tests/home-field.cjs",
@@ -26,15 +26,29 @@
     "test:landscape": "node tests/home-landscape.cjs",
     "test:legacy": "npm run test:menu && npm run test:field && npm run test:audio && npm run test:surface && npm run test:renderer-loss && npm run test:contrast && npm run test:view && npm run test:view-integration && npm run test:labels && npm run test:reveal && npm run test:audio-race && npm run test:compositor-fallback && npm run test:linked-preview && npm run test:ime && npm run test:history && npm run test:noscript && npm run test:section && npm run test:material && npm run test:reality && npm run test:landscape",
     "build": "python3 build_feed.py",
-    "test:review": "node tests/no-external-search.cjs && node tests/feed-pagination-review.cjs && node tests/continuous-scene-review.cjs && node tests/sponsor-repeat.cjs && npm run test:scroll-performance",
+    "test:review": "node tests/feed-position.cjs && node tests/no-external-search.cjs && node tests/continuous-scene-review.cjs && npm run test:scroll-performance && npm run test:motion-refinement",
     "test:quiet-loading": "node tests/quiet-loading-review.cjs",
     "test:entities": "node tests/entities-review.cjs",
     "test:pv-type": "node tests/pv-type-review.cjs",
     "test:sponsors": "node tests/sponsor-repeat.cjs",
-    "test:paintings": "node tests/new-paintings-ten.cjs && node tests/background-loop.cjs && node tests/background-loading.cjs && node tests/scene-load-timeout.cjs && node tests/scene-load-recovery.cjs && node tests/scene-speed-smooth.cjs && node tests/soft-dissolve-review.cjs && node tests/selected-home-stills.cjs",
+    "test:paintings": "node tests/new-paintings-ten.cjs && node tests/background-loop.cjs && node tests/background-loading.cjs && node tests/scene-load-timeout.cjs && node tests/scene-load-recovery.cjs && node tests/scene-speed-smooth.cjs && node tests/soft-dissolve-review.cjs && node tests/selected-home-stills.cjs && node tests/approved-nineteen.cjs && node tests/selected-eleven.cjs && node tests/all-generated-images.cjs && node tests/scene-startup-image.cjs",
     "test:pv-timing": "node tests/pv-timing-review.cjs && node tests/scene-speed-smooth.cjs",
     "test:favicon": "python3 tests/favicon.py",
-    "test:scroll-performance": "node tests/feed-scroll-performance.cjs && node tests/scene-scroll-load-performance.cjs",
-    "test:full-source": "npm run test:paintings && python3 tests/favicon-full-source.py"
+    "test:scroll-performance": "node tests/scene-scroll-load-performance.cjs",
+    "test:recorded-audio": "node tests/recorded-audio-bank.cjs",
+    "test:optimization": "node tests/feed-title-wrap.cjs && node tests/feed-decoration-work.cjs && node tests/home-document-structure.cjs && npm run test:type-reveal && npm run test:combined-filter-reveal && node tests/feed-arabic-title-native.cjs",
+    "test:motion-refinement": "node tests/home-motion-refinement.cjs && node tests/transition-variation.cjs && node tests/scroll-clouds-review.cjs && node tests/scene-random-sequence.cjs && node tests/scene-random-loading.cjs && npm run test:opaque-canvas && npm run test:canvas-recovery",
+    "test:opaque-canvas": "node tests/canvas-opaque-resize.cjs",
+    "test:opaque-pixels": "node tests/canvas-opaque-pixels.cjs",
+    "test:quality": "node tests/quality-replacements.cjs",
+    "test:canvas-recovery": "node tests/canvas-lifecycle-fallback.cjs",
+    "test:touch-compositor": "node tests/touch-compositor.cjs",
+    "test:type-reveal": "node tests/type-reveal-work.cjs",
+    "test:combined-filter-reveal": "node tests/combined-filter-reveal.cjs",
+    "test:legacy-discovery": "node tests/feed-pagination-review.cjs && node tests/feed-pagination-buffer.cjs && node tests/feed-scroll-performance.cjs && node tests/sponsor-repeat.cjs",
+    "test:materials": "python3 tests/feed-build.py && node tests/home-materials-runtime.cjs && node tests/no-external-search.cjs"
+  },
+  "devDependencies": {
+    "css-tree": "^3.2.1"
   }
 }

@@ -1,0 +1,103 @@
+{
+  "module": "src/site/math.mjs + src/site/labs.mjs",
+  "checks_passed": 139,
+  "weights": [
+    0.44580827410760315,
+    0.44580827410760315,
+    0.10838345178479356
+  ],
+  "states": [
+    {
+      "value_c": [
+        -1,
+        1
+      ],
+      "weighted_values": [
+        [
+          0.44580827410760315,
+          0
+        ],
+        [
+          0,
+          0.44580827410760315
+        ],
+        [
+          -0.10838345178479356,
+          0.10838345178479356
+        ]
+      ],
+      "output": [
+        0.33742482232280957,
+        0.5541917258923967
+      ],
+      "display": "[0.337, 0.554]",
+      "interaction_html": "<div class=\"matrix-list\"><p>Value A = [1, 0] <small>× 0.446</small></p><p>Value B = [0, 1] <small>× 0.446</small></p><p>Value C = [-1, 1] <small>× 0.108</small></p></div><p class=\"lab-result\">出力 = <strong>[0.337, 0.554]</strong></p><p>重みは[2,2,0]を√2で割ってsoftmaxした値に固定しています。</p>"
+    },
+    {
+      "value_c": [
+        2,
+        1
+      ],
+      "weighted_values": [
+        [
+          0.44580827410760315,
+          0
+        ],
+        [
+          0,
+          0.44580827410760315
+        ],
+        [
+          0.2167669035695871,
+          0.10838345178479356
+        ]
+      ],
+      "output": [
+        0.6625751776771902,
+        0.5541917258923967
+      ],
+      "display": "[0.663, 0.554]",
+      "interaction_html": "<div class=\"matrix-list\"><p>Value A = [1, 0] <small>× 0.446</small></p><p>Value B = [0, 1] <small>× 0.446</small></p><p>Value C = [2, 1] <small>× 0.108</small></p></div><p class=\"lab-result\">出力 = <strong>[0.663, 0.554]</strong></p><p>重みは[2,2,0]を√2で割ってsoftmaxした値に固定しています。</p>"
+    },
+    {
+      "value_c": [
+        2,
+        -2
+      ],
+      "weighted_values": [
+        [
+          0.44580827410760315,
+          0
+        ],
+        [
+          0,
+          0.44580827410760315
+        ],
+        [
+          0.2167669035695871,
+          -0.2167669035695871
+        ]
+      ],
+      "output": [
+        0.6625751776771902,
+        0.22904137053801604
+      ],
+      "display": "[0.663, 0.229]",
+      "interaction_html": "<div class=\"matrix-list\"><p>Value A = [1, 0] <small>× 0.446</small></p><p>Value B = [0, 1] <small>× 0.446</small></p><p>Value C = [2, -2] <small>× 0.108</small></p></div><p class=\"lab-result\">出力 = <strong>[0.663, 0.229]</strong></p><p>重みは[2,2,0]を√2で割ってsoftmaxした値に固定しています。</p>"
+    }
+  ],
+  "delta_value_c": [
+    0,
+    -3
+  ],
+  "delta_output": [
+    0,
+    -0.32515035535438064
+  ],
+  "notes": [
+    "Weights are fixed in this experiment to isolate Value effects.",
+    "All computations use full precision. Displayed contributions use four decimals; the interactive result uses three.",
+    "These are hand-set vectors, not learned model outputs."
+  ],
+  "reference": "https://arxiv.org/abs/1706.03762 section 3.2.1"
+}

@@ -1,33 +1,137 @@
-/* Original synthesized ambience. No external samples or requests. Autoplay is attempted only within browser policy. */
-(()=>{'use strict';
+/* HOME recorded music: 50 original synthesized cues, current/next buffers only.
+   Browser-policy startup and real-output indicator behavior are retained.
+   Cue cuts/crossfades are numerically screened, not listening/iOS certified. */
+(() => {
+'use strict';
 const panel=document.querySelector('#scroll-audio');if(!panel)return;
 const Engine=window.AudioContext||window.webkitAudioContext,reduced=matchMedia('(prefers-reduced-motion: reduce)');
-const chords=[[48,55,62,64],[45,52,59,60],[41,48,55,57]],hz=m=>440*2**((m-69)/12);
-const algorithms=[
- {name:'drifting-arpeggio',hold:8,minStay:24,maxStay:40,rate:1.15,attack:.008,decay:.65,level:.06,octave:24,noteType:'triangle',padType:'sine',padLevel:.1,accents:[1,.65,.82,.65],palette:chords},
- {name:'open-resonance',hold:12,minStay:36,maxStay:56,rate:.45,attack:.2,decay:3.2,level:.045,octave:12,noteType:'sine',padType:'triangle',padLevel:.075,accents:[.85,1,.9,.75],palette:[[48,60,67,74],[45,57,64,71],[41,53,60,67]]}
-];
-function stayFor(index,random=Math.random){const a=algorithms[index];return a.minStay+(a.maxStay-a.minStay)*Math.max(0,Math.min(1,random()));}
-let session=null,revision=0,raf=0,lastFrame=null,lastPaint=0,musicTime=0,lastFlow=null,stale=0,lastBeat=-1,lastChord=-1;
-const staticMode=()=>reduced.matches||document.body.classList.contains('paused');
-// No visible or announced audio prompts. Genuine touch start/end attempt normal
-// AudioContext resume; the browser may still reject a sliding gesture.
-function ui(){}
-// Site output at unity (100%); retain the downstream limiter and a soft startup.
-function gain(){if(session)session.master.gain.setTargetAtTime(session.muted?0:1,session.ctx.currentTime,session.muted?.04:.25);}
-function close(s){if(!s)return;clearTimeout(s.timeout);s.ctx.onstatechange=null;try{s.master.gain.setValueAtTime(0,s.ctx.currentTime);s.ctx.close().catch(()=>{});}catch(_){}s.notes.clear();}
-function halt(message='再生待ちです。画面を一度タップすると再試行します。'){revision++;cancelAnimationFrame(raf);raf=0;const old=session;session=null;window.__reportAudioIndicatorSource=null;window.HomeSoundIndicator?.setState(document.hidden?'suspended':Engine?'waiting':'unavailable');close(old);lastFrame=null;lastFlow=null;lastBeat=-1;lastChord=-1;ui(message);}
-function transitionPlan(flow){const mode=flow?.transition||'';if(/mist|bloom|veil/.test(mode))return {kind:'mist',duration:2.4};if(/wave|vortex|rings|contour/.test(mode))return {kind:'wave',duration:2.1};if(/lateral|ribbon|diagonal/.test(mode))return {kind:'lateral',duration:1.8};if(/particles|local-blends/.test(mode))return {kind:'particles',duration:1.6};return {kind:'mist',duration:2.2};}
-function blendWeight(x,kind){x=Math.max(0,Math.min(1,x));const smooth=t=>t*t*(3-2*t);return kind==='wave'?(1-Math.cos(Math.PI*x))/2:kind==='particles'?smooth(smooth(x)):kind==='lateral'?smooth(x):x*x*x*(x*(x*6-15)+10);}
-function musicBlend(s){const p=s.musicMix;if(!p)return {from:s.algorithm,to:s.algorithm,weight:1};const x=(s.ctx.currentTime-p.start)/p.duration;if(x>=1){s.musicMix=null;return {from:s.algorithm,to:s.algorithm,weight:1};}return {from:p.from,to:p.to,weight:blendWeight(x,p.kind)};}
-function note(s,m){if(s.notes.size>=8)return;const mix=musicBlend(s),index=s.noteIndex++,beat=Math.floor(musicTime/.9),voices=mix.from===mix.to?[[mix.to,1]]:[[mix.from,1-mix.weight],[mix.to,mix.weight]];
- const token={remaining:0};s.notes.add(token);
- for(const [which,weight] of voices){if(weight<=.0001)continue;const a=algorithms[which],midi=a.palette[Math.floor(musicTime/a.hold)%3][which?3-beat%4:beat%4]+a.octave,o=s.ctx.createOscillator(),g=s.ctx.createGain(),t=s.ctx.currentTime,level=a.level*a.accents[index%4]*weight;
-  token.remaining++;o.type=a.noteType;o.frequency.value=hz(midi);g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(level,t+a.attack);g.gain.exponentialRampToValueAtTime(Math.min(.0001,level*.01),t+a.decay);o.connect(g);g.connect(s.input||s.master);o.onended=()=>{if(--token.remaining===0)s.notes.delete(token);o.disconnect();g.disconnect();};o.start(t);o.stop(t+a.decay+.05);
+// Version the changed cue bank too: a new player must not receive a cached 2 s bank.
+const CATALOG='/assets/home-music/catalog.json?v=piano-v3',OVERLAP=.8,HEADROOM=10**(-3.1/20),FETCH_MS=7000;
+let session=null,revision=0,raf=0,lastPaint=0,catalogPromise=null,shuffleBag=[],lastSelectedId=null;
+// A full shuffled bag is consumed before reshuffling. Keep it across hide/show
+// restarts in this page, but do not store listening history or preload the bank.
+function randomIndex(limit){
+ if(window.crypto?.getRandomValues){
+  const value=new Uint32Array(1),ceiling=Math.floor(4294967296/limit)*limit;
+  do{window.crypto.getRandomValues(value);}while(value[0]>=ceiling);
+  return value[0]%limit;
  }
- if(token.remaining===0)s.notes.delete(token);
+ return Math.floor(Math.random()*limit);
 }
-// Image boundary strength uses the same .4/.6 clear window as the renderer.
+function drawTrack(tracks,avoidId=lastSelectedId){
+ if(shuffleBag.length===1&&shuffleBag[0].id===avoidId&&tracks.length>1)shuffleBag=[];
+ if(!shuffleBag.length){
+  shuffleBag=tracks.slice();
+  for(let i=shuffleBag.length-1;i>0;i--){const j=randomIndex(i+1);[shuffleBag[i],shuffleBag[j]]=[shuffleBag[j],shuffleBag[i]];}
+  // The new round must not immediately repeat the preceding selected track.
+  if(shuffleBag.length>1&&shuffleBag[0].id===avoidId){const j=1+randomIndex(shuffleBag.length-1);[shuffleBag[0],shuffleBag[j]]=[shuffleBag[j],shuffleBag[0]];}
+ }
+ // A failed request or interrupted session can leave the current cue in a bag.
+ if(shuffleBag.length>1&&shuffleBag[0].id===avoidId){const j=1+randomIndex(shuffleBag.length-1);[shuffleBag[0],shuffleBag[j]]=[shuffleBag[j],shuffleBag[0]];}
+ const track=shuffleBag.shift();lastSelectedId=track.id;return track;
+}
+const staticMode=()=>reduced.matches||document.body.classList.contains('paused');
+function ui(){} // Retain the existing no-prompt surface.
+function valid(s){return session===s&&!s.closed&&!document.hidden;}
+function diagnostics(s){
+ if(!s||session!==s)return;
+ const buffers=new Set([s.current?.buffer,s.next?.buffer,s.loaded?.buffer].filter(Boolean));
+ window.__homeMusicStatus=Object.freeze({engine:'recorded-music',order:'shuffle-bag',crossfadeSeconds:OVERLAP,catalogCount:s.tracks?.length||0,currentId:s.current?.track.id||null,nextId:s.next?.track.id||null,currentStart:s.current?.start??null,currentEnd:s.current?.end??null,nextStart:s.next?.start??null,nextEnd:s.next?.end??null,decodedBuffers:buffers.size,sourceNodes:s.voices.size,pendingLoad:!!s.pending,fallback:!!s.next?.fallback,ready:s.ready,error:s.error||null});
+}
+function releaseVoice(s,v){if(!v||v.released)return;v.released=true;v.source.onended=null;try{v.source.disconnect();v.gain.disconnect();v.source.buffer=null;}catch(_){}v.buffer=null;s.voices.delete(v);}
+function close(s){
+ if(!s||s.closed)return;s.closed=true;clearTimeout(s.timeout);s.pending?.controller.abort();s.abort.abort();s.ctx.onstatechange=null;
+ for(const v of [...s.voices]){try{v.source.stop();}catch(_){}releaseVoice(s,v);}
+ s.current=null;s.next=null;s.loaded=null;try{s.master.gain.setValueAtTime(0,s.ctx.currentTime);s.ctx.close().catch(()=>{});}catch(_){}
+}
+function halt(message='再生待ちです。画面を一度タップすると再試行します。'){
+ revision++;cancelAnimationFrame(raf);raf=0;const old=session;session=null;window.__reportAudioIndicatorSource=null;window.__homeMusicStatus=Object.freeze({engine:'recorded-music',ready:false,decodedBuffers:0,sourceNodes:0,catalogCount:old?.tracks?.length||0});window.HomeSoundIndicator?.setState(document.hidden?'suspended':Engine?'waiting':'unavailable');close(old);ui(message);
+}
+async function timedFetch(url,signal){
+ const controller=new AbortController(),abort=()=>controller.abort();signal?.addEventListener('abort',abort,{once:true});if(signal?.aborted)controller.abort();
+ const timer=setTimeout(abort,FETCH_MS);
+ try{const response=await fetch(url,{signal:controller.signal,credentials:'same-origin'});if(!response.ok)throw Error('audio fetch '+response.status);return await response.arrayBuffer();}
+ finally{clearTimeout(timer);signal?.removeEventListener('abort',abort);}
+}
+function validateCatalog(data){
+ if(!data||!Array.isArray(data.tracks)||data.tracks.length!==50||data.crossfade_seconds!==OVERLAP||data.master_gain_db!==-3.1)throw Error('invalid audio catalog');
+ const ids=new Set(),urls=new Set();
+ for(const t of data.tracks){
+  if(!Number.isInteger(t.id)||ids.has(t.id)||!/^\/assets\/home-music\/\d{3}_[a-z0-9_]+\.mp3$/.test(t.url)||urls.has(t.url)||!/^[a-f0-9]{64}$/.test(t.sha256))throw Error('invalid audio track identity');
+  if(![t.cue_in_seconds,t.cue_out_seconds,t.decoded_duration_seconds].every(Number.isFinite)||t.cue_in_seconds<0||t.cue_out_seconds>t.decoded_duration_seconds+.05||t.cue_out_seconds-t.cue_in_seconds<OVERLAP*2+1||t.decoded_duration_seconds>90)throw Error('invalid audio cues');
+  ids.add(t.id);urls.add(t.url);
+ }
+ return data.tracks;
+}
+async function catalog(s){
+ // Metadata is shared only after a successful parse. An aborted first session cannot poison later starts.
+ if(!catalogPromise)catalogPromise=timedFetch(CATALOG,s.abort.signal).then(bytes=>validateCatalog(JSON.parse(new TextDecoder().decode(bytes)))).catch(error=>{catalogPromise=null;throw error;});
+ return catalogPromise;
+}
+async function loadTrack(s,track,signal){
+ const bytes=await timedFetch(track.url,signal);if(!valid(s)||signal.aborted)throw Error('cancelled');
+ if(bytes.byteLength!==track.bytes||!window.crypto?.subtle)throw Error('audio integrity unavailable');
+ const digest=Array.from(new Uint8Array(await window.crypto.subtle.digest('SHA-256',bytes)),x=>x.toString(16).padStart(2,'0')).join('');
+ if(digest!==track.sha256)throw Error('audio hash mismatch');
+ const buffer=await s.ctx.decodeAudioData(bytes);if(!valid(s)||signal.aborted)throw Error('cancelled');
+ if(!Number.isFinite(buffer.duration)||buffer.duration+.05<track.cue_out_seconds||buffer.numberOfChannels!==2)throw Error('invalid decoded audio');
+ return buffer;
+}
+const FADE_IN=new Float32Array(2048),FADE_OUT=new Float32Array(2048);
+for(let i=0;i<FADE_IN.length;i++){const t=i/(FADE_IN.length-1)*Math.PI/2;FADE_IN[i]=Math.sin(t);FADE_OUT[i]=Math.cos(t);}FADE_OUT[FADE_OUT.length-1]=0;
+function voice(s,track,buffer,start,fadeIn){
+ const source=s.ctx.createBufferSource(),g=s.ctx.createGain();source.buffer=buffer;source.playbackRate.value=1;source.connect(g);g.connect(s.input||s.master);
+ const duration=track.cue_out_seconds-track.cue_in_seconds,v={source,gain:g,track,buffer,start,end:start+duration,released:false,fallback:false};s.voices.add(v);
+ g.gain.setValueAtTime(0,start);
+ if(fadeIn)g.gain.setValueCurveAtTime(FADE_IN,start,OVERLAP);else g.gain.linearRampToValueAtTime(1,start+.1);
+ source.onended=()=>ended(s,v);source.start(start,track.cue_in_seconds,duration);return v;
+}
+function queue(s,track,buffer,fallback=false){
+ const current=s.current;if(!valid(s)||!current||s.next)return false;
+ const start=current.end-OVERLAP;
+ if(start<s.ctx.currentTime+.03){s.error='late-transition';return false;}
+ current.gain.gain.setValueCurveAtTime(FADE_OUT,start,OVERLAP);
+ s.next=voice(s,track,buffer,start,true);s.next.fallback=fallback;diagnostics(s);return true;
+}
+function arm(s){
+ if(!valid(s)||!s.current)return;
+ if(s.loaded){const loaded=s.loaded;s.loaded=null;if(!queue(s,loaded.track,loaded.buffer,false)){s.loaded=loaded;return;}}
+ else if(!queue(s,s.current.track,s.current.buffer,true))return;
+ // The fallback is scheduled before any request: network delay alone cannot create an ending gap.
+ if(s.next.fallback)prepareNext(s);
+ diagnostics(s);
+}
+function ended(s,v){
+ if(!valid(s)){releaseVoice(s,v);return;}
+ if(v!==s.current){releaseVoice(s,v);return;}
+ const next=s.next;s.current=next;s.next=null;releaseVoice(s,v);
+ if(!next){halt('音声の接続に失敗しました。画面を一度タップすると再試行します。');return;}
+ // A frozen event loop may return after both already-scheduled sources finished.
+ if(next.end<=s.ctx.currentTime+.05){releaseVoice(s,next);s.current=null;halt('音声が中断されました。画面を一度タップすると再試行します。');return;}
+ arm(s);
+}
+function acceptLoaded(s,track,buffer){
+ if(!valid(s))return;
+ const fallback=s.next;
+ if(fallback?.fallback&&fallback.start>s.ctx.currentTime+.25){
+  fallback.source.onended=null;try{fallback.source.stop();}catch(_){}releaseVoice(s,fallback);s.next=null;
+  // The outgoing fade already has the exact tested timing, so it is not rescheduled.
+  const replacement=voice(s,track,buffer,fallback.start,true);s.next=replacement;
+ }else s.loaded={track,buffer};
+ diagnostics(s);
+}
+async function prepareNext(s){
+ if(!valid(s)||s.pending||s.loaded||!s.next?.fallback)return;
+ const pending={controller:new AbortController()};s.pending=pending;const abort=()=>pending.controller.abort();s.abort.signal.addEventListener('abort',abort,{once:true});diagnostics(s);
+ try{
+  // At most two candidates per cue cycle; an already-scheduled repeat covers both failures.
+  for(let attempt=0;attempt<2;attempt++){
+   const track=drawTrack(s.tracks,s.current.track.id);
+   try{const buffer=await loadTrack(s,track,pending.controller.signal);if(!valid(s)||s.pending!==pending)return;s.error=null;acceptLoaded(s,track,buffer);return;}
+   catch(error){if(!valid(s)||pending.controller.signal.aborted)return;s.error=String(error.message||'audio load failed');}
+  }
+ }finally{s.abort.signal.removeEventListener('abort',abort);if(s.pending===pending)s.pending=null;diagnostics(s);}
+}
 function boundaryState(flow,quiet=false){const zero={mist:0,wave:0,lateral:0,particles:0,pan:0};if(quiet||!flow||flow.paused||(!Number.isFinite(flow.sceneProgress)&&!Number.isFinite(flow.transitionMix)))return zero;
  const p=Math.max(0,Math.min(1,Number(flow.sceneProgress)||0)),smooth=t=>t*t*(3-2*t),amount=Number.isFinite(flow.transitionMix)?Math.max(0,Math.min(1,flow.transitionMix)):(p<.4?1-smooth(p/.4):p>.6?smooth((p-.6)/.4):0);
  const mode=({mist:'mist',wave:'wave','horizontal-wave':'wave',lateral:'lateral','lateral-blend':'lateral',ribbon:'lateral','diagonal-flow':'lateral',particles:'particles','local-blends':'particles',vortex:'wave','depth-rings':'wave','contour-bands':'wave','light-bloom':'mist','chromatic-veil':'mist'})[flow.transition];if(!mode)return zero;
@@ -55,54 +159,30 @@ function colourTo(s,b){if(!s.colour)return;const t=s.ctx.currentTime,k=.08,c=s.c
  c.resonance.gain.setTargetAtTime(b.wave+1.5*s.timbreBlend,t,k);c.resonance.frequency.setTargetAtTime(650-180*b.wave-260*s.timbreBlend,t,k);
  if(c.pan)c.pan.pan.setTargetAtTime(b.pan,t,k);
 }
-// Fixed-pitch banks use complementary soft curves; never retune a sounding bank.
-function chordTo(s,index,initial=false){
- const t=s.ctx.currentTime;if(!initial&&t<s.fadeUntil)return false;
- const next=initial?0:1-s.activeBank,bank=s.banks[next];
- const a=algorithms[Math.floor(index/3)];bank.level=a.padLevel;bank.oscillators.forEach((o,i)=>{o.type=a.padType;o.frequency.setValueAtTime(hz(a.palette[index%3][i]),t);});
- if(initial){bank.gain.gain.setValueAtTime(bank.level,t);s.banks[1].gain.gain.setValueAtTime(0,t);}
- else{const old=s.banks[s.activeBank],flow=window.__reportFlow,plan=s.musicMix||transitionPlan(flow),speed=Math.max(1,Math.min(7.4,flow?.pvSpeed||s.noteSpeed||1)),duration=s.musicMix?Math.max(.2,plan.start+plan.duration-t):Math.max(1.2,Math.min(plan.duration,a.hold/speed*.8)),out=new Float32Array(65),incoming=new Float32Array(65);
-  for(let i=0;i<65;i++){const w=blendWeight(i/64,plan.kind);out[i]=(old.level??.1)*(1-w);incoming[i]=bank.level*w;}
-  if(old.gain.gain.setValueCurveAtTime&&bank.gain.gain.setValueCurveAtTime){old.gain.gain.cancelScheduledValues(t);bank.gain.gain.cancelScheduledValues(t);old.gain.gain.setValueCurveAtTime(out,t,duration);bank.gain.gain.setValueCurveAtTime(incoming,t,duration);}else{old.gain.gain.setValueAtTime(old.level??.1,t);old.gain.gain.linearRampToValueAtTime(0,t+duration);bank.gain.gain.setValueAtTime(0,t);bank.gain.gain.linearRampToValueAtTime(bank.level,t+duration);}
-  s.fadeUntil=t+duration;
- }
- s.activeBank=next;if(initial)s.fadeUntil=t;return true;
-}
-function tick(now){raf=0;const s=session;if(!s||!s.ready)return;if(document.hidden)return halt('ページを離れたため音を停止しました。');if(s.ctx.state!=='running')return halt('音声が中断されました。画面を一度タップすると再開を試みます。');
- const dt=lastFrame===null?0:Math.max(0,Math.min(.1,(now-lastFrame)/1000));lastFrame=now;
- const flow=window.__reportFlow;let advance=dt;
- if(!staticMode()&&flow&&!flow.paused&&Number.isFinite(flow.phase)){
-  if(lastFlow===null){lastFlow=flow.phase;stale=0;}else if(flow.phase>lastFlow){advance=Math.min(.8,flow.phase-lastFlow);lastFlow=flow.phase;stale=0;}else if(flow.phase===lastFlow){stale+=dt;advance=stale<.5?0:dt;}else{lastFlow=flow.phase;advance=0;}
- }else{lastFlow=null;stale=0;}
- musicTime+=advance;
- if(musicTime>=s.nextSwitch){const plan=transitionPlan(flow);s.musicMix={...plan,from:s.algorithm,to:1-s.algorithm,start:s.ctx.currentTime};s.algorithm=1-s.algorithm;s.noteIndex=0;s.nextSwitch=musicTime+stayFor(s.algorithm);}
- const algorithm=algorithms[s.algorithm];
- const mix=musicBlend(s);s.timbreBlend=mix.from*(1-mix.weight)+mix.to*mix.weight;
- s.algorithmRate=algorithms[mix.from].rate*(1-mix.weight)+algorithms[mix.to].rate*mix.weight;
- const boundary=boundaryState(flow,staticMode());
- // Harmony keeps the authoritative PV clock. Only short-note density is softened.
- const intensity=!staticMode()&&flow&&!flow.paused&&Number.isFinite(flow.scrollEnergy)?Math.max(0,Math.min(1,flow.scrollEnergy)):0;
- const targetSpeed=!staticMode()&&flow&&!flow.paused&&Number.isFinite(flow.pvSpeed)?Math.max(1,Math.min(7.4,flow.pvSpeed)):1+4*intensity;
- s.noteSpeed+=(targetSpeed-s.noteSpeed)*(1-Math.exp(-dt/.35));
- const base=1/.9,ceiling=3.8;
- s.noteRate=base+(ceiling-base)*(1-Math.exp(-Math.max(0,s.noteSpeed/.9-base)/(ceiling-base)));
- s.particleMix+=(boundary.particles-s.particleMix)*(1-Math.exp(-dt/.15));
- s.noteRate=Math.min(ceiling,s.noteRate*(1+.2*s.particleMix)*s.algorithmRate);
- s.notePhase+=s.noteRate*dt;
- if(now-lastPaint>=1000/24){lastPaint=now;colourTo(s,boundary);const chord=Math.floor(musicTime/algorithm.hold)%3,key=s.algorithm*3+chord,beat=Math.floor(musicTime/.9);if(key!==lastChord){if(chordTo(s,key))lastChord=key;}if(s.notePhase>=1){s.notePhase%=1;if(!s.muted)note(s,algorithm.palette[chord][(s.algorithm?3-beat%4:beat%4)]+algorithm.octave);lastBeat=beat;}}
+function tick(now){
+ raf=0;const s=session;if(!s||!s.ready)return;if(document.hidden)return halt();if(s.ctx.state!=='running')return halt();
+ // MP3 pitch and pace stay fixed; existing visual transitions still colour/pan the sound.
+ if(now-lastPaint>=1000/24){lastPaint=now;colourTo(s,boundaryState(window.__reportFlow,staticMode()));}
  raf=requestAnimationFrame(tick);
 }
-async function begin(automatic=false){if(session||!Engine)return;if(document.hidden)return ui('ページを表示してから音をオンにしてください。');const token=++revision;let s;
- try{const ctx=new Engine(),master=ctx.createGain();master.gain.value=0;master.connect(ctx.destination);s={ctx,master,pads:[],banks:[],activeBank:0,fadeUntil:0,notePhase:1,noteRate:1/.9,noteSpeed:1,particleMix:0,notes:new Set(),ready:false,muted:false,timeout:0};s.algorithm=Math.random()<.5?0:1;s.timbreBlend=s.algorithm;s.noteIndex=0;s.algorithmRate=algorithms[s.algorithm].rate;s.nextSwitch=Infinity;session=s;ui('音声を準備しています。');if(automatic&&ctx.state!=='running'){halt('ブラウザの制限で再生待ちです。画面を一度タップしてください。');return;}
- // Resume directly inside the genuine gesture, before graph work or any await.
- const resumed=ctx.resume();resumed.catch(()=>{});
- colourGraph(s);connectIndicator(s);
- for(let b=0;b<2;b++){const bank={oscillators:[],gain:ctx.createGain()};bank.gain.gain.value=0;bank.gain.connect(s.input||master);s.banks.push(bank);for(let i=0;i<4;i++){const o=ctx.createOscillator();o.type='sine';o.frequency.value=hz(chords[0][i]);o.connect(bank.gain);o.start();bank.oscillators.push(o);s.pads.push(o);}}
- s.timeout=setTimeout(()=>{if(session===s)halt('音声の開始がタイムアウトしました。画面を一度タップすると再試行できます。');},5000);
- await resumed;if(token!==revision||session!==s)return;if(document.hidden||ctx.state!=='running')throw Error('audio unavailable');clearTimeout(s.timeout);s.ready=true;window.HomeSoundIndicator?.refresh();
- ctx.onstatechange=()=>{if(session===s&&s.ready&&ctx.state!=='running')halt('音声が中断されました。画面を一度タップすると再開を試みます。');};
- const flow=window.__reportFlow;musicTime=(!staticMode()&&flow&&Number.isFinite(flow.phase))?Math.max(0,flow.phase):0;lastFlow=null;lastFrame=null;lastPaint=0;stale=0;s.nextSwitch=musicTime+stayFor(s.algorithm);lastChord=s.algorithm*3+Math.floor(musicTime/algorithms[s.algorithm].hold)%3;chordTo(s,lastChord,true);gain();ui(staticMode()?'再生中。静止設定のためスクロールでは変化しません。':'再生中。背景の時間に合わせ、スクロールで音の展開が進みます。');raf=requestAnimationFrame(tick);
- }catch(_){if(token===revision)halt('音を再生できませんでした。ブラウザ設定を確認し画面を一度タップすると再試行できます。');else close(s);}
+async function begin(automatic=false){
+ if(session||!Engine||document.hidden)return;const token=++revision;let s;
+ try{
+  const ctx=new Engine(),master=ctx.createGain();master.gain.value=0;master.connect(ctx.destination);
+  s={ctx,master,voices:new Set(),current:null,next:null,loaded:null,pending:null,tracks:null,abort:new AbortController(),ready:false,muted:false,closed:false,timeout:0,timbreBlend:0,error:null};session=s;
+  if(automatic&&ctx.state!=='running'){halt();return;}
+  // Preserve synchronous resume inside a genuine gesture before any fetch/decode/await.
+  const resumed=ctx.resume();resumed.catch(()=>{});
+  colourGraph(s);connectIndicator(s);s.timeout=setTimeout(()=>{if(session===s)halt('音声の開始がタイムアウトしました。');},25000);
+  await resumed;if(token!==revision||!valid(s)||ctx.state!=='running')throw Error('audio unavailable');
+  ctx.onstatechange=()=>{if(session===s&&s.ready&&ctx.state!=='running')halt();};
+  s.tracks=await catalog(s);if(token!==revision||!valid(s))return;
+  let first=null,buffer=null;
+  for(let attempt=0;attempt<2;attempt++){first=drawTrack(s.tracks);try{buffer=await loadTrack(s,first,s.abort.signal);break;}catch(error){if(!valid(s)||s.abort.signal.aborted)throw error;s.error=String(error.message||error);}}
+  if(!buffer)throw Error('no initial audio');if(token!==revision||!valid(s))return;
+  clearTimeout(s.timeout);s.error=null;s.current=voice(s,first,buffer,ctx.currentTime+.1,false);s.ready=true;arm(s);
+  master.gain.setTargetAtTime(HEADROOM,ctx.currentTime,.25);window.HomeSoundIndicator?.refresh();lastPaint=0;raf=requestAnimationFrame(tick);diagnostics(s);
+ }catch(_){if(token===revision)halt('音を再生できませんでした。画面を一度タップすると再試行できます。');else close(s);}
 }
 let tap=null,ignoreClickUntil=0,scrollProbeDone=false;
 const editable=event=>!!event.target?.closest?.('input,textarea,select,[contenteditable]');

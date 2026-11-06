@@ -1,8 +1,7 @@
 ---
 import SiteLayout from "../../layouts/SiteLayout.astro";
-
 const title = "著作権・再利用方針";
-const description = "unjuno Research Notes の著作権と再利用について。";
+const description = "論文、要約、背景画像、収録音源、コードの権利と再利用条件について。";
 ---
 <SiteLayout title={`${title} — unjuno`} description={description}>
   <main>
@@ -11,19 +10,58 @@ const description = "unjuno Research Notes の著作権と再利用について�
       <div>
         <p class="kicker">SITE POLICY</p>
         <h1>著作権と、<br />再利用について。</h1>
-        <p class="article-deck">このサイトは閲覧できますが、掲載内容の再利用を許可するライセンスは付与していません。</p>
+        <p class="article-deck">掲載物ごとの権利と利用条件を、出典とあわせてご案内します。</p>
+        <p>更新日：2026年11月6日</p>
       </div>
     </header>
     <div class="article-grid">
       <article class="article-body">
-        <section class="article-section">
-          <h2>このサイトの内容</h2>
-          <p>本サイトの文章、独自に作成した図、デザイン、ソースコード等の著作権は、それぞれの権利者に帰属します。権利者の事前の許可なく、複製、改変、転載、再配布、商用利用などに利用することはできません。サイトが公開されていることは、これらの利用を許諾するものではありません。</p>
-          <p>本サイトは、再利用を認めるオープンソースまたはオープンコンテンツのライセンスを付与していません。許可を希望する場合は、権利者へ事前にお問い合わせください。</p>
+        <section class="article-section" id="basic">
+          <h2>基本方針</h2>
+          <p>掲載物の権利と利用条件は、内容ごとに異なります。本サイトは、サイト独自の文章・図・デザイン・コードについて、一括したオープンコンテンツ／オープンソースライセンスを付与していません。別の許諾が示されておらず、法令上も許諾が必要な利用については、その権利者の許諾が必要です。</p>
+<p>この方針は、適用される法令により認められる引用その他の利用、著作権で保護されない事実・アイデア等の利用、第三者が許諾している利用を制限するものではありません。第三者の著作物に、サイト運営者の新たな権利を主張するものでもありません。</p>
         </section>
-        <section class="article-section">
-          <h2>紹介する論文について</h2>
-          <p>論文の著作権は各著者・出版社等に帰属します。本サイトでは出典を明記し、内容を自分の言葉で要約・解説します。引用は適用される法令と出典の条件に従ってください。原論文の図表や本文を、本サイトの許諾だけで再利用できるものではありません。</p>
+        <section class="article-section" id="papers">
+          <h2>論文・抄録・書誌情報</h2>
+          <p>論文の本文・図表・抄録には、各著者・出版社などによる権利表示と利用条件が適用されます。原論文へのリンクや、本サイトでの紹介は、これらを自由に転載・翻訳・改変・配布できるという許諾ではありません。利用する版の権利表示とライセンスをご確認ください。オープンアクセスで読めることと、あらゆる再利用が認められることは同じではありません。</p>
+<p>ホームの論文一覧には、当サイトで作成した学習教材を実装済みの論文だけを掲載しています。現在の掲載対象はAttention Is All You Needです。学習教材には制作中の項目があり、掲載は教材全体の完成を意味しません。外部の書誌情報を自動取得して一覧に追加することはありません。</p>
+<p><a href="https://www.crossref.org/documentation/retrieve-metadata/#licensing">Crossrefの利用条件</a>では、書誌的な事実情報と抄録は別に扱われています。抄録には著者・出版社の権利と元の公開条件が残ります。APIから取得できることや抜粋が短いことだけで、再掲載・再利用の許諾があるとは限りません。arXiv等の原文も、掲載先・版ごとの条件をご確認ください。</p>
+        </section>
+        <section class="article-section" id="editorial">
+          <h2>当サイトの要約・解説・説明図</h2>
+          <p>当サイトの日本語要約・解説は、原論文や確認できた一次資料に基づく編集コンテンツです。原論文の表現、研究結果、書誌情報と、当サイトで加えた説明を区別してください。説明用の模式図や背景演出は、特記のない限り、原論文の図の転載や実験結果の再現ではありません。</p>
+<p>独自に創作された表現に認められる権利と、研究上の事実・アイデアそのものは別です。このページは、事実や研究成果そのものを当サイトが独占するという表示ではありません。引用や個別ライセンスなどで認められる範囲を超え、保護される表現を利用する場合は、権利者の許諾をご確認ください。</p>
+        </section>
+        <section class="article-section" id="museum">
+          <h2>背景に使用している美術館公開画像</h2>
+          <p>次の2点は、The Metropolitan Museum of ArtがPublic Domainと表示し、<a href="https://www.metmuseum.org/hubs/open-access">Open Access方針</a>によりCC0で提供している画像です。これらの画像に、サイト独自コンテンツの再利用条件は適用しません。</p>
+<ul><li><strong>Pieter Bruegel the Elder, The Harvesters, 1565.</strong> <a href="https://www.metmuseum.org/art/collection/search/435809">作品ページ</a>。Rogers Fund, 1919。背景には部分を切り出して表示しています。横画面では下寄り、縦画面では樹下の食事の集団を中心に見せており、作品全体ではありません。</li>
+<li><strong>Anna Atkins, Ptilota plumosa, ca. 1853.</strong> <a href="https://www.metmuseum.org/art/collection/search/291528">作品ページ</a>。Gilman Collection, Purchase, The Horace W. Goldsmith Foundation Gift, through Joyce and Robert Menschel, 2005。画面に合わせて表示範囲を調整し、下部の手書き名・外周を画角から除き、余白に単色を配置しています。生成AIによる補筆はしていません。</li></ul>
+<p><a href="https://creativecommons.org/publicdomain/zero/1.0/deed.ja">CC0の説明</a>をご確認ください。CC0は商標権やプライバシー権など、著作権以外の権利をすべて処理するものではありません。ここでの出典表記は提供元を示すもので、当サイトが提供元を代理して追加の条件を設けるものではありません。</p>
+        </section>
+        <section class="article-section" id="generated">
+          <h2>生成AIを使った画像・演出</h2>
+          <p id="acoustics-image-credit">音響研究の背景画像（acoustics-hall-v1.webp）は、生成AIを使った編集用イメージです。人物・施設は架空で、実在の研究者・施設を取材した写真や、掲載論文の実験写真ではありません。</p>
+          <p>背景には、生成AIを使って制作したイラストが含まれます。森林での調査、山中の書庫、本や歴史資料、抽象的な造形などの背景は、論文を読むための編集用イメージであり、掲載論文の実験写真や研究の証拠として掲載しているものではありません。</p>
+<p>AIを使ったことだけで、すべての生成物に著作権がある、またはすべて自由に利用できると一律に判断することはできません。人の創作的な関与、第三者の権利、適用法令や個別の利用条件などを確認する必要があります。この方針は、生成物のすべてについて権利の帰属や非侵害を保証するものではありません。</p>
+<p>参考：<a href="https://www.bunka.go.jp/seisaku/chosakuken/aiandcopyright.html">文化庁「AIと著作権について」</a>。同庁が掲載する考え方は、個別の生成物についての確定的な法的判断ではありません。</p>
+        </section>
+        <section class="article-section" id="sound">
+          <h2>音源と録音素材について</h2>
+          <p>ホームは、当サイト向けに制作した50曲の音源ファイルをWeb Audio APIで再生しています。曲の一部をつないで再生し、背景の切り替わりにあわせて音色を調整します。</p>
+          <p>「余白の朝」（002）と「問いの余白」（069）は、Versilian Community Sample Library（VCSL）の実録音Steinway Bピアノ素材を使って制作しています。録音素材の提供元は<a href="https://versilian-studios.com/vcsl/">Versilian Studios</a>、公開リポジトリは<a href="https://github.com/sgossner/VCSL">VCSL</a>です。素材には<a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 Universal</a>が適用されます。<a href="/assets/licenses/VCSL-CC0.txt">保存したライセンス全文</a>も確認できます。</p>
+          <p>CC0は当該録音素材に適用されます。当サイトの楽曲の構成・編曲・プログラム全体に、新しい包括的な再利用ライセンスを付与する表示ではありません。第三者の素材にサイト独自の再利用条件を追加するものでもありません。その他の曲はプログラムによる合成音から制作しています。</p>
+        </section>
+        <section class="article-section" id="code">
+          <h2>コード・ロゴ・その他の第三者素材</h2>
+          <p>ソースコードを閲覧できることは、オープンソースライセンスが付与されていることを意味しません。個別のファイルや依存ライブラリ等に別のライセンスがある場合は、その条件が適用されます。GitHub上で公開されるリポジトリについては、<a href="https://docs.github.com/en/site-policy/github-terms/github-terms-of-service#d-user-generated-content">GitHub利用規約</a>に基づく閲覧・フォーク等の取り扱いを本方針で制限するものではありません。</p>
+<p>GitHubの名称・ロゴは、GitHub, Inc.の商標等です。サイト独自の制作物やCC0素材として扱わず、<a href="https://brand.github.com/foundations/logo">提供元の表示・条件</a>をご確認ください。その他の第三者素材についても、各素材の権利表示が優先します。</p>
+        </section>
+        <section class="article-section" id="reuse">
+          <h2>引用・再利用の際の確認</h2>
+          <p>本サイトの説明文、第三者の抄録、原論文、背景画像など、利用したい対象を特定して、その出典・権利者・個別条件をご確認ください。利用条件を確認できない素材について、本サイトに掲載されているという理由だけで自由な利用が許諾されたとは判断しないでください。一方、権利表示がないことから、当サイトがその素材の権利を保有すると判断することもできません。</p>
+<p>日本法の引用では、公表された著作物であること、公正な慣行に合致すること、引用目的上正当な範囲であることなどが必要で、出所の明示も求められます。出典を記すだけで、あらゆる転載が認められるわけではありません。実際の利用では、適用される国・地域の法令と個別の条件をご確認ください。</p>
+<p>参考：<a href="https://laws.e-gov.go.jp/law/345AC0000000048">著作権法（第32条・第48条など）</a>、<a href="https://www.bunka.go.jp/seisaku/chosakuken/seidokaisetsu/pdf/94383901_01.pdf#page=78">文化庁「著作権テキスト 令和8年度版」</a>。本ページはサイトの利用条件と出典を案内するもので、個別の利用に対する法的助言ではありません。</p>
         </section>
         <div class="next-note"><a class="back-link" href="/">← ホームへ戻る</a></div>
       </article>

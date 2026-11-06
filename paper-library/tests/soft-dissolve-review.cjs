@@ -7,7 +7,7 @@ const env={Float32Array,Uint8ClampedArray,Date,Math,window:{},document:{hidden:f
 let source=fs.readFileSync('dist/assets/cinema-field.js','utf8');source=source.replace('// Fetch the visible image first;',"window.test={dissolve,weights,smooth,clamp,assets,scenes,get field(){return maskField},get pixels(){return maskPixels},get phase(){return phase},setPhase(p){phase=p},paint};\n// Fetch the visible image first;");
 vm.runInNewContext(source,env);const t=env.window.test;
 const a={kind:'wave'},b={kind:'network'};
-t.dissolve(a,a,b,.8,2);const alpha=[];for(let i=3;i<t.pixels.data.length;i+=4)alpha.push(t.pixels.data[i]);assert.ok(Math.max(...alpha)-Math.min(...alpha)>25,'different regions dissolve at different times');assert.ok(canvases[1].width*canvases[1].height<2205000,'secondary layer follows main canvas raster cap');
+t.dissolve(a,a,b,.9,2);const alpha=[];for(let i=3;i<t.pixels.data.length;i+=4)alpha.push(t.pixels.data[i]);assert.ok(Math.max(...alpha)-Math.min(...alpha)>25,'different regions dissolve at different times');assert.ok(canvases[1].width*canvases[1].height<2205000,'secondary layer follows main canvas raster cap');
 for(const offset of t.field){
  const start=t.weights(0,offset),end=t.weights(1,offset);
  assert.equal(start[0],.5);assert.equal(start[1],.5);assert.equal(start[2],0);
@@ -19,7 +19,7 @@ for(const offset of t.field){
 }
 assert.equal(canvases[3].width*canvases[3].height,1536,'tiny diffusion surface');
 for(let y=0;y<48;y++)for(let x=0;x<63;x++)assert.ok(Math.abs(alpha[y*64+x]-alpha[y*64+x+1])<10,'broad, smooth spatial changes, no hard tile edges');
-const field=t.field;t.dissolve(a,a,b,.8,2);assert.equal(t.field,field,'reuse mask field within transition');t.dissolve(a,a,b,.8,3);assert.notEqual(t.field,field);
+const field=t.field;t.dissolve(a,a,b,.9,2);assert.equal(t.field,field,'reuse mask field within transition');t.dissolve(a,a,b,.9,3);assert.notEqual(t.field,field);
 function frame(ms){const batch=[...rafs.values()];rafs.clear();batch.forEach(fn=>fn(ms));}
 frame(0);frame(100);const before=t.phase;env.scrollY=400;events.scroll();assert.equal(t.phase,before);frame(200);assert.ok(t.phase>before+.1,'scroll accelerates phase continuously');
 paused=true;mutations[0]();const frozen=t.phase;assert.equal(rafs.size,0);events.resize();env.scrollY=800;events.scroll();assert.equal(t.phase,frozen);

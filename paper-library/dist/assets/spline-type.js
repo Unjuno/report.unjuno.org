@@ -41,7 +41,16 @@
     record.age+=dt*(1+boost*.5);
     // Short token-like bursts; layout and the accessible full text never change.
     const count=Math.min(record.glyphs.length,Math.max(3,Math.ceil(record.age/1.1*record.glyphs.length/3)*3));
-    record.glyphs.forEach((glyph,i)=>{glyph.style.opacity=i<count?'1':'0';glyph.classList.toggle('typing-cursor',i===count-1&&count<record.glyphs.length);});
+    if(count===record.revealed)return;
+    // Initialize hidden glyphs once. Later bursts touch only their newly
+    // revealed range and move the cursor, rather than rewriting the full card.
+    if(record.revealed===0){
+      record.glyphs.forEach((glyph,i)=>{glyph.style.opacity=i<count?'1':'0';glyph.classList.remove('typing-cursor');});
+    }else{
+      record.glyphs[record.revealed-1].classList.remove('typing-cursor');
+      for(let i=record.revealed;i<count;i++)record.glyphs[i].style.opacity='1';
+    }
+    if(count<record.glyphs.length)record.glyphs[count-1].classList.toggle('typing-cursor',true);
     record.revealed=count;
   }
   function prepare(card) {
@@ -49,8 +58,10 @@
     const link = card.querySelector('.content h2 a');
     if (!link || !link.textContent.trim()) return;
     const title = link.textContent;
-    // Bound per-card work; unusually long titles retain their ordinary rendering.
-    if (title.length > 260) return;
+    // Arabic-script letters must share a native shaping run. Per-grapheme
+    // inline-blocks break joining, including Persian/Urdu and lam-alef forms.
+    // Retain the original nodes, as for unusually long titles.
+    if (title.length > 260 || /\p{Script=Arabic}/u.test(title)) return;
     const source = document.createElement('span');
     source.className = 'spline-title-source';
     while (link.firstChild) source.appendChild(link.firstChild);
@@ -73,7 +84,10 @@
         glyphs.push(glyph);
       });
       // CJK and long unbroken titles must keep natural wrapping on narrow screens.
-      if (chars.length > 17 || /[\u3040-\u30ff\u3400-\u9fff]/u.test(token)) word.style.display = 'inline';
+      if (chars.length > 17 || /[\u3040-\u30ff\u3400-\u9fff]/u.test(token)) {
+        word.style.display = 'inline';
+        word.style.whiteSpace = 'normal';
+      }
       visual.appendChild(word);
       words.push(glyphs);
     }
@@ -193,8 +207,14 @@
   discover(document);
   new MutationObserver(changes => {
     changes.forEach(change => change.addedNodes.forEach(node => {if(node.nodeType===1) discover(node);}));
-    for (const card of records.keys()) {
-      if (!card.isConnected) {visible.delete(card);records.delete(card);observer?.unobserve(card);}
-    }
+    // Only removed card subtrees need cleanup; title decoration and appended
+    // pages must not repeatedly scan every previously encountered record.
+    changes.forEach(change => change.removedNodes.forEach(node => {
+      if(node.nodeType!==1)return;
+      const removed=[];
+      if(node.matches?.('.entry[data-entry], .entry[data-sponsor]'))removed.push(node);
+      removed.push(...(node.querySelectorAll?.('.entry[data-entry], .entry[data-sponsor]')||[]));
+      for(const card of removed)if(!card.isConnected){visible.delete(card);records.delete(card);observer?.unobserve(card);}
+    }));
   }).observe(document.querySelector('#papers') || document.body,{childList:true,subtree:true});
 })();

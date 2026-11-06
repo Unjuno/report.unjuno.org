@@ -1,0 +1,49 @@
+{
+  "title": "Multi-head attentionの流れ",
+  "duration_seconds": 54,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "fps": 30,
+  "frames": 1620,
+  "renderer": "Manim Community 0.19.0 (Cairo)",
+  "animation_count": 28,
+  "narration": "Japanese Kokoro jf_alpha, speed 1.0, nine synchronized sections, no music",
+  "captions": "Burned in Japanese captions plus SRT/WebVTT",
+  "reference": "https://arxiv.org/abs/1706.03762 §3.2.2",
+  "checks": [
+    "Full audiovisual decode passed",
+    "Nine final-video frames visually inspected",
+    "All nine narration sections fit with at least 0.15 second end padding, no cuts or speed-up",
+    "ASR represents all nine sections in the revised narration; homophone substitutions are documented",
+    "201 numerical assertions check actual interaction math, fixed projection matrices, and the toy swap symmetry",
+    "Video and audio both exactly 54 seconds"
+  ],
+  "limits": [
+    "Narration not directly listened to in this runtime; phoneme review and ASR do not guarantee word-perfect subjective voice quality.",
+    "The shared K/V and final averaging are fixed illustrative choices, not general learned behavior."
+  ],
+  "sha256": "2e7a3c77acacdad128bbd767cc40918892496af42acef1d3fa205a977a67cfa4",
+  "file_size_bytes": 3894459,
+  "narration_sha256": "7ee277a4cca139ce85be72bce8a584bc1c95d32e8f09a3aa4dec2b72cb9c484a",
+  "visible_queries": [
+    [
+      1,
+      1
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      0,
+      2
+    ]
+  ],
+  "toy_heads": 2,
+  "dimensions_per_head": 2,
+  "concat_dimensions": 4,
+  "output_dimensions": 2,
+  "caption_overlay_default": false
+}

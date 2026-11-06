@@ -1,0 +1,17 @@
+{
+  "name": "attention-is-all-you-need-experience",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check:structure": "node tools/check-structure.mjs",
+    "build:local": "node tools/build-site.mjs",
+    "test:site-math": "node --test tests/site-math.test.mjs tests/site-chrome.test.mjs tests/qk-math.test.mjs",
+    "test:site": "node --test tests/site-*.test.mjs tests/qk-math.test.mjs tests/qk-dom.test.mjs",
+    "build:production": "node tools/build-site.mjs --production",
+    "test:production": "npm run build:production && node --test tests/site-production.test.mjs",
+    "test": "npm run build:local && npm run build:production && npm run check:structure && npm run test:site"
+  },
+  "devDependencies": {
+    "happy-dom": "20.0.10"
+  }
+}

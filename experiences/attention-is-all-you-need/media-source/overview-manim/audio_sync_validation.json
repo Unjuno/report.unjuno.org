@@ -1,0 +1,133 @@
+{
+  "duration": 110.0,
+  "sample_rate": 24000,
+  "channels": 1,
+  "segments": [
+    {
+      "segment": 1,
+      "start": 0.5,
+      "end": 4.7,
+      "rms": 0.12258019241784146,
+      "last_sound_time": 3.0732916666666665
+    },
+    {
+      "segment": 2,
+      "start": 5.2,
+      "end": 11.8,
+      "rms": 0.11562991531472719,
+      "last_sound_time": 9.154875
+    },
+    {
+      "segment": 3,
+      "start": 11.8,
+      "end": 16.8,
+      "rms": 0.1350641803619514,
+      "last_sound_time": 15.793875
+    },
+    {
+      "segment": 4,
+      "start": 16.8,
+      "end": 24.3,
+      "rms": 0.11784103609284909,
+      "last_sound_time": 21.54925
+    },
+    {
+      "segment": 5,
+      "start": 25,
+      "end": 31,
+      "rms": 0.12931268168468352,
+      "last_sound_time": 29.806583333333332
+    },
+    {
+      "segment": 6,
+      "start": 31,
+      "end": 36.5,
+      "rms": 0.13941943465483062,
+      "last_sound_time": 35.874625
+    },
+    {
+      "segment": 7,
+      "start": 36.5,
+      "end": 42,
+      "rms": 0.1239339845990733,
+      "last_sound_time": 40.508541666666666
+    },
+    {
+      "segment": 8,
+      "start": 42.5,
+      "end": 48.5,
+      "rms": 0.11330773352811259,
+      "last_sound_time": 46.231291666666664
+    },
+    {
+      "segment": 9,
+      "start": 48.5,
+      "end": 54,
+      "rms": 0.13068676645803332,
+      "last_sound_time": 52.812083333333334
+    },
+    {
+      "segment": 10,
+      "start": 54.5,
+      "end": 60,
+      "rms": 0.12480844647045092,
+      "last_sound_time": 58.322041666666664
+    },
+    {
+      "segment": 11,
+      "start": 60,
+      "end": 66,
+      "rms": 0.1132451678036589,
+      "last_sound_time": 63.51575
+    },
+    {
+      "segment": 12,
+      "start": 66.5,
+      "end": 73,
+      "rms": 0.1226764844618214,
+      "last_sound_time": 71.14375
+    },
+    {
+      "segment": 13,
+      "start": 73,
+      "end": 79,
+      "rms": 0.12824036735282324,
+      "last_sound_time": 77.562875
+    },
+    {
+      "segment": 14,
+      "start": 79,
+      "end": 85,
+      "rms": 0.1421700410328992,
+      "last_sound_time": 84.724625
+    },
+    {
+      "segment": 15,
+      "start": 85.5,
+      "end": 92,
+      "rms": 0.1259271576128698,
+      "last_sound_time": 90.42929166666667
+    },
+    {
+      "segment": 16,
+      "start": 92,
+      "end": 99,
+      "rms": 0.12157466720980036,
+      "last_sound_time": 96.71920833333333
+    },
+    {
+      "segment": 17,
+      "start": 99.5,
+      "end": 105,
+      "rms": 0.13842734982113628,
+      "last_sound_time": 104.506375
+    },
+    {
+      "segment": 18,
+      "start": 105,
+      "end": 110,
+      "rms": 0.13950226723844,
+      "last_sound_time": 109.49470833333334
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "purpose": "Precise wording: exponential function and exp values.",
+  "same_source_scene": "SoftmaxWeights",
+  "timing_normalization": "Re-rendered static wait 7 acquired one extra frame from floating-point timing; trimmed one final static frame to preserve original timeline. No narration was trimmed.",
+  "replaced_native_manim_segments": [
+    {
+      "animation": 5,
+      "frame_count": 15,
+      "duration": 0.5,
+      "identical_timing": true
+    },
+    {
+      "animation": 6,
+      "frame_count": 45,
+      "duration": 1.5,
+      "identical_timing": true
+    },
+    {
+      "animation": 7,
+      "frame_count": 120,
+      "duration": 4.0,
+      "identical_timing": true
+    },
+    {
+      "animation": 8,
+      "frame_count": 15,
+      "duration": 0.5,
+      "identical_timing": true
+    },
+    {
+      "animation": 9,
+      "frame_count": 21,
+      "duration": 0.7,
+      "identical_timing": true
+    },
+    {
+      "animation": 10,
+      "frame_count": 30,
+      "duration": 1.0,
+      "identical_timing": true
+    },
+    {
+      "animation": 11,
+      "frame_count": 113,
+      "duration": 3.766667,
+      "identical_timing": true
+    }
+  ]
+}

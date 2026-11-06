@@ -1,0 +1,323 @@
+{
+  "checks_passed": 201,
+  "module": "src/site/math.mjs + src/site/labs.mjs",
+  "keys": [
+    [
+      2,
+      0
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      -1,
+      1
+    ]
+  ],
+  "values": [
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      -1,
+      1
+    ]
+  ],
+  "query_projections": [
+    [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ]
+  ],
+  "output_projection": [
+    [
+      0.5,
+      0
+    ],
+    [
+      0,
+      0.5
+    ],
+    [
+      0.5,
+      0
+    ],
+    [
+      0,
+      0.5
+    ]
+  ],
+  "states": [
+    {
+      "query": [
+        1,
+        1
+      ],
+      "heads": [
+        {
+          "query": [
+            1,
+            1
+          ],
+          "scores": [
+            2,
+            2,
+            0
+          ],
+          "weights": [
+            0.4458082741076032,
+            0.4458082741076032,
+            0.10838345178479357
+          ],
+          "output": [
+            0.3374248223228096,
+            0.5541917258923967
+          ]
+        },
+        {
+          "query": [
+            1,
+            1
+          ],
+          "scores": [
+            2,
+            2,
+            0
+          ],
+          "weights": [
+            0.4458082741076032,
+            0.4458082741076032,
+            0.10838345178479357
+          ],
+          "output": [
+            0.3374248223228096,
+            0.5541917258923967
+          ]
+        }
+      ],
+      "concat": [
+        0.3374248223228096,
+        0.5541917258923967,
+        0.3374248223228096,
+        0.5541917258923967
+      ],
+      "output": [
+        0.3374248223228096,
+        0.5541917258923967
+      ],
+      "display": "[0.337, 0.554]",
+      "interaction_html": "<div class=\"comparison\"><div><small>Head 1</small><p>Q = [1, 1]</p><p>重み [0.446, 0.446, 0.108]</p><strong class=\"vector-output\">[0.337, 0.554]</strong></div><div><small>Head 2</small><p>Q = [1, 1]</p><p>重み [0.446, 0.446, 0.108]</p><strong class=\"vector-output\">[0.337, 0.554]</strong></div></div><p>連結 [0.337, 0.554, 0.337, 0.554]</p><p class=\"lab-result\">固定の出力投影 → <strong>[0.337, 0.554]</strong></p><p>KeyとValueは両Headで同じ固定値です。Head 2のQuery投影は成分の入れ替えです。</p>"
+    },
+    {
+      "query": [
+        2,
+        0
+      ],
+      "heads": [
+        {
+          "query": [
+            2,
+            0
+          ],
+          "scores": [
+            4,
+            0,
+            -2
+          ],
+          "weights": [
+            0.9315537677178045,
+            0.05506018090356401,
+            0.013386051378631567
+          ],
+          "output": [
+            0.9181677163391729,
+            0.06844623228219557
+          ]
+        },
+        {
+          "query": [
+            0,
+            2
+          ],
+          "scores": [
+            0,
+            4,
+            2
+          ],
+          "weights": [
+            0.04538836291379466,
+            0.7679179361387025,
+            0.18669370094750282
+          ],
+          "output": [
+            -0.14130533803370815,
+            0.9546116370862053
+          ]
+        }
+      ],
+      "concat": [
+        0.9181677163391729,
+        0.06844623228219557,
+        -0.14130533803370815,
+        0.9546116370862053
+      ],
+      "output": [
+        0.3884311891527324,
+        0.5115289346842005
+      ],
+      "display": "[0.388, 0.512]",
+      "interaction_html": "<div class=\"comparison\"><div><small>Head 1</small><p>Q = [2, 0]</p><p>重み [0.932, 0.055, 0.013]</p><strong class=\"vector-output\">[0.918, 0.068]</strong></div><div><small>Head 2</small><p>Q = [0, 2]</p><p>重み [0.045, 0.768, 0.187]</p><strong class=\"vector-output\">[-0.141, 0.955]</strong></div></div><p>連結 [0.918, 0.068, -0.141, 0.955]</p><p class=\"lab-result\">固定の出力投影 → <strong>[0.388, 0.512]</strong></p><p>KeyとValueは両Headで同じ固定値です。Head 2のQuery投影は成分の入れ替えです。</p>"
+    },
+    {
+      "query": [
+        0,
+        2
+      ],
+      "heads": [
+        {
+          "query": [
+            0,
+            2
+          ],
+          "scores": [
+            0,
+            4,
+            2
+          ],
+          "weights": [
+            0.04538836291379466,
+            0.7679179361387025,
+            0.18669370094750282
+          ],
+          "output": [
+            -0.14130533803370815,
+            0.9546116370862053
+          ]
+        },
+        {
+          "query": [
+            2,
+            0
+          ],
+          "scores": [
+            4,
+            0,
+            -2
+          ],
+          "weights": [
+            0.9315537677178045,
+            0.05506018090356401,
+            0.013386051378631567
+          ],
+          "output": [
+            0.9181677163391729,
+            0.06844623228219557
+          ]
+        }
+      ],
+      "concat": [
+        -0.14130533803370815,
+        0.9546116370862053,
+        0.9181677163391729,
+        0.06844623228219557
+      ],
+      "output": [
+        0.3884311891527324,
+        0.5115289346842005
+      ],
+      "display": "[0.388, 0.512]",
+      "interaction_html": "<div class=\"comparison\"><div><small>Head 1</small><p>Q = [0, 2]</p><p>重み [0.045, 0.768, 0.187]</p><strong class=\"vector-output\">[-0.141, 0.955]</strong></div><div><small>Head 2</small><p>Q = [2, 0]</p><p>重み [0.932, 0.055, 0.013]</p><strong class=\"vector-output\">[0.918, 0.068]</strong></div></div><p>連結 [-0.141, 0.955, 0.918, 0.068]</p><p class=\"lab-result\">固定の出力投影 → <strong>[0.388, 0.512]</strong></p><p>KeyとValueは両Headで同じ固定値です。Head 2のQuery投影は成分の入れ替えです。</p>"
+    },
+    {
+      "query": [
+        1,
+        0
+      ],
+      "heads": [
+        {
+          "query": [
+            1,
+            0
+          ],
+          "scores": [
+            2,
+            0,
+            -1
+          ],
+          "weights": [
+            0.7336811064968889,
+            0.17837015472760462,
+            0.08794873877550646
+          ],
+          "output": [
+            0.6457323677213824,
+            0.2663188935031111
+          ]
+        },
+        {
+          "query": [
+            0,
+            1
+          ],
+          "scores": [
+            0,
+            2,
+            1
+          ],
+          "weights": [
+            0.14002924504337802,
+            0.575975345215362,
+            0.28399540974126003
+          ],
+          "output": [
+            -0.143966164697882,
+            0.859970754956622
+          ]
+        }
+      ],
+      "concat": [
+        0.6457323677213824,
+        0.2663188935031111,
+        -0.143966164697882,
+        0.859970754956622
+      ],
+      "output": [
+        0.2508831015117502,
+        0.5631448242298666
+      ],
+      "display": "[0.251, 0.563]",
+      "interaction_html": "<div class=\"comparison\"><div><small>Head 1</small><p>Q = [1, 0]</p><p>重み [0.734, 0.178, 0.088]</p><strong class=\"vector-output\">[0.646, 0.266]</strong></div><div><small>Head 2</small><p>Q = [0, 1]</p><p>重み [0.14, 0.576, 0.284]</p><strong class=\"vector-output\">[-0.144, 0.86]</strong></div></div><p>連結 [0.646, 0.266, -0.144, 0.86]</p><p class=\"lab-result\">固定の出力投影 → <strong>[0.251, 0.563]</strong></p><p>KeyとValueは両Headで同じ固定値です。Head 2のQuery投影は成分の入れ替えです。</p>"
+    }
+  ],
+  "notes": [
+    "All projections and K/V are hand-set for this interaction.",
+    "Actual Transformers learn separate Q/K/V projections per head and an output projection.",
+    "The fixed mean is an example of an output projection, not the general definition of multi-head attention.",
+    "Swap invariance here follows from exchanging heads and averaging corresponding components.",
+    "This example does not demonstrate learned semantic roles or a performance gain.",
+    "Original base uses8 heads; this demonstration uses2."
+  ],
+  "reference": "https://arxiv.org/abs/1706.03762 section 3.2.2"
+}

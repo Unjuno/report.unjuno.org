@@ -1,0 +1,398 @@
+{
+  "id": 72,
+  "title_ja": "遠い返事",
+  "title_en": "A Distant Reply",
+  "family": "dialogue",
+  "tonic_midi": 53,
+  "scale": [
+    0,
+    2,
+    4,
+    5,
+    7,
+    9,
+    11
+  ],
+  "bpm": 72,
+  "beats_per_bar": 4,
+  "bars": 8,
+  "chord_degrees": [
+    0,
+    4,
+    5,
+    1,
+    3,
+    2,
+    4,
+    0
+  ],
+  "motif": [
+    7,
+    5,
+    null,
+    4,
+    2,
+    3,
+    1,
+    0
+  ],
+  "rhythm_weights": [
+    3,
+    1,
+    1,
+    2,
+    1,
+    2,
+    1,
+    1
+  ],
+  "form": [
+    "intro",
+    "theme",
+    "answer",
+    "theme",
+    "bridge",
+    "answer",
+    "reprise",
+    "outro"
+  ],
+  "arrangement_revision": 2,
+  "intact_theme_bars": [
+    3,
+    4
+  ],
+  "midi_note_gates": "Repeated same-pitch gates shortened; audio resonance tails retained.",
+  "stem": "072_a_distant_reply",
+  "duration_seconds": 30.6666875,
+  "sample_rate": 32000,
+  "mp3_bitrate_kbps": 160,
+  "clipped_samples": 0,
+  "all_finite": true,
+  "integrated_loudness_lufs": -18.5,
+  "true_peak_dbtp": -8.4,
+  "full_decode": "pass",
+  "auditory_review": "pending",
+  "final_status": "prototype",
+  "additional_generation_fees": 0,
+  "third_party_audio_assets": [],
+  "composition_fingerprint": "97d3a36738e718fc675615f41a5556c459133fb7b398845a32e20f42bafb0035",
+  "audio_sha256": "ab16decbe4ad68ba183aec3b5dd814f54fa6abd84c502511ebe096aabd0ac068",
+  "notes": [
+    {
+      "pitch": 41,
+      "start_beats": 0.0,
+      "duration_beats": 2.2,
+      "voice": "tine",
+      "velocity": 0.32
+    },
+    {
+      "pitch": 65,
+      "start_beats": 1.6,
+      "duration_beats": 2.4,
+      "voice": "tine",
+      "velocity": 0.31
+    },
+    {
+      "pitch": 48,
+      "start_beats": 6.0,
+      "duration_beats": 2.2,
+      "voice": "tine",
+      "velocity": 0.32
+    },
+    {
+      "pitch": 65,
+      "start_beats": 8.6,
+      "duration_beats": 3.6,
+      "voice": "organ",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 69,
+      "start_beats": 8.609,
+      "duration_beats": 3.6,
+      "voice": "organ",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 50,
+      "start_beats": 8.0,
+      "duration_beats": 2.2,
+      "voice": "tine",
+      "velocity": 0.32
+    },
+    {
+      "pitch": 43,
+      "start_beats": 14.0,
+      "duration_beats": 2.2,
+      "voice": "tine",
+      "velocity": 0.32
+    },
+    {
+      "pitch": 62,
+      "start_beats": 16.6,
+      "duration_beats": 3.6,
+      "voice": "organ",
+      "velocity": 0.552
+    },
+    {
+      "pitch": 65,
+      "start_beats": 16.609,
+      "duration_beats": 3.6,
+      "voice": "organ",
+      "velocity": 0.552
+    },
+    {
+      "pitch": 46,
+      "start_beats": 16.0,
+      "duration_beats": 2.2,
+      "voice": "tine",
+      "velocity": 0.32
+    },
+    {
+      "pitch": 60,
+      "start_beats": 20.6,
+      "duration_beats": 3.6,
+      "voice": "organ",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 64,
+      "start_beats": 20.609,
+      "duration_beats": 3.6,
+      "voice": "organ",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 45,
+      "start_beats": 22.0,
+      "duration_beats": 2.2,
+      "voice": "tine",
+      "velocity": 0.32
+    },
+    {
+      "pitch": 64,
+      "start_beats": 24.6,
+      "duration_beats": 3.6,
+      "voice": "organ",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 67,
+      "start_beats": 24.609,
+      "duration_beats": 3.6,
+      "voice": "organ",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 48,
+      "start_beats": 24.0,
+      "duration_beats": 2.2,
+      "voice": "tine",
+      "velocity": 0.32
+    },
+    {
+      "pitch": 57,
+      "start_beats": 28.6,
+      "duration_beats": 3.6,
+      "voice": "organ",
+      "velocity": 0.4
+    },
+    {
+      "pitch": 60,
+      "start_beats": 28.609,
+      "duration_beats": 3.6,
+      "voice": "organ",
+      "velocity": 0.4
+    },
+    {
+      "pitch": 41,
+      "start_beats": 30.0,
+      "duration_beats": 2.2,
+      "voice": "tine",
+      "velocity": 0.32
+    },
+    {
+      "pitch": 69,
+      "start_beats": 4.6667,
+      "duration_beats": 0.5467,
+      "voice": "reed",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 70,
+      "start_beats": 5.3453,
+      "duration_beats": 1.0933,
+      "voice": "reed",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 67,
+      "start_beats": 6.6667,
+      "duration_beats": 0.5467,
+      "voice": "reed",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 65,
+      "start_beats": 7.3453,
+      "duration_beats": 0.5467,
+      "voice": "reed",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 77,
+      "start_beats": 8.0,
+      "duration_beats": 3.05,
+      "voice": "tine",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 74,
+      "start_beats": 10.012,
+      "duration_beats": 1.3167,
+      "voice": "tine",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 72,
+      "start_beats": 11.3453,
+      "duration_beats": 2.1833,
+      "voice": "tine",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 69,
+      "start_beats": 12.6667,
+      "duration_beats": 0.5467,
+      "voice": "reed",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 70,
+      "start_beats": 13.3453,
+      "duration_beats": 1.0933,
+      "voice": "reed",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 67,
+      "start_beats": 14.6667,
+      "duration_beats": 0.5467,
+      "voice": "reed",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 65,
+      "start_beats": 15.3453,
+      "duration_beats": 0.5467,
+      "voice": "reed",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 65,
+      "start_beats": 16.0,
+      "duration_beats": 3.05,
+      "voice": "tine",
+      "velocity": 0.53
+    },
+    {
+      "pitch": 67,
+      "start_beats": 18.012,
+      "duration_beats": 1.3167,
+      "voice": "tine",
+      "velocity": 0.53
+    },
+    {
+      "pitch": 69,
+      "start_beats": 19.3453,
+      "duration_beats": 2.1833,
+      "voice": "tine",
+      "velocity": 0.53
+    },
+    {
+      "pitch": 65,
+      "start_beats": 20.6667,
+      "duration_beats": 0.5467,
+      "voice": "reed",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 67,
+      "start_beats": 21.3453,
+      "duration_beats": 1.0933,
+      "voice": "reed",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 65,
+      "start_beats": 22.6667,
+      "duration_beats": 0.5467,
+      "voice": "reed",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 65,
+      "start_beats": 23.3453,
+      "duration_beats": 0.5467,
+      "voice": "reed",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 77,
+      "start_beats": 24.0,
+      "duration_beats": 3.05,
+      "voice": "tine",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 74,
+      "start_beats": 26.012,
+      "duration_beats": 1.3167,
+      "voice": "tine",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 72,
+      "start_beats": 27.3453,
+      "duration_beats": 2.1833,
+      "voice": "tine",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 67,
+      "start_beats": 28.6667,
+      "duration_beats": 0.5467,
+      "voice": "reed",
+      "velocity": 0.42
+    },
+    {
+      "pitch": 67,
+      "start_beats": 29.3453,
+      "duration_beats": 1.0933,
+      "voice": "reed",
+      "velocity": 0.42
+    },
+    {
+      "pitch": 65,
+      "start_beats": 30.6667,
+      "duration_beats": 0.5467,
+      "voice": "reed",
+      "velocity": 0.42
+    },
+    {
+      "pitch": 65,
+      "start_beats": 31.3453,
+      "duration_beats": 0.5467,
+      "voice": "reed",
+      "velocity": 0.42
+    }
+  ],
+  "render_loudness_before_gain_lufs": -13.0,
+  "final_gain_db": -5.0,
+  "target_loudness_lufs": -18,
+  "mp3_file_size_bytes": 615068,
+  "midi_note_count": 44,
+  "midi_same_pitch_gate_overlaps": 0,
+  "listening_status": "未試聴。採用前に実際の聴覚評価が必要。",
+  "file": "audio/072_a_distant_reply.mp3"
+}

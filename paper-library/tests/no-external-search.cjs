@@ -1,1 +1,5 @@
-'use strict';const fs=require('node:fs'),assert=require('node:assert/strict');const html=fs.readFileSync('dist/index.html','utf8'),build=fs.readFileSync('build_feed.py','utf8'),css=fs.readFileSync('dist/assets/feed.css','utf8'),feed=fs.readFileSync('dist/assets/feed-pagination.js','utf8');assert.ok(!fs.existsSync('dist/assets/infinite-feed.js'));for(const text of [html,build,css])assert.ok(!/external-discovery|external-query|external-results|外部の論文を探す|infinite-feed\.js/.test(text));assert.match(html,/id="search"/);assert.match(html,/assets\/feed\.js\?v=/);assert.match(html,/assets\/feed-pagination\.js\?v=/);assert.ok(!feed.includes('query.bibliographic'));assert.match(feed,/function filtered\(/);assert.match(feed,/https:\/\/api\.crossref\.org\/works/);console.log('PASS removed external-search block, script, selectors and handlers; local filter and query-free main pagination retained.');
+"use strict";
+// Current production policy: no external discovery at all, not merely private queries.
+const {execFileSync}=require('node:child_process');
+const path=require('node:path');
+execFileSync('python3',[path.resolve(__dirname,'../../scripts/check-home-materials.py')],{stdio:'inherit'});

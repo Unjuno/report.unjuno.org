@@ -1,0 +1,156 @@
+{
+  "checks_passed": 95,
+  "module": "src/site/math.mjs + src/site/labs.mjs",
+  "scores": [
+    2,
+    2,
+    0,
+    1
+  ],
+  "interpretation": "Hand-set illustrative scores after the scaling step. No second sqrt(d_k) division is applied.",
+  "input_tokens": [
+    "BOS",
+    "A",
+    "B",
+    "C"
+  ],
+  "prediction_targets": [
+    "A",
+    "B",
+    "C",
+    "EOS"
+  ],
+  "states": [
+    {
+      "position": 0,
+      "predict": "A",
+      "allowed_inputs": [
+        "BOS"
+      ],
+      "masked_inputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "masked_scores": [
+        2,
+        "-Infinity",
+        "-Infinity",
+        "-Infinity"
+      ],
+      "weights": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "rounded": [
+        "1.000",
+        "0.000",
+        "0.000",
+        "0.000"
+      ],
+      "interaction_html": "<p>位置 0 で <strong>A</strong> を予測</p><div class=\"mask-row\"><div class=\"allowed\"><span>BOS</span><strong>1</strong><small>参照できる</small></div><div class=\"masked\"><span>A</span><strong>0</strong><small>未来：参照しない</small></div><div class=\"masked\"><span>B</span><strong>0</strong><small>未来：参照しない</small></div><div class=\"masked\"><span>C</span><strong>0</strong><small>未来：参照しない</small></div></div><p>模式的な点数[2,2,0,1]を使い、未来の重みを0にしてから残りの重みの合計を1にしています。</p>"
+    },
+    {
+      "position": 1,
+      "predict": "B",
+      "allowed_inputs": [
+        "BOS",
+        "A"
+      ],
+      "masked_inputs": [
+        "B",
+        "C"
+      ],
+      "masked_scores": [
+        2,
+        2,
+        "-Infinity",
+        "-Infinity"
+      ],
+      "weights": [
+        0.5,
+        0.5,
+        0,
+        0
+      ],
+      "rounded": [
+        "0.500",
+        "0.500",
+        "0.000",
+        "0.000"
+      ],
+      "interaction_html": "<p>位置 1 で <strong>B</strong> を予測</p><div class=\"mask-row\"><div class=\"allowed\"><span>BOS</span><strong>0.5</strong><small>参照できる</small></div><div class=\"allowed\"><span>A</span><strong>0.5</strong><small>参照できる</small></div><div class=\"masked\"><span>B</span><strong>0</strong><small>未来：参照しない</small></div><div class=\"masked\"><span>C</span><strong>0</strong><small>未来：参照しない</small></div></div><p>模式的な点数[2,2,0,1]を使い、未来の重みを0にしてから残りの重みの合計を1にしています。</p>"
+    },
+    {
+      "position": 2,
+      "predict": "C",
+      "allowed_inputs": [
+        "BOS",
+        "A",
+        "B"
+      ],
+      "masked_inputs": [
+        "C"
+      ],
+      "masked_scores": [
+        2,
+        2,
+        0,
+        "-Infinity"
+      ],
+      "weights": [
+        0.4683105308334812,
+        0.4683105308334812,
+        0.06337893833303762,
+        0
+      ],
+      "rounded": [
+        "0.468",
+        "0.468",
+        "0.063",
+        "0.000"
+      ],
+      "interaction_html": "<p>位置 2 で <strong>C</strong> を予測</p><div class=\"mask-row\"><div class=\"allowed\"><span>BOS</span><strong>0.468</strong><small>参照できる</small></div><div class=\"allowed\"><span>A</span><strong>0.468</strong><small>参照できる</small></div><div class=\"allowed\"><span>B</span><strong>0.063</strong><small>参照できる</small></div><div class=\"masked\"><span>C</span><strong>0</strong><small>未来：参照しない</small></div></div><p>模式的な点数[2,2,0,1]を使い、未来の重みを0にしてから残りの重みの合計を1にしています。</p>"
+    },
+    {
+      "position": 3,
+      "predict": "EOS",
+      "allowed_inputs": [
+        "BOS",
+        "A",
+        "B",
+        "C"
+      ],
+      "masked_inputs": [],
+      "masked_scores": [
+        2,
+        2,
+        0,
+        1
+      ],
+      "weights": [
+        0.39948630465030277,
+        0.39948630465030277,
+        0.05406459218899647,
+        0.14696279851039795
+      ],
+      "rounded": [
+        "0.399",
+        "0.399",
+        "0.054",
+        "0.147"
+      ],
+      "interaction_html": "<p>位置 3 で <strong>EOS</strong> を予測</p><div class=\"mask-row\"><div class=\"allowed\"><span>BOS</span><strong>0.399</strong><small>参照できる</small></div><div class=\"allowed\"><span>A</span><strong>0.399</strong><small>参照できる</small></div><div class=\"allowed\"><span>B</span><strong>0.054</strong><small>参照できる</small></div><div class=\"allowed\"><span>C</span><strong>0.147</strong><small>参照できる</small></div></div><p>模式的な点数[2,2,0,1]を使い、未来の重みを0にしてから残りの重みの合計を1にしています。</p>"
+    }
+  ],
+  "notes": [
+    "The mask permits j<=i, including the diagonal.",
+    "Targets are shifted relative to inputs: at input position2 the token is B and target is C.",
+    "Each position reuses the same score vector only to isolate the masking operation.",
+    "Training can compute masked rows in parallel with shifted ground-truth inputs; autoregressive generation still depends on preceding outputs.",
+    "Future scores can be changed arbitrarily without altering visible weights."
+  ],
+  "reference": "https://arxiv.org/abs/1706.03762 sections 3.1 and 3.2.3"
+}

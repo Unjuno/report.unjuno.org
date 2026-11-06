@@ -1,0 +1,764 @@
+[
+  {
+    "id": 2,
+    "score_title": "余白の朝",
+    "duration_seconds": 34.0,
+    "notes": 56,
+    "sample_rate": 44100,
+    "master_gain_db": 7.9,
+    "retained_score": "Pitch and start times preserved; note-off gates/release and foreground/accompaniment balance refined for piano.",
+    "used_notes": [
+      {
+        "pitch": 36,
+        "sample_root": 36,
+        "transpose_semitones": 0,
+        "voice": "tine",
+        "gate_seconds": 2.4375
+      },
+      {
+        "pitch": 60,
+        "sample_root": 60,
+        "transpose_semitones": 0,
+        "voice": "tine",
+        "gate_seconds": 2.25
+      },
+      {
+        "pitch": 57,
+        "sample_root": 56,
+        "transpose_semitones": 1,
+        "voice": "tine",
+        "gate_seconds": 1.9500000000000002
+      },
+      {
+        "pitch": 43,
+        "sample_root": 44,
+        "transpose_semitones": -1,
+        "voice": "tine",
+        "gate_seconds": 2.4375
+      },
+      {
+        "pitch": 62,
+        "sample_root": 60,
+        "transpose_semitones": 2,
+        "voice": "tine",
+        "gate_seconds": 1.11834375
+      },
+      {
+        "pitch": 64,
+        "sample_root": 64,
+        "transpose_semitones": 0,
+        "voice": "tine",
+        "gate_seconds": 1.1530624999999994
+      },
+      {
+        "pitch": 60,
+        "sample_root": 60,
+        "transpose_semitones": 0,
+        "voice": "tine",
+        "gate_seconds": 2.11784375
+      },
+      {
+        "pitch": 64,
+        "sample_root": 64,
+        "transpose_semitones": 0,
+        "voice": "tine",
+        "gate_seconds": 1.9500000000000002
+      },
+      {
+        "pitch": 38,
+        "sample_root": 36,
+        "transpose_semitones": 2,
+        "voice": "tine",
+        "gate_seconds": 2.4375
+      },
+      {
+        "pitch": 60,
+        "sample_root": 60,
+        "transpose_semitones": 0,
+        "voice": "tine",
+        "gate_seconds": 1.6999999999999997
+      },
+      {
+        "pitch": 64,
+        "sample_root": 64,
+        "transpose_semitones": 0,
+        "voice": "tine",
+        "gate_seconds": 1.11834375
+      },
+      {
+        "pitch": 69,
+        "sample_root": 68,
+        "transpose_semitones": 1,
+        "voice": "tine",
+        "gate_seconds": 2.5111874999999997
+      },
+      {
+        "pitch": 60,
+        "sample_root": 60,
+        "transpose_semitones": 0,
+        "voice": "tine",
+        "gate_seconds": 1.9500000000000002
+      },
+      {
+        "pitch": 67,
+        "sample_root": 68,
+        "transpose_semitones": -1,
+        "voice": "tine",
+        "gate_seconds": 1.11834375
+      },
+      {
+        "pitch": 45,
+        "sample_root": 44,
+        "transpose_semitones": 1,
+        "voice": "tine",
+        "gate_seconds": 2.4375
+      },
+      {
+        "pitch": 57,
+        "sample_root": 56,
+        "transpose_semitones": 1,
+        "voice": "pad",
+        "gate_seconds": 3.735
+      },
+      {
+        "pitch": 62,
+        "sample_root": 60,
+        "transpose_semitones": 2,
+        "voice": "tine",
+        "gate_seconds": 0.08
+      },
+      {
+        "pitch": 60,
+        "sample_root": 60,
+        "transpose_semitones": 0,
+        "voice": "pad",
+        "gate_seconds": 1.5737187499999998
+      },
+      {
+        "pitch": 62,
+        "sample_root": 60,
+        "transpose_semitones": 2,
+        "voice": "pad",
+        "gate_seconds": 3.7181249999999992
+      },
+      {
+        "pitch": 64,
+        "sample_root": 64,
+        "transpose_semitones": 0,
+        "voice": "tine",
+        "gate_seconds": 1.81471875
+      },
+      {
+        "pitch": 60,
+        "sample_root": 60,
+        "transpose_semitones": 0,
+        "voice": "tine",
+        "gate_seconds": 2.117843750000001
+      },
+      {
+        "pitch": 67,
+        "sample_root": 68,
+        "transpose_semitones": -1,
+        "voice": "tine",
+        "gate_seconds": 1.9500000000000002
+      },
+      {
+        "pitch": 36,
+        "sample_root": 36,
+        "transpose_semitones": 0,
+        "voice": "tine",
+        "gate_seconds": 2.4375
+      },
+      {
+        "pitch": 48,
+        "sample_root": 48,
+        "transpose_semitones": 0,
+        "voice": "pad",
+        "gate_seconds": 3.735
+      },
+      {
+        "pitch": 60,
+        "sample_root": 60,
+        "transpose_semitones": 0,
+        "voice": "tine",
+        "gate_seconds": 1.81471875
+      },
+      {
+        "pitch": 50,
+        "sample_root": 48,
+        "transpose_semitones": 2,
+        "voice": "pad",
+        "gate_seconds": 3.7265625000000004
+      },
+      {
+        "pitch": 52,
+        "sample_root": 52,
+        "transpose_semitones": 0,
+        "voice": "pad",
+        "gate_seconds": 3.7081249999999994
+      },
+      {
+        "pitch": 64,
+        "sample_root": 64,
+        "transpose_semitones": 0,
+        "voice": "tine",
+        "gate_seconds": 1.11834375
+      },
+      {
+        "pitch": 62,
+        "sample_root": 60,
+        "transpose_semitones": 2,
+        "voice": "tine",
+        "gate_seconds": 2.1178437499999974
+      },
+      {
+        "pitch": 57,
+        "sample_root": 56,
+        "transpose_semitones": 1,
+        "voice": "tine",
+        "gate_seconds": 1.9500000000000002
+      },
+      {
+        "pitch": 67,
+        "sample_root": 68,
+        "transpose_semitones": -1,
+        "voice": "tine",
+        "gate_seconds": 1.11834375
+      },
+      {
+        "pitch": 40,
+        "sample_root": 40,
+        "transpose_semitones": 0,
+        "voice": "tine",
+        "gate_seconds": 2.4375
+      },
+      {
+        "pitch": 52,
+        "sample_root": 52,
+        "transpose_semitones": 0,
+        "voice": "pad",
+        "gate_seconds": 3.735
+      },
+      {
+        "pitch": 62,
+        "sample_root": 60,
+        "transpose_semitones": 2,
+        "voice": "tine",
+        "gate_seconds": 1.11834375
+      },
+      {
+        "pitch": 55,
+        "sample_root": 56,
+        "transpose_semitones": -1,
+        "voice": "pad",
+        "gate_seconds": 3.7165625000000007
+      },
+      {
+        "pitch": 57,
+        "sample_root": 56,
+        "transpose_semitones": 1,
+        "voice": "pad",
+        "gate_seconds": 3.7165625000000007
+      },
+      {
+        "pitch": 64,
+        "sample_root": 64,
+        "transpose_semitones": 0,
+        "voice": "tine",
+        "gate_seconds": 1.81471875
+      },
+      {
+        "pitch": 60,
+        "sample_root": 60,
+        "transpose_semitones": 0,
+        "voice": "tine",
+        "gate_seconds": 2.1178437499999974
+      },
+      {
+        "pitch": 62,
+        "sample_root": 60,
+        "transpose_semitones": 2,
+        "voice": "tine",
+        "gate_seconds": 1.9500000000000002
+      },
+      {
+        "pitch": 43,
+        "sample_root": 44,
+        "transpose_semitones": -1,
+        "voice": "tine",
+        "gate_seconds": 2.4375
+      },
+      {
+        "pitch": 55,
+        "sample_root": 56,
+        "transpose_semitones": -1,
+        "voice": "pad",
+        "gate_seconds": 3.735
+      },
+      {
+        "pitch": 60,
+        "sample_root": 60,
+        "transpose_semitones": 0,
+        "voice": "tine",
+        "gate_seconds": 0.08
+      },
+      {
+        "pitch": 57,
+        "sample_root": 56,
+        "transpose_semitones": 1,
+        "voice": "pad",
+        "gate_seconds": 3.7265625000000004
+      },
+      {
+        "pitch": 60,
+        "sample_root": 60,
+        "transpose_semitones": 0,
+        "voice": "pad",
+        "gate_seconds": 3.718125000000001
+      },
+      {
+        "pitch": 64,
+        "sample_root": 64,
+        "transpose_semitones": 0,
+        "voice": "tine",
+        "gate_seconds": 0.6172812499999999
+      },
+      {
+        "pitch": 69,
+        "sample_root": 68,
+        "transpose_semitones": 1,
+        "voice": "tine",
+        "gate_seconds": 2.5111874999999997
+      },
+      {
+        "pitch": 64,
+        "sample_root": 64,
+        "transpose_semitones": 0,
+        "voice": "tine",
+        "gate_seconds": 1.9500000000000002
+      },
+      {
+        "pitch": 67,
+        "sample_root": 68,
+        "transpose_semitones": -1,
+        "voice": "tine",
+        "gate_seconds": 1.11834375
+      },
+      {
+        "pitch": 36,
+        "sample_root": 36,
+        "transpose_semitones": 0,
+        "voice": "tine",
+        "gate_seconds": 2.4375
+      },
+      {
+        "pitch": 48,
+        "sample_root": 48,
+        "transpose_semitones": 0,
+        "voice": "pad",
+        "gate_seconds": 3.735
+      },
+      {
+        "pitch": 62,
+        "sample_root": 60,
+        "transpose_semitones": 2,
+        "voice": "tine",
+        "gate_seconds": 1.11834375
+      },
+      {
+        "pitch": 50,
+        "sample_root": 48,
+        "transpose_semitones": 2,
+        "voice": "pad",
+        "gate_seconds": 3.7265625000000004
+      },
+      {
+        "pitch": 52,
+        "sample_root": 52,
+        "transpose_semitones": 0,
+        "voice": "pad",
+        "gate_seconds": 3.718125000000001
+      },
+      {
+        "pitch": 60,
+        "sample_root": 60,
+        "transpose_semitones": 0,
+        "voice": "tine",
+        "gate_seconds": 1.0352187500000007
+      },
+      {
+        "pitch": 60,
+        "sample_root": 60,
+        "transpose_semitones": 0,
+        "voice": "tine",
+        "gate_seconds": 2.1428437499999973
+      },
+      {
+        "pitch": 57,
+        "sample_root": 56,
+        "transpose_semitones": 1,
+        "voice": "tine",
+        "gate_seconds": 1.9500000000000002
+      }
+    ],
+    "outputs": {
+      "flac": {
+        "lufs": -18.6,
+        "true_peak_dbtp": -2.0,
+        "bytes": 4905236,
+        "sha256": "b02608c17cfc2867d9ae92aa734132c222a96471eefc0e38c6c9aec205a57174",
+        "sample_peak_dbfs": -1.9862730834711688,
+        "full_decode": "pass"
+      },
+      "mp3": {
+        "lufs": -18.6,
+        "true_peak_dbtp": -2.0,
+        "bytes": 1090242,
+        "sha256": "88b94d33f9eca5cae7f602d402397730858d53c12d097f0be28fa952d6a94717",
+        "sample_peak_dbfs": -1.986077212686102,
+        "full_decode": "pass"
+      }
+    },
+    "comparison": [
+      {
+        "kind": "before",
+        "file": "002_before_matched_18s.mp3",
+        "lufs": -20.0,
+        "true_peak_dbtp": -8.8
+      },
+      {
+        "kind": "after",
+        "file": "002_after_matched_18s.mp3",
+        "lufs": -20.0,
+        "true_peak_dbtp": -4.1
+      }
+    ],
+    "listening_review": "unavailable: environment cannot receive audio input",
+    "production_status": "not integrated"
+  },
+  {
+    "id": 69,
+    "score_title": "問いの余白",
+    "duration_seconds": 26.5,
+    "notes": 40,
+    "sample_rate": 44100,
+    "master_gain_db": 9.100000000000001,
+    "retained_score": "Pitch and start times preserved; note-off gates/release and foreground/accompaniment balance refined for piano.",
+    "used_notes": [
+      {
+        "pitch": 43,
+        "sample_root": 44,
+        "transpose_semitones": -1,
+        "voice": "tine",
+        "gate_seconds": 1.546875
+      },
+      {
+        "pitch": 67,
+        "sample_root": 68,
+        "transpose_semitones": -1,
+        "voice": "tine",
+        "gate_seconds": 2.1425
+      },
+      {
+        "pitch": 69,
+        "sample_root": 68,
+        "transpose_semitones": 1,
+        "voice": "reed",
+        "gate_seconds": 0.38437499999999997
+      },
+      {
+        "pitch": 67,
+        "sample_root": 68,
+        "transpose_semitones": -1,
+        "voice": "reed",
+        "gate_seconds": 1.153125
+      },
+      {
+        "pitch": 52,
+        "sample_root": 52,
+        "transpose_semitones": 0,
+        "voice": "tine",
+        "gate_seconds": 1.546875
+      },
+      {
+        "pitch": 70,
+        "sample_root": 68,
+        "transpose_semitones": 2,
+        "voice": "reed",
+        "gate_seconds": 0.38437499999999997
+      },
+      {
+        "pitch": 48,
+        "sample_root": 48,
+        "transpose_semitones": 0,
+        "voice": "tine",
+        "gate_seconds": 1.546875
+      },
+      {
+        "pitch": 74,
+        "sample_root": 72,
+        "transpose_semitones": 2,
+        "voice": "tine",
+        "gate_seconds": 1.640625
+      },
+      {
+        "pitch": 64,
+        "sample_root": 64,
+        "transpose_semitones": 0,
+        "voice": "organ",
+        "gate_seconds": 2.375625
+      },
+      {
+        "pitch": 67,
+        "sample_root": 68,
+        "transpose_semitones": -1,
+        "voice": "organ",
+        "gate_seconds": 2.3671875000000004
+      },
+      {
+        "pitch": 70,
+        "sample_root": 68,
+        "transpose_semitones": 2,
+        "voice": "tine",
+        "gate_seconds": 1.03125
+      },
+      {
+        "pitch": 72,
+        "sample_root": 72,
+        "transpose_semitones": 0,
+        "voice": "tine",
+        "gate_seconds": 1.640625
+      },
+      {
+        "pitch": 69,
+        "sample_root": 68,
+        "transpose_semitones": 1,
+        "voice": "reed",
+        "gate_seconds": 0.38437499999999997
+      },
+      {
+        "pitch": 67,
+        "sample_root": 68,
+        "transpose_semitones": -1,
+        "voice": "reed",
+        "gate_seconds": 1.153125
+      },
+      {
+        "pitch": 43,
+        "sample_root": 44,
+        "transpose_semitones": -1,
+        "voice": "tine",
+        "gate_seconds": 1.546875
+      },
+      {
+        "pitch": 70,
+        "sample_root": 68,
+        "transpose_semitones": 2,
+        "voice": "reed",
+        "gate_seconds": 0.38437499999999997
+      },
+      {
+        "pitch": 46,
+        "sample_root": 44,
+        "transpose_semitones": 2,
+        "voice": "tine",
+        "gate_seconds": 1.546875
+      },
+      {
+        "pitch": 74,
+        "sample_root": 72,
+        "transpose_semitones": 2,
+        "voice": "tine",
+        "gate_seconds": 1.640625
+      },
+      {
+        "pitch": 62,
+        "sample_root": 60,
+        "transpose_semitones": 2,
+        "voice": "organ",
+        "gate_seconds": 2.375625
+      },
+      {
+        "pitch": 65,
+        "sample_root": 64,
+        "transpose_semitones": 1,
+        "voice": "organ",
+        "gate_seconds": 2.3671875000000004
+      },
+      {
+        "pitch": 67,
+        "sample_root": 68,
+        "transpose_semitones": -1,
+        "voice": "tine",
+        "gate_seconds": 1.03125
+      },
+      {
+        "pitch": 69,
+        "sample_root": 68,
+        "transpose_semitones": 1,
+        "voice": "tine",
+        "gate_seconds": 1.640625
+      },
+      {
+        "pitch": 67,
+        "sample_root": 68,
+        "transpose_semitones": -1,
+        "voice": "reed",
+        "gate_seconds": 0.38437499999999997
+      },
+      {
+        "pitch": 60,
+        "sample_root": 60,
+        "transpose_semitones": 0,
+        "voice": "organ",
+        "gate_seconds": 2.375625
+      },
+      {
+        "pitch": 64,
+        "sample_root": 64,
+        "transpose_semitones": 0,
+        "voice": "organ",
+        "gate_seconds": 2.3671875000000004
+      },
+      {
+        "pitch": 67,
+        "sample_root": 68,
+        "transpose_semitones": -1,
+        "voice": "reed",
+        "gate_seconds": 1.153125
+      },
+      {
+        "pitch": 45,
+        "sample_root": 44,
+        "transpose_semitones": 1,
+        "voice": "tine",
+        "gate_seconds": 1.546875
+      },
+      {
+        "pitch": 67,
+        "sample_root": 68,
+        "transpose_semitones": -1,
+        "voice": "reed",
+        "gate_seconds": 0.38437499999999997
+      },
+      {
+        "pitch": 50,
+        "sample_root": 48,
+        "transpose_semitones": 2,
+        "voice": "tine",
+        "gate_seconds": 1.546875
+      },
+      {
+        "pitch": 74,
+        "sample_root": 72,
+        "transpose_semitones": 2,
+        "voice": "tine",
+        "gate_seconds": 1.640625
+      },
+      {
+        "pitch": 65,
+        "sample_root": 64,
+        "transpose_semitones": 1,
+        "voice": "organ",
+        "gate_seconds": 2.375625
+      },
+      {
+        "pitch": 69,
+        "sample_root": 68,
+        "transpose_semitones": 1,
+        "voice": "organ",
+        "gate_seconds": 2.3571875000000007
+      },
+      {
+        "pitch": 70,
+        "sample_root": 68,
+        "transpose_semitones": 2,
+        "voice": "tine",
+        "gate_seconds": 1.03125
+      },
+      {
+        "pitch": 72,
+        "sample_root": 72,
+        "transpose_semitones": 0,
+        "voice": "tine",
+        "gate_seconds": 1.640625
+      },
+      {
+        "pitch": 69,
+        "sample_root": 68,
+        "transpose_semitones": 1,
+        "voice": "reed",
+        "gate_seconds": 0.38437499999999997
+      },
+      {
+        "pitch": 58,
+        "sample_root": 56,
+        "transpose_semitones": 2,
+        "voice": "organ",
+        "gate_seconds": 2.375625
+      },
+      {
+        "pitch": 62,
+        "sample_root": 60,
+        "transpose_semitones": 2,
+        "voice": "organ",
+        "gate_seconds": 2.3671875000000004
+      },
+      {
+        "pitch": 69,
+        "sample_root": 68,
+        "transpose_semitones": 1,
+        "voice": "reed",
+        "gate_seconds": 1.153125
+      },
+      {
+        "pitch": 43,
+        "sample_root": 44,
+        "transpose_semitones": -1,
+        "voice": "tine",
+        "gate_seconds": 1.40625
+      },
+      {
+        "pitch": 67,
+        "sample_root": 68,
+        "transpose_semitones": -1,
+        "voice": "reed",
+        "gate_seconds": 0.38437499999999997
+      }
+    ],
+    "outputs": {
+      "flac": {
+        "lufs": -18.0,
+        "true_peak_dbtp": -3.2,
+        "bytes": 3737234,
+        "sha256": "d45e752d47eeb4ab7c95055b1fe6609101dc407ee919493f24785702d2319662",
+        "sample_peak_dbfs": -3.15855286729497,
+        "full_decode": "pass"
+      },
+      "mp3": {
+        "lufs": -18.0,
+        "true_peak_dbtp": -3.2,
+        "bytes": 850337,
+        "sha256": "ef8cac007659d32d10cf79e4fe1dd5a0dee742d76467aeb8c8f986d3af87dca0",
+        "sample_peak_dbfs": -3.1671472926582616,
+        "full_decode": "pass"
+      }
+    },
+    "comparison": [
+      {
+        "kind": "before",
+        "file": "069_before_matched_18s.mp3",
+        "lufs": -20.0,
+        "true_peak_dbtp": -9.3
+      },
+      {
+        "kind": "after",
+        "file": "069_after_matched_18s.mp3",
+        "lufs": -20.0,
+        "true_peak_dbtp": -5.7
+      }
+    ],
+    "listening_review": "unavailable: environment cannot receive audio input",
+    "production_status": "not integrated"
+  }
+]

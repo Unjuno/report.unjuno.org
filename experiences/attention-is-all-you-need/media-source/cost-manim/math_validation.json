@@ -1,0 +1,62 @@
+{
+  "checks_passed": 2923,
+  "all_interactive_combinations": 256,
+  "states": [
+    {
+      "n": 128,
+      "d": 512,
+      "pairs": 16384,
+      "attention": 8388608,
+      "recurrent": 33554432,
+      "ratio": 0.25,
+      "interaction_html": "<p class=\"lab-result\">位置の組 <strong>16,384</strong></p><div class=\"lab-bar\"><span>n²d</span><span class=\"lab-bar-track\" aria-hidden=\"true\"><i class=\"blue\" style=\"width:25%\"></i></span><strong>8388608</strong></div><div class=\"lab-bar\"><span>nd²</span><span class=\"lab-bar-track\" aria-hidden=\"true\"><i class=\"clay\" style=\"width:100%\"></i></span><strong>33554432</strong></div><p>主要項の比 n²d / nd² = <strong>0.25</strong>。単位は秒でもFLOPsの実測値でもありません。</p>"
+    },
+    {
+      "n": 256,
+      "d": 512,
+      "pairs": 65536,
+      "attention": 33554432,
+      "recurrent": 67108864,
+      "ratio": 0.5,
+      "interaction_html": "<p class=\"lab-result\">位置の組 <strong>65,536</strong></p><div class=\"lab-bar\"><span>n²d</span><span class=\"lab-bar-track\" aria-hidden=\"true\"><i class=\"blue\" style=\"width:50%\"></i></span><strong>33554432</strong></div><div class=\"lab-bar\"><span>nd²</span><span class=\"lab-bar-track\" aria-hidden=\"true\"><i class=\"clay\" style=\"width:100%\"></i></span><strong>67108864</strong></div><p>主要項の比 n²d / nd² = <strong>0.5</strong>。単位は秒でもFLOPsの実測値でもありません。</p>"
+    },
+    {
+      "n": 512,
+      "d": 512,
+      "pairs": 262144,
+      "attention": 134217728,
+      "recurrent": 134217728,
+      "ratio": 1,
+      "interaction_html": "<p class=\"lab-result\">位置の組 <strong>262,144</strong></p><div class=\"lab-bar\"><span>n²d</span><span class=\"lab-bar-track\" aria-hidden=\"true\"><i class=\"blue\" style=\"width:100%\"></i></span><strong>134217728</strong></div><div class=\"lab-bar\"><span>nd²</span><span class=\"lab-bar-track\" aria-hidden=\"true\"><i class=\"clay\" style=\"width:100%\"></i></span><strong>134217728</strong></div><p>主要項の比 n²d / nd² = <strong>1</strong>。単位は秒でもFLOPsの実測値でもありません。</p>"
+    },
+    {
+      "n": 1024,
+      "d": 512,
+      "pairs": 1048576,
+      "attention": 536870912,
+      "recurrent": 268435456,
+      "ratio": 2,
+      "interaction_html": "<p class=\"lab-result\">位置の組 <strong>1,048,576</strong></p><div class=\"lab-bar\"><span>n²d</span><span class=\"lab-bar-track\" aria-hidden=\"true\"><i class=\"blue\" style=\"width:100%\"></i></span><strong>536870912</strong></div><div class=\"lab-bar\"><span>nd²</span><span class=\"lab-bar-track\" aria-hidden=\"true\"><i class=\"clay\" style=\"width:50%\"></i></span><strong>268435456</strong></div><p>主要項の比 n²d / nd² = <strong>2</strong>。単位は秒でもFLOPsの実測値でもありません。</p>"
+    },
+    {
+      "n": 1024,
+      "d": 1024,
+      "pairs": 1048576,
+      "attention": 1073741824,
+      "recurrent": 1073741824,
+      "ratio": 1,
+      "interaction_html": "<p class=\"lab-result\">位置の組 <strong>1,048,576</strong></p><div class=\"lab-bar\"><span>n²d</span><span class=\"lab-bar-track\" aria-hidden=\"true\"><i class=\"blue\" style=\"width:100%\"></i></span><strong>1073741824</strong></div><div class=\"lab-bar\"><span>nd²</span><span class=\"lab-bar-track\" aria-hidden=\"true\"><i class=\"clay\" style=\"width:100%\"></i></span><strong>1073741824</strong></div><p>主要項の比 n²d / nd² = <strong>1</strong>。単位は秒でもFLOPsの実測値でもありません。</p>"
+    }
+  ],
+  "bar_scale": "Each frame is normalized to max(n²d,nd²), exactly like the interactive. This is labeled visibly.",
+  "reference": "https://arxiv.org/abs/1706.03762 Table 1 and section 4",
+  "scope": [
+    "n is sequence length, d is representation dimension; positive integers.",
+    "O(n²d) is the attention comparison-and-mixing leading term in Table 1; O(nd²) is the recurrent-layer leading term.",
+    "Numerical values compare monomials with coefficient 1; not measured runtime or exact FLOP counts.",
+    "Projected self-attention also has O(nd²) projection work; a whole Transformer additionally includes feed-forward and other work.",
+    "Wall time also depends on parallelism, implementation, memory, and hardware.",
+    "An n² pair count does not establish a measured n² memory footprint for all attention implementations.",
+    "The cost animation does not imply autoregressive generation becomes parallel."
+  ]
+}

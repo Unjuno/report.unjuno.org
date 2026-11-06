@@ -50,7 +50,8 @@ body{overflow-anchor:none}.load-more{overflow-anchor:none}.feed-search .search{d
 @media(prefers-reduced-motion:reduce){.entry .content{animation:none}}
 
 /* Continuous world crosses article boundaries; text stays in document flow. */
-.continuous-canvas{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+html{background:#101719}
+.continuous-canvas{position:fixed;inset:0;width:100%;height:100%;height:100vh;height:100lvh;z-index:0;pointer-events:none;background:#101719}
 body>header,body>main,body>footer{position:relative;z-index:1}body>header{position:sticky}
 .cinema-field .art{display:none}.cinema-field:before,.cinema-field:after{display:none}.cinema-field{background:transparent}
 #papers{background:none}.sponsor-break{background:transparent}.entry .content{animation:none}
@@ -102,5 +103,25 @@ body>header{z-index:10}body>.skip:focus{z-index:20}
   .feed-search #filter-feedback{
     position:static;top:auto;right:auto;width:auto;max-width:100%;
     margin:8px 0 0;padding:10px 12px;overflow-wrap:anywhere;
+  }
+}
+
+/* Keep tiny attribution readable even at the bright outer edge of a still. */
+.source-note{background:#101719d9;padding:4px 7px;border-radius:3px}
+
+/* Keep native disclosure markers while making metadata easier to operate. */
+summary:focus-visible{outline:2px solid var(--gold);outline-offset:6px}
+.paper-metadata summary{min-height:44px;padding-block:10px}
+
+/* Touch scrolling: keep the opaque canvas, but do not combine its continuously
+   changing pixels with a sticky backdrop filter and per-card masked surfaces.
+   This changes only faint DOM tints/header translucency. Scene transitions,
+   scroll-linked motion, text animation, audio, and reading geometry stay intact.
+   It is a compositor-risk reduction, not proof of an iPhone flicker fix. */
+@media(hover:none) and (pointer:coarse){
+  body>header{background:#101719;backdrop-filter:none;-webkit-backdrop-filter:none}
+  #papers>.entry::before,#papers>.entry::after{
+    content:none;display:none;mask-image:none;-webkit-mask-image:none;
+    transform:none;opacity:1;
   }
 }

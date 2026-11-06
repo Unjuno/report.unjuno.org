@@ -1,0 +1,6 @@
+build-local/
+build-production/
+node_modules/
+.cache/
+*.zip
+.DS_Store

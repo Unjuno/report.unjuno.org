@@ -1,6 +1,6 @@
 'use strict';
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
-const source=fs.readFileSync(process.env.SCENE_SOURCE||'dist/assets/cinema-field.js','utf8').replace('const wanted=[];', 'window.__scans=(window.__scans||0)+1;const wanted=[];');
+const source=fs.readFileSync(process.env.SCENE_SOURCE||'dist/assets/cinema-field.js','utf8').replace(/const wanted=\[\](?=;|,visible=)/, 'window.__scans=(window.__scans||0)+1;const wanted=[]');
 function harness(reduced=false){
  let clock=0,id=0,draws=[];const frames=new Map(),timers=new Map(),requests=[],listeners={};
  const ctx=new Proxy({drawImage(image){draws.push(image.url)},createLinearGradient:()=>({addColorStop(){}})},{get:(o,k)=>o[k]||(()=>{})});
@@ -26,7 +26,7 @@ function harness(reduced=false){
   assert.ok(h.frames.size<=1,'only one animation frame chain');assert.ok(h.timers.size<=2,'no timer accumulation after successful loads');
  }
  assert.ok(wraps===Math.floor(h.flow().phase/h.flow().reelSeconds),'two hours completes every duration-aware reel without skipping a wrap');assert.ok(peakLoads<=2,'bounded concurrency');assert.ok(peakReady<=6,'bounded ready images');
- assert.ok(h.requests.length<=35*(wraps+2),'no repeated requests per frame or retry storms');
+ assert.ok(h.requests.length<=require('./scene-registry.cjs')(process.env.SCENE_SOURCE).assets.length*(wraps+2),'no repeated requests per frame or retry storms');
  assert.ok(Number.isFinite(h.flow().phase)&&h.flow().phase>7199,'clock continues across loop boundaries');
  const scans=h.env.window.__scans;
  if(!process.env.SCENE_SOURCE)assert.ok(scans<7200,'working-set scans are at least tenfold below frame count');

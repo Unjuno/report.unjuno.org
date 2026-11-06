@@ -3,7 +3,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "astro build"
+    "build": "python3 scripts/prepare-home.py && node scripts/prepare-attention.mjs && astro build && python3 scripts/verify-production.py --built",
+    "test": "npm run build && npm --prefix paper-library test && npm --prefix paper-library run test:optimization && npm --prefix paper-library run test:review && npm --prefix paper-library run test:recorded-audio && python3 scripts/verify-production.py && npm --prefix paper-library run test:quality && node paper-library/tests/home-materials-runtime.cjs build",
+    "test:media": "npm --prefix paper-library run test:paintings",
+    "test:pixels": "cd paper-library && node tests/canvas-opaque-pixels.cjs && node tests/canvas-recovery-pixels.cjs",
+    "test:attention": "npm --prefix experiences/attention-is-all-you-need run build:local && npm --prefix experiences/attention-is-all-you-need run build:production && npm --prefix experiences/attention-is-all-you-need run check:structure && npm --prefix experiences/attention-is-all-you-need run test:site"
   },
   "dependencies": {
     "astro": "7.4.4"

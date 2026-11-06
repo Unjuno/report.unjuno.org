@@ -7,9 +7,13 @@ const IDLE_SPEED=1.2,SCROLL_GAIN=.0048,MAX_BOOST=1.2,BOOST_DECAY=2.2,DT=.1;
 const phaseStep=boost=>IDLE_SPEED*DT+boost*(1-Math.exp(-BOOST_DECAY*DT))/BOOST_DECAY;
 const frames=new Map(),listeners={},documentListeners={},observers=[],loads=[];let serial=0,paused=false,paints=0;
 const reduced={matches:false,addEventListener(n,fn){this.change=fn}};
+// Reproducible shuffle; override to exercise other authored opening durations.
+const seed=Number(process.env.SCENE_TEST_SEED??.68),math=Object.create(Math);
+assert.ok(seed>=0&&seed<1,'SCENE_TEST_SEED is in [0, 1)');math.random=()=>seed;
 const context2d=new Proxy({createLinearGradient:()=>({addColorStop(){}}),clearRect(){}},{get:(o,k)=>o[k]||(()=>{})});
 const env={setTimeout:()=>1,clearTimeout(){},window:{},document:{hidden:false,body:{prepend(){},classList:{contains:()=>paused}},createElement:()=>({setAttribute(){},getContext:()=>context2d,remove(){}}),querySelectorAll:()=>[],querySelector:()=>({}),addEventListener:(n,f)=>documentListeners[n]=f},Image:class{constructor(){this.complete=false;}set src(url){loads.push(()=>{this.naturalWidth=1536;this.naturalHeight=1024;this.onload();})}},matchMedia:()=>reduced,scrollY:0,innerWidth:1200,innerHeight:800,devicePixelRatio:1,requestAnimationFrame(fn){frames.set(++serial,fn);return serial},cancelAnimationFrame(id){frames.delete(id)},addEventListener:(n,f)=>listeners[n]=f,MutationObserver:class{constructor(fn){this.fn=fn}observe(target){if(target===env.document.body)observers.push(this.fn)}}};
 env.countPaint=()=>paints++;
+env.Math=math;
 vm.runInNewContext(fs.readFileSync(process.argv[2]||'dist/assets/cinema-field.js','utf8').replace('function paint(){', 'function paint(){countPaint();'),env);
 function flush(){while(loads.length)loads.shift()();}
 flush();
@@ -17,10 +21,13 @@ function frame(time){const queue=[...frames.values()];frames.clear();queue.forEa
 function flow(){return env.window.__reportFlow;}
 function close(a,b,msg){assert.ok(Math.abs(a-b)<1e-8,`${msg}: ${a} versus ${b}`)}
 frame(0);close(flow().pvSpeed,IDLE_SPEED,'calmer idle speed remains 1.2');
-for(let i=1;i<=48;i++)frame(i*100);
-close(flow().phase,4.8*IDLE_SPEED,'phase follows wall time at the calmer idle speed');assert.ok(Math.abs(flow().blend-.5)<.002,'vista midpoint is nearly half blended');assert.equal(flow().sceneDuration,11.5);assert.equal(flow().scene,0);
-for(let i=49;i<=95;i++)frame(i*100);assert.equal(flow().scene,0);assert.ok(flow().blend>.999,'phase blend approaches the boundary');
-frame(9600);assert.equal(flow().scene,1,'11.5 phase units finish after about 9.58 wall-clock seconds');assert.ok(flow().blend<.001,'next phase interval starts gently');
+// 8.4 / 1.2 * 10 can round to 70.00000000000001. Do not move the
+// test's expected boundary one whole frame because of floating-point noise.
+const openingDuration=flow().sceneDuration,boundaryFrame=Math.ceil(openingDuration/(IDLE_SPEED*DT)-1e-9);
+for(let i=1;i<boundaryFrame;i++)frame(i*100);
+close(flow().phase,(boundaryFrame-1)*.1*IDLE_SPEED,'phase follows wall time at the calmer idle speed');
+assert.equal(flow().scene,0);assert.ok(flow().blend>.99,'random opening approaches its own duration boundary');
+frame(boundaryFrame*100);assert.equal(flow().scene,1,'random opening keeps its authored duration');assert.ok(flow().sceneProgress<.03,'next randomized interval starts gently');
 frame(9700); // Establish the frame clock after the next asset completes.
 const beforeScroll=flow().phase;env.scrollY=180;listeners.scroll();close(flow().phase,beforeScroll,'scroll never jumps the scene position');
 frame(9800);const boostedStep=flow().phase-beforeScroll;

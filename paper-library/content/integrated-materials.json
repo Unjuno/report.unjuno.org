@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Attention Is All You Need",
+    "authors": [
+      "Ashish Vaswani",
+      "Noam Shazeer",
+      "Niki Parmar",
+      "Jakob Uszkoreit",
+      "Llion Jones",
+      "Aidan N. Gomez",
+      "Lukasz Kaiser",
+      "Illia Polosukhin"
+    ],
+    "summary": "RNNやCNNに頼らず、Attentionを中心に系列を変換するTransformerを提案。機械翻訳の実験で、翻訳品質と学習の並列性を示した2017年の論文です。",
+    "url": "/notes/attention-is-all-you-need/learn/"
+  }
+]

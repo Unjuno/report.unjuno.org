@@ -1,0 +1,142 @@
+{
+  "module": "src/site/math.mjs + src/site/labs.mjs",
+  "checks_passed": 57,
+  "states": [
+    {
+      "name": "initial",
+      "raw": [
+        2,
+        2,
+        0
+      ],
+      "scale": true,
+      "w": [
+        0.44580827410760315,
+        0.44580827410760315,
+        0.10838345178479356
+      ],
+      "divisor": 1.4142135623730951,
+      "scaled": [
+        1.414213562373095,
+        1.414213562373095,
+        0
+      ],
+      "exp": [
+        4.113250378782927,
+        4.113250378782927,
+        1
+      ],
+      "expSum": 9.226500757565853,
+      "rounded": [
+        "0.446",
+        "0.446",
+        "0.108"
+      ],
+      "interaction_html": "<p class=\"formula\">softmax([1.414, 1.414, 0])</p><div class=\"lab-bar\"><span>A</span><span class=\"lab-bar-track\" aria-hidden=\"true\"><i class=\"blue\" style=\"width:44.580827410760314%\"></i></span><strong>0.446</strong></div><div class=\"lab-bar\"><span>B</span><span class=\"lab-bar-track\" aria-hidden=\"true\"><i class=\"blue\" style=\"width:44.580827410760314%\"></i></span><strong>0.446</strong></div><div class=\"lab-bar\"><span>C</span><span class=\"lab-bar-track\" aria-hidden=\"true\"><i class=\"blue\" style=\"width:10.838345178479356%\"></i></span><strong>0.108</strong></div><p class=\"lab-result\">重みの合計 <strong>1</strong></p>"
+    },
+    {
+      "name": "A raised",
+      "raw": [
+        4,
+        2,
+        0
+      ],
+      "scale": true,
+      "w": [
+        0.7679179361387025,
+        0.18669370094750284,
+        0.04538836291379466
+      ],
+      "divisor": 1.4142135623730951,
+      "scaled": [
+        2.82842712474619,
+        1.414213562373095,
+        0
+      ],
+      "exp": [
+        16.918828678557894,
+        4.113250378782927,
+        1
+      ],
+      "expSum": 22.03207905734082,
+      "rounded": [
+        "0.768",
+        "0.187",
+        "0.045"
+      ],
+      "interaction_html": "<p class=\"formula\">softmax([2.828, 1.414, 0])</p><div class=\"lab-bar\"><span>A</span><span class=\"lab-bar-track\" aria-hidden=\"true\"><i class=\"blue\" style=\"width:76.79179361387025%\"></i></span><strong>0.768</strong></div><div class=\"lab-bar\"><span>B</span><span class=\"lab-bar-track\" aria-hidden=\"true\"><i class=\"blue\" style=\"width:18.669370094750285%\"></i></span><strong>0.187</strong></div><div class=\"lab-bar\"><span>C</span><span class=\"lab-bar-track\" aria-hidden=\"true\"><i class=\"blue\" style=\"width:4.538836291379466%\"></i></span><strong>0.045</strong></div><p class=\"lab-result\">重みの合計 <strong>1</strong></p>"
+    },
+    {
+      "name": "no scaling comparison",
+      "raw": [
+        4,
+        2,
+        0
+      ],
+      "scale": false,
+      "w": [
+        0.8668133321973347,
+        0.11731042782619835,
+        0.015876239976466762
+      ],
+      "divisor": 1,
+      "scaled": [
+        4,
+        2,
+        0
+      ],
+      "exp": [
+        54.598150033144236,
+        7.38905609893065,
+        1
+      ],
+      "expSum": 62.98720613207489,
+      "rounded": [
+        "0.867",
+        "0.117",
+        "0.016"
+      ],
+      "interaction_html": "<p class=\"formula\">softmax([4, 2, 0])</p><div class=\"lab-bar\"><span>A</span><span class=\"lab-bar-track\" aria-hidden=\"true\"><i class=\"blue\" style=\"width:86.68133321973347%\"></i></span><strong>0.867</strong></div><div class=\"lab-bar\"><span>B</span><span class=\"lab-bar-track\" aria-hidden=\"true\"><i class=\"blue\" style=\"width:11.731042782619836%\"></i></span><strong>0.117</strong></div><div class=\"lab-bar\"><span>C</span><span class=\"lab-bar-track\" aria-hidden=\"true\"><i class=\"blue\" style=\"width:1.5876239976466762%\"></i></span><strong>0.016</strong></div><p class=\"lab-result\">重みの合計 <strong>1</strong></p>"
+    },
+    {
+      "name": "equal scores",
+      "raw": [
+        2,
+        2,
+        2
+      ],
+      "scale": true,
+      "w": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "divisor": 1.4142135623730951,
+      "scaled": [
+        1.414213562373095,
+        1.414213562373095,
+        1.414213562373095
+      ],
+      "exp": [
+        4.113250378782927,
+        4.113250378782927,
+        4.113250378782927
+      ],
+      "expSum": 12.33975113634878,
+      "rounded": [
+        "0.333",
+        "0.333",
+        "0.333"
+      ],
+      "interaction_html": "<p class=\"formula\">softmax([1.414, 1.414, 1.414])</p><div class=\"lab-bar\"><span>A</span><span class=\"lab-bar-track\" aria-hidden=\"true\"><i class=\"blue\" style=\"width:33.33333333333333%\"></i></span><strong>0.333</strong></div><div class=\"lab-bar\"><span>B</span><span class=\"lab-bar-track\" aria-hidden=\"true\"><i class=\"blue\" style=\"width:33.33333333333333%\"></i></span><strong>0.333</strong></div><div class=\"lab-bar\"><span>C</span><span class=\"lab-bar-track\" aria-hidden=\"true\"><i class=\"blue\" style=\"width:33.33333333333333%\"></i></span><strong>0.333</strong></div><p class=\"lab-result\">重みの合計 <strong>1</strong></p>"
+    }
+  ],
+  "notes": [
+    "Attention weights form a normalized distribution over reference positions, not a probability of truth or correctness.",
+    "Finite unmasked scores yield strictly positive mathematical weights.",
+    "Scaling uses Key dimension d_k=2, not count of keys (3).",
+    "The original paper scales by sqrt(d_k); no-scaling is explicitly only a comparison.",
+    "Chart decimal labels are rounded; exact weights sum to one."
+  ],
+  "source": "https://arxiv.org/abs/1706.03762 section 3.2.1"
+}

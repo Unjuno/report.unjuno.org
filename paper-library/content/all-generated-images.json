@@ -1,0 +1,1438 @@
+{
+  "baseVersion": 100,
+  "baseCommit": "745c7aab7d5a13079d02b7f7c7e79b568f211d3c",
+  "generatedTotal": 100,
+  "excluded": "selected-fern-cyanotype-v1.webp",
+  "added": [
+    {
+      "name": "selected-api-candidate-02-v1.webp",
+      "candidate": 2,
+      "source_sha256": "8955de2edc23e16240666acd95a26103484145ec186b5bceb0589006396f9ae1",
+      "sha256": "94c966652734de2e5cfccdeeae368567b9172943f565390192585223fc41d395",
+      "bytes": 199984,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.77,
+      "transition": "contour-bands",
+      "label": "鉱石"
+    },
+    {
+      "name": "selected-api-candidate-03-v1.webp",
+      "candidate": 3,
+      "source_sha256": "d29aebe9bd8668caf816db9d8750441ab62fe772353e534e8b55ace97bb838d5",
+      "sha256": "6205bcdab8e9ad33b1062b9a08ddbc51117c0f4998882080bd34216690c980f1",
+      "bytes": 72210,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.78,
+      "transition": "local-blends",
+      "label": "青い煙"
+    },
+    {
+      "name": "selected-api-candidate-04-v1.webp",
+      "candidate": 4,
+      "source_sha256": "43ebc99327607c4a8cd25ad3afee6f48ba4ea9d2b08e1aef057acba085c56a61",
+      "sha256": "7fbd13a753c728766f4762e99b166d9669f1fc708bf742e28ba5167462d7541f",
+      "bytes": 67606,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.84,
+      "transition": "ribbon",
+      "label": "天球儀"
+    },
+    {
+      "name": "selected-api-candidate-05-v1.webp",
+      "candidate": 5,
+      "source_sha256": "be12bf6eb76842a9aea38b87db6d44a1a9ef52f7b50acedd4bb41217f4a920c9",
+      "sha256": "037db6f98f4fc9cc4bf9d649df13cf5695900f616671b7f7e9303f39cf453e98",
+      "bytes": 109290,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.75,
+      "transition": "lateral-blend",
+      "label": "岩の波紋"
+    },
+    {
+      "name": "selected-api-candidate-06-v1.webp",
+      "candidate": 6,
+      "source_sha256": "dc9434ebb2a27b859a97543bdd6aabb4a9fe2154488781d0d97c9f72bfeac207",
+      "sha256": "a28b4eda8e94584d5001b32ea2c92748b024c30fcd7170350bcbc2e2604aff97",
+      "bytes": 227982,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.73,
+      "transition": "mist",
+      "label": "地層"
+    },
+    {
+      "name": "selected-api-candidate-07-v1.webp",
+      "candidate": 7,
+      "source_sha256": "368b17b7c575af8b9c7251f8d5536e3c0e82201b01a09bd7d11acc16c89c1382",
+      "sha256": "b85a215e8fc855d36d700834002f83a8a3fbcf83484362aa9bff8bd8ab5d7d68",
+      "bytes": 98564,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.8,
+      "transition": "depth-rings",
+      "label": "神経網"
+    },
+    {
+      "name": "selected-api-candidate-08-v1.webp",
+      "candidate": 8,
+      "source_sha256": "a2d2e29c8b5dbb867d52ebf20437b32b6f9765fca758f2ebb98ebeee81c30c74",
+      "sha256": "e05a2c1d0b1f6221d71c1cac6f55b65f3bed544e026eb8fcc4eb00051321be2c",
+      "bytes": 192826,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.74,
+      "transition": "contour-bands",
+      "label": "藍の布"
+    },
+    {
+      "name": "selected-api-candidate-10-v1.webp",
+      "candidate": 10,
+      "source_sha256": "41fe54de0ba761fcb4f6394be0b61b95f3d71472e65c3b883e64365b49c95907",
+      "sha256": "fbb1c014e8c42297ca1c109e86d1c67ae7e6706ea044f05e267dc4aca703620c",
+      "bytes": 45286,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.81,
+      "transition": "ribbon",
+      "label": "銅の曲面"
+    },
+    {
+      "name": "selected-api-candidate-11-v1.webp",
+      "candidate": 11,
+      "source_sha256": "4ff6d4bbb3445dd5374d26be10e3be7788ebcab391511b1ea6bdd4a3b9534157",
+      "sha256": "00810673929fa872e84b5620e204fa08204b05f14654a715dc6070b871856577",
+      "bytes": 165258,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.73,
+      "transition": "lateral-blend",
+      "label": "アストロラーベ"
+    },
+    {
+      "name": "selected-api-candidate-12-v1.webp",
+      "candidate": 12,
+      "source_sha256": "ad86e71a9782506edf0144f0dbfa9f3103ab14f93b5717055b6b44c500bf294e",
+      "sha256": "f1886d86aa4a3a6a4da6e4de6833e8de5ad25d39c45ee05a4c637d962244d07e",
+      "bytes": 150814,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.8,
+      "transition": "mist",
+      "label": "ガラスの珪藻"
+    },
+    {
+      "name": "selected-api-candidate-13-v1.webp",
+      "candidate": 13,
+      "source_sha256": "31393687c9457968fd6a1aca301a84a1e0b604363039c2394d652ee8a3fe2acc",
+      "sha256": "4fe2e7dc3c9daaf442ffd3c462f024c794bb0942009697fcf9f7eb6c439849b5",
+      "bytes": 138484,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.8,
+      "transition": "depth-rings",
+      "label": "雨の街灯"
+    },
+    {
+      "name": "selected-api-candidate-14-v1.webp",
+      "candidate": 14,
+      "source_sha256": "83b4b603216906196501121fc8bb4ff56109aaee03c56454afed68bbd3fe760e",
+      "sha256": "e545ad56522a76951043d847e93cd434dea6e1c25a3559cd043b556db3763564",
+      "bytes": 98372,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.8,
+      "transition": "contour-bands",
+      "label": "紙の結晶"
+    },
+    {
+      "name": "selected-api-candidate-15-v1.webp",
+      "candidate": 15,
+      "source_sha256": "4683bfddb3c73b4d3b460a3516f3dbdff8160b76422223342ca11a418d25b0a0",
+      "sha256": "f4c33a67ec9b0fd2b87f81d3afe4dc1a03f7eae926539a364de53c5321277079",
+      "bytes": 256790,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.72,
+      "transition": "local-blends",
+      "label": "アンモナイト"
+    },
+    {
+      "name": "selected-api-candidate-16-v1.webp",
+      "candidate": 16,
+      "source_sha256": "f799024d5399e1229fa738486afec26d6fa28a9f722228f9d295d451ae860de5",
+      "sha256": "de1a11080acfe64db9411577992201a1177a797327af1f04be7b727a55390b1a",
+      "bytes": 80408,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.78,
+      "transition": "ribbon",
+      "label": "顕微鏡"
+    },
+    {
+      "name": "selected-api-candidate-18-v1.webp",
+      "candidate": 18,
+      "source_sha256": "1746d62622cfeb07e9be8b1ba051a98aea687d1a3afc5daf935e77d62f91b716",
+      "sha256": "9dc0fddce80f9f815356d91d384543055171c7b4e476d2ca45bffc1af63ed051",
+      "bytes": 191328,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.77,
+      "transition": "mist",
+      "label": "光る波"
+    },
+    {
+      "name": "selected-api-candidate-19-v1.webp",
+      "candidate": 19,
+      "source_sha256": "a863953841a98bcb0e78a47dcdf511a605c1bf67a77ecf9646811fd2d2d0790d",
+      "sha256": "400a3ef0a25e63ed002cf95da6dd427c89b256cb4d245e93d5ca093937ecbe17",
+      "bytes": 103060,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.79,
+      "transition": "depth-rings",
+      "label": "時計の歯車"
+    },
+    {
+      "name": "selected-api-candidate-20-v1.webp",
+      "candidate": 20,
+      "source_sha256": "f667978c1bd3484d1095f998945458670a5ac2f1362c5e1bd116dab255894798",
+      "sha256": "44b2cec6c06e17f97e2648b5d30ad223a895f1a19978aa260ba3461eff92fd9c",
+      "bytes": 141806,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.75,
+      "transition": "contour-bands",
+      "label": "峡谷の川"
+    },
+    {
+      "name": "selected-api-candidate-21-v1.webp",
+      "candidate": 21,
+      "source_sha256": "7bc8fb54338d33f88c3f661f99837bc815b388351f2668c1bc51bed2eab6fe53",
+      "sha256": "8af7d08fb4169b5e171db83585aa2d750ce488861c52f5f91200a0a3a37b9d89",
+      "bytes": 151926,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.74,
+      "transition": "local-blends",
+      "label": "夕映えの山"
+    },
+    {
+      "name": "selected-api-candidate-22-v2.webp",
+      "candidate": 22,
+      "source_sha256": "278b5989d9c6c5c8d369e1fd402703def7454ae403c32a5bbd4cf896af34100f",
+      "sha256": "7db09af2cbcad69531a5ed49323f10f769a2036d0564cbc836c6396e387048bd",
+      "bytes": 252820,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.78,
+      "transition": "ribbon",
+      "label": "火山岩の海岸",
+      "replaces": "selected-api-candidate-22-v1.webp"
+    },
+    {
+      "name": "selected-api-candidate-23-v1.webp",
+      "candidate": 23,
+      "source_sha256": "47030faab2a5b75b3ab41a38b7b8752b1316d7ec4d83480548fcf8e8c5619fd4",
+      "sha256": "e6514045e197988c3708fc78b78f89deaf3a64cb5d67f57ca27070a96e1e1bc5",
+      "bytes": 82564,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.79,
+      "transition": "lateral-blend",
+      "label": "螺旋階段"
+    },
+    {
+      "name": "selected-api-candidate-24-v1.webp",
+      "candidate": 24,
+      "source_sha256": "75a82d40238a3e39f339229ef84dd10de1672d28dd0e7c54850a65830fd4e964",
+      "sha256": "619e5bbbdbd4e07d97d5358b4fec5d5d3eb4077467eca9c20323495bd2caca70",
+      "bytes": 106390,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.76,
+      "transition": "mist",
+      "label": "虹色の結晶"
+    },
+    {
+      "name": "selected-api-candidate-25-v1.webp",
+      "candidate": 25,
+      "source_sha256": "f347ce797ae31eb6547c2b317a0585093233e002d9670bb93f18b9db9eddfa66",
+      "sha256": "0ea16be7737c066d84f43574f2e47f904843dd47c39e6e2bfb383afb628ff04e",
+      "bytes": 71298,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.76,
+      "transition": "depth-rings",
+      "label": "海底の石柱"
+    },
+    {
+      "name": "selected-api-candidate-26-v1.webp",
+      "candidate": 26,
+      "source_sha256": "c847fdae72b993d5a3f7624fb002103d63652d2eb734e1511ef8be16dcb97de8",
+      "sha256": "649d0a77fc71f22e9fce78a515c2bbeb0dfeec6cb0b2fae607eceafb6e4391e3",
+      "bytes": 291064,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.77,
+      "transition": "contour-bands",
+      "label": "青い海岸図"
+    },
+    {
+      "name": "selected-api-candidate-27-v2.webp",
+      "candidate": 27,
+      "source_sha256": "f9dc255f3c6539ec387e7c45868a94cc6026c031e5b399ddfab89bed61548d1f",
+      "sha256": "ae856884b267fa4f4924c360e4025dde53ae2b55f213d5f655b756b6a0000121",
+      "bytes": 278822,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.5,
+      "transition": "local-blends",
+      "label": "葉の断面",
+      "replaces": "selected-api-candidate-27-v1.webp"
+    },
+    {
+      "name": "selected-api-candidate-28-v1.webp",
+      "candidate": 28,
+      "source_sha256": "65d21e779dc6daa0850f88d1288c972af5cd83e001d573e5ff859eac0a24dee6",
+      "sha256": "b2ca4ae227599adc58a33115820241f56b401b7a89450568fefae9b59671a68b",
+      "bytes": 128644,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.8,
+      "transition": "ribbon",
+      "label": "月夜の雪原"
+    },
+    {
+      "name": "selected-api-candidate-29-v1.webp",
+      "candidate": 29,
+      "source_sha256": "e7440cc63c65d8021cc8100c5843f896d87585844d21e44507c877e054e5af32",
+      "sha256": "031c8c27388ab41b4c1b7c389174d6dac138f6b7e5631409539b6fb1d24f524f",
+      "bytes": 239954,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.74,
+      "transition": "lateral-blend",
+      "label": "銅の織物"
+    },
+    {
+      "name": "selected-api-candidate-31-v1.webp",
+      "candidate": 31,
+      "source_sha256": "977bfbc37467a83963c0e3d91e0fca31ec3c2cbc6cdfc230c3c085e30fa5b915",
+      "sha256": "951425f3da07668e322e3853133dda2bf84071625aedca6820dba3a4bd0b170e",
+      "bytes": 315640,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.76,
+      "transition": "depth-rings",
+      "label": "霜の結晶"
+    },
+    {
+      "name": "selected-api-candidate-32-v1.webp",
+      "candidate": 32,
+      "source_sha256": "fa0d1ed546b4070435fa5486b081c3e1effd38b0c03636a460e8a9ae569732b4",
+      "sha256": "1a5c611986cffcad877a330a8415e326e239b57d0eaadd66a7e9d275fc21d0e7",
+      "bytes": 308262,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.77,
+      "transition": "contour-bands",
+      "label": "顔料の地層"
+    },
+    {
+      "name": "selected-api-candidate-33-v1.webp",
+      "candidate": 33,
+      "source_sha256": "b977a211ea52ebec99bc046149d761799af4a954bf06ad3a119481d79da2b8e7",
+      "sha256": "4f491e707ca08dd9a52a6e55e67961f40e3a1b1fe13d6a3e005d4e51ca17c76a",
+      "bytes": 166706,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.71,
+      "transition": "local-blends",
+      "label": "氷河の支流"
+    },
+    {
+      "name": "selected-api-candidate-34-v1.webp",
+      "candidate": 34,
+      "source_sha256": "7bb9bccd0b7d7285fea483c0844fe1ea9c4ee114a3ea28a2ca491cc277c4d9c0",
+      "sha256": "b9376215d6d4be3bb593860c961ce520a8a29dffde6e8b232e93efccb4cfa2a0",
+      "bytes": 240496,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.8,
+      "transition": "ribbon",
+      "label": "天文台の図面"
+    },
+    {
+      "name": "selected-api-candidate-36-v1.webp",
+      "candidate": 36,
+      "source_sha256": "c03c8795999f4c5c56907c3f9b694f83dae4df23c9d630cce92cab43c5dc77f4",
+      "sha256": "cc876ceba3279b5d977a85bf2cdac4f27cc76990cdc70d095bfabb93651feaa6",
+      "bytes": 177478,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.72,
+      "transition": "mist",
+      "label": "雨の温室"
+    },
+    {
+      "name": "selected-api-candidate-37-v1.webp",
+      "candidate": 37,
+      "source_sha256": "4468dded99330aa2e7eed5c5c1e512e68d047fe967a43c6f4a50bc603c97554a",
+      "sha256": "7a5764015b86bf021bfa4bae19e39bf1b9ab229c19747bc9389baa719b2a5f28",
+      "bytes": 241912,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.5,
+      "transition": "depth-rings",
+      "label": "墨の流れ"
+    },
+    {
+      "name": "selected-api-candidate-38-v2.webp",
+      "candidate": 38,
+      "source_sha256": "4740426c2e16842bb9c1bbc416b4a9ca49ac488f635939648ac010fdce22c1c8",
+      "sha256": "adec5983dc61ac6a454a799a21c3e1a3b872676468fa9b8416c38c995eaf5a6d",
+      "bytes": 377812,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.45,
+      "transition": "contour-bands",
+      "label": "手製本の作業台",
+      "replaces": "selected-api-candidate-38-v1.webp"
+    },
+    {
+      "name": "selected-api-candidate-40-v1.webp",
+      "candidate": 40,
+      "source_sha256": "ac0a4e066e15aceec8eeb747e8de68818d277d7bde7a9df9de54097824cbb71e",
+      "sha256": "6e3ebda9abd056971a35da2aa6beaf14ebe9191990a667ef5fffabdf5971718d",
+      "bytes": 86722,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.5,
+      "transition": "ribbon",
+      "label": "干潟"
+    },
+    {
+      "name": "selected-api-candidate-41-v1.webp",
+      "candidate": 41,
+      "source_sha256": "a1315a0e1be8aef9b12480f9f22548180ef3bb2e4ea57dda50688e2454110dfd",
+      "sha256": "e6d815db7fbfbcb1c1aea2b768afb37be11c70998960db81df79557d49d11078",
+      "bytes": 162814,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.78,
+      "transition": "lateral-blend",
+      "label": "霧の天文台"
+    },
+    {
+      "name": "selected-api-candidate-42-v1.webp",
+      "candidate": 42,
+      "source_sha256": "c34d00a1c2872c6e7f6ab60873cce547c93d1330987e927e3b5a685318cdf100",
+      "sha256": "a450760cb525ef722e5519638f95672dac55bf976b58bd6e5924dc4abee9b7d2",
+      "bytes": 171596,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.45,
+      "transition": "mist",
+      "label": "河口の枝分かれ"
+    },
+    {
+      "name": "selected-api-candidate-43-v1.webp",
+      "candidate": 43,
+      "source_sha256": "5c03c128667b288b331a0c29b5d17e3ee3337d1c71ce65a002b601fd8062f331",
+      "sha256": "1429adea3feeda831a0a627da7867b6c53275fe45163c4f264d30adbc68b4a4f",
+      "bytes": 52308,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.31,
+      "transition": "depth-rings",
+      "label": "光のプリズム"
+    },
+    {
+      "name": "selected-api-candidate-44-v1.webp",
+      "candidate": 44,
+      "source_sha256": "19b1217c48de4f0d9a9477b07ccdd1981df2b664014efe808a85b8e9fdade2fd",
+      "sha256": "2c0e2e2843edeb029ec99a0d6f9b3f2a6d8d4c84cef358aa398dc288f438c18a",
+      "bytes": 288964,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.32,
+      "transition": "contour-bands",
+      "label": "植物の根"
+    },
+    {
+      "name": "selected-api-candidate-45-v1.webp",
+      "candidate": 45,
+      "source_sha256": "903bb0cf60b45856a9cab98d6ce741a7b29219e223bde18d0f4536380377c841",
+      "sha256": "9f46e680ad0baa7b8f8b2531e2f5355170744ae2bfdc570d1261d7f248f54c08",
+      "bytes": 103314,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.4,
+      "transition": "local-blends",
+      "label": "曲線の彫刻"
+    },
+    {
+      "name": "selected-api-candidate-46-v1.webp",
+      "candidate": 46,
+      "source_sha256": "086438af4f1e0ec386fa8e5065240ddd26430dd89909231c02a63717b2ed7da5",
+      "sha256": "ac62453b5829c2e9b806f668edc4a6102fbde51b64002a199b02d5498aefedfd",
+      "bytes": 195000,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.65,
+      "transition": "ribbon",
+      "label": "版画工房"
+    },
+    {
+      "name": "selected-api-candidate-47-v1.webp",
+      "candidate": 47,
+      "source_sha256": "a1f6d2cfa7100cf32bae00981685b6f90a768f0f0d97dfdd35afb7e0ba328668",
+      "sha256": "1f807915c16b70a5bf8986e6e724e238df264f47c3e5d6f702bbec61574aa48d",
+      "bytes": 104126,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.4,
+      "transition": "lateral-blend",
+      "label": "陶芸の窓辺"
+    },
+    {
+      "name": "selected-api-candidate-49-v1.webp",
+      "candidate": 49,
+      "source_sha256": "db2af2f0dd69430a53e85ad377f1b8c078b66414b0a34c857b1e719084dcebf8",
+      "sha256": "f7e747288ee09efbfdf4177084be4a9e8d32c72ef1d3e55dfc3010ae8dcb51c4",
+      "bytes": 191420,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.3,
+      "transition": "depth-rings",
+      "label": "朝の温室"
+    },
+    {
+      "name": "selected-api-candidate-50-v1.webp",
+      "candidate": 50,
+      "source_sha256": "d7952b6030736fab19caaba7fef91e07cbf6a4147c5f1c9339d9359ce0712ba7",
+      "sha256": "d4e7e80ae871ffce7912aafed6c4287d4501b69a039bd5a687a3a1cd97719c6f",
+      "bytes": 181946,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.66,
+      "transition": "contour-bands",
+      "label": "淡い海の朝"
+    },
+    {
+      "name": "selected-api-candidate-51-v2.webp",
+      "candidate": 51,
+      "source_sha256": "0a03e1a3cf22aaa057dd2e4ca89257c4b46463c243dcc2876ba5670b612da43c",
+      "sha256": "95068b3bdcbf99ffb6f90d252cece03ce20281285fe0211f850756fe19756565",
+      "bytes": 135734,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.73,
+      "transition": "local-blends",
+      "label": "陶器の貫入",
+      "replaces": "selected-api-candidate-51-v1.webp"
+    },
+    {
+      "name": "selected-api-candidate-54-v1.webp",
+      "candidate": 54,
+      "source_sha256": "79a389e9f1ce98f0b9072bdf50ef4663d73cbdf891df368a9dd6f3cc149cd8a9",
+      "sha256": "e9e36258d703fcec6a98b3cfe6f246c454fb55b7d0711ec615a2a9c27f973cfd",
+      "bytes": 91160,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.25,
+      "transition": "mist",
+      "label": "紫のレンズ"
+    },
+    {
+      "name": "selected-api-candidate-55-v1.webp",
+      "candidate": 55,
+      "source_sha256": "26bd66389f6806b5eff9d40f7415886cdfd0af51a0c558a5e77f977deb0849c6",
+      "sha256": "5a546321e0cefaeb463a17480ce41310b1fe80d4ed9a17ba5555461212f28ca5",
+      "bytes": 236156,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.28,
+      "transition": "depth-rings",
+      "label": "霧の林"
+    },
+    {
+      "name": "selected-api-candidate-56-v1.webp",
+      "candidate": 56,
+      "source_sha256": "49d3a62952ac689156837538f7fc152e1db103d8bad000162e22bb443d0b9c24",
+      "sha256": "857b6c3737f11bc478f3e8dde686e525d4a209dc1a6cc4d7575f5957b157727d",
+      "bytes": 114172,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.77,
+      "transition": "contour-bands",
+      "label": "水辺の石造アーチ"
+    },
+    {
+      "name": "selected-api-candidate-57-v1.webp",
+      "candidate": 57,
+      "source_sha256": "ad13bd464e19947da1bc1a8771aa226db2b6310ee2484938fb3e653fa7401817",
+      "sha256": "606b8c045e93dd388ccdc7344b6beef518077bfd9910b638102b5b6dfbdb7f1a",
+      "bytes": 80676,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.25,
+      "transition": "local-blends",
+      "label": "桃色の紙"
+    },
+    {
+      "name": "selected-api-candidate-58-v1.webp",
+      "candidate": 58,
+      "source_sha256": "80cc31d3333451bd5ba8b19bc22eafde0545b14121c2bace912fde818ecdc3ce",
+      "sha256": "aa65e2ea7b13a178822c1b6c44cf36ffba79480a820a26471ac43c83a74523d3",
+      "bytes": 152476,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.5,
+      "transition": "ribbon",
+      "label": "春の蛇行河川"
+    },
+    {
+      "name": "selected-api-candidate-59-v1.webp",
+      "candidate": 59,
+      "source_sha256": "5215c791533316a4f69535a09d8b732c8754324e72e6c170b9e5e51b08fa892b",
+      "sha256": "3ae7a3850b46aedc72e182c377bc3569d7a232dc10f3a5083736c164a4bc2dd5",
+      "bytes": 99622,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.28,
+      "transition": "lateral-blend",
+      "label": "池の波紋"
+    },
+    {
+      "name": "selected-api-candidate-60-v1.webp",
+      "candidate": 60,
+      "source_sha256": "a959f8777e13b48b4a9bdfb31d4f88260ecefe84ba9bfe03c0857e64d9060a01",
+      "sha256": "b62b36ebc09569b60f01ed304fb9d20fd8c77c8a0e4ede522efc28ce01748e3f",
+      "bytes": 215234,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.3,
+      "transition": "mist",
+      "label": "製本の机"
+    },
+    {
+      "name": "selected-api-candidate-61-v1.webp",
+      "candidate": 61,
+      "source_sha256": "b334ccee05957399008d1d45b1688e7fac85ab8c45a50f09678af02f0a1860a0",
+      "sha256": "a60957422c55c5c12d7a7ab5a22fe59e8a04ed8dbbef366df2cd047bfdf19453",
+      "bytes": 312018,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.5,
+      "transition": "depth-rings",
+      "label": "冬の森"
+    },
+    {
+      "name": "selected-api-candidate-62-v1.webp",
+      "candidate": 62,
+      "source_sha256": "e3acabf4bc1cca3856561e3ecc440893862872d294c6bf9f4f6f0cf5201466f9",
+      "sha256": "0f48b7092cce0df6202a03afc68f2dfc57ca98e91b271e22daf2445e00e43da9",
+      "bytes": 142146,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.5,
+      "transition": "contour-bands",
+      "label": "光の彫刻室"
+    },
+    {
+      "name": "selected-api-candidate-63-v1.webp",
+      "candidate": 63,
+      "source_sha256": "8f3350bad8b2c7615013a5072023a79a6221a0148d564dda10aef2b4aeee82ad",
+      "sha256": "49093ee349a3d0eb57d224323651d99e18e3a0a2fd8a92d3d86a2e9a5076b4f7",
+      "bytes": 395998,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.45,
+      "transition": "local-blends",
+      "label": "染め糸と布"
+    },
+    {
+      "name": "selected-api-candidate-64-v1.webp",
+      "candidate": 64,
+      "source_sha256": "656c3aa702b36e131b220b6b4504bcbb2c0ccd594aab709dc443c8bfe8afbbd1",
+      "sha256": "01e0502e9f299b0acfabe3d32d70b9be7011b3352631da2ca07bae2965cd3d45",
+      "bytes": 149978,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.23,
+      "transition": "ribbon",
+      "label": "緑のガラス"
+    },
+    {
+      "name": "selected-api-candidate-65-v1.webp",
+      "candidate": 65,
+      "source_sha256": "19d9b1ad2eea626d094b1e0dc319c477145c7d4f62cf7240aa4645196d943992",
+      "sha256": "b2fe88dc5cd1005dd4bcef8b2179420b4c09301e2206ef136b70f9541f10c745",
+      "bytes": 114808,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.35,
+      "transition": "lateral-blend",
+      "label": "霧の海岸"
+    },
+    {
+      "name": "selected-api-candidate-66-v1.webp",
+      "candidate": 66,
+      "source_sha256": "3740827fe15ddfb26cc1d9e4991d2eccf49aec13bb672efd58cda8df378b8624",
+      "sha256": "b39eb162de5a33d0a6943c8839880be2ed8e92550c442601e1dadc7273147206",
+      "bytes": 261438,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.68,
+      "transition": "mist",
+      "label": "緑青の屋根"
+    },
+    {
+      "name": "selected-api-candidate-67-v1.webp",
+      "candidate": 67,
+      "source_sha256": "02b8e5e7b9198b80173504b3264f2eb846685b10417222fea7395474adfead9e",
+      "sha256": "11da60d3eb960b32e7f9f091ca40cb477b45feb28319aa9131ab1667c0945102",
+      "bytes": 218904,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.35,
+      "transition": "depth-rings",
+      "label": "山の観測所"
+    },
+    {
+      "name": "selected-api-candidate-68-v1.webp",
+      "candidate": 68,
+      "source_sha256": "82d61192235b1dce022a04567d628e49020b1051a3a36421142ec0d2cf7926b7",
+      "sha256": "e2a6172b33c0370b42197b65fd8f5c7125b9a4099f4ee7a1d0077a417ef5b540",
+      "bytes": 151016,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.5,
+      "transition": "contour-bands",
+      "label": "薄紫の雪湖"
+    },
+    {
+      "name": "selected-api-candidate-70-v1.webp",
+      "candidate": 70,
+      "source_sha256": "60123006d1d7d4e8680e061b89bf3952621cc69cdfeca86e9e2d4a50a6419b13",
+      "sha256": "9a6b1fc42f80f0b8eb07099e74de3b0fcd9a6fee99c2771da6e9542918c03f39",
+      "bytes": 294694,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.69,
+      "transition": "ribbon",
+      "label": "石の回廊"
+    },
+    {
+      "name": "selected-api-candidate-72-v1.webp",
+      "candidate": 72,
+      "source_sha256": "536fe12c2b58ca74741fc648ddfd54141598f0e7a97f751f1de24c33a30e7d83",
+      "sha256": "f1549e023089bc7b3e100123d04852423441808ddb6660a816486efc15319740",
+      "bytes": 153966,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.4,
+      "transition": "mist",
+      "label": "種のさや"
+    },
+    {
+      "name": "selected-api-candidate-73-v1.webp",
+      "candidate": 73,
+      "source_sha256": "ef539e41807babb9b0a71dd9e22705fd5dc199504b4166bd79d4ac9967e6e616",
+      "sha256": "909d0f9c8ae4e621133eefdaafed0821cc60f473e4040e2164b6ede8e69dbf4d",
+      "bytes": 247830,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.45,
+      "transition": "depth-rings",
+      "label": "湖畔の研究棟"
+    },
+    {
+      "name": "selected-api-candidate-74-v1.webp",
+      "candidate": 74,
+      "source_sha256": "ac802c17da3bb742132400a4e07a44aff49ad48a6c522a251cb423499620f180",
+      "sha256": "00cec06c73718177298fefce0218839d07013f454570e66f0e750eab4cf7b05f",
+      "bytes": 222042,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.4,
+      "transition": "contour-bands",
+      "label": "木目と窓の影"
+    },
+    {
+      "name": "selected-api-candidate-75-v2.webp",
+      "candidate": 75,
+      "source_sha256": "0c1adad8560a860c16984fd84be49ebf32d15d66ff051bacd7968134e1b88c24",
+      "sha256": "2bc1256aa983a090c0daaa537d75e09613c399480e62c41374856d2cb59506d6",
+      "bytes": 150580,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.65,
+      "transition": "local-blends",
+      "label": "氷の気泡",
+      "replaces": "selected-api-candidate-75-v1.webp"
+    },
+    {
+      "name": "selected-api-candidate-76-v1.webp",
+      "candidate": 76,
+      "source_sha256": "2dd9448ba958c96bae819748f03dfeef95f853d3d6b76758041681c0a00cbeec",
+      "sha256": "a812d6d8ec74e74063284f67721b5bd0a16903c2a1a681041de8c1c5b7c3e5e2",
+      "bytes": 176568,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.5,
+      "transition": "ribbon",
+      "label": "六脚の椅子"
+    },
+    {
+      "name": "selected-api-candidate-77-v1.webp",
+      "candidate": 77,
+      "source_sha256": "c05868f5377ee7689b016a2b78e0a2c954c5b4e71cb547aba31f3aacccd915ec",
+      "sha256": "f27ca984dc450085607f45de56e820259c713d9677c6f171b0d33d41158a30ca",
+      "bytes": 63454,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.5,
+      "transition": "lateral-blend",
+      "label": "静かな砂丘"
+    },
+    {
+      "name": "selected-api-candidate-78-v1.webp",
+      "candidate": 78,
+      "source_sha256": "8fcef58c36dbbd368e28cafb7adbbfe5c95cd2aa3d5f7284376dbdd959721039",
+      "sha256": "74d514cf8f18ff7a3bb396ba69756e25cb971ae77384084d005c95e8e665ff0f",
+      "bytes": 175316,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.5,
+      "transition": "mist",
+      "label": "紙のうねり"
+    },
+    {
+      "name": "selected-api-candidate-79-v1.webp",
+      "candidate": 79,
+      "source_sha256": "226350a674d2b5a4679fa8f70cfa7e2917e9792f9a6e5d30148ff62f6e73d30a",
+      "sha256": "17e1b5b1053cbc50fcaa752d351a3b913aa0f0b99333354d2b96edf9dfdf5722",
+      "bytes": 301572,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.38,
+      "transition": "depth-rings",
+      "label": "山あいの湖畔"
+    },
+    {
+      "name": "selected-api-candidate-80-v1.webp",
+      "candidate": 80,
+      "source_sha256": "0f8d68619d5eb91e13e9dbb2f11cd517df871996ee810965b218a869a03ef5f3",
+      "sha256": "61d53b1f5daa2740f5651eaacf091b6ee8c80d3cc527b44416121723525886c4",
+      "bytes": 150710,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.63,
+      "transition": "contour-bands",
+      "label": "清流の石"
+    },
+    {
+      "name": "selected-api-100-dawn-lake-v1.webp",
+      "candidate": 100,
+      "source_sha256": "84756d2e6c9c5814fa22c1f40558215ddab63d3f37a100e95cb36eec665f57bc",
+      "sha256": "8d227880542363851913e3efd96bd8d1eaeea9bffdd40fadc9194fe0985d645f",
+      "bytes": 248914,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "focus": 0.57,
+      "transition": "mist",
+      "label": "夜明けの湖"
+    }
+  ],
+  "preservedScenes": [
+    {
+      "asset": 3,
+      "focus": 0.69,
+      "name": "empty-platform.webp"
+    },
+    {
+      "asset": 13,
+      "focus": 0.7,
+      "name": "anime-forest-fieldwork-v2.webp"
+    },
+    {
+      "asset": 17,
+      "focus": 0.55,
+      "name": "art-cosmic-cells-v2.webp"
+    },
+    {
+      "asset": 4,
+      "focus": 0.69,
+      "name": "spaceship-window.webp"
+    },
+    {
+      "asset": 49,
+      "focus": 0.99,
+      "transition": "depth-rings",
+      "name": "selected-api-next-observatory-v1.webp"
+    },
+    {
+      "asset": 30,
+      "focus": 0.78,
+      "transition": "mist",
+      "name": "selected-ceramic-sherds-v1.webp"
+    },
+    {
+      "asset": 34,
+      "focus": 0.58,
+      "transition": "mist",
+      "name": "selected-api-06-woven-air.webp"
+    },
+    {
+      "asset": 15,
+      "focus": 0.7,
+      "name": "books-vault-v1.webp"
+    },
+    {
+      "asset": 50,
+      "focus": 0.93,
+      "transition": "mist",
+      "name": "selected-api-next-library-v1.webp"
+    },
+    {
+      "asset": 35,
+      "focus": 0.65,
+      "transition": "diagonal-flow",
+      "name": "selected-api-07-folded-city.webp"
+    },
+    {
+      "asset": 5,
+      "focus": 0.47,
+      "name": "submerged-city.webp"
+    },
+    {
+      "asset": 59,
+      "focus": 0.6,
+      "transition": "local-blends",
+      "name": "selected-api-next-sea-glass-v1.webp"
+    },
+    {
+      "asset": 18,
+      "focus": 0.5,
+      "name": "art-mobius-sculpture-v2.webp"
+    },
+    {
+      "asset": 6,
+      "focus": 0.6,
+      "name": "forest-library.webp"
+    },
+    {
+      "asset": 36,
+      "focus": 0.65,
+      "transition": "contour-bands",
+      "name": "selected-api-08-magnetic-field.webp"
+    },
+    {
+      "asset": 7,
+      "focus": 0.43,
+      "name": "living-gallery.webp"
+    },
+    {
+      "asset": 14,
+      "focus": 0.74,
+      "name": "anime-mountain-archive-v2.webp"
+    },
+    {
+      "asset": 56,
+      "focus": 0.76,
+      "transition": "contour-bands",
+      "name": "selected-api-next-watercolor-hills-v1.webp"
+    },
+    {
+      "asset": 19,
+      "focus": 0.53,
+      "name": "art-mosaic-restoration-v2.webp"
+    },
+    {
+      "asset": 37,
+      "focus": 0.65,
+      "transition": "horizontal-wave",
+      "name": "selected-api-09-glass-river.webp"
+    },
+    {
+      "asset": 31,
+      "focus": 0.88,
+      "transition": "depth-rings",
+      "name": "selected-star-trails-v1.webp"
+    },
+    {
+      "asset": 8,
+      "focus": 0.67,
+      "name": "garden-conservatory.webp"
+    },
+    {
+      "asset": 16,
+      "focus": 0.62,
+      "name": "history-atelier-v1.webp"
+    },
+    {
+      "asset": 58,
+      "focus": 0.45,
+      "transition": "mist",
+      "name": "selected-api-next-plaster-v1.webp"
+    },
+    {
+      "asset": 38,
+      "focus": 0.72,
+      "transition": "local-blends",
+      "name": "selected-api-10-listening-room.webp"
+    },
+    {
+      "asset": 9,
+      "focus": 0.65,
+      "name": "ocean-corridor.webp"
+    },
+    {
+      "asset": 20,
+      "focus": 0.6,
+      "name": "art-social-dialogue-v2.webp"
+    },
+    {
+      "asset": 10,
+      "focus": 0.5,
+      "name": "forest-theater.webp"
+    },
+    {
+      "asset": 51,
+      "focus": 0.9,
+      "transition": "mist",
+      "name": "selected-api-next-bamboo-v1.webp"
+    },
+    {
+      "asset": 39,
+      "focus": 0.64,
+      "transition": "particles",
+      "name": "selected-api-11-amber-network.webp"
+    },
+    {
+      "asset": 11,
+      "focus": 0.62,
+      "name": "city-reflection.webp"
+    },
+    {
+      "asset": 55,
+      "focus": 0.85,
+      "transition": "lateral-blend",
+      "name": "selected-api-next-city-print-v1.webp"
+    },
+    {
+      "asset": 12,
+      "focus": 0.58,
+      "name": "model-city.webp"
+    },
+    {
+      "asset": 32,
+      "focus": 0.78,
+      "transition": "local-blends",
+      "name": "selected-shared-plaza-v1.webp"
+    },
+    {
+      "asset": 40,
+      "focus": 0.55,
+      "transition": "ribbon",
+      "name": "selected-api-12-felt-mobius.webp"
+    },
+    {
+      "asset": 53,
+      "focus": 0.83,
+      "transition": "ribbon",
+      "name": "selected-api-next-silver-sculpture-v1.webp"
+    },
+    {
+      "asset": 21,
+      "focus": 0.52,
+      "name": "art-optical-bench-v2.webp"
+    },
+    {
+      "asset": 52,
+      "focus": 0.7,
+      "transition": "contour-bands",
+      "name": "selected-api-next-polarized-mineral-v1.webp"
+    },
+    {
+      "asset": 2,
+      "tile": 0,
+      "cols": 3,
+      "rows": 2,
+      "name": "quiet-media-atlas-v1.webp"
+    },
+    {
+      "asset": 2,
+      "tile": 1,
+      "cols": 3,
+      "rows": 2,
+      "name": "quiet-media-atlas-v1.webp"
+    },
+    {
+      "asset": 41,
+      "focus": 0.68,
+      "transition": "contour-bands",
+      "name": "selected-api-13-dune-markers.webp"
+    },
+    {
+      "asset": 57,
+      "focus": 0.5,
+      "transition": "contour-bands",
+      "name": "selected-api-next-desert-v1.webp"
+    },
+    {
+      "asset": 2,
+      "tile": 2,
+      "cols": 3,
+      "rows": 2,
+      "name": "quiet-media-atlas-v1.webp"
+    },
+    {
+      "asset": 22,
+      "focus": 0.58,
+      "name": "art-robot-workshop-v2.webp"
+    },
+    {
+      "asset": 2,
+      "tile": 3,
+      "cols": 3,
+      "rows": 2,
+      "name": "quiet-media-atlas-v1.webp"
+    },
+    {
+      "asset": 42,
+      "focus": 0.68,
+      "transition": "ribbon",
+      "name": "selected-api-14-blue-fabric.webp"
+    },
+    {
+      "asset": 2,
+      "tile": 4,
+      "cols": 3,
+      "rows": 2,
+      "name": "quiet-media-atlas-v1.webp"
+    },
+    {
+      "asset": 2,
+      "tile": 5,
+      "cols": 3,
+      "rows": 2,
+      "name": "quiet-media-atlas-v1.webp"
+    },
+    {
+      "asset": 23,
+      "focus": 0.5,
+      "name": "art-archaeology-table-v2.webp"
+    },
+    {
+      "asset": 43,
+      "focus": 0.65,
+      "transition": "light-bloom",
+      "name": "selected-api-15-singing-bowls.webp"
+    },
+    {
+      "asset": 1,
+      "name": "river-city-dawn.webp"
+    },
+    {
+      "kind": "geometry",
+      "name": null
+    },
+    {
+      "asset": 0,
+      "tile": 0,
+      "name": "cinema-atlas.webp"
+    },
+    {
+      "asset": 44,
+      "focus": 0.7,
+      "transition": "particles",
+      "name": "selected-api-16-night-flock.webp"
+    },
+    {
+      "asset": 24,
+      "focus": 0.55,
+      "name": "art-organic-cells-v2.webp"
+    },
+    {
+      "kind": "network",
+      "name": null
+    },
+    {
+      "asset": 0,
+      "tile": 6,
+      "name": "cinema-atlas.webp"
+    },
+    {
+      "asset": 45,
+      "focus": 0.85,
+      "transition": "mist",
+      "name": "selected-api-17-blue-mended-paper.webp"
+    },
+    {
+      "asset": 33,
+      "focus": 0.8,
+      "transition": "particles",
+      "name": "selected-milkweed-seeds-v1.webp"
+    },
+    {
+      "asset": 0,
+      "tile": 8,
+      "name": "cinema-atlas.webp"
+    },
+    {
+      "asset": 25,
+      "focus": 0.58,
+      "name": "art-wave-light-v2.webp"
+    },
+    {
+      "asset": 46,
+      "focus": 0.78,
+      "transition": "depth-rings",
+      "name": "selected-api-18-ripple-orbits.webp"
+    },
+    {
+      "asset": 27,
+      "focus": 0.4,
+      "transition": "mist",
+      "name": "acoustics-hall-v1.webp"
+    },
+    {
+      "asset": 54,
+      "focus": 0.9,
+      "transition": "mist",
+      "name": "selected-api-next-piano-room-v1.webp"
+    },
+    {
+      "kind": "wave",
+      "name": null
+    },
+    {
+      "asset": 0,
+      "tile": 9,
+      "name": "cinema-atlas.webp"
+    },
+    {
+      "asset": 47,
+      "focus": 0.56,
+      "transition": "depth-rings",
+      "name": "selected-api-19-woven-corridor.webp"
+    },
+    {
+      "asset": 0,
+      "tile": 12,
+      "name": "cinema-atlas.webp"
+    },
+    {
+      "asset": 26,
+      "focus": 0.52,
+      "name": "art-gestural-lines-v2.webp"
+    },
+    {
+      "asset": 0,
+      "tile": 15,
+      "name": "cinema-atlas.webp"
+    },
+    {
+      "asset": 48,
+      "focus": 0.66,
+      "transition": "ribbon",
+      "name": "selected-api-20-rose-orbits.webp"
+    },
+    {
+      "asset": 0,
+      "tile": 4,
+      "name": "cinema-atlas.webp"
+    },
+    {
+      "asset": 0,
+      "tile": 14,
+      "name": "cinema-atlas.webp"
+    },
+    {
+      "asset": 0,
+      "tile": 10,
+      "name": "cinema-atlas.webp"
+    },
+    {
+      "asset": 28,
+      "framing": "bruegel",
+      "transition": "mist",
+      "name": "bruegel-harvesters-2048.webp"
+    },
+    {
+      "asset": 29,
+      "framing": "atkins",
+      "transition": "mist",
+      "name": "atkins-ptilota-2560.webp"
+    }
+  ],
+  "quality_replacements_20261105": [
+    {
+      "from": "selected-api-candidate-27-v1.webp",
+      "to": "selected-api-candidate-27-v2.webp"
+    },
+    {
+      "from": "selected-api-candidate-75-v1.webp",
+      "to": "selected-api-candidate-75-v2.webp"
+    },
+    {
+      "from": "selected-api-candidate-51-v1.webp",
+      "to": "selected-api-candidate-51-v2.webp"
+    },
+    {
+      "from": "selected-api-candidate-38-v1.webp",
+      "to": "selected-api-candidate-38-v2.webp"
+    },
+    {
+      "from": "selected-api-candidate-22-v1.webp",
+      "to": "selected-api-candidate-22-v2.webp"
+    }
+  ]
+}

@@ -1,0 +1,237 @@
+{
+  "initial": [
+    1,
+    1
+  ],
+  "keys": [
+    {
+      "id": "A",
+      "vector": [
+        2,
+        0
+      ]
+    },
+    {
+      "id": "B",
+      "vector": [
+        0,
+        2
+      ]
+    },
+    {
+      "id": "C",
+      "vector": [
+        -1,
+        1
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "query": [
+        1,
+        1
+      ],
+      "rows": [
+        {
+          "id": "A",
+          "vector": [
+            2,
+            0
+          ],
+          "products": [
+            2,
+            0
+          ],
+          "score": 2
+        },
+        {
+          "id": "B",
+          "vector": [
+            0,
+            2
+          ],
+          "products": [
+            0,
+            2
+          ],
+          "score": 2
+        },
+        {
+          "id": "C",
+          "vector": [
+            -1,
+            1
+          ],
+          "products": [
+            -1,
+            1
+          ],
+          "score": 0
+        }
+      ],
+      "maximum": 2,
+      "winnerIds": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "query": [
+        1.4142135623730951,
+        0
+      ],
+      "rows": [
+        {
+          "id": "A",
+          "vector": [
+            2,
+            0
+          ],
+          "products": [
+            2.8284271247461903,
+            0
+          ],
+          "score": 2.8284271247461903
+        },
+        {
+          "id": "B",
+          "vector": [
+            0,
+            2
+          ],
+          "products": [
+            0,
+            0
+          ],
+          "score": 0
+        },
+        {
+          "id": "C",
+          "vector": [
+            -1,
+            1
+          ],
+          "products": [
+            -1.4142135623730951,
+            0
+          ],
+          "score": -1.4142135623730951
+        }
+      ],
+      "maximum": 2.8284271247461903,
+      "winnerIds": [
+        "A"
+      ]
+    },
+    {
+      "query": [
+        2,
+        0
+      ],
+      "rows": [
+        {
+          "id": "A",
+          "vector": [
+            2,
+            0
+          ],
+          "products": [
+            4,
+            0
+          ],
+          "score": 4
+        },
+        {
+          "id": "B",
+          "vector": [
+            0,
+            2
+          ],
+          "products": [
+            0,
+            0
+          ],
+          "score": 0
+        },
+        {
+          "id": "C",
+          "vector": [
+            -1,
+            1
+          ],
+          "products": [
+            -2,
+            0
+          ],
+          "score": -2
+        }
+      ],
+      "maximum": 4,
+      "winnerIds": [
+        "A"
+      ]
+    },
+    {
+      "query": [
+        0,
+        0
+      ],
+      "rows": [
+        {
+          "id": "A",
+          "vector": [
+            2,
+            0
+          ],
+          "products": [
+            0,
+            0
+          ],
+          "score": 0
+        },
+        {
+          "id": "B",
+          "vector": [
+            0,
+            2
+          ],
+          "products": [
+            0,
+            0
+          ],
+          "score": 0
+        },
+        {
+          "id": "C",
+          "vector": [
+            -1,
+            1
+          ],
+          "products": [
+            0,
+            0
+          ],
+          "score": 0
+        }
+      ],
+      "maximum": 0,
+      "winnerIds": [
+        "A",
+        "B",
+        "C"
+      ]
+    }
+  ],
+  "passed": true,
+  "same_length_rotation": true,
+  "same_direction_length_change": true,
+  "numbers_are_raw_dot_products_not_probabilities": true,
+  "visualization_only_2d_handset_example": true,
+  "palette": {
+    "Q": "#2a55eb",
+    "KA": "#b94b2c",
+    "KB": "#417065",
+    "KC": "#566567"
+  }
+}

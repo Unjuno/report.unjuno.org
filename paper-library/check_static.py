@@ -4,9 +4,10 @@ from urllib.parse import urlsplit
 import re, subprocess
 root=Path(__file__).parent/'dist'
 class Page(HTMLParser):
- def __init__(self):super().__init__();self.ids=[];self.refs=[]
+ def __init__(self):super().__init__();self.ids=[];self.refs=[];self.cards=[];self.attrs=[]
  def handle_starttag(self,tag,attrs):
-  d=dict(attrs)
+  d=dict(attrs);self.attrs.append(d)
+  if tag=='article' and 'data-entry' in d:self.cards.append(d)
   if 'id' in d:self.ids.append(d['id'])
   for k in ['href','src']:
    if k in d:self.refs.append(d[k])
@@ -17,6 +18,11 @@ for file in root.rglob('*.html'):
   if url.scheme or url.netloc:continue
   target=(root/url.path.lstrip('/')) if url.path.startswith('/') else (file.parent/url.path if url.path else file)
   if target.is_dir():target=target/'index.html'
+  # This one additional page belongs to the enclosing Astro app, not this feed.
+  if not target.exists() and url.path == '/notes/attention-is-all-you-need/learn/':
+   production = root.parent.parent
+   assert (production/'src/pages/notes/attention-is-all-you-need/learn/index.astro').is_file()
+   target = production/'build/notes/attention-is-all-you-need/learn/index.html'
   assert target.exists(),(file,ref)
   if url.fragment:
    dest=Page();dest.feed(target.read_text());assert url.fragment in dest.ids,(file,ref)
@@ -24,10 +30,12 @@ for file in root.rglob('*.html'):
 s=(root/'index.html').read_text()
 import json
 from hashlib import sha256
-papers=json.loads((root.parent/'content/papers.json').read_text())
-assert s.count('data-entry data-search=')==len(papers)
-assert 'data-sample' not in s and '論文サンプル' not in s and '論文ノート' not in s
-assert 'home-landscape' not in s and 'home-surface' not in s
+from material_policy import load_materials
+papers,_=load_materials(root.parent)
+home=Page();home.feed(s)
+assert len(home.cards)==len(papers)
+assert not any('data-sample' in attrs for attrs in home.attrs)
+assert not any(any(name in attrs.get('class','').split() for name in ('home-landscape','home-surface')) for attrs in home.attrs)
 for name in ('feed.css','feed.js'):
  fingerprint=sha256((root/'assets'/name).read_bytes()).hexdigest()[:12]
  assert '/assets/'+name+'?v='+fingerprint in s

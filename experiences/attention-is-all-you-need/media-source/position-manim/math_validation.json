@@ -1,0 +1,122 @@
+{
+  "checks_passed": 1150,
+  "module": "src/site/math.mjs + src/site/labs.mjs",
+  "dimensions": 8,
+  "position_range": [
+    0,
+    40
+  ],
+  "positions_are_integers": true,
+  "pair_denominators": [
+    1,
+    10,
+    100,
+    1000
+  ],
+  "states": [
+    {
+      "position": 0,
+      "encoding": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "rounded": [
+        "0.000",
+        "1.000",
+        "0.000",
+        "1.000",
+        "0.000",
+        "1.000",
+        "0.000",
+        "1.000"
+      ],
+      "interaction_html": "<div class=\"position-values\"><div><small>sin · 0</small><span class=\"signed-line\"><i style=\"left:50%;width:0%\"></i></span><strong>0</strong></div><div><small>cos · 1</small><span class=\"signed-line\"><i style=\"left:50%;width:50%\"></i></span><strong>1</strong></div><div><small>sin · 2</small><span class=\"signed-line\"><i style=\"left:50%;width:0%\"></i></span><strong>0</strong></div><div><small>cos · 3</small><span class=\"signed-line\"><i style=\"left:50%;width:50%\"></i></span><strong>1</strong></div><div><small>sin · 4</small><span class=\"signed-line\"><i style=\"left:50%;width:0%\"></i></span><strong>0</strong></div><div><small>cos · 5</small><span class=\"signed-line\"><i style=\"left:50%;width:50%\"></i></span><strong>1</strong></div><div><small>sin · 6</small><span class=\"signed-line\"><i style=\"left:50%;width:0%\"></i></span><strong>0</strong></div><div><small>cos · 7</small><span class=\"signed-line\"><i style=\"left:50%;width:50%\"></i></span><strong>1</strong></div></div><p class=\"formula\">PE(pos,2i)=sin(pos / 10000^(2i/8))</p><p>偶数番目はsin、奇数番目は同じ周波数のcosです。</p>"
+    },
+    {
+      "position": 1,
+      "encoding": [
+        0.8414709848078965,
+        0.5403023058681398,
+        0.09983341664682815,
+        0.9950041652780257,
+        0.009999833334166664,
+        0.9999500004166653,
+        0.0009999998333333417,
+        0.9999995000000417
+      ],
+      "rounded": [
+        "0.841",
+        "0.540",
+        "0.100",
+        "0.995",
+        "0.010",
+        "1.000",
+        "0.001",
+        "1.000"
+      ],
+      "interaction_html": "<div class=\"position-values\"><div><small>sin · 0</small><span class=\"signed-line\"><i style=\"left:50%;width:42.073549240394826%\"></i></span><strong>0.841</strong></div><div><small>cos · 1</small><span class=\"signed-line\"><i style=\"left:50%;width:27.01511529340699%\"></i></span><strong>0.54</strong></div><div><small>sin · 2</small><span class=\"signed-line\"><i style=\"left:50%;width:4.991670832341407%\"></i></span><strong>0.1</strong></div><div><small>cos · 3</small><span class=\"signed-line\"><i style=\"left:50%;width:49.750208263901285%\"></i></span><strong>0.995</strong></div><div><small>sin · 4</small><span class=\"signed-line\"><i style=\"left:50%;width:0.4999916667083332%\"></i></span><strong>0.01</strong></div><div><small>cos · 5</small><span class=\"signed-line\"><i style=\"left:50%;width:49.997500020833265%\"></i></span><strong>1</strong></div><div><small>sin · 6</small><span class=\"signed-line\"><i style=\"left:50%;width:0.04999999166666708%\"></i></span><strong>0.001</strong></div><div><small>cos · 7</small><span class=\"signed-line\"><i style=\"left:50%;width:49.99997500000208%\"></i></span><strong>1</strong></div></div><p class=\"formula\">PE(pos,2i)=sin(pos / 10000^(2i/8))</p><p>偶数番目はsin、奇数番目は同じ周波数のcosです。</p>"
+    },
+    {
+      "position": 10,
+      "encoding": [
+        -0.5440211108893698,
+        -0.8390715290764524,
+        0.8414709848078965,
+        0.5403023058681398,
+        0.09983341664682815,
+        0.9950041652780257,
+        0.009999833334166664,
+        0.9999500004166653
+      ],
+      "rounded": [
+        "-0.544",
+        "-0.839",
+        "0.841",
+        "0.540",
+        "0.100",
+        "0.995",
+        "0.010",
+        "1.000"
+      ],
+      "interaction_html": "<div class=\"position-values\"><div><small>sin · 0</small><span class=\"signed-line\"><i style=\"left:22.79894445553151%;width:27.20105554446849%\"></i></span><strong>-0.544</strong></div><div><small>cos · 1</small><span class=\"signed-line\"><i style=\"left:8.04642354617738%;width:41.95357645382262%\"></i></span><strong>-0.839</strong></div><div><small>sin · 2</small><span class=\"signed-line\"><i style=\"left:50%;width:42.073549240394826%\"></i></span><strong>0.841</strong></div><div><small>cos · 3</small><span class=\"signed-line\"><i style=\"left:50%;width:27.01511529340699%\"></i></span><strong>0.54</strong></div><div><small>sin · 4</small><span class=\"signed-line\"><i style=\"left:50%;width:4.991670832341407%\"></i></span><strong>0.1</strong></div><div><small>cos · 5</small><span class=\"signed-line\"><i style=\"left:50%;width:49.750208263901285%\"></i></span><strong>0.995</strong></div><div><small>sin · 6</small><span class=\"signed-line\"><i style=\"left:50%;width:0.4999916667083332%\"></i></span><strong>0.01</strong></div><div><small>cos · 7</small><span class=\"signed-line\"><i style=\"left:50%;width:49.997500020833265%\"></i></span><strong>1</strong></div></div><p class=\"formula\">PE(pos,2i)=sin(pos / 10000^(2i/8))</p><p>偶数番目はsin、奇数番目は同じ周波数のcosです。</p>"
+    },
+    {
+      "position": 40,
+      "encoding": [
+        0.7451131604793488,
+        -0.6669380616522619,
+        -0.7568024953079282,
+        -0.6536436208636119,
+        0.3894183423086505,
+        0.9210609940028851,
+        0.03998933418663416,
+        0.9992001066609779
+      ],
+      "rounded": [
+        "0.745",
+        "-0.667",
+        "-0.757",
+        "-0.654",
+        "0.389",
+        "0.921",
+        "0.040",
+        "0.999"
+      ],
+      "interaction_html": "<div class=\"position-values\"><div><small>sin · 0</small><span class=\"signed-line\"><i style=\"left:50%;width:37.25565802396744%\"></i></span><strong>0.745</strong></div><div><small>cos · 1</small><span class=\"signed-line\"><i style=\"left:16.653096917386904%;width:33.346903082613096%\"></i></span><strong>-0.667</strong></div><div><small>sin · 2</small><span class=\"signed-line\"><i style=\"left:12.15987523460359%;width:37.84012476539641%\"></i></span><strong>-0.757</strong></div><div><small>cos · 3</small><span class=\"signed-line\"><i style=\"left:17.3178189568194%;width:32.6821810431806%\"></i></span><strong>-0.654</strong></div><div><small>sin · 4</small><span class=\"signed-line\"><i style=\"left:50%;width:19.470917115432528%\"></i></span><strong>0.389</strong></div><div><small>cos · 5</small><span class=\"signed-line\"><i style=\"left:50%;width:46.05304970014426%\"></i></span><strong>0.921</strong></div><div><small>sin · 6</small><span class=\"signed-line\"><i style=\"left:50%;width:1.999466709331708%\"></i></span><strong>0.04</strong></div><div><small>cos · 7</small><span class=\"signed-line\"><i style=\"left:50%;width:49.9600053330489%\"></i></span><strong>0.999</strong></div></div><p class=\"formula\">PE(pos,2i)=sin(pos / 10000^(2i/8))</p><p>偶数番目はsin、奇数番目は同じ周波数のcosです。</p>"
+    }
+  ],
+  "notes": [
+    "The formula is the original sinusoidal scheme with d_model replaced by8 for the illustrative interaction.",
+    "The original paper base model has d_model=512.",
+    "Angles are radians.",
+    "Curves illustrate the functions continuously; the displayed marker and values advance over integer positions like the slider.",
+    "Positional vectors are added elementwise, not concatenated; no learned input values are invented."
+  ],
+  "reference": "https://arxiv.org/abs/1706.03762 section 3.5"
+}

@@ -1,0 +1,218 @@
+{
+  "base_commit": "644b2da8e16ee999edf056d25166cc7aabb0669b",
+  "excluded": "api-still-run/still-3.png",
+  "added": [
+    {
+      "name": "selected-api-06-woven-air.webp",
+      "source": "api-still-run/batch-01/still-1.png",
+      "source_sha256": "3761b0c8ee26d1b82d18c3f5ee5bd409f435477fe5719050f1f32824147ab212",
+      "sha256": "2d289cf1271fcdf5016e01ef4e592699c5c687fb819dd56058d7afd41d18960d",
+      "bytes": 274720,
+      "dimensions": [
+        2048,
+        1152
+      ],
+      "focus": 0.58,
+      "transition": "mist",
+      "position": 5
+    },
+    {
+      "name": "selected-api-07-folded-city.webp",
+      "source": "api-still-run/batch-01/still-2.png",
+      "source_sha256": "80a545be496ffcb73d3684aa53e31c75c36509333d0690e0c42b3a16a6240e33",
+      "sha256": "b7dbe36dfa492b717168327074bdd2f5e16eb25fbd5c204d4663c2b224a1ac20",
+      "bytes": 162050,
+      "dimensions": [
+        2048,
+        1152
+      ],
+      "focus": 0.65,
+      "transition": "diagonal-flow",
+      "position": 7
+    },
+    {
+      "name": "selected-api-08-magnetic-field.webp",
+      "source": "api-still-run/batch-01/still-3.png",
+      "source_sha256": "bf8ba8ffac5e01f71007d32d08e73e4a05dc8c1f92a752728ed015a106eb0dc5",
+      "sha256": "cb43ab8cc9cfc2573c585b2a48b6249e5e7b668be4947926841e8e89909df2ef",
+      "bytes": 716978,
+      "dimensions": [
+        2048,
+        1152
+      ],
+      "focus": 0.65,
+      "transition": "contour-bands",
+      "position": 11
+    },
+    {
+      "name": "selected-api-09-glass-river.webp",
+      "source": "api-still-run/batch-01/still-4.png",
+      "source_sha256": "01fef501a5f81d3fa617272def02a644d547ff9a697bf1960ccc9b8c3245162b",
+      "sha256": "563fbd115db3c40a58ca12ac0117494de1ff7bf4fbef2b4a2a6700474868c286",
+      "bytes": 194118,
+      "dimensions": [
+        2048,
+        1152
+      ],
+      "focus": 0.65,
+      "transition": "horizontal-wave",
+      "position": 15
+    },
+    {
+      "name": "selected-api-10-listening-room.webp",
+      "source": "api-still-run/batch-01/still-5.png",
+      "source_sha256": "725912ad65dedc792fc0ed38e25069dbb62157383ebf5b03c6776def7c0749df",
+      "sha256": "1ce57e4601059f3d0c1508b7974d2d7b56819aa4c4b15d8334611f895a4aaac2",
+      "bytes": 332220,
+      "dimensions": [
+        2048,
+        1152
+      ],
+      "focus": 0.72,
+      "transition": "local-blends",
+      "position": 19
+    },
+    {
+      "name": "selected-api-11-amber-network.webp",
+      "source": "api-still-run/batch-02/still-1.png",
+      "source_sha256": "cd1676e4b8c9909b0e4664d49f4ccdf5027653bd3494a4a0621c973f951e4cfa",
+      "sha256": "a647cfe6075fdfcf9153e1930affb7b2ce3bb8cc4eeefd9ccb1eb0a47a0a17f7",
+      "bytes": 192252,
+      "dimensions": [
+        2048,
+        1152
+      ],
+      "focus": 0.64,
+      "transition": "particles",
+      "position": 23
+    },
+    {
+      "name": "selected-api-12-felt-mobius.webp",
+      "source": "api-still-run/batch-02/still-2.png",
+      "source_sha256": "5ebcfe71630229e796953e313763ce41476311d887f7b00a9b2f219b9d96f3eb",
+      "sha256": "5324b98834339281e52185f0f50762966f8ebb7e1e5b4d4525c3a1a12fec490b",
+      "bytes": 112190,
+      "dimensions": [
+        2048,
+        1152
+      ],
+      "focus": 0.55,
+      "transition": "ribbon",
+      "position": 27
+    },
+    {
+      "name": "selected-api-13-dune-markers.webp",
+      "source": "api-still-run/batch-02/still-3.png",
+      "source_sha256": "b2cd034573f67e4bbd73820b5153a78dac60213059f015c40dd9903ca6bc1dee",
+      "sha256": "db44531b1f5edb251dea88bd1c187945d2d9bec6184b4a799564d3f0e4b2d2a3",
+      "bytes": 177506,
+      "dimensions": [
+        2048,
+        1152
+      ],
+      "focus": 0.68,
+      "transition": "contour-bands",
+      "position": 31
+    },
+    {
+      "name": "selected-api-14-blue-fabric.webp",
+      "source": "api-still-run/batch-02/still-4.png",
+      "source_sha256": "8a530c2c99dd8083fb42e181c3f5704030588f6b9c0ec8a114052c764b3ec364",
+      "sha256": "45d472510f2875991e9a03593d3d7a552de152c9d53204747e38131cb1064f45",
+      "bytes": 593940,
+      "dimensions": [
+        2048,
+        1152
+      ],
+      "focus": 0.68,
+      "transition": "ribbon",
+      "position": 35
+    },
+    {
+      "name": "selected-api-15-singing-bowls.webp",
+      "source": "api-still-run/batch-02/still-5.png",
+      "source_sha256": "9a2a33a0713984943df201d28002acd1cf7199b9ac2262ef2566c604aa0cf1c2",
+      "sha256": "7b0f25d51b2d96009c822235cb22fd74e30a957657842e5b7e61078f21ad98b7",
+      "bytes": 87030,
+      "dimensions": [
+        2048,
+        1152
+      ],
+      "focus": 0.65,
+      "transition": "light-bloom",
+      "position": 39
+    },
+    {
+      "name": "selected-api-16-night-flock.webp",
+      "source": "api-still-run/batch-03/still-1.png",
+      "source_sha256": "3feb43b92bb7c769bbc9ef438a11124ebfc0988204cd270a20c971eaab79973c",
+      "sha256": "c5f99d2e391ebf9c94317ed9b0fab05b15ed508100a32e19b16ed3d510f5f196",
+      "bytes": 34318,
+      "dimensions": [
+        2048,
+        1152
+      ],
+      "focus": 0.7,
+      "transition": "particles",
+      "position": 43
+    },
+    {
+      "name": "selected-api-17-blue-mended-paper.webp",
+      "source": "api-still-run/batch-03/still-2.png",
+      "source_sha256": "822d944cf6f7d19e3dfe2d573cf7a6ccdd87c49bdde467a56fa8cae97cc2488a",
+      "sha256": "4e12e19d96de2adefa87904e8fd86263a53edbef281176dd1ab4aa9b2c561b5b",
+      "bytes": 392692,
+      "dimensions": [
+        2048,
+        1152
+      ],
+      "focus": 0.85,
+      "transition": "mist",
+      "position": 47
+    },
+    {
+      "name": "selected-api-18-ripple-orbits.webp",
+      "source": "api-still-run/batch-03/still-3.png",
+      "source_sha256": "cbe2a20ed59137ec238905d2241d303cac4cd5b80181fc7cc5ff764b20956758",
+      "sha256": "0bcd062c0cd798cb354aab323e73a27396c4e15f85c2317af1badf8633c73a76",
+      "bytes": 421728,
+      "dimensions": [
+        2048,
+        1152
+      ],
+      "focus": 0.78,
+      "transition": "depth-rings",
+      "position": 51
+    },
+    {
+      "name": "selected-api-19-woven-corridor.webp",
+      "source": "api-still-run/batch-03/still-4.png",
+      "source_sha256": "682ad4f08969f3912ec7f80e70135105c83a7b734d00d0c70c9a46679177512a",
+      "sha256": "de42cb423770e7cb11d951a906146b4dc857d1dcc4e239d8b1001e6b3ffd78fe",
+      "bytes": 212910,
+      "dimensions": [
+        2048,
+        1152
+      ],
+      "focus": 0.56,
+      "transition": "depth-rings",
+      "position": 55
+    },
+    {
+      "name": "selected-api-20-rose-orbits.webp",
+      "source": "api-still-run/batch-03/still-5.png",
+      "source_sha256": "4996c8cda3dfbf927e10275483cd548ae956ce0d5d752e2ea2bb6ed1963bf58e",
+      "sha256": "332e40f693c14e412d48668fbb3385988d0c69574bd8b3c83d730488105c468a",
+      "bytes": 102372,
+      "dimensions": [
+        2048,
+        1152
+      ],
+      "focus": 0.66,
+      "transition": "ribbon",
+      "position": 59
+    }
+  ],
+  "retained_initial": 4,
+  "total_selected": 19
+}

@@ -1,0 +1,503 @@
+{
+  "id": 24,
+  "title_ja": "竹の影時計",
+  "title_en": "Bamboo Shadow Clock",
+  "family": "organic",
+  "tonic_midi": 58,
+  "scale": [
+    0,
+    2,
+    4,
+    7,
+    9
+  ],
+  "bpm": 72,
+  "beats_per_bar": 6,
+  "bars": 8,
+  "chord_degrees": [
+    0,
+    2,
+    4,
+    3,
+    1,
+    0,
+    3,
+    0
+  ],
+  "motif": [
+    1,
+    3,
+    2,
+    0,
+    4,
+    2,
+    1,
+    3,
+    0
+  ],
+  "rhythm_weights": [
+    2,
+    1,
+    3,
+    4,
+    1,
+    2,
+    3,
+    1,
+    7
+  ],
+  "form": [
+    "intro",
+    "theme",
+    "bridge",
+    "theme",
+    "answer",
+    "reprise",
+    "answer",
+    "outro"
+  ],
+  "arrangement_revision": 2,
+  "intact_theme_bars": [
+    3,
+    4
+  ],
+  "midi_note_gates": "Repeated same-pitch gates shortened; audio resonance tails retained.",
+  "stem": "024_bamboo_shadow_clock",
+  "duration_seconds": 44.0,
+  "sample_rate": 32000,
+  "mp3_bitrate_kbps": 160,
+  "clipped_samples": 0,
+  "all_finite": true,
+  "integrated_loudness_lufs": -18.4,
+  "true_peak_dbtp": -6.9,
+  "full_decode": "pass",
+  "auditory_review": "pending",
+  "final_status": "prototype",
+  "additional_generation_fees": 0,
+  "third_party_audio_assets": [],
+  "composition_fingerprint": "7932e291a19be6b8602a9386ef401351a4f563f6a6ed183e8da45051ee9179aa",
+  "audio_sha256": "675d61a488cbb58ef31e47852eaca3cdb07799b7e8c4608ae864c286c07d314f",
+  "notes": [
+    {
+      "pitch": 58,
+      "start_beats": 0,
+      "duration_beats": 0.95,
+      "voice": "wood",
+      "velocity": 0.39
+    },
+    {
+      "pitch": 62,
+      "start_beats": 2.0,
+      "duration_beats": 0.95,
+      "voice": "wood",
+      "velocity": 0.355
+    },
+    {
+      "pitch": 67,
+      "start_beats": 4.0,
+      "duration_beats": 0.95,
+      "voice": "wood",
+      "velocity": 0.32
+    },
+    {
+      "pitch": 46,
+      "start_beats": 0,
+      "duration_beats": 10.2,
+      "voice": "flute",
+      "velocity": 0.19
+    },
+    {
+      "pitch": 70,
+      "start_beats": 2.4,
+      "duration_beats": 2.4,
+      "voice": "wood",
+      "velocity": 0.31
+    },
+    {
+      "pitch": 67,
+      "start_beats": 6,
+      "duration_beats": 0.95,
+      "voice": "wood",
+      "velocity": 0.39
+    },
+    {
+      "pitch": 72,
+      "start_beats": 8.0,
+      "duration_beats": 0.95,
+      "voice": "wood",
+      "velocity": 0.355
+    },
+    {
+      "pitch": 62,
+      "start_beats": 10.0,
+      "duration_beats": 0.95,
+      "voice": "wood",
+      "velocity": 0.32
+    },
+    {
+      "pitch": 77,
+      "start_beats": 12,
+      "duration_beats": 0.95,
+      "voice": "wood",
+      "velocity": 0.39
+    },
+    {
+      "pitch": 67,
+      "start_beats": 14.0,
+      "duration_beats": 0.95,
+      "voice": "wood",
+      "velocity": 0.355
+    },
+    {
+      "pitch": 72,
+      "start_beats": 16.0,
+      "duration_beats": 0.95,
+      "voice": "wood",
+      "velocity": 0.32
+    },
+    {
+      "pitch": 55,
+      "start_beats": 12,
+      "duration_beats": 10.2,
+      "voice": "flute",
+      "velocity": 0.19
+    },
+    {
+      "pitch": 65,
+      "start_beats": 18,
+      "duration_beats": 0.95,
+      "voice": "wood",
+      "velocity": 0.39
+    },
+    {
+      "pitch": 70,
+      "start_beats": 20.0,
+      "duration_beats": 0.95,
+      "voice": "wood",
+      "velocity": 0.355
+    },
+    {
+      "pitch": 74,
+      "start_beats": 22.0,
+      "duration_beats": 0.95,
+      "voice": "wood",
+      "velocity": 0.32
+    },
+    {
+      "pitch": 65,
+      "start_beats": 24,
+      "duration_beats": 0.95,
+      "voice": "wood",
+      "velocity": 0.39
+    },
+    {
+      "pitch": 70,
+      "start_beats": 26.0,
+      "duration_beats": 0.95,
+      "voice": "wood",
+      "velocity": 0.355
+    },
+    {
+      "pitch": 60,
+      "start_beats": 28.0,
+      "duration_beats": 0.95,
+      "voice": "wood",
+      "velocity": 0.32
+    },
+    {
+      "pitch": 48,
+      "start_beats": 24,
+      "duration_beats": 10.2,
+      "voice": "flute",
+      "velocity": 0.19
+    },
+    {
+      "pitch": 67,
+      "start_beats": 30,
+      "duration_beats": 0.95,
+      "voice": "wood",
+      "velocity": 0.39
+    },
+    {
+      "pitch": 58,
+      "start_beats": 32.0,
+      "duration_beats": 0.95,
+      "voice": "wood",
+      "velocity": 0.355
+    },
+    {
+      "pitch": 62,
+      "start_beats": 34.0,
+      "duration_beats": 0.95,
+      "voice": "wood",
+      "velocity": 0.32
+    },
+    {
+      "pitch": 65,
+      "start_beats": 36,
+      "duration_beats": 0.95,
+      "voice": "wood",
+      "velocity": 0.39
+    },
+    {
+      "pitch": 70,
+      "start_beats": 38.0,
+      "duration_beats": 0.95,
+      "voice": "wood",
+      "velocity": 0.355
+    },
+    {
+      "pitch": 74,
+      "start_beats": 40.0,
+      "duration_beats": 0.95,
+      "voice": "wood",
+      "velocity": 0.32
+    },
+    {
+      "pitch": 53,
+      "start_beats": 36,
+      "duration_beats": 10.2,
+      "voice": "flute",
+      "velocity": 0.19
+    },
+    {
+      "pitch": 62,
+      "start_beats": 42,
+      "duration_beats": 0.95,
+      "voice": "wood",
+      "velocity": 0.39
+    },
+    {
+      "pitch": 67,
+      "start_beats": 44.0,
+      "duration_beats": 0.95,
+      "voice": "wood",
+      "velocity": 0.355
+    },
+    {
+      "pitch": 58,
+      "start_beats": 46.0,
+      "duration_beats": 0.95,
+      "voice": "wood",
+      "velocity": 0.32
+    },
+    {
+      "pitch": 72,
+      "start_beats": 6.5,
+      "duration_beats": 1.95,
+      "voice": "wood",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 77,
+      "start_beats": 8.012,
+      "duration_beats": 0.65,
+      "voice": "wood",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 70,
+      "start_beats": 8.5,
+      "duration_beats": 3.5,
+      "voice": "wood",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 72,
+      "start_beats": 12.0,
+      "duration_beats": 1.3,
+      "voice": "wood",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 77,
+      "start_beats": 13.012,
+      "duration_beats": 0.65,
+      "voice": "wood",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 74,
+      "start_beats": 13.5,
+      "duration_beats": 1.95,
+      "voice": "wood",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 70,
+      "start_beats": 15.012,
+      "duration_beats": 2.6,
+      "voice": "wood",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 79,
+      "start_beats": 17.0,
+      "duration_beats": 0.65,
+      "voice": "wood",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 74,
+      "start_beats": 17.512,
+      "duration_beats": 1.3,
+      "voice": "wood",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 72,
+      "start_beats": 18.5,
+      "duration_beats": 1.95,
+      "voice": "wood",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 77,
+      "start_beats": 20.012,
+      "duration_beats": 0.65,
+      "voice": "wood",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 70,
+      "start_beats": 20.5,
+      "duration_beats": 3.5,
+      "voice": "wood",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 74,
+      "start_beats": 24.0,
+      "duration_beats": 0.82,
+      "voice": "flute",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 77,
+      "start_beats": 25.012,
+      "duration_beats": 0.41,
+      "voice": "flute",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 74,
+      "start_beats": 25.5,
+      "duration_beats": 1.23,
+      "voice": "flute",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 72,
+      "start_beats": 27.012,
+      "duration_beats": 1.64,
+      "voice": "flute",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 79,
+      "start_beats": 29.0,
+      "duration_beats": 0.41,
+      "voice": "flute",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 74,
+      "start_beats": 29.512,
+      "duration_beats": 0.82,
+      "voice": "flute",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 72,
+      "start_beats": 30.5,
+      "duration_beats": 1.95,
+      "voice": "wood",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 77,
+      "start_beats": 32.012,
+      "duration_beats": 0.65,
+      "voice": "wood",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 70,
+      "start_beats": 32.5,
+      "duration_beats": 3.5,
+      "voice": "wood",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 74,
+      "start_beats": 36.0,
+      "duration_beats": 0.82,
+      "voice": "flute",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 77,
+      "start_beats": 37.012,
+      "duration_beats": 0.41,
+      "voice": "flute",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 74,
+      "start_beats": 37.5,
+      "duration_beats": 1.23,
+      "voice": "flute",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 72,
+      "start_beats": 39.012,
+      "duration_beats": 1.64,
+      "voice": "flute",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 79,
+      "start_beats": 41.0,
+      "duration_beats": 0.41,
+      "voice": "flute",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 74,
+      "start_beats": 41.512,
+      "duration_beats": 0.82,
+      "voice": "flute",
+      "velocity": 0.48
+    },
+    {
+      "pitch": 70,
+      "start_beats": 42.5,
+      "duration_beats": 1.95,
+      "voice": "wood",
+      "velocity": 0.42
+    },
+    {
+      "pitch": 70,
+      "start_beats": 44.012,
+      "duration_beats": 0.65,
+      "voice": "wood",
+      "velocity": 0.42
+    },
+    {
+      "pitch": 70,
+      "start_beats": 44.5,
+      "duration_beats": 3.5,
+      "voice": "wood",
+      "velocity": 0.42
+    }
+  ],
+  "render_loudness_before_gain_lufs": -14.5,
+  "final_gain_db": -3.5,
+  "target_loudness_lufs": -18,
+  "mp3_file_size_bytes": 882195,
+  "midi_note_count": 59,
+  "midi_same_pitch_gate_overlaps": 0,
+  "listening_status": "未試聴。採用前に実際の聴覚評価が必要。",
+  "file": "audio/024_bamboo_shadow_clock.mp3"
+}

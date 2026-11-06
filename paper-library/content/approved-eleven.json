@@ -1,0 +1,505 @@
+{
+  "baseVersion": 99,
+  "added": [
+    {
+      "name": "selected-api-next-observatory-v1.webp",
+      "label": "天文台",
+      "after": "spaceship-window.webp",
+      "focus": 0.99,
+      "transition": "depth-rings",
+      "sha256": "776332bd270990dccb9dab9566d9010180fd4e25c900bf16f58eb99b08d63756",
+      "bytes": 93546,
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "name": "selected-api-next-library-v1.webp",
+      "label": "図書館",
+      "after": "books-vault-v1.webp",
+      "focus": 0.93,
+      "transition": "mist",
+      "sha256": "893e6a682a0c1939da75c49b663a78dacbd7cb1e28854558786d7cadf6223602",
+      "bytes": 168386,
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "name": "selected-api-next-bamboo-v1.webp",
+      "label": "竹林",
+      "after": "forest-theater.webp",
+      "focus": 0.9,
+      "transition": "mist",
+      "sha256": "b57fa5d283c8186c76536d7dc8a75a0534d9cd7adf52b8dbbb6fac3dbcd31eca",
+      "bytes": 146412,
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "name": "selected-api-next-polarized-mineral-v1.webp",
+      "label": "偏光鉱物",
+      "after": "art-optical-bench-v2.webp",
+      "focus": 0.7,
+      "transition": "contour-bands",
+      "sha256": "7b49e24a0bedf17fedb11fa04887f3a3a3c199cd10c732685d872e95a1461192",
+      "bytes": 362746,
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "name": "selected-api-next-silver-sculpture-v1.webp",
+      "label": "銀色彫刻",
+      "after": "selected-api-12-felt-mobius.webp",
+      "focus": 0.83,
+      "transition": "ribbon",
+      "sha256": "97114dfea5f97f522af0199f8704aaec2e8529280ff2af71fa39151bbc607477",
+      "bytes": 55214,
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "name": "selected-api-next-piano-room-v1.webp",
+      "label": "ピアノ室",
+      "after": "acoustics-hall-v1.webp",
+      "focus": 0.9,
+      "transition": "mist",
+      "sha256": "edf7f1f9137a25824c1f23bf9d520fed832d5ad9de921dd0dd44c3d12d8890af",
+      "bytes": 164834,
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "name": "selected-api-next-city-print-v1.webp",
+      "label": "街の版画",
+      "after": "city-reflection.webp",
+      "focus": 0.85,
+      "transition": "lateral-blend",
+      "sha256": "839445038ae9d50fefa10493fb473ead57bd92d9e8c5767b0d61967a20914410",
+      "bytes": 515254,
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "name": "selected-api-next-watercolor-hills-v1.webp",
+      "label": "丘の水彩",
+      "after": "anime-mountain-archive-v2.webp",
+      "focus": 0.76,
+      "transition": "contour-bands",
+      "sha256": "bcec6388b10a3ea7d0ede8be124c7427b260abbb827f2a2d202622fadc456eab",
+      "bytes": 243188,
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "name": "selected-api-next-desert-v1.webp",
+      "label": "砂漠",
+      "after": "selected-api-13-dune-markers.webp",
+      "focus": 0.5,
+      "transition": "contour-bands",
+      "sha256": "731bc411983cf651f62f018640cdb69672d9e939fc6e3e464a40ca5d37e405e1",
+      "bytes": 91566,
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "name": "selected-api-next-plaster-v1.webp",
+      "label": "漆喰",
+      "after": "history-atelier-v1.webp",
+      "focus": 0.45,
+      "transition": "mist",
+      "sha256": "1ea54595765a306c860284f1fa77f7ce55ba39db363597bf0d92bb3058f7eadf",
+      "bytes": 307488,
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "name": "selected-api-next-sea-glass-v1.webp",
+      "label": "シーグラス",
+      "after": "submerged-city.webp",
+      "focus": 0.6,
+      "transition": "local-blends",
+      "sha256": "a004622f2f2ac99d81809ffc3218236adc2ee2fd24ca03465c008e9bbf075468",
+      "bytes": 197204,
+      "dimensions": [
+        1672,
+        941
+      ]
+    }
+  ],
+  "preservedScenes": [
+    {
+      "asset": 3,
+      "focus": 0.69,
+      "name": "empty-platform.webp"
+    },
+    {
+      "asset": 13,
+      "focus": 0.7,
+      "name": "anime-forest-fieldwork-v2.webp"
+    },
+    {
+      "asset": 17,
+      "focus": 0.55,
+      "name": "art-cosmic-cells-v2.webp"
+    },
+    {
+      "asset": 4,
+      "focus": 0.69,
+      "name": "spaceship-window.webp"
+    },
+    {
+      "asset": 30,
+      "focus": 0.78,
+      "transition": "mist",
+      "name": "selected-ceramic-sherds-v1.webp"
+    },
+    {
+      "asset": 34,
+      "focus": 0.58,
+      "transition": "mist",
+      "name": "selected-api-06-woven-air.webp"
+    },
+    {
+      "asset": 15,
+      "focus": 0.7,
+      "name": "books-vault-v1.webp"
+    },
+    {
+      "asset": 35,
+      "focus": 0.65,
+      "transition": "diagonal-flow",
+      "name": "selected-api-07-folded-city.webp"
+    },
+    {
+      "asset": 5,
+      "focus": 0.47,
+      "name": "submerged-city.webp"
+    },
+    {
+      "asset": 18,
+      "focus": 0.5,
+      "name": "art-mobius-sculpture-v2.webp"
+    },
+    {
+      "asset": 6,
+      "focus": 0.6,
+      "name": "forest-library.webp"
+    },
+    {
+      "asset": 36,
+      "focus": 0.65,
+      "transition": "contour-bands",
+      "name": "selected-api-08-magnetic-field.webp"
+    },
+    {
+      "asset": 7,
+      "focus": 0.43,
+      "name": "living-gallery.webp"
+    },
+    {
+      "asset": 14,
+      "focus": 0.74,
+      "name": "anime-mountain-archive-v2.webp"
+    },
+    {
+      "asset": 19,
+      "focus": 0.53,
+      "name": "art-mosaic-restoration-v2.webp"
+    },
+    {
+      "asset": 37,
+      "focus": 0.65,
+      "transition": "horizontal-wave",
+      "name": "selected-api-09-glass-river.webp"
+    },
+    {
+      "asset": 31,
+      "focus": 0.88,
+      "transition": "depth-rings",
+      "name": "selected-star-trails-v1.webp"
+    },
+    {
+      "asset": 8,
+      "focus": 0.67,
+      "name": "garden-conservatory.webp"
+    },
+    {
+      "asset": 16,
+      "focus": 0.62,
+      "name": "history-atelier-v1.webp"
+    },
+    {
+      "asset": 38,
+      "focus": 0.72,
+      "transition": "local-blends",
+      "name": "selected-api-10-listening-room.webp"
+    },
+    {
+      "asset": 9,
+      "focus": 0.65,
+      "name": "ocean-corridor.webp"
+    },
+    {
+      "asset": 20,
+      "focus": 0.6,
+      "name": "art-social-dialogue-v2.webp"
+    },
+    {
+      "asset": 10,
+      "focus": 0.5,
+      "name": "forest-theater.webp"
+    },
+    {
+      "asset": 39,
+      "focus": 0.64,
+      "transition": "particles",
+      "name": "selected-api-11-amber-network.webp"
+    },
+    {
+      "asset": 11,
+      "focus": 0.62,
+      "name": "city-reflection.webp"
+    },
+    {
+      "asset": 12,
+      "focus": 0.58,
+      "name": "model-city.webp"
+    },
+    {
+      "asset": 32,
+      "focus": 0.78,
+      "transition": "local-blends",
+      "name": "selected-shared-plaza-v1.webp"
+    },
+    {
+      "asset": 40,
+      "focus": 0.55,
+      "transition": "ribbon",
+      "name": "selected-api-12-felt-mobius.webp"
+    },
+    {
+      "asset": 21,
+      "focus": 0.52,
+      "name": "art-optical-bench-v2.webp"
+    },
+    {
+      "asset": 2,
+      "tile": 0,
+      "cols": 3,
+      "rows": 2,
+      "name": "quiet-media-atlas-v1.webp"
+    },
+    {
+      "asset": 2,
+      "tile": 1,
+      "cols": 3,
+      "rows": 2,
+      "name": "quiet-media-atlas-v1.webp"
+    },
+    {
+      "asset": 41,
+      "focus": 0.68,
+      "transition": "contour-bands",
+      "name": "selected-api-13-dune-markers.webp"
+    },
+    {
+      "asset": 2,
+      "tile": 2,
+      "cols": 3,
+      "rows": 2,
+      "name": "quiet-media-atlas-v1.webp"
+    },
+    {
+      "asset": 22,
+      "focus": 0.58,
+      "name": "art-robot-workshop-v2.webp"
+    },
+    {
+      "asset": 2,
+      "tile": 3,
+      "cols": 3,
+      "rows": 2,
+      "name": "quiet-media-atlas-v1.webp"
+    },
+    {
+      "asset": 42,
+      "focus": 0.68,
+      "transition": "ribbon",
+      "name": "selected-api-14-blue-fabric.webp"
+    },
+    {
+      "asset": 2,
+      "tile": 4,
+      "cols": 3,
+      "rows": 2,
+      "name": "quiet-media-atlas-v1.webp"
+    },
+    {
+      "asset": 2,
+      "tile": 5,
+      "cols": 3,
+      "rows": 2,
+      "name": "quiet-media-atlas-v1.webp"
+    },
+    {
+      "asset": 23,
+      "focus": 0.5,
+      "name": "art-archaeology-table-v2.webp"
+    },
+    {
+      "asset": 43,
+      "focus": 0.65,
+      "transition": "light-bloom",
+      "name": "selected-api-15-singing-bowls.webp"
+    },
+    {
+      "asset": 1,
+      "name": "river-city-dawn.webp"
+    },
+    {
+      "kind": "geometry",
+      "name": null
+    },
+    {
+      "asset": 0,
+      "tile": 0,
+      "name": "cinema-atlas.webp"
+    },
+    {
+      "asset": 44,
+      "focus": 0.7,
+      "transition": "particles",
+      "name": "selected-api-16-night-flock.webp"
+    },
+    {
+      "asset": 24,
+      "focus": 0.55,
+      "name": "art-organic-cells-v2.webp"
+    },
+    {
+      "kind": "network",
+      "name": null
+    },
+    {
+      "asset": 0,
+      "tile": 6,
+      "name": "cinema-atlas.webp"
+    },
+    {
+      "asset": 45,
+      "focus": 0.85,
+      "transition": "mist",
+      "name": "selected-api-17-blue-mended-paper.webp"
+    },
+    {
+      "asset": 33,
+      "focus": 0.8,
+      "transition": "particles",
+      "name": "selected-milkweed-seeds-v1.webp"
+    },
+    {
+      "asset": 0,
+      "tile": 8,
+      "name": "cinema-atlas.webp"
+    },
+    {
+      "asset": 25,
+      "focus": 0.58,
+      "name": "art-wave-light-v2.webp"
+    },
+    {
+      "asset": 46,
+      "focus": 0.78,
+      "transition": "depth-rings",
+      "name": "selected-api-18-ripple-orbits.webp"
+    },
+    {
+      "asset": 27,
+      "focus": 0.4,
+      "transition": "mist",
+      "name": "acoustics-hall-v1.webp"
+    },
+    {
+      "kind": "wave",
+      "name": null
+    },
+    {
+      "asset": 0,
+      "tile": 9,
+      "name": "cinema-atlas.webp"
+    },
+    {
+      "asset": 47,
+      "focus": 0.56,
+      "transition": "depth-rings",
+      "name": "selected-api-19-woven-corridor.webp"
+    },
+    {
+      "asset": 0,
+      "tile": 12,
+      "name": "cinema-atlas.webp"
+    },
+    {
+      "asset": 26,
+      "focus": 0.52,
+      "name": "art-gestural-lines-v2.webp"
+    },
+    {
+      "asset": 0,
+      "tile": 15,
+      "name": "cinema-atlas.webp"
+    },
+    {
+      "asset": 48,
+      "focus": 0.66,
+      "transition": "ribbon",
+      "name": "selected-api-20-rose-orbits.webp"
+    },
+    {
+      "asset": 0,
+      "tile": 4,
+      "name": "cinema-atlas.webp"
+    },
+    {
+      "asset": 0,
+      "tile": 14,
+      "name": "cinema-atlas.webp"
+    },
+    {
+      "asset": 0,
+      "tile": 10,
+      "name": "cinema-atlas.webp"
+    },
+    {
+      "asset": 28,
+      "framing": "bruegel",
+      "transition": "mist",
+      "name": "bruegel-harvesters-2048.webp"
+    },
+    {
+      "asset": 29,
+      "framing": "atkins",
+      "transition": "mist",
+      "name": "atkins-ptilota-2560.webp"
+    }
+  ]
+}

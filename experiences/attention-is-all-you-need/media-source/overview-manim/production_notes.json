@@ -1,0 +1,24 @@
+{
+  "title": "Attention Is All You Need｜日本語概要",
+  "renderer": "Manim Community 0.19.0, Cairo",
+  "source": "overview.py",
+  "duration_seconds": 110,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "fps": 30,
+  "video_frames": 3300,
+  "narration": "Kokoro Japanese jf_alpha, 18 timed sections, speed 1.0",
+  "audio": "AAC mono 48kHz, narration only",
+  "checks": [
+    "Full audiovisual decode passed",
+    "15 rendered video frames visually checked",
+    "18 narration intervals contain audio and fit the intended timeline",
+    "ASR covers all 18 passages in order without omissions; technical-word transcription substitutions noted"
+  ],
+  "limits": [
+    "Direct subjective listening was unavailable; exact word-for-word pronunciation is not claimed"
+  ],
+  "sha256": "460a225c1669ba91b182123f034a8c84e4389b3760f583320d673e4f51338884"
+}

@@ -8,7 +8,7 @@ function run({failNew=false,reduced=false,initialOnly=false,width=1200,height=80
  const context={setTimeout:()=>1,clearTimeout(){},window:{},document:{hidden:false,body:{prepend(){},classList:{contains:()=>false}},createElement:()=>canvas,querySelectorAll:()=>[],querySelector:()=>({}),addEventListener(){}},Image:class{constructor(){this.complete=false;}set src(x){if(!x)return;this.url=x;const fresh=x.includes('quiet-media');if(/art-/.test(x)&&failNew){this.onerror();return;}const newer=/forest-library|living-gallery|garden-conservatory|ocean-corridor|forest-theater|city-reflection|model-city|anime-forest-fieldwork-v2|anime-mountain-archive-v2/.test(x);this.naturalWidth=fresh?2172:newer?1536:1672;this.naturalHeight=fresh?724:newer?1024:941;this.onload();}},matchMedia:()=>({matches:reduced,addEventListener(){}}),scrollY:0,innerWidth:width,innerHeight:height,devicePixelRatio:1,requestAnimationFrame(fn){next=fn;return 1},cancelAnimationFrame(){},addEventListener:(n,f)=>listeners[n]=f,MutationObserver:class{observe(){}}};
  vm.runInNewContext(source,context);
  if(reduced){assert.equal(next,undefined);const phase=context.window.__reportFlow.phase;context.scrollY=1000;listeners.scroll();assert.equal(context.window.__reportFlow.phase,phase);}
- else if(!initialOnly)for(let i=0;i<4200;i++)next(i*100);
+ else if(!initialOnly)for(let i=0;i<Math.ceil(require('./scene-registry.cjs')().reelSeconds/1.2*10)+100;i++)next(i*100);
  return draws;
 }
 
@@ -19,7 +19,7 @@ for(const [width,height] of [[1280,844],[390,844]]){
   for(const {args:a} of own){const old=true,iw=old?1672:1536,ih=old?941:1024;assert.equal(a[3],iw);assert.equal(a[4],ih);assert.ok(a[7]>=width&&a[8]>=height);assert.ok(Math.abs(a[7]/a[8]-iw/ih)<1e-9);const expected=(width-a[7])*(width<650?focus:.5);assert.ok(Math.abs(a[5]-expected)<=width*.012+.001)}
  }
 }
-const initial=run({initialOnly:true});assert.ok(initial.length>0);assert.ok(initial.every(d=>!/cinema-atlas|river-city/.test(d.args[0].url)),'later legacy assets not loaded upfront');
+const initial=run({initialOnly:true});assert.ok(initial.length>0);assert.ok(new Set(initial.map(d=>d.args[0].url)).size<=2,'random opening still draws at most two source images');
 const fallback=run({failNew:true});assert.ok(fallback.length);assert.ok(fallback.every(d=>!/art-/.test(d.args[0].url)));
-assert.ok(run({reduced:true}).some(d=>d.args[0].url.includes('empty-platform')));
+assert.ok(run({reduced:true}).length>0,'reduced motion retains a single randomized opening image');
 console.log('PASS ten new selected paintings: cover, mobile focal points, crossfade, deferred loading, painting-image failure fallback and reduced motion. Mock, not browser QA.');

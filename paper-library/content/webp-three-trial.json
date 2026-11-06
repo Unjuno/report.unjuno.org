@@ -1,0 +1,42 @@
+{
+  "base": "644b2da8e16ee999edf056d25166cc7aabb0669b",
+  "unpublished_loading_patch_included": true,
+  "assets": [
+    {
+      "name": "selected-unconformity-q92.webp",
+      "id": 1,
+      "sha256": "57ede71f3d5a3090d1e5e28a97bef603f516d306b62e6644bc78ee17339969b6",
+      "bytes": 508412,
+      "source_sha256": "575d529db996a37a2d72ac97da5954dbca8ff1104c2b2499659166f4082ebb67",
+      "focus": 0.6,
+      "transition": "contour-bands",
+      "rights": "Original AI-generated conceptual still, derivative compression only; no exclusive copyright or scientific accuracy guarantee",
+      "deployed": false,
+      "device_verified": false
+    },
+    {
+      "name": "selected-moon-q92.webp",
+      "id": 81,
+      "sha256": "b7aa1b5f5c61d6361cf45567dd830a3b52fa37bd87a8cc7d48d556c04c1a1314",
+      "bytes": 151224,
+      "source_sha256": "76b68ce314bee53aa23076f5a29d55c9c8695da7d54f82d617ff594492187d93",
+      "focus": 0.92,
+      "transition": "depth-rings",
+      "rights": "Original AI-generated conceptual still, derivative compression only; no exclusive copyright or scientific accuracy guarantee",
+      "deployed": false,
+      "device_verified": false
+    },
+    {
+      "name": "selected-culture-q92.webp",
+      "id": 83,
+      "sha256": "a628b7502d7614d2242c10e3be70703b97c2de38d13192744ba6396cd75ec05b",
+      "bytes": 411862,
+      "source_sha256": "bd4ccacc2d6be752edfb6dc0a54bb2187f2d162b763c2ccfa1aa6ac698732b40",
+      "focus": 0.5,
+      "transition": "ribbon",
+      "rights": "Original AI-generated conceptual still, derivative compression only; no exclusive copyright or scientific accuracy guarantee",
+      "deployed": false,
+      "device_verified": false
+    }
+  ]
+}

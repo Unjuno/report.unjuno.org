@@ -1,0 +1,54 @@
+{
+  "title": "系列長と計算量",
+  "duration_seconds": 54,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "fps": 30,
+  "frames": 1620,
+  "renderer": "Manim Community 0.19.0 (Cairo)",
+  "animation_count": 31,
+  "narration": "Japanese Kokoro jf_alpha, speed1.0, nine synchronized sections, no music",
+  "captions": "Burned-in Japanese captions plus SRT/WebVTT",
+  "reference": "https://arxiv.org/abs/1706.03762 Table1 / section4",
+  "checks": [
+    "Full audiovisual decode passed",
+    "Nine final-video frames visually inspected",
+    "All nine narration sections fit with at least0.15second tail padding, no cuts or speedup",
+    "ASR represents all nine revised narration sections and numeric values; homophone substitutions documented",
+    "2923 assertions check all256 allowed interaction states, n/d doubling relationships, and five video states",
+    "Video and audio both54.000seconds"
+  ],
+  "limits": [
+    "Narration not directly listened to in this runtime. Phoneme review and ASR do not guarantee perfect subjective voice quality.",
+    "Compares Table1 monomials only, not whole-model cost, measured runtime, or exact FLOPs. Q/K/V and output projections, feed-forward, and other work are excluded.",
+    "Bar scale is normalized to the larger current term at every moment, explicitly labeled."
+  ],
+  "sha256": "467cbccc419d1f21401238df532bd63bfb55073e02277517b382b049a8e979eb",
+  "file_size_bytes": 3475949,
+  "narration_sha256": "1f4c61f1bf64a992a00bddbb579da0588548d92503ea77caa702150bb20c2e12",
+  "visible_states": [
+    {
+      "n": 128,
+      "d": 512
+    },
+    {
+      "n": 256,
+      "d": 512
+    },
+    {
+      "n": 512,
+      "d": 512
+    },
+    {
+      "n": 1024,
+      "d": 512
+    },
+    {
+      "n": 1024,
+      "d": 1024
+    }
+  ],
+  "caption_overlay_default": false
+}

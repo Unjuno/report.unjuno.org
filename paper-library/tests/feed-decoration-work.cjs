@@ -1,0 +1,34 @@
+'use strict';
+// Deterministic DOM work counts, not browser timing measurements.
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+const scene=fs.readFileSync('dist/assets/cinema-field.js','utf8');
+let writes=0,fullScans=0;
+const card=()=>({nodeType:1,classList:{add(){writes++}},matches:s=>s==='[data-entry]',querySelectorAll:()=>[]});
+const existing=Array.from({length:10000},card),document={querySelectorAll(){fullScans++;return existing}};
+const env={document};vm.createContext(env);
+vm.runInContext(scene.slice(scene.indexOf('function mark('),scene.indexOf('function size(')),env);
+env.mark();assert.equal(writes,10000);assert.equal(fullScans,1);
+let callback;env.cards={};env.MutationObserver=class{constructor(fn){callback=fn}observe(){}};
+const observer=scene.match(/if\(cards\)new MutationObserver\(changes=>.*?\.observe\(cards,\{childList:true\}\);/)[0];
+vm.runInContext(observer,env);writes=0;fullScans=0;
+callback([{addedNodes:Array.from({length:12},card),removedNodes:[]}]);
+assert.equal(writes,12,'one new page decorates only its 12 papers');assert.equal(fullScans,0,'no complete document rescan');
+callback([{addedNodes:[{nodeType:3}],removedNodes:[]}]);assert.equal(writes,12);
+
+const type=fs.readFileSync('dist/assets/spline-type.js','utf8');
+const marker='  new MutationObserver(changes => {';
+const begin=type.lastIndexOf(marker),end=type.indexOf(".observe(document.querySelector('#papers')",begin);
+assert(begin>=0&&end>begin);
+const records=new Map(),visible=new Set(),removed=[];let discovered=0,typeCallback;
+for(let i=0;i<10000;i++)records.set({isConnected:true},{});
+records.keys=()=>{assert.fail('append-only decoration must not scan the old registry')};
+const typeEnv={records,visible,observer:{unobserve:c=>removed.push(c)},discover:()=>{discovered++},MutationObserver:class{constructor(fn){typeCallback=fn}}};
+vm.runInNewContext(type.slice(begin,end)+';',typeEnv);
+typeCallback([{addedNodes:Array.from({length:12},card),removedNodes:[]}]);assert.equal(discovered,12);assert.equal(records.size,10000);
+const old={nodeType:1,isConnected:false,matches:()=>true,querySelectorAll:()=>[]};records.set(old,{});visible.add(old);
+typeCallback([{addedNodes:[],removedNodes:[old]}]);assert(!records.has(old));assert(!visible.has(old));assert.deepEqual(removed,[old]);
+const moved={...old,isConnected:true};records.set(moved,{});
+typeCallback([{addedNodes:[],removedNodes:[moved]}]);assert(records.has(moved),'a moved/reinserted card remains registered');
+const nested={...old};records.set(nested,{});visible.add(nested);
+typeCallback([{addedNodes:[],removedNodes:[{nodeType:1,matches:()=>false,querySelectorAll:()=>[nested]}]}]);assert(!records.has(nested));
+console.log('PASS incremental decoration: 12 added papers after 10,000 existing require 12 class writes and zero full document/record scans; removed subtrees clean up and moved cards remain. Mock operation counts, not browser latency.');

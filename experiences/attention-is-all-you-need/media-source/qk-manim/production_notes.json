@@ -1,0 +1,52 @@
+{
+  "title": "QとKを照合する",
+  "duration_seconds": 48,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "fps": 30,
+  "frames": 1440,
+  "renderer": "Manim Community 0.19.0 (Cairo)",
+  "animation_count": 25,
+  "narration": "Japanese Kokoro jf_alpha, speed 1.0, eight synchronized segments, no music",
+  "captions": "Burned in Japanese captions plus SRT/WebVTT",
+  "reference": "https://arxiv.org/abs/1706.03762 §3.2.1",
+  "checks": [
+    "Full audiovisual decode passed",
+    "Eight final-video frames visually inspected",
+    "All eight narration sections fit without cutting or speed-up",
+    "ASR covers all eight sections, with homophone/technical-word substitutions",
+    "Four numeric states agree with the existing interaction math module",
+    "Angle-only motion preserves norm sqrt(2); length-only motion preserves angle 0"
+  ],
+  "limits": [
+    "Narration not directly listened to in this runtime; word-perfect pronunciation is not claimed"
+  ],
+  "sha256": "5cf1db55207b0f06f293b13c971d34877edd1e8809a31cd5517680a65e242c5f",
+  "file_size_bytes": 2936296,
+  "initial_query": [
+    1,
+    1
+  ],
+  "keys": [
+    [
+      2,
+      0
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      -1,
+      1
+    ]
+  ],
+  "palette": {
+    "Q": "#2a55eb",
+    "KA": "#b94b2c",
+    "KB": "#417065",
+    "KC": "#566567"
+  }
+}
