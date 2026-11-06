@@ -75,7 +75,7 @@ class Page(HTMLParser):
 if args.built:
     build = ROOT / 'build'
     pages = sorted(str(p.relative_to(build)) for p in build.rglob('*.html'))
-    assert pages == ['index.html', 'notes/attention-is-all-you-need/index.html', 'notes/attention-is-all-you-need/learn/index.html', 'rights/index.html'], pages
+    assert pages == ['index.html', 'notes/attention-is-all-you-need/index.html', 'notes/attention-is-all-you-need/learn/index.html', 'notes/gan/index.html', 'notes/resnet/index.html', 'rights/index.html'], pages
     home = (build / 'index.html').read_text()
     assert home.lower().count('<!doctype html>') == 1
     assert home.count('<html ') == home.count('</html>') == 1
@@ -109,5 +109,5 @@ if args.built:
                 destination = Page()
                 destination.feed(target.read_text())
                 assert url.fragment in destination.ids, (name, ref)
-    print('PASS root build: exactly 4 routes; 1 preserved article and 1 learning experience; all links/anchors; 130 images and 50 tracks.')
+    print('PASS root build: exactly 6 routes; 1 preserved article, 2 new reading notes and 1 learning experience; all links/anchors; 130 images and 50 tracks.')
 print('PASS production source preservation, registered authored materials only, no production discovery, and complete media.')
