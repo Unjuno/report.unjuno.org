@@ -76,6 +76,7 @@ if args.built:
     build = ROOT / 'build'
     pages = sorted(str(p.relative_to(build)) for p in build.rglob('*.html'))
     assert pages == ['index.html', 'notes/attention-is-all-you-need/index.html', 'notes/attention-is-all-you-need/learn/index.html', 'notes/gan/index.html', 'notes/resnet/index.html', 'rights/index.html'], pages
+    subprocess.run(['python3', str(ROOT / 'scripts/check-reading-notes.py'), str(build)], check=True)
     home = (build / 'index.html').read_text()
     assert home.lower().count('<!doctype html>') == 1
     assert home.count('<html ') == home.count('</html>') == 1
