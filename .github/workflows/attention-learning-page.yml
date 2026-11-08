@@ -1,0 +1,27 @@
+name: Attention learning-page checks
+
+on:
+  pull_request:
+    paths:
+      - 'experiences/attention-is-all-you-need/**'
+      - '.github/workflows/attention-learning-page.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  attention-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install experience test dependency
+        run: npm install --no-audit --no-fund
+        working-directory: experiences/attention-is-all-you-need
+      - name: Run Attention local and production tests
+        run: npm test
+        working-directory: experiences/attention-is-all-you-need
