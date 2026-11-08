@@ -45,3 +45,26 @@ test('production controls initialize and every unit still supplies practice and 
  assert.equal(d.querySelectorAll('[data-lab-reset]').length,10);
  assert.equal(d.querySelectorAll('[data-action="reset"]').length,1);
 });
+
+test('every source label links to its exact arXiv HTML section or table',()=>{
+ const anchors={
+  '§1':'S1','§3.1':'S3.SS1','§3.2.1':'S3.SS2.SSS1',
+  '§3.2.2':'S3.SS2.SSS2','§3.2.3':'S3.SS2.SSS3',
+  '§3.5':'S3.SS5','§4':'S4','§6':'S6',
+  '§6.1':'S6.SS1','§7':'S7',
+  'Table 1':'S4.T1','Table 2':'S6.T2'
+ };
+ for(const unit of config.units){
+  const root=d.getElementById('unit-'+unit.id);
+  const labels=unit.interaction.source_sections.split('、').map(label=>label.trim());
+  const links=[...root.querySelectorAll('.unit-source a')];
+  assert.equal(links.length,labels.length,'Missing source links in '+unit.id);
+  for(const [i,label] of labels.entries()){
+   assert.ok(Object.hasOwn(anchors,label),'Unrecognized source '+label);
+   assert.equal(links[i].href,'https://arxiv.org/html/'+config.reference_paper_version+'#'+anchors[label]);
+   assert.ok(links[i].textContent.includes(label));
+   assert.equal(links[i].getAttribute('target'),'_blank');
+   assert.equal(links[i].getAttribute('rel'),'noopener noreferrer');
+  }
+ }
+});
