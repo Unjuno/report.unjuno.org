@@ -42,7 +42,7 @@
     "test:opaque-pixels": "node tests/canvas-opaque-pixels.cjs",
     "test:quality": "node tests/quality-replacements.cjs",
     "test:canvas-recovery": "node tests/canvas-lifecycle-fallback.cjs",
-    "test:touch-compositor": "node tests/touch-compositor.cjs",
+    "test:touch-compositor": "node tests/touch-compositor.cjs && node tests/touch-transition-fallback.cjs",
     "test:type-reveal": "node tests/type-reveal-work.cjs",
     "test:combined-filter-reveal": "node tests/combined-filter-reveal.cjs",
     "test:legacy-discovery": "node tests/feed-pagination-review.cjs && node tests/feed-pagination-buffer.cjs && node tests/feed-scroll-performance.cjs && node tests/sponsor-repeat.cjs",

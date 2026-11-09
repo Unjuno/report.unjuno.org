@@ -1,6 +1,9 @@
 /* One continuous viewport world: clear paintings with soft dissolves, no per-card canvases. */
 (()=>{'use strict';
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+// iOS touch compositors may discard complex multi-surface canvas frames.
+// Keep touch transitions on the same opaque backing surface as the scene.
+const touchCompositor=matchMedia('(hover: none) and (pointer: coarse)');
 const canvas=document.createElement('canvas');canvas.className='continuous-canvas';canvas.setAttribute('aria-hidden','true');document.body.prepend(canvas);
 // The viewport world is opaque. Keep transparency only on the dissolve masks.
 const c=canvas.getContext('2d',{alpha:false});if(!c){canvas.remove();return;}
@@ -182,6 +185,14 @@ function dissolve(previous,a,b,progress,step){
  // Draw the current scene directly as the base instead of drawing, fully
  // covering, and masking an invisible previous scene.
  const outgoing=progress>.6,base=outgoing?a:(previous||a);
+ if(touchCompositor.matches){
+  // Bypass viewport-sized intermediate surfaces and destination-in masks.
+  // Shared shoulder weights retain continuity across adjacent scenes.
+  layer(base,1);
+  const next=outgoing?b:a,alpha=outgoing?weight[2]:weight[1];
+  if(next&&alpha>=.001)layer(next,alpha);
+  return;
+ }
  const spatial=rc&&mc&&maskPixels&&!revealLost&&!mistLost;
  if(spatial){
   const scale=f.d;
