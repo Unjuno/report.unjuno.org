@@ -3,14 +3,21 @@ on:
   push:
     branches: ['sync/attention-sites-v225']
     paths: ['reproductions/attention-is-all-you-need/SHA256SUMS']
+  pull_request:
+    types: [opened, synchronize]
+    branches: [main]
+    paths: ['reproductions/attention-is-all-you-need/SHA256SUMS']
 permissions:
   contents: write
 jobs:
   mirror:
+    if: github.event_name == 'push' || (github.head_ref == 'sync/attention-sites-v225' && github.event.pull_request.head.repo.full_name == github.repository)
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
       - name: Download only the 104 approved public files and verify SHA-256
         shell: bash
         run: |
@@ -48,7 +55,7 @@ jobs:
       - name: Commit the verified reproduction to this branch only
         shell: bash
         run: |
-          test "$GITHUB_REF_NAME" = "sync/attention-sites-v225"
+          test "$(git branch --show-current)" = "sync/attention-sites-v225"
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add --force -- reproductions/attention-is-all-you-need/v225
